@@ -724,8 +724,34 @@
     a.click();
   }
 
+  async function fetchCloudData() {
+    if (typeof dbClient !== 'undefined' && dbClient) {
+      try {
+        const { data: cBookings } = await dbClient.from('bookings').select('*').order('created_at', { ascending: false });
+        if (cBookings && cBookings.length > 0) {
+          bookings = cBookings.map(b => ({
+            id: b.id,
+            name: b.customer_name,
+            phone: b.phone,
+            email: b.email,
+            package: b.package_name,
+            date: b.travel_date,
+            persons: b.guests || 1,
+            price: b.price || 0,
+            status: b.status || 'Pending'
+          }));
+          localStorage.setItem('vj_admin_bookings', JSON.stringify(bookings));
+          renderAll();
+        }
+      } catch(e) { console.warn('Supabase fetch notice:', e); }
+    }
+  }
+
   // AUTO INIT
   checkSession();
+  fetchCloudData();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase_client.js"></script>
 </body>
 </html>

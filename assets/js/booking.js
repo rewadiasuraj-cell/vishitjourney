@@ -237,14 +237,17 @@ async function submitBookingPayment() {
   };
   
   const saveToAdminStore = (bData) => {
-    try {
-      let existing = JSON.parse(localStorage.getItem('vj_admin_bookings') || '[]');
-      // Avoid duplicate IDs
-      if (!existing.some(b => b.id === bData.id)) {
-        existing.unshift(bData);
-        localStorage.setItem('vj_admin_bookings', JSON.stringify(existing));
-      }
-    } catch(e) { console.warn('LocalStorage save error:', e); }
+    if (typeof saveBookingToCloud === 'function') {
+      saveBookingToCloud(bData);
+    } else {
+      try {
+        let existing = JSON.parse(localStorage.getItem('vj_admin_bookings') || '[]');
+        if (!existing.some(b => b.id === bData.id)) {
+          existing.unshift(bData);
+          localStorage.setItem('vj_admin_bookings', JSON.stringify(existing));
+        }
+      } catch(e) {}
+    }
   };
 
   try {
