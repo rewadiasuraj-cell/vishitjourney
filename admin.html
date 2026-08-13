@@ -490,8 +490,8 @@
     const user = document.getElementById('adminUser').value.trim();
     const pass = document.getElementById('adminPass').value.trim();
 
-    // Default Credential: admin / vishit123
-    if ((user === 'admin' && pass === 'vishit123') || (user === 'admin' && pass === 'admin123')) {
+    // Updated Credentials: admin@vishitjourney.com / vish7689@journey
+    if ((user.toLowerCase() === 'admin@vishitjourney.com' || user.toLowerCase() === 'admin') && pass === 'vish7689@journey') {
       sessionStorage.setItem('vj_admin_logged', 'true');
       document.getElementById('loginOverlay').style.display = 'none';
       renderAll();
