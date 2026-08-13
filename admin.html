@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Vishit Journeys</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --bg-dark: #081428;
+    --bg-card: #0d1f3c;
+    --bg-card-hover: #12284c;
+    --gold: #c9a54a;
+    --gold-light: #e4c06e;
+    --gold-glow: rgba(201, 165, 74, 0.25);
+    --text-white: #ffffff;
+    --text-muted: #8a9ab5;
+    --border-color: rgba(201, 165, 74, 0.2);
+    --success: #22c55e;
+    --warning: #eab308;
+    --danger: #ef4444;
+    --info: #3b82f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+  body { background: var(--bg-dark); color: var(--text-white); min-height: 100vh; overflow-x: hidden; }
+
+  /* ── LOGIN OVERLAY ── */
+  #loginOverlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: radial-gradient(circle at center, #0d1f3c 0%, #040a14 100%);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .login-card {
+    background: var(--bg-card); border: 1px solid var(--border-color);
+    border-radius: 16px; padding: 2.5rem; width: 100%; max-width: 420px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px var(--gold-glow);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .login-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .login-logo { width: 60px; height: 60px; margin: 0 auto 1.2rem; border-radius: 50%; border: 2px solid var(--gold); padding: 4px; }
+  .login-title { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 0.3rem; letter-spacing: 2px; }
+  .login-sub { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2rem; }
+  .input-group { margin-bottom: 1.2rem; text-align: left; }
+  .input-group label { display: block; font-size: 0.75rem; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+  .input-group input {
+    width: 100%; padding: 0.9rem 1.2rem; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-size: 0.95rem;
+    outline: none; transition: all 0.3s ease;
+  }
+  .input-group input:focus { border-color: var(--gold); box-shadow: 0 0 15px var(--gold-glow); background: rgba(255,255,255,0.07); }
+  .btn-gold {
+    width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none; border-radius: 8px; color: #081428; font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201,165,74,0.3); margin-top: 0.5rem;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,165,74,0.5); }
+  .login-error { color: var(--danger); font-size: 0.85rem; margin-top: 1rem; display: none; background: rgba(239, 68, 68, 0.1); padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+  /* ── ADMIN LAYOUT ── */
+  .app-container { display: flex; min-height: 100vh; }
+  
+  /* Sidebar */
+  aside.sidebar {
+    width: 260px; background: var(--bg-card); border-right: 1px solid var(--border-color);
+    display: flex; flex-direction: column; position: fixed; top: 0; bottom: 0; left: 0; z-index: 100;
+    transition: all 0.3s ease;
+  }
+  .sidebar-header { padding: 1.8rem 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px; }
+  .sidebar-header img { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold); }
+  .sidebar-brand h2 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--gold); letter-spacing: 1.5px; }
+  .sidebar-brand p { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; }
+
+  .sidebar-menu { padding: 1.5rem 1rem; flex: 1; list-style: none; }
+  .menu-item { margin-bottom: 0.5rem; }
+  .menu-link {
+    display: flex; align-items: center; gap: 14px; padding: 0.9rem 1.2rem;
+    color: var(--text-muted); text-decoration: none; border-radius: 10px; font-weight: 500; font-size: 0.9rem;
+    transition: all 0.3s ease; cursor: pointer;
+  }
+  .menu-link i { font-size: 1.1rem; width: 20px; text-align: center; }
+  .menu-link:hover, .menu-link.active { background: rgba(201, 165, 74, 0.12); color: var(--gold); border: 1px solid rgba(201, 165, 74, 0.3); }
+
+  .sidebar-footer { padding: 1.5rem 1rem; border-top: 1px solid var(--border-color); }
+  .logout-btn {
+    display: flex; align-items: center; gap: 12px; width: 100%; padding: 0.8rem 1.2rem;
+    background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3);
+    color: var(--danger); border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease;
+  }
+  .logout-btn:hover { background: var(--danger); color: #fff; }
+
+  /* Main Content Area */
+  main.main-content { margin-left: 260px; flex: 1; padding: 2rem 2.5rem; }
+
+  /* Top Navbar */
+  .top-nav {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem;
+    padding-bottom: 1.2rem; border-bottom: 1px solid var(--border-color);
+  }
+  .page-title h1 { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--text-white); letter-spacing: 1px; }
+  .page-title p { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+  .user-profile { display: flex; align-items: center; gap: 15px; }
+  .live-pill { display: flex; align-items: center; gap: 8px; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); padding: 0.4rem 0.9rem; border-radius: 20px; font-size: 0.75rem; color: var(--success); font-weight: 600; }
+  .dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse 1.5s infinite; }
+
+  @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+  /* Stats Grid */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px;
+    padding: 1.5rem; display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .stat-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 8px 25px var(--gold-glow); }
+  .stat-info h4 { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+  .stat-info .value { font-size: 1.8rem; font-weight: 700; color: var(--text-white); }
+  .stat-icon { width: 52px; height: 52px; border-radius: 12px; background: rgba(201, 165, 74, 0.1); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--gold); }
+
+  /* Sections */
+  .section-tab { display: none; }
+  .section-tab.active { display: block; animation: fadeIn 0.4s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Card Tables */
+  .panel-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 4px 25px rgba(0,0,0,0.2); }
+  .panel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+  .panel-header h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); }
+
+  /* Action Buttons & Filters */
+  .action-bar { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .search-input {
+    padding: 0.6rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);
+    border-radius: 8px; color: #fff; font-size: 0.85rem; outline: none; min-width: 220px;
+  }
+  .search-input:focus { border-color: var(--gold); }
+  .btn-sm {
+    padding: 0.6rem 1.2rem; background: var(--gold); color: #081428; border: none;
+    border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  }
+  .btn-sm:hover { background: var(--gold-light); }
+  .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+  .btn-outline:hover { background: rgba(201, 165, 74, 0.15); }
+
+  /* Table Style */
+  .table-responsive { overflow-x: auto; }
+  table.data-table { width: 100%; border-collapse: collapse; text-align: left; }
+  table.data-table th { padding: 1rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); border-bottom: 1px solid var(--border-color); font-weight: 600; }
+  table.data-table td { padding: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+  table.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* Badges */
+  .badge { padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
+  .badge-success { background: rgba(34, 197, 94, 0.15); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.3); }
+  .badge-warning { background: rgba(234, 179, 8, 0.15); color: var(--warning); border: 1px solid rgba(234, 179, 8, 0.3); }
+  .badge-danger { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+  .badge-info { background: rgba(59, 130, 246, 0.15); color: var(--info); border: 1px solid rgba(59, 130, 246, 0.3); }
+
+  /* Package Grid in Admin */
+  .admin-pkg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .admin-pkg-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; position: relative; }
+  .admin-pkg-img { height: 160px; width: 100%; object-fit: cover; }
+  .admin-pkg-body { padding: 1.2rem; }
+  .admin-pkg-title { font-family: 'Cinzel', serif; font-size: 1.1rem; color: #fff; margin-bottom: 0.4rem; }
+  .admin-pkg-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--gold); margin-bottom: 0.8rem; font-weight: 600; }
+  .admin-pkg-actions { display: flex; gap: 8px; margin-top: 1rem; }
+
+  /* Modal Form */
+  .modal-backdrop { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); display: none; align-items: center; justify-content: center; padding: 1rem; }
+  .modal-box { background: var(--bg-card); border: 1px solid var(--gold); border-radius: 16px; padding: 2rem; width: 100%; max-width: 550px; max-height: 90vh; overflow-y: auto; }
+  .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .modal-header h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.4rem; }
+  .close-btn { background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+
+  @media (max-width: 900px) {
+    aside.sidebar { width: 70px; }
+    .sidebar-brand, .menu-link span, .sidebar-footer span { display: none; }
+    main.main-content { margin-left: 70px; padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN OVERLAY -->
+<div id="loginOverlay">
+  <div class="login-card">
+    <img src="Vishit_Journey_Logo.jpg" alt="Logo" class="login-logo" onerror="this.src='dark logo 1.png'">
+    <h2 class="login-title">VISHIT JOURNEYS</h2>
+    <p class="login-sub">✦ Admin Control Panel ✦</p>
+    <div id="loginError" class="login-error">Invalid Username or Password!</div>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="input-group">
+        <label><i class="fa-solid fa-user"></i> Username</label>
+        <input type="text" id="adminUser" placeholder="Enter admin username" required>
+      </div>
+      <div class="input-group">
+        <label><i class="fa-solid fa-lock"></i> Password</label>
+        <input type="password" id="adminPass" placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="btn-gold"><i class="fa-solid fa-right-to-bracket"></i> Login Dashboard</button>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN LAYOUT -->
+<div class="app-container">
+  
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="Vishit_Journey_Logo.jpg" alt="Logo" onerror="this.src='dark logo 1.png'">
+      <div class="sidebar-brand">
+        <h2>VISHIT</h2>
+        <p>Admin Portal</p>
+      </div>
+    </div>
+    
+    <ul class="sidebar-menu">
+      <li class="menu-item">
+        <a class="menu-link active" onclick="showTab('dashboard', this)">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link" onclick="showTab('bookings', this)">
+          <i class="fa-solid fa-suitcase"></i>
+          <span>Bookings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link" onclick="showTab('packages', this)">
+          <i class="fa-solid fa-route"></i>
+          <span>Tour Packages</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link" onclick="showTab('enquiries', this)">
+          <i class="fa-solid fa-envelope-open-text"></i>
+          <span>Leads & Enquiries</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <button class="logout-btn" onclick="handleLogout()">
+        <i class="fa-solid fa-power-off"></i>
+        <span>Sign Out</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Top Navbar -->
+    <div class="top-nav">
+      <div class="page-title">
+        <h1 id="currentTabTitle">Dashboard Overview</h1>
+        <p>Welcome back, Admin! Here is your live business summary.</p>
+      </div>
+      <div class="user-profile">
+        <div class="live-pill">
+          <div class="dot"></div> System Live
+        </div>
+        <a href="index.html" target="_blank" class="btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Site</a>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Total Revenue</h4>
+          <div class="value" id="statRevenue">₹4,85,000</div>
+        </div>
+        <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Total Bookings</h4>
+          <div class="value" id="statBookings">38</div>
+        </div>
+        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Active Packages</h4>
+          <div class="value" id="statPackages">18</div>
+        </div>
+        <div class="stat-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Enquiries / Leads</h4>
+          <div class="value" id="statLeads">64</div>
+        </div>
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+      </div>
+    </div>
+
+    <!-- TAB 1: DASHBOARD OVERVIEW -->
+    <div id="tab-dashboard" class="section-tab active">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Customer Bookings</h3>
+          <div class="action-bar">
+            <button class="btn-sm" onclick="exportBookingsCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Customer Name</th>
+                <th>Package Name</th>
+                <th>Travel Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="dashboardBookingsTbody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: BOOKINGS MANAGER -->
+    <div id="tab-bookings" class="section-tab">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h3><i class="fa-solid fa-list-check"></i> All Tour Bookings</h3>
+          <div class="action-bar">
+            <input type="text" class="search-input" id="bookingSearch" placeholder="Search customer or package..." oninput="filterBookingsTable()">
+            <button class="btn-sm" onclick="exportBookingsCSV()"><i class="fa-solid fa-download"></i> Export Data</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Phone / Email</th>
+                <th>Package</th>
+                <th>Persons</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>Update Status</th>
+              </tr>
+            </thead>
+            <tbody id="allBookingsTbody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: PACKAGES MANAGER -->
+    <div id="tab-packages" class="section-tab">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h3><i class="fa-solid fa-map-location-dot"></i> Manage Tour Packages</h3>
+          <button class="btn-sm" onclick="openAddPackageModal()"><i class="fa-solid fa-plus"></i> Add New Package</button>
+        </div>
+        <div class="admin-pkg-grid" id="adminPackageGrid">
+          <!-- Packages dynamically rendered here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: ENQUIRIES & LEADS -->
+    <div id="tab-enquiries" class="section-tab">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h3><i class="fa-solid fa-comments"></i> Customer Inquiries & Leads</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Phone / Email</th>
+                <th>Destination</th>
+                <th>Message</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="enquiriesTbody">
+              <!-- Enquiries rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- MODAL: ADD / EDIT PACKAGE -->
+<div class="modal-backdrop" id="pkgModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalPkgTitle">Add New Package</h3>
+      <button class="close-btn" onclick="closePkgModal()">&times;</button>
+    </div>
+    <form id="pkgForm" onsubmit="savePackage(event)">
+      <input type="hidden" id="pkgEditId">
+      <div class="input-group">
+        <label>Package Title</label>
+        <input type="text" id="pkgTitle" placeholder="e.g. Kashmir Paradise Package" required>
+      </div>
+      <div class="input-group">
+        <label>Category</label>
+        <input type="text" id="pkgCategory" placeholder="e.g. hills, honeymoon, international" required>
+      </div>
+      <div class="input-group">
+        <label>Duration</label>
+        <input type="text" id="pkgDuration" placeholder="e.g. 6D / 5N" required>
+      </div>
+      <div class="input-group">
+        <label>Price (₹)</label>
+        <input type="number" id="pkgPrice" placeholder="e.g. 14999" required>
+      </div>
+      <div class="input-group">
+        <label>Badge / Tag</label>
+        <input type="text" id="pkgBadge" placeholder="e.g. POPULAR, BEST SELLER">
+      </div>
+      <div class="input-group">
+        <label>Image URL</label>
+        <input type="url" id="pkgImgUrl" placeholder="https://images.unsplash.com/..." required>
+      </div>
+      <button type="submit" class="btn-gold"><i class="fa-solid fa-floppy-disk"></i> Save Package</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // DEFAULT INITIAL DATA
+  const initialBookings = [
+    { id: 'VJ-1001', name: 'Rahul Sharma', phone: '+91 98765 43210', email: 'rahul@gmail.com', package: 'Kashmir Paradise Package', date: '2026-09-10', persons: 2, price: 29998, status: 'Confirmed' },
+    { id: 'VJ-1002', name: 'Priya Verma', phone: '+91 98123 67890', email: 'priya.v@gmail.com', package: 'Manali Volvo Package', date: '2026-08-25', persons: 4, price: 27996, status: 'Pending' },
+    { id: 'VJ-1003', name: 'Amitabh Sen', phone: '+91 99000 11223', email: 'sen.amit@yahoo.com', package: 'Dubai Luxury Package', date: '2026-10-01', persons: 2, price: 120000, status: 'Confirmed' },
+    { id: 'VJ-1004', name: 'Neha Gupta', phone: '+91 97654 32109', email: 'neha.g@outlook.com', package: 'Goa Sun & Surf Package', date: '2026-08-20', persons: 3, price: 22497, status: 'Cancelled' },
+    { id: 'VJ-1005', name: 'Vikram Singh', phone: '+91 98888 77766', email: 'vikram@gmail.com', package: 'Shimla Manali Package', date: '2026-09-05', persons: 2, price: 21998, status: 'Pending' }
+  ];
+
+  const initialPackages = [
+    { id: 1, title: 'Kashmir Paradise Package', duration: '6D / 5N', price: 14999, category: 'hills', badge: 'POPULAR', image: 'https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&q=80' },
+    { id: 2, title: 'Manali Volvo Package', duration: '5D / 4N', price: 6999, category: 'hills', badge: 'BEST SELLER', image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80' },
+    { id: 3, title: 'Shimla Manali Package', duration: '5D / 4N', price: 10999, category: 'hills', badge: 'HILLS COMBO', image: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80' },
+    { id: 4, title: 'Goa Sun & Surf Package', duration: '4D / 3N', price: 7499, category: 'beach', badge: 'BEACH FUN', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80' },
+    { id: 5, title: 'Dubai Luxury Package', duration: '5D / 4N', price: 59999, category: 'international', badge: 'LUXURY', image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80' },
+    { id: 6, title: 'Thailand Exotic Package', duration: '5D / 4N', price: 34999, category: 'international', badge: 'EXOTIC', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80' }
+  ];
+
+  const initialEnquiries = [
+    { date: '2026-08-13', name: 'Siddharth Roy', contact: '+91 98765 11111', dest: 'Kashmir', msg: 'Need custom package for family of 6 with cab.', status: 'New' },
+    { date: '2026-08-12', name: 'Megha Kapoor', contact: 'megha@gmail.com', dest: 'Manali', msg: 'Is snow available in Solang valley in September?', status: 'Contacted' },
+    { date: '2026-08-11', name: 'Karan Patel', contact: '+91 99887 66554', dest: 'Dubai', msg: 'Looking for 5-star hotel upgrade quote.', status: 'Resolved' }
+  ];
+
+  // STATE MANAGEMENT
+  let bookings = JSON.parse(localStorage.getItem('vj_admin_bookings')) || initialBookings;
+  let packages = JSON.parse(localStorage.getItem('vj_admin_packages')) || initialPackages;
+  let enquiries = JSON.parse(localStorage.getItem('vj_admin_enquiries')) || initialEnquiries;
+
+  // LOGIN LOGIC
+  function checkSession() {
+    if (sessionStorage.getItem('vj_admin_logged') === 'true') {
+      document.getElementById('loginOverlay').style.display = 'none';
+      renderAll();
+    }
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const user = document.getElementById('adminUser').value.trim();
+    const pass = document.getElementById('adminPass').value.trim();
+
+    // Default Credential: admin / vishit123
+    if ((user === 'admin' && pass === 'vishit123') || (user === 'admin' && pass === 'admin123')) {
+      sessionStorage.setItem('vj_admin_logged', 'true');
+      document.getElementById('loginOverlay').style.display = 'none';
+      renderAll();
+    } else {
+      document.getElementById('loginError').style.display = 'block';
+    }
+  }
+
+  function handleLogout() {
+    sessionStorage.removeItem('vj_admin_logged');
+    location.reload();
+  }
+
+  // TAB SWITCHING
+  function showTab(tabId, element) {
+    document.querySelectorAll('.section-tab').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.menu-link').forEach(el => el.classList.remove('active'));
+    
+    document.getElementById('tab-' + tabId).classList.add('active');
+    element.classList.add('active');
+
+    const titles = {
+      'dashboard': 'Dashboard Overview',
+      'bookings': 'Booking Management',
+      'packages': 'Tour Packages Manager',
+      'enquiries': 'Customer Enquiries & Leads'
+    };
+    document.getElementById('currentTabTitle').textContent = titles[tabId] || 'Admin Panel';
+  }
+
+  // RENDER EVERYTHING
+  function renderAll() {
+    renderStats();
+    renderBookings();
+    renderPackages();
+    renderEnquiries();
+  }
+
+  function renderStats() {
+    const totalRev = bookings.reduce((sum, b) => b.status === 'Confirmed' ? sum + b.price : sum, 0);
+    document.getElementById('statRevenue').textContent = '₹' + totalRev.toLocaleString('en-IN');
+    document.getElementById('statBookings').textContent = bookings.length;
+    document.getElementById('statPackages').textContent = packages.length;
+    document.getElementById('statLeads').textContent = enquiries.length;
+  }
+
+  function getBadgeClass(status) {
+    if (status === 'Confirmed') return 'badge-success';
+    if (status === 'Pending') return 'badge-warning';
+    if (status === 'Cancelled') return 'badge-danger';
+    return 'badge-info';
+  }
+
+  function renderBookings() {
+    // Dashboard Table (Top 5)
+    const dashTbody = document.getElementById('dashboardBookingsTbody');
+    dashTbody.innerHTML = bookings.slice(0, 5).map(b => `
+      <tr>
+        <td><strong>${b.id}</strong></td>
+        <td>${b.name}</td>
+        <td>${b.package}</td>
+        <td>${b.date}</td>
+        <td>₹${b.price.toLocaleString('en-IN')}</td>
+        <td><span class="badge ${getBadgeClass(b.status)}">${b.status}</span></td>
+        <td>
+          <button class="btn-sm btn-outline" onclick="showTab('bookings', document.querySelectorAll('.menu-link')[1])">Manage</button>
+        </td>
+      </tr>
+    `).join('');
+
+    // All Bookings Table
+    const allTbody = document.getElementById('allBookingsTbody');
+    allTbody.innerHTML = bookings.map(b => `
+      <tr>
+        <td><strong>${b.id}</strong></td>
+        <td><strong>${b.name}</strong></td>
+        <td>${b.phone}<br><span style="font-size:0.75rem;color:var(--text-muted)">${b.email}</span></td>
+        <td>${b.package}</td>
+        <td>${b.persons} Person(s)</td>
+        <td><strong>₹${b.price.toLocaleString('en-IN')}</strong></td>
+        <td><span class="badge ${getBadgeClass(b.status)}">${b.status}</span></td>
+        <td>
+          <select onchange="updateBookingStatus('${b.id}', this.value)" style="background:var(--bg-dark);color:#fff;border:1px solid var(--border-color);padding:0.4rem;border-radius:6px;outline:none;">
+            <option value="Confirmed" ${b.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
+            <option value="Pending" ${b.status === 'Pending' ? 'selected' : ''}>Pending</option>
+            <option value="Cancelled" ${b.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+          </select>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function updateBookingStatus(id, newStatus) {
+    const item = bookings.find(b => b.id === id);
+    if (item) {
+      item.status = newStatus;
+      localStorage.setItem('vj_admin_bookings', JSON.stringify(bookings));
+      renderAll();
+    }
+  }
+
+  function filterBookingsTable() {
+    const query = document.getElementById('bookingSearch').value.toLowerCase();
+    const rows = document.querySelectorAll('#allBookingsTbody tr');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(query) ? '' : 'none';
+    });
+  }
+
+  function renderPackages() {
+    const grid = document.getElementById('adminPackageGrid');
+    grid.innerHTML = packages.map(p => `
+      <div class="admin-pkg-card">
+        <img src="${p.image}" class="admin-pkg-img" alt="${p.title}">
+        <div class="admin-pkg-body">
+          <div class="admin-pkg-title">${p.title}</div>
+          <div class="admin-pkg-meta">
+            <span>${p.duration}</span>
+            <span>₹${p.price.toLocaleString('en-IN')}</span>
+          </div>
+          <span class="badge badge-info">${p.badge || 'SPECIAL'}</span>
+          <div class="admin-pkg-actions">
+            <button class="btn-sm btn-outline" style="flex:1" onclick="editPackage(${p.id})"><i class="fa-solid fa-pen"></i> Edit</button>
+            <button class="btn-sm" style="background:var(--danger);color:#fff" onclick="deletePackage(${p.id})"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function openAddPackageModal() {
+    document.getElementById('pkgForm').reset();
+    document.getElementById('pkgEditId').value = '';
+    document.getElementById('modalPkgTitle').textContent = 'Add New Package';
+    document.getElementById('pkgModal').style.display = 'flex';
+  }
+
+  function closePkgModal() {
+    document.getElementById('pkgModal').style.display = 'none';
+  }
+
+  function editPackage(id) {
+    const pkg = packages.find(p => p.id === id);
+    if (!pkg) return;
+    document.getElementById('pkgEditId').value = pkg.id;
+    document.getElementById('pkgTitle').value = pkg.title;
+    document.getElementById('pkgCategory').value = pkg.category;
+    document.getElementById('pkgDuration').value = pkg.duration;
+    document.getElementById('pkgPrice').value = pkg.price;
+    document.getElementById('pkgBadge').value = pkg.badge || '';
+    document.getElementById('pkgImgUrl').value = pkg.image;
+
+    document.getElementById('modalPkgTitle').textContent = 'Edit Package';
+    document.getElementById('pkgModal').style.display = 'flex';
+  }
+
+  function savePackage(e) {
+    e.preventDefault();
+    const editId = document.getElementById('pkgEditId').value;
+    const title = document.getElementById('pkgTitle').value;
+    const category = document.getElementById('pkgCategory').value;
+    const duration = document.getElementById('pkgDuration').value;
+    const price = parseInt(document.getElementById('pkgPrice').value);
+    const badge = document.getElementById('pkgBadge').value;
+    const image = document.getElementById('pkgImgUrl').value;
+
+    if (editId) {
+      const pkg = packages.find(p => p.id == editId);
+      if (pkg) {
+        pkg.title = title; pkg.category = category; pkg.duration = duration;
+        pkg.price = price; pkg.badge = badge; pkg.image = image;
+      }
+    } else {
+      const newPkg = {
+        id: Date.now(), title, category, duration, price, badge, image
+      };
+      packages.unshift(newPkg);
+    }
+
+    localStorage.setItem('vj_admin_packages', JSON.stringify(packages));
+    closePkgModal();
+    renderAll();
+  }
+
+  function deletePackage(id) {
+    if (confirm('Are you sure you want to delete this package?')) {
+      packages = packages.filter(p => p.id !== id);
+      localStorage.setItem('vj_admin_packages', JSON.stringify(packages));
+      renderAll();
+    }
+  }
+
+  function renderEnquiries() {
+    const tbody = document.getElementById('enquiriesTbody');
+    tbody.innerHTML = enquiries.map((e, idx) => `
+      <tr>
+        <td>${e.date}</td>
+        <td><strong>${e.name}</strong></td>
+        <td>${e.contact}</td>
+        <td><span class="badge badge-info">${e.dest}</span></td>
+        <td style="max-width:250px">${e.msg}</td>
+        <td>
+          <select onchange="updateEnquiryStatus(${idx}, this.value)" style="background:var(--bg-dark);color:#fff;border:1px solid var(--border-color);padding:0.4rem;border-radius:6px;outline:none;">
+            <option value="New" ${e.status === 'New' ? 'selected' : ''}>New</option>
+            <option value="Contacted" ${e.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
+            <option value="Resolved" ${e.status === 'Resolved' ? 'selected' : ''}>Resolved</option>
+          </select>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function updateEnquiryStatus(idx, newStatus) {
+    enquiries[idx].status = newStatus;
+    localStorage.setItem('vj_admin_enquiries', JSON.stringify(enquiries));
+    renderAll();
+  }
+
+  function exportBookingsCSV() {
+    let csv = 'Booking ID,Customer Name,Phone,Email,Package,Persons,Total Price,Status\n';
+    bookings.forEach(b => {
+      csv += `"${b.id}","${b.name}","${b.phone}","${b.email}","${b.package}",${b.persons},${b.price},"${b.status}"\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Vishit_Journeys_Bookings_${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+  }
+
+  // AUTO INIT
+  checkSession();
+</script>
+</body>
+</html>
