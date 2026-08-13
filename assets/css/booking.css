@@ -1,0 +1,387 @@
+/* ============================================
+   VISHIT JOURNEYS - Premium Booking System CSS
+   ============================================ */
+
+.vj-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 20, 40, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.vj-modal-box {
+  background: #0d1f3c;
+  border: 1px solid rgba(201, 165, 74, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  color: #ffffff;
+  font-family: 'Jost', sans-serif;
+}
+
+.vj-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.vj-modal-close:hover {
+  background: rgba(201, 165, 74, 0.2);
+  color: #c9a54a;
+  border-color: #c9a54a;
+}
+
+.vj-modal-header {
+  padding: 1.8rem 2rem 1.2rem;
+  border-bottom: 1px solid rgba(201, 165, 74, 0.15);
+}
+.vj-modal-tag {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: #c9a54a;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.vj-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.vj-modal-meta {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stepper */
+.vj-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  position: relative;
+  padding: 0 0.5rem;
+}
+.vj-stepper::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+.vj-step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+}
+.vj-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #081428;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.3rem;
+  transition: all 0.3s;
+}
+.vj-step-item.active .vj-step-num {
+  background: #c9a54a;
+  border-color: #c9a54a;
+  color: #081428;
+  box-shadow: 0 0 10px rgba(201, 165, 74, 0.4);
+}
+.vj-step-item.completed .vj-step-num {
+  background: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+}
+.vj-step-label {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.vj-step-item.active .vj-step-label {
+  color: #c9a54a;
+  font-weight: 600;
+}
+
+.vj-modal-body {
+  padding: 1.8rem 2rem;
+}
+
+.vj-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.vj-form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vj-field-group {
+  margin-bottom: 1rem;
+}
+.vj-label {
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+.vj-input, .vj-select, .vj-textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 165, 74, 0.25);
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+}
+.vj-input:focus, .vj-select:focus, .vj-textarea:focus {
+  border-color: #c9a54a;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 8px rgba(201, 165, 74, 0.2);
+}
+.vj-select option {
+  background: #081428;
+  color: #ffffff;
+}
+
+/* Pricing Breakdown Table */
+.vj-price-summary-card {
+  background: rgba(201, 165, 74, 0.06);
+  border: 1px solid rgba(201, 165, 74, 0.25);
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.vj-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.6rem;
+}
+.vj-price-row.total {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-top: 1px dashed rgba(201, 165, 74, 0.3);
+  padding-top: 0.6rem;
+  margin-top: 0.6rem;
+}
+.vj-price-row.advance {
+  background: rgba(201, 165, 74, 0.15);
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  color: #c9a54a;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.vj-price-row.remaining {
+  color: #8a9ab5;
+  font-size: 0.82rem;
+}
+
+.vj-btn-primary {
+  width: 100%;
+  padding: 0.95rem;
+  background: linear-gradient(135deg, #c9a54a, #e4c06e);
+  color: #081428;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(201, 165, 74, 0.3);
+}
+.vj-btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+.vj-btn-secondary {
+  padding: 0.95rem 1.4rem;
+  background: transparent;
+  border: 1px solid rgba(201, 165, 74, 0.3);
+  color: #c9a54a;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vj-btn-secondary:hover {
+  background: rgba(201, 165, 74, 0.1);
+}
+
+.vj-actions-flex {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+/* Confirmation Slip / Printable Invoice */
+.vj-receipt-box {
+  background: #ffffff;
+  color: #1a2536;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: left;
+}
+.vj-receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #081428;
+  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+}
+.vj-receipt-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #081428;
+  letter-spacing: 1px;
+}
+.vj-receipt-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.vj-receipt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+}
+.vj-receipt-label {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.vj-receipt-value {
+  font-weight: 600;
+  color: #081428;
+}
+
+.vj-alert-error {
+  background: rgba(255, 82, 82, 0.12);
+  border: 1px solid rgba(255, 82, 82, 0.4);
+  color: #ff5252;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #vjPrintSection, #vjPrintSection * {
+    visibility: visible;
+  }
+  #vjPrintSection {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media(max-width: 600px) {
+  .vj-form-grid-2, .vj-form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .vj-modal-box {
+    max-height: 98vh;
+    border-radius: 0;
+  }
+  .vj-modal-body {
+    padding: 1.2rem;
+  }
+}
+
+/* Curved Shapes Override */
+.vj-modal-box { border-radius: 24px !important; }
+.vj-input, .vj-select, .vj-textarea { border-radius: 14px !important; }
+.vj-btn-primary, .vj-btn-secondary { border-radius: 25px !important; }
+.vj-price-summary-card { border-radius: 18px !important; }
+.vj-step-num { border-radius: 50% !important; }
+
+/* MAKE CALENDAR PICKER ICON WHITE */
+input[type="date"] {
+  color-scheme: dark !important;
+  color: #ffffff !important;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(100%) !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+input[type="date"]::-moz-calendar-picker-indicator {
+  filter: invert(1) brightness(100%) !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
