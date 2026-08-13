@@ -250,146 +250,118 @@ async function submitBookingPayment() {
     }
   };
 
-  try {
-    const res = await fetch('/api/booking.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    
-    const data = await res.json();
-    
-    if (!data.success) {
-      // Fallback for static hosting (Vercel)
-      const bookingRef = 'VJ-' + Math.floor(1000 + Math.random() * 9000);
-      const totalAmt = vjPricing ? vjPricing.total_amount : (vjCurrentPkg.price * payload.adults);
-      const advAmt = vjPricing ? vjPricing.advance_amount : Math.round(totalAmt * 0.2);
-      const remAmt = Math.max(0, totalAmt - advAmt);
+  const RAZORPAY_KEY_ID = 'rzp_test_TPH35birrxUzj8';
 
-      const newBooking = {
-        id: bookingRef,
+  const bookingRef = 'VJ-' + Math.floor(1000 + Math.random() * 9000);
+  const totalAmt = vjPricing ? vjPricing.total_amount : (vjCurrentPkg.price * payload.adults);
+  const advAmt = vjPricing ? vjPricing.advance_amount : Math.round(totalAmt * 0.2);
+  const remAmt = Math.max(0, totalAmt - advAmt);
+
+  // Check if Razorpay SDK is loaded
+  if (typeof Razorpay !== 'undefined') {
+    const options = {
+      key: RAZORPAY_KEY_ID,
+      amount: advAmt * 100, // in paise
+      currency: 'INR',
+      name: 'Vishit Journey',
+      description: `${payload.package_name} (${bookingRef})`,
+      image: '/Vishit_Journey_Logo.jpg',
+      prefill: {
         name: payload.name,
-        phone: payload.phone,
-        email: payload.email || 'N/A',
-        package: payload.package_name,
-        date: payload.travel_date,
-        persons: (payload.adults || 1) + (payload.children || 0),
-        price: totalAmt,
-        status: 'Pending'
-      };
-      saveToAdminStore(newBooking);
-
-      showSuccessState({
-        booking_ref: bookingRef,
-        package_name: payload.package_name,
-        customer_name: payload.name,
-        phone: payload.phone,
-        travel_date: payload.travel_date,
-        adults: payload.adults,
-        children: payload.children,
-        total_amount: totalAmt,
-        advance_amount: advAmt,
-        remaining_amount: remAmt,
-        payment_id: 'STATIC_BOOKING'
-      });
-      return;
-    }
-    
-    vjBookingData = data;
-    
-    // Save to admin store
-    saveToAdminStore({
-      id: data.booking_ref || ('VJ-' + Math.floor(1000 + Math.random() * 9000)),
-      name: payload.name,
-      phone: payload.phone,
-      email: payload.email || 'N/A',
-      package: payload.package_name,
-      date: payload.travel_date,
-      persons: (payload.adults || 1) + (payload.children || 0),
-      price: data.total_amount || (vjPricing ? vjPricing.total_amount : 0),
-      status: 'Pending'
-    });
-    
-    // Check if Razorpay order is ready
-    if (data.razorpay_order && data.razorpay_order.id) {
-      const options = {
-        key: data.razorpay_key,
-        amount: data.advance_amount * 100,
-        currency: 'INR',
-        name: 'Vishit Journey',
-        description: `${data.package_name} (${data.booking_ref})`,
-        image: '/Vishit_Journey_Logo.png',
-        order_id: data.razorpay_order.id,
-        handler: async function(response) {
-          verifyRazorpayPayment(response, data.booking_id);
-        },
-        prefill: {
+        contact: payload.phone,
+        email: payload.email || ''
+      },
+      theme: { color: '#c9a54a' },
+      handler: function(response) {
+        // Payment Success!
+        const paymentId = response.razorpay_payment_id || ('pay_' + Math.random().toString(36).substring(2, 12));
+        const confirmedBooking = {
+          id: bookingRef,
           name: payload.name,
-          contact: payload.phone,
-          email: payload.email
-        },
-        theme: { color: '#c9a54a' },
-        modal: {
-          ondismiss: function() {
-            if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
-            showFailedState(data.booking_ref, 'Payment checkout dismissed before completion.');
-          }
+          phone: payload.phone,
+          email: payload.email || 'N/A',
+          package: payload.package_name,
+          date: payload.travel_date,
+          persons: (payload.adults || 1) + (payload.children || 0),
+          price: totalAmt,
+          status: 'Confirmed',
+          payment_id: paymentId
+        };
+        saveToAdminStore(confirmedBooking);
+
+        showSuccessState({
+          booking_ref: bookingRef,
+          package_name: payload.package_name,
+          customer_name: payload.name,
+          phone: payload.phone,
+          travel_date: payload.travel_date,
+          adults: payload.adults,
+          children: payload.children,
+          total_amount: totalAmt,
+          advance_amount: advAmt,
+          remaining_amount: remAmt,
+          payment_id: paymentId
+        });
+      },
+      modal: {
+        ondismiss: function() {
+          if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
+          saveToAdminStore({
+            id: bookingRef,
+            name: payload.name,
+            phone: payload.phone,
+            email: payload.email || 'N/A',
+            package: payload.package_name,
+            date: payload.travel_date,
+            persons: (payload.adults || 1) + (payload.children || 0),
+            price: totalAmt,
+            status: 'Pending'
+          });
+          showFailedState(bookingRef, 'Payment checkout dismissed before completion.');
         }
-      };
+      }
+    };
+    
+    try {
       const rzp = new Razorpay(options);
       rzp.on('payment.failed', function(response) {
-        showFailedState(data.booking_ref, response.error.description || 'Payment transaction failed.');
+        if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
+        showFailedState(bookingRef, response.error.description || 'Payment transaction failed.');
       });
       rzp.open();
-    } else {
-      showSuccessState({
-        booking_ref: data.booking_ref,
-        package_name: data.package_name,
-        customer_name: payload.name,
-        phone: payload.phone,
-        travel_date: payload.travel_date,
-        adults: payload.adults,
-        children: payload.children,
-        total_amount: data.total_amount,
-        advance_amount: data.advance_amount,
-        remaining_amount: data.remaining_amount,
-        payment_id: 'DIRECT_ENQUIRY'
-      });
+      return;
+    } catch(e) {
+      console.warn('Razorpay open error:', e);
     }
-  } catch (err) {
-    // Network fallback for Vercel static environment
-    const bookingRef = 'VJ-' + Math.floor(1000 + Math.random() * 9000);
-    const totalAmt = vjPricing ? vjPricing.total_amount : (vjCurrentPkg.price * payload.adults);
-    const advAmt = vjPricing ? vjPricing.advance_amount : Math.round(totalAmt * 0.2);
-    const remAmt = Math.max(0, totalAmt - advAmt);
-
-    const newBooking = {
-      id: bookingRef,
-      name: payload.name,
-      phone: payload.phone,
-      email: payload.email || 'N/A',
-      package: payload.package_name,
-      date: payload.travel_date,
-      persons: (payload.adults || 1) + (payload.children || 0),
-      price: totalAmt,
-      status: 'Pending'
-    };
-    saveToAdminStore(newBooking);
-
-    showSuccessState({
-      booking_ref: bookingRef,
-      package_name: payload.package_name,
-      customer_name: payload.name,
-      phone: payload.phone,
-      travel_date: payload.travel_date,
-      adults: payload.adults,
-      children: payload.children,
-      total_amount: totalAmt,
-      advance_amount: advAmt,
-      remaining_amount: remAmt,
-      payment_id: 'DIRECT_BOOKING'
-    });
   }
+
+  // Fallback if Razorpay SDK unavailable
+  const pendingBooking = {
+    id: bookingRef,
+    name: payload.name,
+    phone: payload.phone,
+    email: payload.email || 'N/A',
+    package: payload.package_name,
+    date: payload.travel_date,
+    persons: (payload.adults || 1) + (payload.children || 0),
+    price: totalAmt,
+    status: 'Pending'
+  };
+  saveToAdminStore(pendingBooking);
+
+  showSuccessState({
+    booking_ref: bookingRef,
+    package_name: payload.package_name,
+    customer_name: payload.name,
+    phone: payload.phone,
+    travel_date: payload.travel_date,
+    adults: payload.adults,
+    children: payload.children,
+    total_amount: totalAmt,
+    advance_amount: advAmt,
+    remaining_amount: remAmt,
+    payment_id: 'PENDING_ENQUIRY'
+  });
 }
 
 async function verifyRazorpayPayment(rzpResponse, bookingId) {
