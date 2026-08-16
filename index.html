@@ -93,7 +93,7 @@
     100%{opacity:0;transform:scale(1)}
   }
   .slide-overlay{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(to bottom, rgba(8,20,40,0.55) 0%, rgba(8,20,40,0.28) 40%, rgba(8,20,40,0.82) 100%);}
+    background:linear-gradient(to bottom, rgba(8,20,40,0.15) 0%, rgba(8,20,40,0.3) 35%, rgba(8,20,40,0.85) 100%);}
 
   .hero-badge{
     font-size:.8rem;letter-spacing:4px;text-transform:uppercase;
@@ -594,7 +594,7 @@
   .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15}
   .section-title em{color:var(--gold);font-style:normal}
   .section-sub{color:var(--muted);margin-top:.7rem;font-size:.9rem;line-height:1.7;max-width:500px}
-  .gold-line{display:none !important;}
+  .gold-line{width:50px;height:2px;background:var(--gold);margin:1rem 0}
 
   /* ── LUXURY SCROLL-FADE & HOVER ANIMATION CLASSES ── */
   .vj-scroll-fade {
@@ -1661,8 +1661,20 @@
   <a href="#contact" class="mob-book" onclick="document.getElementById('mobDrawer').classList.remove('open')">Book Now</a>
 </div>
 
-
-
+<!-- TAGLINE BAR -->
+<div class="tagline-bar">
+  <span class="tag-line-inner">
+    <span class="tag-arrow">——</span>
+    <span class="tag-item">DREAM IT.</span>
+    <span class="tag-icon">✈</span>
+    <span class="tag-item">PLAN IT.</span>
+    <span class="tag-icon">🧳</span>
+    <span class="tag-item">LIVE IT.</span>
+    <span class="tag-icon">❤</span>
+    <span class="tag-item">VISHIT.</span>
+    <span class="tag-arrow">——</span>
+  </span>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -2667,18 +2679,18 @@
     const nav = document.querySelector('nav');
     const tagline = document.querySelector('.tagline-bar');
     const hero = document.querySelector('.hero');
-    const searchSec = document.querySelector('.search-section');
-    if (!nav || !tagline || !hero) return;
+    if (!nav || !hero) return;
 
     const navH = nav.offsetHeight;
-    tagline.style.top = navH + 'px';
+    let tagH = 0;
+    if (tagline) {
+      tagline.style.top = (navH - 1) + 'px';
+      tagH = tagline.offsetHeight;
+    }
 
-    // Wait one frame for tagline to reflow then measure
     requestAnimationFrame(() => {
-      const tagH = tagline.offsetHeight;
-      const total = navH + tagH;
+      const total = navH + tagH - 1;
       hero.style.marginTop = total + 'px';
-      // search section sits right below hero — no extra margin needed
     });
   }
 
