@@ -1,0 +1,11 @@
+# Enable Directory Indexing defaults
+DirectoryIndex index.php index.html
+
+# Enable RewriteEngine for Clean URLs
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect /admin to /admin/ if trailing slash is missing
+  RewriteRule ^admin$ /admin/ [R=301,L]
+</IfModule>
