@@ -1575,8 +1575,8 @@ foreach ($packages_raw as $p) {
   <ul class="nav-links">
     <li><a href="#destinations">Destinations</a></li>
     <li><a href="#packages">Packages</a></li>
-    <li><a href="#why">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="about.php">About Us</a></li>
+    <li><a href="contact.php">Contact Us</a></li>
   </ul>
   <div class="nav-right-actions">
     <button onclick="openAuthModal('login')" class="nav-btn-signup">Sign In / Sign Up →</button>

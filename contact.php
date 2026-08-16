@@ -1,0 +1,292 @@
+<?php
+require_once __DIR__ . '/config/config.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="psJq_vKOneKGa4XOJk3xLJ7ap7jF5pHo6Dv_h3q5hJY" />
+<title>Contact Us — Vishit Journey | Book Your Dream Holiday</title>
+<meta name="description" content="Get in touch with Vishit Journey travel experts. Phone: +91 9899902890, Email: vishitjourney2104@gmail.com. Request a custom travel itinerary today.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/booking.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --navy:#081428;
+    --navy2:#0d1f3c;
+    --gold:#c9a54a;
+    --gold2:#e4c06e;
+    --white:#fff;
+    --offwhite:#f5f0e8;
+    --muted:#8a9ab5;
+    --card-bg:rgba(13,31,60,0.7);
+    --border-gold:rgba(201,165,74,0.25);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+  /* ── NAV BAR ── */
+  header.nav-header{
+    position:fixed;top:0;left:0;right:0;z-index:999;
+    background:rgba(8,20,40,0.92);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border-gold);
+    padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand-logo img{height:50px;width:auto;display:block;border-radius:8px}
+  .nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
+  .nav-links a{color:var(--offwhite);text-decoration:none;font-weight:500;font-size:0.95rem;transition:0.3s;letter-spacing:0.5px}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .btn-contact{
+    background:linear-gradient(135deg, var(--gold), var(--gold2));
+    color:var(--navy);padding:0.6rem 1.4rem;border-radius:30px;
+    font-weight:600;text-decoration:none;transition:0.3s;box-shadow:0 4px 15px rgba(201,165,74,0.3);
+  }
+  .btn-contact:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,165,74,0.5)}
+
+  /* ── HERO ── */
+  .hero-section{
+    position:relative;padding:9rem 2rem 4rem;
+    background:radial-gradient(circle at 50% 30%, rgba(201,165,74,0.15), transparent 70%), var(--navy);
+    text-align:center;
+  }
+  .hero-subtitle{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:0.9rem;font-weight:600;margin-bottom:1rem}
+  .hero-title{font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:var(--white);margin-bottom:1rem;font-weight:700}
+  .hero-title span{color:var(--gold);font-style:italic}
+  .hero-desc{max-width:650px;margin:0 auto;color:var(--muted);font-size:1.1rem}
+
+  /* ── MAIN CONTENT ── */
+  .contact-container{max-width:1150px;margin:3rem auto 5rem;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1.3fr;gap:3rem}
+  @media(max-width:900px){.contact-container{grid-template-columns:1fr}}
+
+  /* INFO SIDE */
+  .info-card{
+    background:var(--card-bg);border:1px solid var(--border-gold);
+    border-radius:20px;padding:2.5rem 2rem;height:100%;backdrop-filter:blur(10px);
+  }
+  .info-card h3{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);margin-bottom:1.5rem}
+  .info-item{display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:2rem}
+  .info-icon{
+    width:50px;height:50px;border-radius:50%;background:rgba(201,165,74,0.15);
+    border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;color:var(--gold);flex-shrink:0;
+  }
+  .info-text h4{color:var(--white);font-size:1.1rem;margin-bottom:0.3rem}
+  .info-text p,.info-text a{color:var(--muted);font-size:0.98rem;text-decoration:none;transition:0.3s}
+  .info-text a:hover{color:var(--gold)}
+
+  .whatsapp-btn-large{
+    display:flex;align-items:center;justify-content:center;gap:0.8rem;
+    background:#25D366;color:#fff;font-weight:600;font-size:1.05rem;
+    padding:1rem 1.5rem;border-radius:30px;text-decoration:none;
+    margin-top:2rem;transition:0.3s;box-shadow:0 6px 20px rgba(37,211,102,0.3);
+  }
+  .whatsapp-btn-large:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(37,211,102,0.5)}
+
+  /* FORM SIDE */
+  .form-card{
+    background:var(--card-bg);border:1px solid var(--border-gold);
+    border-radius:20px;padding:2.5rem 2rem;backdrop-filter:blur(10px);
+  }
+  .form-card h3{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);margin-bottom:0.5rem}
+  .form-card p{color:var(--muted);margin-bottom:2rem}
+  .form-group{margin-bottom:1.4rem}
+  .form-group label{display:block;color:var(--offwhite);font-size:0.9rem;margin-bottom:0.4rem;font-weight:500}
+  .form-control{
+    width:100%;background:rgba(8,20,40,0.8);border:1px solid var(--border-gold);
+    border-radius:10px;padding:0.8rem 1rem;color:var(--white);font-family:inherit;
+    font-size:1rem;outline:none;transition:0.3s;
+  }
+  .form-control:focus{border-color:var(--gold);box-shadow:0 0 10px rgba(201,165,74,0.3)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:600px){.form-row{grid-template-columns:1fr}}
+
+  .btn-submit{
+    width:100%;background:linear-gradient(135deg, var(--gold), var(--gold2));
+    color:var(--navy);font-weight:700;font-size:1.1rem;padding:0.9rem;
+    border:none;border-radius:12px;cursor:pointer;transition:0.3s;
+    box-shadow:0 4px 15px rgba(201,165,74,0.3);margin-top:1rem;
+  }
+  .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,165,74,0.5)}
+
+  /* FOOTER */
+  footer{background:#040a14;border-top:1px solid var(--border-gold);padding:3rem 2rem 1.5rem;color:var(--muted)}
+  .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+  @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+  .footer-col h4{color:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:1rem}
+  .footer-col p{font-size:0.9rem;line-height:1.6}
+  .footer-links{list-style:none}
+  .footer-links li{margin-bottom:0.6rem}
+  .footer-links a{color:var(--muted);text-decoration:none;transition:0.3s}
+  .footer-links a:hover{color:var(--gold)}
+  .copyright{text-align:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.85rem}
+</style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="nav-header">
+    <a href="/index.php" class="brand-logo">
+      <img src="/logodark.png" alt="Vishit Journey Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.php">Home</a></li>
+      <li><a href="/about.php">About Us</a></li>
+      <li><a href="/index.php#destinations">Destinations</a></li>
+      <li><a href="/contact.php" class="active">Contact Us</a></li>
+    </ul>
+    <a href="/contact.php" class="btn-contact">Plan My Trip</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-subtitle">We are here to assist you</div>
+    <h1 class="hero-title">Contact <span>Vishit Journey</span></h1>
+    <p class="hero-desc">Have questions or want a custom holiday quote? Speak directly with our dedicated travel experts today.</p>
+  </section>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <div class="contact-container">
+    
+    <!-- LEFT: INFO -->
+    <div class="info-card">
+      <h3>Get In Touch</h3>
+      
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <h4>Phone & Hotline</h4>
+          <p><a href="tel:+919899902890">+91 9899902890</a></p>
+          <p style="font-size:0.85rem;color:var(--gold);">Available 24/7 on Call & WhatsApp</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div class="info-text">
+          <h4>Email Address</h4>
+          <p><a href="mailto:vishitjourney2104@gmail.com">vishitjourney2104@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <h4>Head Office</h4>
+          <p>Vishit Journey Travel Agency, New Delhi / NCR, India</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/919899902890?text=Hi%20Vishit%20Journey,%20I%20want%20to%20inquire%20about%20a%20tour%20package." target="_blank" class="whatsapp-btn-large">
+        💬 Chat instantly on WhatsApp
+      </a>
+    </div>
+
+    <!-- RIGHT: INQUIRY FORM -->
+    <div class="form-card">
+      <h3>Plan Your Trip</h3>
+      <p>Fill in your details below and our travel architect will reach out within 30 minutes.</p>
+
+      <form id="contactForm" onsubmit="handleContactSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cname">Full Name *</label>
+            <input type="text" id="cname" class="form-control" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="cphone">Phone / WhatsApp *</label>
+            <input type="tel" id="cphone" class="form-control" placeholder="e.g. 9899902890" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cemail">Email Address</label>
+            <input type="email" id="cemail" class="form-control" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="cdest">Preferred Destination *</label>
+            <select id="cdest" class="form-control" required style="background:#081428;">
+              <option value="Kashmir">Kashmir Paradise</option>
+              <option value="Leh Ladakh">Leh Ladakh Adventure</option>
+              <option value="Shimla Manali">Shimla & Manali</option>
+              <option value="Goa Beach">Goa Holiday</option>
+              <option value="Kerala">Kerala Backwaters</option>
+              <option value="Other">Other / Custom</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row">
+            <div>
+              <label for="cdate">Travel Date</label>
+              <input type="date" id="cdate" class="form-control">
+            </div>
+            <div>
+              <label for="cguests">Travelers</label>
+              <input type="number" id="cguests" class="form-control" placeholder="e.g. 2 Adults" min="1" value="2">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cmsg">Special Requirements / Message</label>
+          <textarea id="cmsg" class="form-control" rows="3" placeholder="Tell us about your budget, hotel choice, or special preferences..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Request Free Travel Quote ➔</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Vishit Journey</h4>
+        <p>Redefining luxury and leisure travel across India and worldwide. Experience seamless bookings, handpicked hotels, and curated tour packages.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/about.php">About Us</a></li>
+          <li><a href="/contact.php">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p>📞 Phone: +91 9899902890</p>
+        <p>✉️ Email: vishitjourney2104@gmail.com</p>
+        <p>🌐 Website: vishitjourney.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Vishit Journey. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('cname').value;
+      const phone = document.getElementById('cphone').value;
+      const dest = document.getElementById('cdest').value;
+      const date = document.getElementById('cdate').value;
+      const guests = document.getElementById('cguests').value;
+      const msg = document.getElementById('cmsg').value;
+
+      const waMsg = `Hi Vishit Journey! I want a tour quote.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Destination:* ${dest}\n*Travel Date:* ${date || 'Flexible'}\n*Guests:* ${guests}\n*Message:* ${msg || 'None'}`;
+      const waUrl = `https://wa.me/919899902890?text=${encodeURIComponent(waMsg)}`;
+      
+      alert("Thank you " + name + "! Opening WhatsApp to send your travel inquiry directly to our team.");
+      window.open(waUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
