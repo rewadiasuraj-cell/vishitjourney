@@ -24,37 +24,91 @@
   html{scroll-behavior:smooth}
   body{font-family:'Jost',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6}
 
-  /* ── NAV BAR ── */
-  header.nav-header{
-    position:fixed;top:0;left:0;right:0;z-index:999;
-    background:rgba(8,20,40,0.92);backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border-gold);
-    padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  /* ── EXACT MAIN SITE HEADER NAVBAR ── */
+  nav {
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: .5rem 4% !important;
+    background: #ffffff !important;
+    border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
   }
-  .brand-logo img{height:50px;width:auto;display:block;border-radius:8px}
-  .nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
-  .nav-links a{color:var(--offwhite);text-decoration:none;font-weight:500;font-size:0.95rem;transition:0.3s;letter-spacing:0.5px}
-  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
-  .btn-contact{
-    background:linear-gradient(135deg, var(--gold), var(--gold2));
-    color:var(--navy);padding:0.6rem 1.4rem;border-radius:30px;
-    font-weight:600;text-decoration:none;transition:0.3s;box-shadow:0 4px 15px rgba(201,165,74,0.3);
+  .nav-links {
+    display: flex !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  .btn-contact:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,165,74,0.5)}
+  .nav-links a {
+    text-decoration: none !important;
+    font-size: .8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #0d1f3c !important;
+    padding: .5rem 1rem !important;
+    border-radius: 20px !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: all .2s ease !important;
+    white-space: nowrap !important;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--gold) !important;
+    background: rgba(201, 165, 74, 0.08) !important;
+  }
+  .nav-right-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: .8rem !important;
+  }
+  .nav-btn-signup {
+    padding: .55rem 1.4rem !important;
+    border: 1.5px solid var(--gold) !important;
+    border-radius: 25px !important;
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: .78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: all .25s ease !important;
+    box-shadow: 0 4px 12px rgba(201, 165, 74, 0.35) !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+  .nav-btn-signup:hover {
+    background: #0d1f3c !important;
+    color: var(--gold) !important;
+    border-color: #0d1f3c !important;
+  }
 
-  /* ── HERO ── */
+  /* ── PAGE CONTENT ── */
+  .main-wrapper {
+    margin-top: 120px;
+  }
   .hero-section{
-    position:relative;padding:9rem 2rem 4rem;
+    position:relative;padding:5rem 2rem 3rem;
     background:radial-gradient(circle at 50% 30%, rgba(201,165,74,0.15), transparent 70%), var(--navy);
     text-align:center;
   }
-  .hero-subtitle{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:0.9rem;font-weight:600;margin-bottom:1rem}
+  .hero-subtitle{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:0.85rem;font-weight:600;margin-bottom:0.8rem}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:var(--white);margin-bottom:1rem;font-weight:700}
   .hero-title span{color:var(--gold);font-style:italic}
   .hero-desc{max-width:650px;margin:0 auto;color:var(--muted);font-size:1.1rem}
 
   /* ── MAIN CONTENT ── */
-  .contact-container{max-width:1150px;margin:3rem auto 5rem;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1.3fr;gap:3rem}
+  .contact-container{max-width:1150px;margin:2rem auto 5rem;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1.3fr;gap:3rem}
   @media(max-width:900px){.contact-container{grid-template-columns:1fr}}
 
   /* INFO SIDE */
@@ -107,7 +161,7 @@
   }
   .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,165,74,0.5)}
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer{background:#040a14;border-top:1px solid var(--border-gold);padding:3rem 2rem 1.5rem;color:var(--muted)}
   .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
   @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
@@ -122,121 +176,125 @@
 </head>
 <body>
 
-  <!-- HEADER NAV -->
-  <header class="nav-header">
-    <a href="/index.html" class="brand-logo">
-      <img src="/logodark.png" alt="Vishit Journey Logo">
+  <!-- EXACT SITE NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:104px;width:auto;display:block;">
     </a>
     <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About Us</a></li>
-      <li><a href="/index.html#destinations">Destinations</a></li>
-      <li><a href="/contact.html" class="active">Contact Us</a></li>
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
     </ul>
-    <a href="/contact.html" class="btn-contact">Plan My Trip</a>
-  </header>
+    <div class="nav-right-actions">
+      <a href="contact.html" class="nav-btn-signup">Plan My Trip →</a>
+    </div>
+  </nav>
 
-  <!-- HERO -->
-  <section class="hero-section">
-    <div class="hero-subtitle">We are here to assist you</div>
-    <h1 class="hero-title">Contact <span>Vishit Journey</span></h1>
-    <p class="hero-desc">Have questions or want a custom holiday quote? Speak directly with our dedicated travel experts today.</p>
-  </section>
+  <div class="main-wrapper">
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="hero-subtitle">We are here to assist you</div>
+      <h1 class="hero-title">Contact <span>Vishit Journey</span></h1>
+      <p class="hero-desc">Have questions or want a custom holiday quote? Speak directly with our dedicated travel experts today.</p>
+    </section>
 
-  <!-- MAIN CONTACT CONTENT -->
-  <div class="contact-container">
-    
-    <!-- LEFT: INFO -->
-    <div class="info-card">
-      <h3>Get In Touch</h3>
+    <!-- MAIN CONTACT CONTENT -->
+    <div class="contact-container">
       
-      <div class="info-item">
-        <div class="info-icon">📞</div>
-        <div class="info-text">
-          <h4>Phone & Hotline</h4>
-          <p><a href="tel:+919899902890">+91 9899902890</a></p>
-          <p style="font-size:0.85rem;color:var(--gold);">Available 24/7 on Call & WhatsApp</p>
+      <!-- LEFT: INFO -->
+      <div class="info-card">
+        <h3>Get In Touch</h3>
+        
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <h4>Phone & Hotline</h4>
+            <p><a href="tel:+919899902890">+91 9899902890</a></p>
+            <p style="font-size:0.85rem;color:var(--gold);">Available 24/7 on Call & WhatsApp</p>
+          </div>
         </div>
+
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div class="info-text">
+            <h4>Email Address</h4>
+            <p><a href="mailto:vishitjourney2104@gmail.com">vishitjourney2104@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <h4>Head Office</h4>
+            <p>Vishit Journey Travel Agency, New Delhi / NCR, India</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919899902890?text=Hi%20Vishit%20Journey,%20I%20want%20to%20inquire%20about%20a%20tour%20package." target="_blank" class="whatsapp-btn-large">
+          💬 Chat instantly on WhatsApp
+        </a>
       </div>
 
-      <div class="info-item">
-        <div class="info-icon">✉️</div>
-        <div class="info-text">
-          <h4>Email Address</h4>
-          <p><a href="mailto:vishitjourney2104@gmail.com">vishitjourney2104@gmail.com</a></p>
-        </div>
-      </div>
+      <!-- RIGHT: INQUIRY FORM -->
+      <div class="form-card">
+        <h3>Plan Your Trip</h3>
+        <p>Fill in your details below and our travel architect will reach out within 30 minutes.</p>
 
-      <div class="info-item">
-        <div class="info-icon">📍</div>
-        <div class="info-text">
-          <h4>Head Office</h4>
-          <p>Vishit Journey Travel Agency, New Delhi / NCR, India</p>
-        </div>
-      </div>
-
-      <a href="https://wa.me/919899902890?text=Hi%20Vishit%20Journey,%20I%20want%20to%20inquire%20about%20a%20tour%20package." target="_blank" class="whatsapp-btn-large">
-        💬 Chat instantly on WhatsApp
-      </a>
-    </div>
-
-    <!-- RIGHT: INQUIRY FORM -->
-    <div class="form-card">
-      <h3>Plan Your Trip</h3>
-      <p>Fill in your details below and our travel architect will reach out within 30 minutes.</p>
-
-      <form id="contactForm" onsubmit="handleContactSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="cname">Full Name *</label>
-            <input type="text" id="cname" class="form-control" placeholder="e.g. Rahul Sharma" required>
-          </div>
-          <div class="form-group">
-            <label for="cphone">Phone / WhatsApp *</label>
-            <input type="tel" id="cphone" class="form-control" placeholder="e.g. 9899902890" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="cemail">Email Address</label>
-            <input type="email" id="cemail" class="form-control" placeholder="name@example.com">
-          </div>
-          <div class="form-group">
-            <label for="cdest">Preferred Destination *</label>
-            <select id="cdest" class="form-control" required style="background:#081428;">
-              <option value="Kashmir">Kashmir Paradise</option>
-              <option value="Leh Ladakh">Leh Ladakh Adventure</option>
-              <option value="Shimla Manali">Shimla & Manali</option>
-              <option value="Goa Beach">Goa Holiday</option>
-              <option value="Kerala">Kerala Backwaters</option>
-              <option value="Other">Other / Custom</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
           <div class="form-row">
-            <div>
-              <label for="cdate">Travel Date</label>
-              <input type="date" id="cdate" class="form-control">
+            <div class="form-group">
+              <label for="cname">Full Name *</label>
+              <input type="text" id="cname" class="form-control" placeholder="e.g. Rahul Sharma" required>
             </div>
-            <div>
-              <label for="cguests">Travelers</label>
-              <input type="number" id="cguests" class="form-control" placeholder="e.g. 2 Adults" min="1" value="2">
+            <div class="form-group">
+              <label for="cphone">Phone / WhatsApp *</label>
+              <input type="tel" id="cphone" class="form-control" placeholder="e.g. 9899902890" required>
             </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="cmsg">Special Requirements / Message</label>
-          <textarea id="cmsg" class="form-control" rows="3" placeholder="Tell us about your budget, hotel choice, or special preferences..."></textarea>
-        </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cemail">Email Address</label>
+              <input type="email" id="cemail" class="form-control" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="cdest">Preferred Destination *</label>
+              <select id="cdest" class="form-control" required style="background:#081428;">
+                <option value="Kashmir">Kashmir Paradise</option>
+                <option value="Leh Ladakh">Leh Ladakh Adventure</option>
+                <option value="Shimla Manali">Shimla & Manali</option>
+                <option value="Goa Beach">Goa Holiday</option>
+                <option value="Kerala">Kerala Backwaters</option>
+                <option value="Other">Other / Custom</option>
+              </select>
+            </div>
+          </div>
 
-        <button type="submit" class="btn-submit">Request Free Travel Quote ➔</button>
-      </form>
+          <div class="form-group">
+            <div class="form-row">
+              <div>
+                <label for="cdate">Travel Date</label>
+                <input type="date" id="cdate" class="form-control">
+              </div>
+              <div>
+                <label for="cguests">Travelers</label>
+                <input type="number" id="cguests" class="form-control" placeholder="e.g. 2 Adults" min="1" value="2">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cmsg">Special Requirements / Message</label>
+            <textarea id="cmsg" class="form-control" rows="3" placeholder="Tell us about your budget, hotel choice, or special preferences..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Request Free Travel Quote ➔</button>
+        </form>
+      </div>
+
     </div>
-
   </div>
 
   <!-- FOOTER -->
@@ -249,11 +307,12 @@
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="/terms.html">Terms & Conditions</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
         </ul>
       </div>
       <div class="footer-col">
