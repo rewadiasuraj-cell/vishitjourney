@@ -76,8 +76,8 @@
   .hero{
     position:relative;min-height:100vh;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:0 2%;overflow:hidden;
-    margin-top:120px; /* overridden by JS */
+    text-align:center;padding:130px 2% 4rem;overflow:hidden;
+    margin-top:0 !important;
   }
   /* slideshow */
   .slide{position:absolute;inset:0;background-size:cover;background-position:center;
@@ -2684,13 +2684,13 @@
     const navH = nav.offsetHeight;
     let tagH = 0;
     if (tagline) {
-      tagline.style.top = (navH - 1) + 'px';
+      tagline.style.top = navH + 'px';
       tagH = tagline.offsetHeight;
     }
 
     requestAnimationFrame(() => {
-      const total = navH + tagH - 1;
-      hero.style.marginTop = total + 'px';
+      hero.style.marginTop = '0px';
+      hero.style.paddingTop = (navH + tagH + 25) + 'px';
     });
   }
 
