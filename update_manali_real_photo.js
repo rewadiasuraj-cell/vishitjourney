@@ -2,7 +2,7 @@ const fs = require('fs');
 
 // Real Manali Himachal Pradesh image (snow-capped Himalayan peaks, pine valley & cottages)
 const realManaliUrl = 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80';
-const realManaliHoneymoon = 'https://images.unsplash.com/photo-1571536802807-30451e3955d8?w=800&q=80';
+const realManaliHoneymoon = '/uploads/packages/manali_honeymoon.jpg';
 const realKasolManali = 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80';
 const realShimlaManali = 'https://images.unsplash.com/photo-1586375300773-8384e3e4916f?w=800&q=80';
 
