@@ -46,8 +46,8 @@ if (pkgLoopStart !== -1) {
 html = html.replace(/<title>.*?<\/title>/gi, '<title>Vishit Journey — Travel Beyond Limits</title>');
 
 // Update Address in Footer
-html = html.replace(/📍\s*Your City, India/g, '📍 1st Floor Plot no. 2 Metro Pillar 786 Dwarka Mor New Delhi.');
-html = html.replace(/📍\s*Delhi, Dwarka/g, '📍 1st Floor Plot no. 2 Metro Pillar 786 Dwarka Mor New Delhi.');
+html = html.replace(/📍\s*Your City, India/g, '📍 Metro Pillar No. 786, Jai Bharat ENC, Office On First Floor, Plot No. 2, 55 Feet Rd, Near Aggarwal Sweets, Bhagwati Garden, Uttam Nagar, New Delhi, Delhi - 110059');
+html = html.replace(/📍\s*Delhi, Dwarka/g, '📍 Metro Pillar No. 786, Jai Bharat ENC, Office On First Floor, Plot No. 2, 55 Feet Rd, Near Aggarwal Sweets, Bhagwati Garden, Uttam Nagar, New Delhi, Delhi - 110059');
 
 // Replace Testimonials section with infinite marquee slider
 html = html.replace(/<section class="testimonials">[^]*?<\/section>/gi, `

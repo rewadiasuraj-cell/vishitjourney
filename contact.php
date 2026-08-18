@@ -239,7 +239,7 @@ require_once __DIR__ . '/config/config.php';
           <div class="info-icon">📍</div>
           <div class="info-text">
             <h4>Head Office</h4>
-            <p>Vishit Journey Travel Agency, New Delhi / NCR, India</p>
+            <p>Metro Pillar No. 786, Jai Bharat ENC, Office On First Floor, Plot No. 2, 55 Feet Rd, Near Aggarwal Sweets, Bhagwati Garden, Uttam Nagar, New Delhi, Delhi - 110059</p>
           </div>
         </div>
 
