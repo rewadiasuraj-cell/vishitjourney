@@ -70,7 +70,7 @@ targetFiles.forEach(filePath => {
   content = content.replace(/(<img src=")[^"]+(" alt="Kashmir")/gi, '$1https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&q=80$2');
 
   // 2. Direct exact image replacements for packages 17 & 18 if they exist
-  content = content.replace('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=80', 'https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?w=600&q=80'); // Udaipur
+  content = content.replace('/uploads/packages/udaipur.jpg', 'https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?w=600&q=80'); // Udaipur
   content = content.replace('https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=600&q=80', 'https://images.unsplash.com/photo-1586375300773-8384e3e4916f?w=600&q=80'); // Shimla
 
   // 3. Replace Package cards container content cleanly
