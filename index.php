@@ -38,6 +38,7 @@ foreach ($packages_raw as $p) {
 
   /* ── TAGLINE BAR ── */
   .tagline-bar{
+    display:none !important;
     position:fixed;top:80px;left:0;right:0;z-index:98;
     background:#f5f0e8;
     padding:.65rem 0;
@@ -792,6 +793,7 @@ foreach ($packages_raw as $p) {
 
     /* ── TAGLINE BAR ── */
     .tagline-bar{
+    display:none !important;
       top:auto;
       padding:.35rem 0;
       min-height:auto;
@@ -1597,20 +1599,7 @@ foreach ($packages_raw as $p) {
 </div>
 
 
-<!-- TAGLINE BAR -->
-<div class="tagline-bar">
-  <span class="tag-line-inner">
-    <span class="tag-arrow">——</span>
-    <span class="tag-item">DREAM IT.</span>
-    <span class="tag-icon">✈</span>
-    <span class="tag-item">PLAN IT.</span>
-    <span class="tag-icon">🧳</span>
-    <span class="tag-item">LIVE IT.</span>
-    <span class="tag-icon">❤</span>
-    <span class="tag-item">VISHIT.</span>
-    <span class="tag-arrow">——</span>
-  </span>
-</div>
+<!-- TAGLINE BAR REMOVED -->
 
 <!-- HERO -->
 <section class="hero">
