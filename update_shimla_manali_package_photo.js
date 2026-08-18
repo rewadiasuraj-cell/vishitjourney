@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Real Shimla-Manali Himachal Pradesh Hill Station image (Scenic Shimla town, pine hills & Himalayan mountains)
-const realShimlaManaliUrl = 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80';
+const realShimlaManaliUrl = '/uploads/packages/kasol_manali.jpg';
 
 const targetFiles = [
   'd:/vishit-journeys/Vishit Journey.html',
