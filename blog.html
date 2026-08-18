@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="psJq_vKOneKGa4XOJk3xLJ7ap7jF5pHo6Dv_h3q5hJY" />
+<title>Travel Blogs & Location Vlogs — Vishit Journey</title>
+<meta name="description" content="Explore travel location vlogs, destination guides, insider tips, and video walkthroughs for Kashmir, Leh Ladakh, Himachal, Spiti Valley, Rishikesh, and Kerala with Vishit Journey.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/booking.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --navy:#081428;
+    --navy2:#0d1f3c;
+    --gold:#c9a54a;
+    --gold2:#e4c06e;
+    --white:#fff;
+    --offwhite:#f5f0e8;
+    --muted:#8a9ab5;
+    --card-bg:rgba(13,31,60,0.75);
+    --border-gold:rgba(201,165,74,0.25);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+  /* ── EXACT SITE NAVBAR ── */
+  nav {
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: .5rem 4% !important;
+    background: #ffffff !important;
+    border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+  .nav-links {
+    display: flex !important;
+    gap: 1.8rem !important;
+    list-style: none !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .nav-links a {
+    text-decoration: none !important;
+    font-size: .8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #0d1f3c !important;
+    padding: .5rem 1rem !important;
+    border-radius: 20px !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: all .2s ease !important;
+    white-space: nowrap !important;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--gold) !important;
+    background: rgba(201, 165, 74, 0.08) !important;
+  }
+  .nav-right-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: .8rem !important;
+  }
+  .nav-btn-signup {
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important; 
+    padding: .55rem 1.4rem !important;
+    border: 1.5px solid var(--gold) !important;
+    border-radius: 25px !important;
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: .78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all .25s ease !important;
+    box-shadow: 0 4px 12px rgba(201, 165, 74, 0.35) !important;
+    white-space: nowrap !important;
+  }
+  .nav-btn-signup:hover {
+    background: #0d1f3c !important;
+    color: var(--gold) !important;
+    border-color: #0d1f3c !important;
+  }
+
+  /* ── PAGE CONTENT ── */
+  .main-wrapper {
+    margin-top: 100px;
+  }
+  
+  .blog-hero {
+    position: relative;
+    padding: 4.5rem 2rem 3rem;
+    background: radial-gradient(circle at 50% 30%, rgba(201,165,74,0.18), transparent 70%), var(--navy);
+    text-align: center;
+    border-bottom: 1px solid var(--border-gold);
+  }
+  .blog-hero-sub {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .blog-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  .blog-hero-title span {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .blog-hero-desc {
+    max-width: 720px;
+    margin: 0 auto 2.2rem;
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+
+  /* SEARCH & FILTER CONTROLS */
+  .search-filter-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .search-box-container {
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+  }
+  .search-box-container input {
+    width: 100%;
+    padding: 0.95rem 1.4rem 0.95rem 3rem;
+    border-radius: 30px;
+    border: 1.5px solid var(--border-gold);
+    background: rgba(13, 31, 60, 0.85);
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: 'Jost', sans-serif;
+    outline: none;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .search-box-container input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(201, 165, 74, 0.25);
+  }
+  .search-box-container svg {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--gold);
+    width: 18px;
+    height: 18px;
+  }
+  .category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  .tab-btn {
+    background: rgba(13, 31, 60, 0.6);
+    border: 1px solid var(--border-gold);
+    color: var(--muted);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(201, 165, 74, 0.3);
+  }
+
+  /* SECTION CONTAINER */
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+  }
+
+  /* FEATURED VLOG HERO CARD */
+  .featured-vlog-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    background: var(--card-bg);
+    border: 1.5px solid var(--border-gold);
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  @media(max-width: 900px){
+    .featured-vlog-card { grid-template-columns: 1fr; }
+  }
+  .featured-vlog-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .vlog-thumb-wrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+  .vlog-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .featured-vlog-card:hover .vlog-thumb-wrap img {
+    transform: scale(1.05);
+  }
+  .play-badge-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65px; height: 65px;
+    background: rgba(201, 165, 74, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(201, 165, 74, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .play-badge-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+    background: #fff;
+  }
+  .play-badge-overlay svg {
+    width: 26px; height: 26px;
+    fill: var(--navy);
+    margin-left: 3px;
+  }
+  .vlog-badge-tag {
+    position: absolute;
+    top: 1.2rem; left: 1.2rem;
+    background: rgba(8, 20, 40, 0.85);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.35rem 0.9rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+  }
+  .featured-content {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .featured-content .meta-info {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .featured-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .featured-content p {
+    color: var(--muted);
+    font-size: 1.02rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
+  }
+  .btn-vlog-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: fit-content;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-vlog-action:hover {
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+  }
+
+  /* BLOG & VLOG GRID */
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .section-heading span {
+    color: var(--gold);
+  }
+
+  .vlog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+  @media(max-width: 480px){
+    .vlog-grid { grid-template-columns: 1fr; }
+  }
+
+  .vlog-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-gold);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .vlog-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  .card-img-wrap {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+  .card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .vlog-card:hover .card-img-wrap img {
+    transform: scale(1.08);
+  }
+  .card-tag {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background: rgba(8, 20, 40, 0.85);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .card-duration {
+    position: absolute;
+    bottom: 1rem; right: 1rem;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .card-body {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .card-location {
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.5rem;
+  }
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+  .card-desc {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .card-date {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  .btn-card-link {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .btn-card-link:hover {
+    color: #fff;
+    transform: translateX(3px);
+  }
+
+  /* MODAL OVERLAY FOR WATCHING VLOG / READING ARTICLE */
+  .vlog-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(4, 10, 20, 0.92);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .vlog-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .vlog-modal-box {
+    background: var(--navy2);
+    border: 1.5px solid var(--border-gold);
+    border-radius: 24px;
+    max-width: 850px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  .vlog-modal-overlay.open .vlog-modal-box {
+    transform: translateY(0);
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid var(--border-gold);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+  .modal-close-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  .video-container-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 24px 24px 0 0;
+  }
+  .video-container-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .modal-details {
+    padding: 2.2rem;
+  }
+  .modal-details .modal-tag {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .modal-details h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .modal-details p {
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .modal-highlights {
+    background: rgba(8, 20, 40, 0.6);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .modal-highlights h4 {
+    color: var(--gold);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+  }
+  .modal-highlights ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.6rem;
+  }
+  .modal-highlights li {
+    color: var(--offwhite);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .modal-highlights li::before {
+    content: "✦";
+    color: var(--gold);
+  }
+  .modal-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer{background:#040a14;border-top:1px solid var(--border-gold);padding:3.5rem 2rem 1.5rem;color:var(--muted)}
+  .footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+  @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+  .footer-col h4{color:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:1rem}
+  .footer-col p{font-size:0.9rem;line-height:1.6}
+  .footer-links{list-style:none}
+  .footer-links li{margin-bottom:0.6rem}
+  .footer-links a{color:var(--muted);text-decoration:none;transition:0.3s}
+  .footer-links a:hover{color:var(--gold)}
+  .copyright{text-align:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.85rem}
+</style>
+</head>
+<body>
+
+  <!-- EXACT SITE NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:104px;width:auto;display:block;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="blog.html" class="active">Blogs & Vlogs</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="nav-right-actions">
+      <a href="contact.html" class="nav-btn-signup">Plan My Trip →</a>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="blog-hero">
+      <div class="blog-hero-sub">Insiders Travel Guides & Video Stories</div>
+      <h1 class="blog-hero-title">Travel Blogs & <span>Location Vlogs</span></h1>
+      <p class="blog-hero-desc">Discover breathtaking landscapes, local hidden gems, culture, and travel video walkthroughs curated directly by the Vishit Journey team.</p>
+
+      <!-- SEARCH & CATEGORY FILTER -->
+      <div class="search-filter-wrap">
+        <div class="search-box-container">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="vlogSearch" placeholder="Search by location (Kashmir, Leh Ladakh, Manali, Rishikesh)..." onkeyup="filterVlogs()">
+        </div>
+        <div class="category-tabs" id="categoryTabs">
+          <button class="tab-btn active" onclick="setCategory('all', this)">All Stories</button>
+          <button class="tab-btn" onclick="setCategory('vlog', this)">📹 Location Vlogs</button>
+          <button class="tab-btn" onclick="setCategory('kashmir', this)">🏔 Kashmir</button>
+          <button class="tab-btn" onclick="setCategory('ladakh', this)">🏍 Leh Ladakh</button>
+          <button class="tab-btn" onclick="setCategory('himachal', this)">🌲 Himachal & Spiti</button>
+          <button class="tab-btn" onclick="setCategory('uttarakhand', this)">🌊 Uttarakhand</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-container">
+
+      <!-- FEATURED LOCATION VLOG HERO CARD -->
+      <div class="featured-vlog-card" id="featuredCard">
+        <div class="vlog-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1000&q=80" alt="Kashmir Paradise Vlog" id="featImg">
+          <div class="vlog-badge-tag">🔥 Featured Location Vlog</div>
+          <div class="play-badge-overlay" onclick="openVlogModal(0)">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="featured-content">
+          <div class="meta-info">📍 Kashmir • 📹 8 Min Video Guide</div>
+          <h2>Kashmir Valley Expedition: Dal Lake, Gulmarg Snow & Pahalgam Vistas</h2>
+          <p>Immerse yourself in the breathtaking beauty of Gulmarg gondolas, houseboats of Dal Lake, and serene valleys of Pahalgam in our latest travel vlog walkthrough.</p>
+          <button class="btn-vlog-action" onclick="openVlogModal(0)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Full Vlog & Guide
+          </button>
+        </div>
+      </div>
+
+      <!-- VLOG GRID -->
+      <div class="section-heading">
+        <div>Latest Location <span>Vlogs & Articles</span></div>
+      </div>
+
+      <div class="vlog-grid" id="vlogGrid">
+        <!-- Dynamically rendered via JS -->
+      </div>
+    </div>
+
+    <!-- CTA BANNER -->
+    <section style="max-width:1100px;margin:2rem auto 4rem;padding:0 1.5rem;">
+      <div style="background:linear-gradient(135deg, rgba(201,165,74,0.15), rgba(8,20,40,0.9)), var(--navy2);border:1px solid var(--border-gold);border-radius:24px;padding:3.5rem 2rem;text-align:center;">
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:#fff;margin-bottom:0.8rem;">Inspired by Our Travel Stories?</h2>
+        <p style="color:var(--offwhite);max-width:620px;margin:0 auto 2rem;font-size:1.05rem;">Let us customize your dream itinerary for Kashmir, Leh Ladakh, Himachal, Kerala, or Spiti Valley with 24/7 dedicated support.</p>
+        <a href="contact.html" class="nav-btn-signup" style="padding:0.8rem 2.2rem;font-size:0.88rem;">Plan My Custom Trip →</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- MODAL PLAYER OVERLAY -->
+  <div class="vlog-modal-overlay" id="vlogModal">
+    <div class="vlog-modal-box">
+      <button class="modal-close-btn" onclick="closeVlogModal()">✕</button>
+      <div class="video-container-embed" id="modalVideoContainer">
+        <!-- iframe injected here -->
+      </div>
+      <div class="modal-details">
+        <div class="modal-tag" id="modalTag">📍 Kashmir Valley</div>
+        <h2 id="modalTitle">Kashmir Paradise Walkthrough</h2>
+        <p id="modalDesc">Detailed description of the location vlog experience.</p>
+        <div class="modal-highlights">
+          <h4>Trip Highlights & Tips</h4>
+          <ul id="modalHighlights">
+            <li>Best Season: April - October & Dec - Feb for Snow</li>
+            <li>Gondola Ride Phase 1 & 2 Pre-booking recommended</li>
+            <li>Local Cuisine: Authentic Wazwan & Shikara rides</li>
+          </ul>
+        </div>
+        <div class="modal-action-bar">
+          <a id="modalBookBtn" href="contact.html" class="btn-vlog-action">
+            Book Package For This Location →
+          </a>
+          <span style="color:var(--muted);font-size:0.85rem;" id="modalAuthor">By Vishit Journey Travel Experts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:70px;margin-bottom:1rem;">
+        <p>Vishit Journey is your trusted luxury travel advisor, crafting bespoke holiday experiences across India and global destinations with comfort and authentic culture.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#destinations">Destinations</a></li>
+          <li><a href="index.html#packages">Tour Packages</a></li>
+          <li><a href="blog.html">Travel Vlogs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal & Support</h4>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="contact.html">Support Line</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Vishit Journey. All Rights Reserved. Crafted with passion for extraordinary travel.
+    </div>
+  </footer>
+
+  <!-- INTEGRATION JS -->
+  <script src="/assets/js/supabase_client.js"></script>
+  <script>
+    // CURATED VLOGS & TRAVEL BLOG DATABASE
+    const vlogDatabase = [
+      {
+        id: 0,
+        title: "Kashmir Valley Expedition: Dal Lake, Gulmarg Snow & Pahalgam Vistas",
+        location: "Kashmir",
+        category: "kashmir",
+        type: "vlog",
+        badge: "📹 Location Vlog",
+        duration: "8:45 Mins",
+        img: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "Experience the magic of Dal Lake's morning floating vegetable markets, high-altitude cable car rides in Gulmarg, and serene valleys of Pahalgam in our latest travel vlog walkthrough.",
+        highlights: [
+          "Shikara ride on Dal Lake at sunset",
+          "Gulmarg Gondola Phase 2 snow activities",
+          "Betaab Valley & Aru Valley day tours",
+          "Stay in luxury cedar wood houseboats"
+        ]
+      },
+      {
+        id: 1,
+        title: "Leh Ladakh Bike Expedition: Crossing Khardung La & Pangong Lake Tents",
+        location: "Leh Ladakh",
+        category: "ladakh",
+        type: "vlog",
+        badge: "📹 Moto Vlog",
+        duration: "12:10 Mins",
+        img: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Join our motorbiking squad as we cross world's highest motorable passes, navigate Nubra Valley sand dunes, and camp under milky way stars at Pangong Tso.",
+        highlights: [
+          "Acclimatization tips in Leh City",
+          "Double-humped camel ride in Hunder",
+          "Magnetic Hill & Confluence of Zanskar",
+          "Pangong Tso sunrise views"
+        ]
+      },
+      {
+        id: 2,
+        title: "Shimla & Manali Winter Special: Solang Valley Skiing & Old Manali Cafes",
+        location: "Himachal Pradesh",
+        category: "himachal",
+        type: "vlog",
+        badge: "📖 Travel Guide",
+        duration: "6:30 Mins",
+        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "From Mall Road walks in Shimla to Solang Valley snow sports and Atal Tunnel crossings to Sissu, here is everything you need to plan a Himachal winter retreat.",
+        highlights: [
+          "Atal Tunnel to Lahaul Sissu day trip",
+          "Paragliding & Skiing in Solang Valley",
+          "Exploring wood cafe culture in Old Manali",
+          "Hadimba Temple & Van Vihar walks"
+        ]
+      },
+      {
+        id: 3,
+        title: "Spiti Valley Road Trip Guide: Kaza, Key Monastery & Chandratal Lake",
+        location: "Spiti Valley",
+        category: "himachal",
+        type: "vlog",
+        badge: "📹 Offbeat Vlog",
+        duration: "14:20 Mins",
+        img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Journey into the cold desert mountain valley of Spiti. Discover thousand-year-old monasteries, world's highest post office in Hikkim, and turquoise Chandratal Lake.",
+        highlights: [
+          "Postcard sending from Hikkim (14,567 ft)",
+          "Key Monastery prayer ritual experience",
+          "High altitude camping at Chandratal",
+          "Chicham Bridge — Asia's highest bridge"
+        ]
+      },
+      {
+        id: 4,
+        title: "Rishikesh Cliff Jumping, River Rafting & Ganga Aarti Sunset",
+        location: "Uttarakhand",
+        category: "uttarakhand",
+        type: "vlog",
+        badge: "📹 Adventure Vlog",
+        duration: "7:15 Mins",
+        img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "Feel the rush of 16km white water rafting along Ganges rapids, cliff jumping, riverside camping under starry nights, and peaceful evening Triveni Ghat Aarti.",
+        highlights: [
+          "Grade III & IV rapids rafting",
+          "Laxman Jhula & Beatles Ashram tour",
+          "Riverside camping with bonfire & live music",
+          "Triveni Ghat spiritual evening Aarti"
+        ]
+      },
+      {
+        id: 5,
+        title: "Kerala Backwaters Houseboat Cruise & Munnar Tea Plantation Walk",
+        location: "Kerala",
+        category: "uttarakhand",
+        type: "vlog",
+        badge: "📖 Luxury Guide",
+        duration: "9:50 Mins",
+        img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Relax on an authentic wooden luxury houseboat cruising Alleppey palm-lined canals, and stroll through mist-covered tea estates in hilly Munnar.",
+        highlights: [
+          "Overnight stay on luxury private houseboat",
+          "Fresh Karimeen seafood feast cooked onboard",
+          "Munnar tea museum & spice garden tour",
+          "Kathakali dance performance evening"
+        ]
+      }
+    ];
+
+    let currentCategory = 'all';
+
+    function renderVlogs(data) {
+      const grid = document.getElementById('vlogGrid');
+      grid.innerHTML = '';
+
+      if(data.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--muted)">
+          <h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:0.5rem">No Vlogs Found</h3>
+          <p>Try searching for another destination or switching categories.</p>
+        </div>`;
+        return;
+      }
+
+      data.forEach(vlog => {
+        const card = document.createElement('div');
+        card.className = 'vlog-card';
+        card.innerHTML = `
+          <div class="card-img-wrap">
+            <img src="${vlog.img}" alt="${vlog.title}" loading="lazy">
+            <div class="card-tag">${vlog.badge}</div>
+            <div class="card-duration">${vlog.duration}</div>
+          </div>
+          <div class="card-body">
+            <div class="card-location">📍 ${vlog.location}</div>
+            <h3 class="card-title">${vlog.title}</h3>
+            <p class="card-desc">${vlog.desc}</p>
+            <div class="card-footer">
+              <span class="card-date">Vishit Journey Crew</span>
+              <button class="btn-card-link" onclick="openVlogModal(${vlog.id})">
+                Watch / Read →
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterVlogs();
+    }
+
+    function filterVlogs() {
+      const query = document.getElementById('vlogSearch').value.toLowerCase().trim();
+      const filtered = vlogDatabase.filter(vlog => {
+        const matchesCategory = (currentCategory === 'all') || 
+          (currentCategory === 'vlog' && vlog.type === 'vlog') ||
+          (vlog.category === currentCategory);
+        const matchesSearch = vlog.title.toLowerCase().includes(query) || 
+          vlog.location.toLowerCase().includes(query) || 
+          vlog.desc.toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
+      });
+      renderVlogs(filtered);
+    }
+
+    function openVlogModal(id) {
+      const vlog = vlogDatabase.find(item => item.id === id);
+      if(!vlog) return;
+
+      document.getElementById('modalTag').innerText = `📍 ${vlog.location} • ${vlog.badge}`;
+      document.getElementById('modalTitle').innerText = vlog.title;
+      document.getElementById('modalDesc').innerText = vlog.desc;
+
+      const highlightsList = document.getElementById('modalHighlights');
+      highlightsList.innerHTML = vlog.highlights.map(h => `<li>${h}</li>`).join('');
+
+      document.getElementById('modalBookBtn').href = `contact.html?dest=${encodeURIComponent(vlog.location)}`;
+
+      // Embed YouTube video safely
+      const embedContainer = document.getElementById('modalVideoContainer');
+      embedContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${vlog.youtubeId}?autoplay=1&mute=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+      document.getElementById('vlogModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVlogModal() {
+      document.getElementById('vlogModal').classList.remove('open');
+      document.getElementById('modalVideoContainer').innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('vlogModal').addEventListener('click', function(e) {
+      if(e.target === this) {
+        closeVlogModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if(e.key === 'Escape') closeVlogModal();
+    });
+
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderVlogs(vlogDatabase);
+    });
+  </script>
+</body>
+</html>
