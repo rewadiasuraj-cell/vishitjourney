@@ -35,7 +35,7 @@ require_once __DIR__ . '/config/config.php';
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: .5rem 4% !important;
+    padding: .25rem 4% !important;
     background: #ffffff !important;
     border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
@@ -98,7 +98,7 @@ require_once __DIR__ . '/config/config.php';
 
   /* ── PAGE CONTENT ── */
   .main-wrapper {
-    margin-top: 120px;
+    margin-top: 80px;
   }
   .hero-section{
     position:relative;padding:5rem 2rem 3rem;
@@ -182,7 +182,7 @@ require_once __DIR__ . '/config/config.php';
   <!-- EXACT SITE NAVBAR -->
   <nav>
     <a href="index.php" class="logo">
-      <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:104px;width:auto;display:block;">
+      <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:64px;width:auto;display:block;">
     </a>
     <ul class="nav-links">
       <li><a href="index.php#destinations">Destinations</a></li>

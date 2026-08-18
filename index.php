@@ -89,7 +89,7 @@ foreach ($packages_raw as $p) {
     position:relative;min-height:100vh;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;padding:0 2%;overflow:hidden;
-    margin-top:120px; /* overridden by JS */
+    margin-top: 80px; /* overridden by JS */
   }
   /* slideshow */
   .slide{position:absolute;inset:0;background-size:cover;background-position:center;
@@ -253,7 +253,7 @@ foreach ($packages_raw as $p) {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: .5rem 4% !important;
+    padding: .25rem 4% !important;
     background: #ffffff !important;
     border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
@@ -1572,7 +1572,7 @@ foreach ($packages_raw as $p) {
 <!-- NAVBAR -->
 <nav>
   <a href="#" class="logo">
-    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:104px;width:auto;display:block;">
+    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:64px;width:auto;display:block;">
   </a>
   <ul class="nav-links">
     <li><a href="index.php#destinations">Destinations</a></li>
