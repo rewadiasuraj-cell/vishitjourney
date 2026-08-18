@@ -757,10 +757,12 @@
   </footer>
 
   <!-- INTEGRATION JS -->
+  
   <script src="/assets/js/supabase_client.js"></script>
   <script>
-    // CURATED VLOGS & TRAVEL BLOG DATABASE
+    // RICH CURATED VLOGS & TRAVEL BLOG DATABASE (14 EXPANDED DESTINATIONS)
     const vlogDatabase = [
+      // KASHMIR
       {
         id: 0,
         title: "Kashmir Valley Expedition: Dal Lake, Gulmarg Snow & Pahalgam Vistas",
@@ -781,6 +783,44 @@
       },
       {
         id: 1,
+        title: "Sonamarg Glacier Trek & Thajiwas Snow Adventures Guide",
+        location: "Kashmir",
+        category: "kashmir",
+        type: "vlog",
+        badge: "📹 Location Vlog",
+        duration: "10:15 Mins",
+        img: "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Discover Sonamarg — the Meadow of Gold. Trek to Thajiwas Glacier, sledge down snow slopes, and explore pristine Himalayan river streams with our expert local guides.",
+        highlights: [
+          "Pony ride to Thajiwas Glacier point",
+          "Pristine Sind River banks photography",
+          "Local Kahwa tea tasting at snow vantage points",
+          "Ideal April to September travel itinerary"
+        ]
+      },
+      {
+        id: 2,
+        title: "Srinagar Old City Heritage Walk & Authentic Wazwan Food Tour",
+        location: "Kashmir",
+        category: "kashmir",
+        type: "guide",
+        badge: "📖 Travel Guide",
+        duration: "7:20 Mins",
+        img: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "Stroll through centuries-old wooden shrines, Jamia Masjid Mughal architecture, copper artisan bazaars, and indulge in a 36-course royal Kashmiri Wazwan feast.",
+        highlights: [
+          "Jamia Masjid & Shah-e-Hamdan wooden shrines",
+          "Local Pashmina weaving workshop tour",
+          "Authentic Rista & Gushtaba culinary degustation",
+          "Mughal Gardens Shalimar & Nishat Bagh stroll"
+        ]
+      },
+
+      // LEH LADAKH
+      {
+        id: 3,
         title: "Leh Ladakh Bike Expedition: Crossing Khardung La & Pangong Lake Tents",
         location: "Leh Ladakh",
         category: "ladakh",
@@ -798,11 +838,49 @@
         ]
       },
       {
-        id: 2,
+        id: 4,
+        title: "Nubra Valley Sand Dunes, Diskit Monastery & Turtuk Border Vlog",
+        location: "Leh Ladakh",
+        category: "ladakh",
+        type: "vlog",
+        badge: "📹 Location Vlog",
+        duration: "11:45 Mins",
+        img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "Explore cold desert sand dunes in Hunder, giant Maitreya Buddha at Diskit Monastery, and visit Turtuk — the northernmost Balti village near the Line of Control.",
+        highlights: [
+          "106ft Giant Maitreya Buddha statue at Diskit",
+          "Bactrian double-hump camel rides in Hunder",
+          "Organic apricot orchards tour in Turtuk",
+          "Scenic Shyok River valley drive"
+        ]
+      },
+      {
+        id: 5,
+        title: "Zanskar Valley Expedition & Phugtal Monastery Cave Guide",
+        location: "Leh Ladakh",
+        category: "ladakh",
+        type: "guide",
+        badge: "📖 Offbeat Guide",
+        duration: "15:00 Mins",
+        img: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Venture deep into raw Zanskar territory. Visit the cliffside Phugtal cave monastery, cross Shinku La pass, and marvel at Mt. Gonbo Rangjon.",
+        highlights: [
+          "Cliff-clinging Phugtal Monastery hike",
+          "Shinku La Pass (16,580 ft) crossing",
+          "Camping near majestic Mount Gonbo Rangjon",
+          "Authentic Zanskari homestay experience"
+        ]
+      },
+
+      // HIMACHAL & SPITI
+      {
+        id: 6,
         title: "Shimla & Manali Winter Special: Solang Valley Skiing & Old Manali Cafes",
         location: "Himachal Pradesh",
         category: "himachal",
-        type: "vlog",
+        type: "guide",
         badge: "📖 Travel Guide",
         duration: "6:30 Mins",
         img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
@@ -816,12 +894,12 @@
         ]
       },
       {
-        id: 3,
+        id: 7,
         title: "Spiti Valley Road Trip Guide: Kaza, Key Monastery & Chandratal Lake",
         location: "Spiti Valley",
         category: "himachal",
         type: "vlog",
-        badge: "📹 Offbeat Vlog",
+        badge: "📹 Location Vlog",
         duration: "14:20 Mins",
         img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800&q=80",
         youtubeId: "1-J3h40M6Jg",
@@ -834,12 +912,50 @@
         ]
       },
       {
-        id: 4,
+        id: 8,
+        title: "Kasol & Tosh Parvati Valley Backpacking & Kheerganga Trek",
+        location: "Himachal Pradesh",
+        category: "himachal",
+        type: "vlog",
+        badge: "📹 Adventure Vlog",
+        duration: "9:10 Mins",
+        img: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "Trek through pine forests of Parvati Valley to natural hot springs at Kheerganga summit, taste authentic Israeli cafe cuisine in Kasol, and wander peaceful Tosh village.",
+        highlights: [
+          "12km scenic forest trek to Kheerganga",
+          "Natural hot water spring dip at top summit",
+          "Riverside camping beside Parvati River",
+          "Hippie cafe hops in Kasol & Manikaran Sahib"
+        ]
+      },
+      {
+        id: 9,
+        title: "Dharamshala & McLeodganj Peace Monastery Walkthrough",
+        location: "Himachal Pradesh",
+        category: "himachal",
+        type: "guide",
+        badge: "📖 Travel Guide",
+        duration: "8:00 Mins",
+        img: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Home of His Holiness Dalai Lama. Explore Tsuglagkhang Temple, peaceful Tibetan prayer wheel walks, Bhagsu Waterfall, and sunset viewpoints at Naddi.",
+        highlights: [
+          "Dalai Lama Temple Complex (Tsuglagkhang)",
+          "Bhagsu Waterfall & Shiva Cafe trail",
+          "Triund Hill day trek guide",
+          "Tibetan Momos & Thukpa food walk"
+        ]
+      },
+
+      // UTTARAKHAND & SOUTH
+      {
+        id: 10,
         title: "Rishikesh Cliff Jumping, River Rafting & Ganga Aarti Sunset",
         location: "Uttarakhand",
         category: "uttarakhand",
         type: "vlog",
-        badge: "📹 Adventure Vlog",
+        badge: "📹 Location Vlog",
         duration: "7:15 Mins",
         img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
         youtubeId: "L_LUpnjgPso",
@@ -852,12 +968,48 @@
         ]
       },
       {
-        id: 5,
+        id: 11,
+        title: "Mussoorie Mall Road, Kempty Falls & George Everest Sunset Hike",
+        location: "Uttarakhand",
+        category: "uttarakhand",
+        type: "vlog",
+        badge: "📹 Location Vlog",
+        duration: "6:50 Mins",
+        img: "https://images.unsplash.com/photo-1586375300773-8384e3e4916f?w=800&q=80",
+        youtubeId: "1-J3h40M6Jg",
+        desc: "Explore Queen of Hills Mussoorie! Take the ropeway to Gun Hill, splash in Kempty Falls, walk historic Mall Road, and watch golden sunset at Sir George Everest Peak.",
+        highlights: [
+          "Sir George Everest House sunset trail",
+          "Cable car ride to Gun Hill viewpoint",
+          "Kempty Falls & Lal Tibba mountain views",
+          "Heritage bakeries on Mussoorie Mall Road"
+        ]
+      },
+      {
+        id: 12,
+        title: "Nainital Lake Boating & Bhimtal Hill Station Escape Guide",
+        location: "Uttarakhand",
+        category: "uttarakhand",
+        type: "guide",
+        badge: "📖 Travel Guide",
+        duration: "7:40 Mins",
+        img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
+        youtubeId: "L_LUpnjgPso",
+        desc: "Enjoy traditional wooden boat rides on eye-shaped Naini Lake, visit Naina Devi Temple, ride Aerial Ropeway to Snow View point, and relax by serene Bhimtal Lake.",
+        highlights: [
+          "Naini Lake yachting & wooden boat rides",
+          "Snow View Point cable car panorama",
+          "Bhimtal island aquarium coffee visit",
+          "Eco Cave Gardens exploration"
+        ]
+      },
+      {
+        id: 13,
         title: "Kerala Backwaters Houseboat Cruise & Munnar Tea Plantation Walk",
         location: "Kerala",
         category: "uttarakhand",
         type: "vlog",
-        badge: "📖 Luxury Guide",
+        badge: "📹 Location Vlog",
         duration: "9:50 Mins",
         img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80",
         youtubeId: "1-J3h40M6Jg",
@@ -875,59 +1027,75 @@
 
     function renderVlogs(data) {
       const grid = document.getElementById('vlogGrid');
-      grid.innerHTML = '';
+      grid.style.opacity = '0';
+      grid.style.transition = 'opacity 0.25s ease';
 
-      if(data.length === 0) {
-        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--muted)">
-          <h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:0.5rem">No Vlogs Found</h3>
-          <p>Try searching for another destination or switching categories.</p>
-        </div>`;
-        return;
-      }
+      setTimeout(() => {
+        grid.innerHTML = '';
 
-      data.forEach(vlog => {
-        const card = document.createElement('div');
-        card.className = 'vlog-card';
-        card.innerHTML = `
-          <div class="card-img-wrap">
-            <img src="${vlog.img}" alt="${vlog.title}" loading="lazy">
-            <div class="card-tag">${vlog.badge}</div>
-            <div class="card-duration">${vlog.duration}</div>
-          </div>
-          <div class="card-body">
-            <div class="card-location">📍 ${vlog.location}</div>
-            <h3 class="card-title">${vlog.title}</h3>
-            <p class="card-desc">${vlog.desc}</p>
-            <div class="card-footer">
-              <span class="card-date">Vishit Journey Crew</span>
-              <button class="btn-card-link" onclick="openVlogModal(${vlog.id})">
-                Watch / Read →
-              </button>
+        if(data.length === 0) {
+          grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--muted)">
+            <h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:2.2rem;margin-bottom:0.5rem">No Stories Found</h3>
+            <p>Try selecting another location category or clear your search input.</p>
+          </div>`;
+          grid.style.opacity = '1';
+          return;
+        }
+
+        data.forEach(vlog => {
+          const card = document.createElement('div');
+          card.className = 'vlog-card';
+          card.innerHTML = `
+            <div class="card-img-wrap">
+              <img src="${vlog.img}" alt="${vlog.title}" loading="lazy">
+              <div class="card-tag">${vlog.badge}</div>
+              <div class="card-duration">${vlog.duration}</div>
             </div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
+            <div class="card-body">
+              <div class="card-location">📍 ${vlog.location}</div>
+              <h3 class="card-title">${vlog.title}</h3>
+              <p class="card-desc">${vlog.desc}</p>
+              <div class="card-footer">
+                <span class="card-date">Vishit Journey Crew</span>
+                <button class="btn-card-link" onclick="openVlogModal(${vlog.id})">
+                  Watch / Read →
+                </button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+        grid.style.opacity = '1';
+      }, 150);
     }
 
     function setCategory(cat, btn) {
       currentCategory = cat;
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if(btn) btn.classList.add('active');
       filterVlogs();
     }
 
     function filterVlogs() {
-      const query = document.getElementById('vlogSearch').value.toLowerCase().trim();
+      const query = (document.getElementById('vlogSearch')?.value || '').toLowerCase().trim();
       const filtered = vlogDatabase.filter(vlog => {
-        const matchesCategory = (currentCategory === 'all') || 
-          (currentCategory === 'vlog' && vlog.type === 'vlog') ||
-          (vlog.category === currentCategory);
-        const matchesSearch = vlog.title.toLowerCase().includes(query) || 
+        let matchesCategory = false;
+        if (currentCategory === 'all') {
+          matchesCategory = true;
+        } else if (currentCategory === 'vlog') {
+          matchesCategory = (vlog.type === 'vlog' || vlog.badge.toLowerCase().includes('vlog'));
+        } else {
+          matchesCategory = (vlog.category === currentCategory);
+        }
+
+        const matchesSearch = !query || 
+          vlog.title.toLowerCase().includes(query) || 
           vlog.location.toLowerCase().includes(query) || 
           vlog.desc.toLowerCase().includes(query);
+
         return matchesCategory && matchesSearch;
       });
+
       renderVlogs(filtered);
     }
 
@@ -959,7 +1127,7 @@
     }
 
     // Close modal on backdrop click
-    document.getElementById('vlogModal').addEventListener('click', function(e) {
+    document.getElementById('vlogModal')?.addEventListener('click', function(e) {
       if(e.target === this) {
         closeVlogModal();
       }
@@ -975,5 +1143,6 @@
       renderVlogs(vlogDatabase);
     });
   </script>
+
 </body>
 </html>
