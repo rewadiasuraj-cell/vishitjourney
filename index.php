@@ -254,7 +254,9 @@ foreach ($packages_raw as $p) {
     align-items: center !important;
     justify-content: space-between !important;
     padding: .25rem 4% !important;
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.78) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
   }
@@ -1572,7 +1574,7 @@ foreach ($packages_raw as $p) {
 <!-- NAVBAR -->
 <nav>
   <a href="#" class="logo">
-    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:64px;width:auto;display:block;">
+    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:64px;width:auto;display:block;mix-blend-mode:multiply;">
   </a>
   <ul class="nav-links">
     <li><a href="index.php#destinations">Destinations</a></li>
