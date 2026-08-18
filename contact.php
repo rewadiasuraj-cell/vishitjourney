@@ -36,7 +36,7 @@ require_once __DIR__ . '/config/config.php';
     align-items: center !important;
     justify-content: space-between !important;
     padding: .25rem 4% !important;
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.88) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;

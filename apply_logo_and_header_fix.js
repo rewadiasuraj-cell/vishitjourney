@@ -8,8 +8,9 @@ function processFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
   let original = content;
 
-  // 1. Update header background opacity (reduce transparency from 0.78 to 0.95)
-  content = content.replace(/rgba\(255,\s*255,\s*255,\s*0\.78\)/g, 'rgba(255, 255, 255, 0.95)');
+  // 1. Update header background opacity (lower opacity to 0.88)
+  content = content.replace(/rgba\(255,\s*255,\s*255,\s*0\.95\)/g, 'rgba(255, 255, 255, 0.88)');
+  content = content.replace(/rgba\(255,\s*255,\s*255,\s*0\.78\)/g, 'rgba(255, 255, 255, 0.88)');
 
   // 2. Update logo image references from Vishit_Journey_Logo.jpg to Vishit_Journey_Logo.png or logo_transparent.png
   // And remove 
