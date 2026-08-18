@@ -7,11 +7,11 @@ if (fs.existsSync(file)) {
   // Replace base64 logo or old logo img in navbar
   content = content.replace(
     /<a href="#" class="logo">\s*<img src="[^"]*" alt="Vishit Journeys"[^>]*>\s*<\/a>/gi,
-    '<a href="#" class="logo">\n    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journeys" style="height:104px;width:auto;display:block;">\n  </a>'
+    '<a href="#" class="logo">\n    <img src="Vishit_Journey_Logo.png" alt="Vishit Journeys" style="height:104px;width:auto;display:block;">\n  </a>'
   );
   content = content.replace(
     /<a href="#" class="logo">\s*<img src="[^"]*" alt="Vishit Journey"[^>]*>\s*<\/a>/gi,
-    '<a href="#" class="logo">\n    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journeys" style="height:104px;width:auto;display:block;">\n  </a>'
+    '<a href="#" class="logo">\n    <img src="Vishit_Journey_Logo.png" alt="Vishit Journeys" style="height:104px;width:auto;display:block;">\n  </a>'
   );
 
   fs.writeFileSync(file, content, 'utf8');

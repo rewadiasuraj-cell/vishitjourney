@@ -9,7 +9,7 @@ if (fs.existsSync(phpFile)) {
   // 1. Clean up <nav> markup completely
   const cleanNavHtml = `<nav>
   <a href="#" class="logo">
-    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:104px;width:auto;display:block;">
+    <img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:104px;width:auto;display:block;">
   </a>
   <ul class="nav-links">
     <li><a href="#destinations">Destinations</a></li>

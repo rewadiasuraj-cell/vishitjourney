@@ -22,7 +22,7 @@ html = html.replace('<title>Vishit Journeys — Travel Beyond Limits</title>', '
 // Only replace top navbar logo inside <a href="#" class="logo"> ... </a>
 // Regex targets ONLY the img tag inside <a href="#" class="logo">
 html = html.replace(/(<a href="#" class="logo">\s*)<img[^>]+>/i, (match, p1) => {
-  return `${p1}<img id="navLogoDark" src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:52px;width:auto;"><img id="navLogo" src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:52px;width:auto;">`;
+  return `${p1}<img id="navLogoDark" src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:52px;width:auto;"><img id="navLogo" src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:52px;width:auto;">`;
 });
 
 // Target list of files to update

@@ -485,8 +485,8 @@ html = html.replace(/Vishit Journeys/g, "Vishit Journey");
 html = html.replace(/Real <em>Journeys<\/em>/g, "Real <em>Journey<\/em>");
 
 // Replace header and footer logos
-html = html = html.replace(/(<div class="footer-brand">\s*<div[^>]*>\s*)<img src="[^"]*"[^>]*>(\s*<\/div>)/gi, `$1<img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:128px;width:auto;display:block">$2`);
-html = html.replace(/(<a href="#" class="logo">\s*)[^]*?(<\/a>)/i, `$1<img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:104px;width:auto;display:block;">$2`);
+html = html = html.replace(/(<div class="footer-brand">\s*<div[^>]*>\s*)<img src="[^"]*"[^>]*>(\s*<\/div>)/gi, `$1<img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:128px;width:auto;display:block">$2`);
+html = html.replace(/(<a href="#" class="logo">\s*)[^]*?(<\/a>)/i, `$1<img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:104px;width:auto;display:block;">$2`);
 
 
 const targetFiles = [

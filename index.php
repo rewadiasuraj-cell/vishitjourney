@@ -254,7 +254,7 @@ foreach ($packages_raw as $p) {
     align-items: center !important;
     justify-content: space-between !important;
     padding: .25rem 4% !important;
-    background: rgba(255, 255, 255, 0.78) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
@@ -1574,7 +1574,7 @@ foreach ($packages_raw as $p) {
 <!-- NAVBAR -->
 <nav>
   <a href="#" class="logo">
-    <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:64px;width:auto;display:block;mix-blend-mode:multiply;">
+    <img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:64px;width:auto;display:block;">
   </a>
   <ul class="nav-links">
     <li><a href="index.php#destinations">Destinations</a></li>
@@ -2427,7 +2427,7 @@ foreach ($packages_raw as $p) {
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="background:#fff;display:inline-block;padding:10px 16px;border-radius:8px;margin-bottom:.8rem;border:1px solid rgba(201,165,74,0.2)">
-        <img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:128px;width:auto;display:block">
+        <img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:128px;width:auto;display:block">
       </div>
       <p>Premium travel experiences with trusted cab & bus services across India and internationally.</p>
       <div class="contact-row">📍 Your City, India</div>

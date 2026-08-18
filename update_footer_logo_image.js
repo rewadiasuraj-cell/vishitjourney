@@ -31,7 +31,7 @@ if (fs.existsSync(phpFile)) {
   // Replace image tag in footer-brand
   content = content.replace(
     /(<div class="footer-brand">\s*<div[^>]*>\s*)<img src="[^"]*"[^>]*>(\s*<\/div>)/gi,
-    `$1<img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:128px;width:auto;display:block">$2`
+    `$1<img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:128px;width:auto;display:block">$2`
   );
 
   fs.writeFileSync(phpFile, content, 'utf8');
@@ -53,7 +53,7 @@ if (fs.existsSync(buildScript)) {
   // Ensure footer replacement in build script uses 128px
   scriptContent = scriptContent.replace(
     /html\.replace\(\/\(<div class="footer-brand">\\s\*<div\[\^>\]\*\>\\s\*\)<img src="\[\^"\]\*"\[\^>\]\*>\(\\s\*<\\\/div>\)\/gi, `\$1<img src="Vishit_Journey_Logo\.jpg" alt="Vishit Journey" style="height:\d+px;width:auto;display:block">\$2`\);/g,
-    'html = html.replace(/(<div class="footer-brand">\\s*<div[^>]*>\\s*)<img src="[^"]*"[^>]*>(\\s*<\\/div>)/gi, `$1<img src="Vishit_Journey_Logo.jpg" alt="Vishit Journey" style="height:128px;width:auto;display:block">$2`);'
+    'html = html.replace(/(<div class="footer-brand">\\s*<div[^>]*>\\s*)<img src="[^"]*"[^>]*>(\\s*<\\/div>)/gi, `$1<img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:128px;width:auto;display:block">$2`);'
   );
   fs.writeFileSync(buildScript, scriptContent, 'utf8');
   console.log('Updated build_clean_static_site.js with 128px footer logo!');
