@@ -1973,41 +1973,507 @@ foreach ($packages_raw as $p) {
         </div>
       </div>
 <div class="pkg-grid2" id="pkgGrid">
-  <?php foreach($packages_raw as $p):
-    $highlights = explode('|', $p['highlights']);
-    $price_fmt = '₹' . number_format($p['price']);
-    $badge_cls = in_array($p['badge'],['HONEYMOON','ROMANTIC','PREMIUM']) ? 'pkg2-badge pkg2-badge-gold' : 'pkg2-badge';
-    $cats = $p['category'];
-    if($p['category']=='honeymoon') $cats = 'honeymoon domestic';
-    if($p['category']=='hills') $cats = 'hills domestic';
-  ?>
-  <div class="pkg2" data-cat="<?= $cats ?>">
+
+  <div class="pkg2" data-cat="international" data-price="39999" data-days="5">
     <div class="pkg2-img">
-      <img src="<?= htmlspecialchars($p['image_url']) ?>" alt="<?= htmlspecialchars($p['name']) ?>" loading="lazy">
-      <span class="<?= $badge_cls ?>"><?= htmlspecialchars($p['badge']) ?></span>
-      <span class="pkg2-price"><?= $price_fmt ?><small>/<?= $p['price_label'] ?></small></span>
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai Luxury Package" loading="lazy">
+      <span class="pkg2-badge ">INTERNATIONAL</span>
     </div>
     <div class="pkg2-body">
-      <h3><?= htmlspecialchars($p['name']) ?></h3>
-      <div class="pkg2-meta"><span>🗓 <?= $p['duration'] ?></span></div>
+      <h3>Dubai Luxury Package</h3>
+      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
       <ul class="pkg2-list">
-        <?php foreach(array_slice($highlights,0,4) as $hl): ?>
-        <li><?= htmlspecialchars($hl) ?></li>
-        <?php endforeach; ?>
+        <li>Burj Khalifa Visit</li>
+        <li>Desert Safari</li>
+        <li>Luxury Hotel Stay</li>
+        <li>Airport Transfers</li>
       </ul>
-      <button onclick="openBooking(<?= $p['id'] ?>, '<?= addslashes($p['name']) ?>', <?= $p['price'] ?>, '<?= $p['duration'] ?>', '<?= $p['category'] ?>')" class="pkg2-btn">Book Now →</button>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹39,999</span>
+        </div>
+        <button onclick="openBooking(1, 'Dubai Luxury Package', 39999, '5D / 4N', 'international')" class="pkg2-btn">Book Now →</button>
+      </div>
     </div>
   </div>
-  <?php endforeach; ?>
-  </div>
+  
 
-        <!-- EMPTY STATE -->
-        <div class="pkg-empty-state" id="pkgEmptyState" style="display:none;">
-          <div class="empty-icon">🔍</div>
-          <h3>No Packages Found</h3>
-          <p>No tour packages match your selected filter criteria. Try adjusting the price slider, duration, or trip type.</p>
-          <button class="reset-empty-btn" onclick="resetAllFilters()">Reset All Filters</button>
+  <div class="pkg2" data-cat="international" data-price="29999" data-days="6">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" alt="Thailand Holiday Package" loading="lazy">
+      <span class="pkg2-badge ">INTERNATIONAL</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Thailand Holiday Package</h3>
+      <div class="pkg2-meta"><span>🗓 6D / 5N</span></div>
+      <ul class="pkg2-list">
+        <li>Bangkok & Pattaya Tour</li>
+        <li>Coral Island Visit</li>
+        <li>Hotel with Breakfast</li>
+        <li>Beach Activities</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹29,999</span>
         </div>
+        <button onclick="openBooking(2, 'Thailand Holiday Package', 29999, '6D / 5N', 'international')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="honeymoon international" data-price="44999" data-days="5">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali Honeymoon Package" loading="lazy">
+      <span class="pkg2-badge pkg2-badge-gold">HONEYMOON</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Bali Honeymoon Package</h3>
+      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
+      <ul class="pkg2-list">
+        <li>Private Villa Stay</li>
+        <li>Candle Light Dinner</li>
+        <li>Water Sports</li>
+        <li>Ubud Sightseeing</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹44,999</span>
+        </div>
+        <button onclick="openBooking(3, 'Bali Honeymoon Package', 44999, '5D / 4N', 'honeymoon')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="honeymoon international" data-price="49999" data-days="5">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Maldives Luxury Package" loading="lazy">
+      <span class="pkg2-badge pkg2-badge-gold">PREMIUM</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Maldives Luxury Package</h3>
+      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
+      <ul class="pkg2-list">
+        <li>Luxury Water Villa</li>
+        <li>Speed Boat Transfers</li>
+        <li>All Meals Included</li>
+        <li>Private Beach</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹49,999</span>
+        </div>
+        <button onclick="openBooking(4, 'Maldives Luxury Package', 49999, '5D / 4N', 'honeymoon')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="hills domestic" data-price="14999" data-days="6">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1566837945700-30057527ade0?w=600&q=80" alt="Kashmir Paradise Package" loading="lazy">
+      <span class="pkg2-badge ">POPULAR</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Kashmir Paradise Package</h3>
+      <div class="pkg2-meta"><span>🗓 6D / 5N</span></div>
+      <ul class="pkg2-list">
+        <li>Srinagar Houseboat Stay</li>
+        <li>Gulmarg Gondola Ride</li>
+        <li>Pahalgam & Sonmarg Tour</li>
+        <li>Breakfast & Dinner</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹14,999</span>
+        </div>
+        <button onclick="openBooking(5, 'Kashmir Paradise Package', 14999, '6D / 5N', 'hills')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="hills domestic honeymoon" data-price="9680" data-days="4">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/manali_honeymoon.jpg" alt="Manali Package (3N/4D)" loading="lazy">
+      <span class="pkg2-badge pkg2-badge-gold">BEST SELLER</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Manali Package (3N/4D)</h3>
+      <div class="pkg2-meta"><span>🗓 4D / 3N</span></div>
+      <ul class="pkg2-list">
+        <li>Romantic Room Decoration</li>
+        <li>Candle Light Dinner</li>
+        <li>Private Cab</li>
+        <li>Solang & Snow Point</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,680</span>
+        </div>
+        <button onclick="openBooking(6, 'Manali Package (3N/4D)', 9680, '4D / 3N', 'hills')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="hills domestic" data-price="12430" data-days="5">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/kasol_manali.jpg" alt="Shimla Manali Package (4N/5D)" loading="lazy">
+      <span class="pkg2-badge ">HILLS COMBO</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Shimla Manali Package (4N/5D)</h3>
+      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
+      <ul class="pkg2-list">
+        <li>Shimla Local Tour</li>
+        <li>Manali Sightseeing</li>
+        <li>Solang Valley</li>
+        <li>Hotel with Meals</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹12,430</span>
+        </div>
+        <button onclick="openBooking(7, 'Shimla Manali Package (4N/5D)', 12430, '5D / 4N', 'hills')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="hills domestic" data-price="9999" data-days="6">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/kasol_manali.jpg" alt="Kasol + Manali Combo" loading="lazy">
+      <span class="pkg2-badge ">COMBO</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Kasol + Manali Combo</h3>
+      <div class="pkg2-meta"><span>🗓 6D / 5N</span></div>
+      <ul class="pkg2-list">
+        <li>Kasol Riverside Stay</li>
+        <li>Manali Sightseeing</li>
+        <li>Solang Valley</li>
+        <li>Bonfire & Music Night</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,999</span>
+        </div>
+        <button onclick="openBooking(8, 'Kasol + Manali Combo', 9999, '6D / 5N', 'hills')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="pilgrimage domestic" data-price="10000" data-days="3">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ek Dham Yatra Package" loading="lazy">
+      <span class="pkg2-badge ">PILGRIMAGE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Ek Dham Yatra Package</h3>
+      <div class="pkg2-meta"><span>🗓 3D / 2N</span></div>
+      <ul class="pkg2-list">
+        <li>Kedarnath / Badrinath Visit</li>
+        <li>Pooja Assistance</li>
+        <li>Hotel Stay & Meals</li>
+        <li>Cab Transfers</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹10,000</span>
+        </div>
+        <button onclick="openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="pilgrimage domestic" data-price="13000" data-days="5">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&q=80" alt="Do Dham Yatra Package" loading="lazy">
+      <span class="pkg2-badge ">PILGRIMAGE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Do Dham Yatra Package</h3>
+      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
+      <ul class="pkg2-list">
+        <li>Kedarnath & Badrinath Tour</li>
+        <li>Helicopter / Trek Option</li>
+        <li>Hotel Stay with Meals</li>
+        <li>Dedicated Cab</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹13,000</span>
+        </div>
+        <button onclick="openBooking(10, 'Do Dham Yatra Package', 13000, '5D / 4N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="pilgrimage domestic" data-price="20000" data-days="10">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=600&q=80" alt="Char Dham Yatra Package" loading="lazy">
+      <span class="pkg2-badge ">SPIRITUAL</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Char Dham Yatra Package</h3>
+      <div class="pkg2-meta"><span>🗓 10D / 9N</span></div>
+      <ul class="pkg2-list">
+        <li>Yamunotri, Gangotri, Kedarnath, Badrinath</li>
+        <li>Complete AC Vehicle</li>
+        <li>Hotels & Meals</li>
+        <li>VIP Darshan</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹20,000</span>
+        </div>
+        <button onclick="openBooking(11, 'Char Dham Yatra Package', 20000, '10D / 9N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="heritage domestic" data-price="7500" data-days="2">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&q=80" alt="Agra Overnight Package" loading="lazy">
+      <span class="pkg2-badge ">HERITAGE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Agra Overnight Package</h3>
+      <div class="pkg2-meta"><span>🗓 2D / 1N</span></div>
+      <ul class="pkg2-list">
+        <li>Taj Mahal Sunrise Tour</li>
+        <li>Agra Fort Visit</li>
+        <li>Luxury Hotel Stay</li>
+        <li>Private AC Cab</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹7,500</span>
+        </div>
+        <button onclick="openBooking(12, 'Agra Overnight Package', 7500, '2D / 1N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="heritage domestic" data-price="9000" data-days="3">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/rajasthan.jpg" alt="Agra Jaipur Combo (2N/3D)" loading="lazy">
+      <span class="pkg2-badge ">GOLDEN TRIANGLE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Agra Jaipur Combo (2N/3D)</h3>
+      <div class="pkg2-meta"><span>🗓 3D / 2N</span></div>
+      <ul class="pkg2-list">
+        <li>Taj Mahal & Agra Fort</li>
+        <li>Jaipur Hawa Mahal & Amber Fort</li>
+        <li>Sightseeing Cab</li>
+        <li>Hotel with Breakfast</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,000</span>
+        </div>
+        <button onclick="openBooking(13, 'Agra Jaipur Combo (2N/3D)', 9000, '3D / 2N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="domestic heritage" data-price="23000" data-days="8">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/rajasthan.jpg" alt="Rajasthan Royal Package (7N/8D)" loading="lazy">
+      <span class="pkg2-badge ">ROYAL</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Rajasthan Royal Package (7N/8D)</h3>
+      <div class="pkg2-meta"><span>🗓 8D / 7N</span></div>
+      <ul class="pkg2-list">
+        <li>Jaipur, Jodhpur, Jaisalmer & Udaipur</li>
+        <li>Fort & Palace Visits</li>
+        <li>Desert Safari</li>
+        <li>Heritage Stays & Meals</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹23,000</span>
+        </div>
+        <button onclick="openBooking(14, 'Rajasthan Royal Package (7N/8D)', 23000, '8D / 7N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="nature domestic" data-price="19250" data-days="7">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Assam & Meghalaya (6N/7D)" loading="lazy">
+      <span class="pkg2-badge ">NORTH EAST</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Assam & Meghalaya (6N/7D)</h3>
+      <div class="pkg2-meta"><span>🗓 7D / 6N</span></div>
+      <ul class="pkg2-list">
+        <li>Kaziranga National Park Rhino Safari</li>
+        <li>Shillong & Cherrapunji Waterfalls</li>
+        <li>Dawki Living Root Bridge</li>
+        <li>Hotel & Cab</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹19,250</span>
+        </div>
+        <button onclick="openBooking(15, 'Assam & Meghalaya (6N/7D)', 19250, '7D / 6N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="domestic backwaters" data-price="19250" data-days="6">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=600&q=80" alt="Kerala Backwaters (5N/6D)" loading="lazy">
+      <span class="pkg2-badge ">BACKWATERS</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Kerala Backwaters (5N/6D)</h3>
+      <div class="pkg2-meta"><span>🗓 6D / 5N</span></div>
+      <ul class="pkg2-list">
+        <li>Munnar Tea Gardens</li>
+        <li>Alleppey Houseboat Cruise</li>
+        <li>Kochi & Kovalam Beach</li>
+        <li>Breakfast & Houseboat Meals</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹19,250</span>
+        </div>
+        <button onclick="openBooking(16, 'Kerala Backwaters (5N/6D)', 19250, '6D / 5N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="hills domestic" data-price="22999" data-days="7">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/leh_ladakh.jpg" alt="Leh Ladakh Adventure" loading="lazy">
+      <span class="pkg2-badge ">ADVENTURE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Leh Ladakh Adventure</h3>
+      <div class="pkg2-meta"><span>🗓 7D / 6N</span></div>
+      <ul class="pkg2-list">
+        <li>Pangong Lake</li>
+        <li>Nubra Valley Safari</li>
+        <li>Mountain Camps</li>
+        <li>Bike/Cab Tour</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹22,999</span>
+        </div>
+        <button onclick="openBooking(17, 'Leh Ladakh Adventure', 22999, '7D / 6N', 'hills')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="domestic beach" data-price="7999" data-days="4">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa Beach Package" loading="lazy">
+      <span class="pkg2-badge ">BEACH</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Goa Beach Package</h3>
+      <div class="pkg2-meta"><span>🗓 4D / 3N</span></div>
+      <ul class="pkg2-list">
+        <li>Beachside Hotel Stay</li>
+        <li>North & South Goa Tour</li>
+        <li>Breakfast Included</li>
+        <li>Airport Pickup & Drop</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹7,999</span>
+        </div>
+        <button onclick="openBooking(18, 'Goa Beach Package', 7999, '4D / 3N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="hills domestic" data-price="5999" data-days="3">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/rishikesh.jpg" alt="Rishikesh Camping Package" loading="lazy">
+      <span class="pkg2-badge ">ADVENTURE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Rishikesh Camping Package</h3>
+      <div class="pkg2-meta"><span>🗓 3D / 2N</span></div>
+      <ul class="pkg2-list">
+        <li>River Rafting</li>
+        <li>Camping Stay</li>
+        <li>Bonfire & Music</li>
+        <li>Adventure Activities</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹5,999</span>
+        </div>
+        <button onclick="openBooking(19, 'Rishikesh Camping Package', 5999, '3D / 2N', 'hills')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pkg2" data-cat="honeymoon domestic" data-price="11999" data-days="4">
+    <div class="pkg2-img">
+      <img src="/uploads/packages/udaipur.jpg" alt="Udaipur Romantic Package" loading="lazy">
+      <span class="pkg2-badge pkg2-badge-gold">ROMANTIC</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Udaipur Romantic Package</h3>
+      <div class="pkg2-meta"><span>🗓 4D / 3N</span></div>
+      <ul class="pkg2-list">
+        <li>Lake Pichola Boat Ride</li>
+        <li>City Palace Visit</li>
+        <li>Luxury Hotel</li>
+        <li>Candle Light Dinner</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹11,999</span>
+        </div>
+        <button onclick="openBooking(20, 'Udaipur Romantic Package', 11999, '4D / 3N', 'honeymoon')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  
+</div>
       </main>
     </div>
   </section>
@@ -2430,6 +2896,80 @@ foreach ($packages_raw as $p) {
 </section>
 
 <!-- FOOTER -->
+<div class="official-price-section" style="margin:4rem auto;max-width:1000px;background:rgba(13,31,60,0.6);border:1px solid rgba(201,165,74,0.3);border-radius:16px;padding:2rem 4%;backdrop-filter:blur(10px);">
+    <div style="text-align:center;margin-bottom:1.8rem;">
+      <span style="font-size:0.75rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600;">Official Rate Card</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:#ffffff;margin-top:0.3rem;">Vishit Journey Starting Price List</h2>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-top:0.4rem;">Prices are indicative starting prices and may vary based on travel dates, hotel category & inclusions.</p>
+    </div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;color:#ffffff;font-size:0.9rem;text-align:left;">
+        <thead>
+          <tr style="background:rgba(201,165,74,0.15);border-bottom:2px solid var(--gold);">
+            <th style="padding:1rem 1.2rem;letter-spacing:1.5px;text-transform:uppercase;font-size:0.8rem;color:var(--gold);">Package Name</th>
+            <th style="padding:1rem 1.2rem;letter-spacing:1.5px;text-transform:uppercase;font-size:0.8rem;color:var(--gold);">Duration</th>
+            <th style="padding:1rem 1.2rem;letter-spacing:1.5px;text-transform:uppercase;font-size:0.8rem;color:var(--gold);text-align:right;">Starting Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Ek Dham Yatra</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">3D / 2N</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹10,000/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Do Dham Yatra</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">5D / 4N</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹13,000/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Char Dham Yatra</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">10D / 9N</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹20,000/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Manali Package</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">4D / 3N (3N/4D)</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹9,680/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Shimla Manali Package</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">5D / 4N (4N/5D)</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹12,430/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Agra Overnight Package</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">2D / 1N</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹7,500/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Agra Jaipur Combo</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">3D / 2N (2N/3D)</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹9,000/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Rajasthan Royal Package</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">8D / 7N (7N/8D)</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹23,000/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Assam & Meghalaya Tour</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">7D / 6N (6N/7D)</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹19,250/-</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.9rem 1.2rem;font-weight:600;">Kerala Backwaters Tour</td>
+            <td style="padding:0.9rem 1.2rem;color:rgba(255,255,255,0.8);">6D / 5N (5N/6D)</td>
+            <td style="padding:0.9rem 1.2rem;font-weight:700;color:var(--gold);text-align:right;">₹19,250/-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:1.2rem;font-size:0.75rem;color:rgba(255,255,255,0.5);">
+      Starting Price | Terms & Conditions Apply. Prices are indicative starting prices and may vary based on travel dates, hotel category, number of travellers, vehicle type, availability, seasonality and inclusions.
+    </div>
+  </div>
+
 <footer>
   <!-- Premium Trust Badges Banner -->
   <div class="footer-trust-strip" style="display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:1.2rem;padding:1.4rem 1rem;border-top:1px solid rgba(201,165,74,0.2);border-bottom:1px solid rgba(201,165,74,0.2);margin-bottom:2rem;background:rgba(201,165,74,0.03);border-radius:8px">
