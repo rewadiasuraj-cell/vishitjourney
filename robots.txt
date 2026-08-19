@@ -1,7 +1,38 @@
+# ==============================================================================
+# VISHIT JOURNEY (https://www.vishitjourney.com/) - ROBOTS.TXT
+# Optimized for Traditional Search Engines (Google, Bing) & Generative AI Search (GEO)
+# ==============================================================================
+
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /config/
 Disallow: /api/
 
-Sitemap: https://vishitjourneys.com/sitemap.xml
+# Explicit Crawl Directives for AI Search Engines (Generative Engine Optimization - GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap Index Link (Corrected Domain URL)
+Sitemap: https://www.vishitjourney.com/sitemap.xml
