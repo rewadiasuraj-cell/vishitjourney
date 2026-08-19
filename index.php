@@ -1599,61 +1599,68 @@ foreach ($packages_raw as $p) {
 </style>
 
   <style id="vjCtaBtnStyles">
-    /* GLOBAL BUTTON BASE STYLES */
+    /* GLOBAL BUTTON BASE STYLES - COMPACT & 1-LINE ONLY */
     .vj-btn-book {
-      padding: 0.65rem 1.3rem !important;
-      font-size: 0.85rem !important;
+      padding: 0.45rem 1rem !important;
+      font-size: 0.78rem !important;
       background: linear-gradient(45deg, #c9a54a, #e4c06e) !important;
       color: #081428 !important;
       font-weight: 800 !important;
       border: none !important;
-      border-radius: 25px !important;
+      border-radius: 20px !important;
       cursor: pointer !important;
       text-transform: uppercase !important;
-      letter-spacing: 1px !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      box-shadow: 0 4px 15px rgba(201, 165, 74, 0.25) !important;
-      display: inline-block !important;
+      letter-spacing: 0.8px !important;
+      white-space: nowrap !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      box-shadow: 0 3px 10px rgba(201, 165, 74, 0.2) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       text-decoration: none !important;
-      text-align: center !important;
     }
     .vj-btn-book:hover {
-      transform: translateY(-3px) scale(1.04) !important;
-      box-shadow: 0 8px 25px rgba(201, 165, 74, 0.5) !important;
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 6px 18px rgba(201, 165, 74, 0.45) !important;
       background: linear-gradient(45deg, #e4c06e, #ffffff) !important;
       color: #081428 !important;
     }
 
     .vj-btn-read {
-      padding: 0.65rem 1.3rem !important;
-      font-size: 0.85rem !important;
-      background: rgba(201, 165, 74, 0.18) !important;
+      padding: 0.45rem 1rem !important;
+      font-size: 0.78rem !important;
+      background: rgba(201, 165, 74, 0.15) !important;
       color: #ffffff !important;
       font-weight: 800 !important;
       border: 1.5px solid #c9a54a !important;
-      border-radius: 25px !important;
+      border-radius: 20px !important;
       cursor: pointer !important;
       text-transform: uppercase !important;
-      letter-spacing: 1px !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      display: inline-block !important;
+      letter-spacing: 0.8px !important;
+      white-space: nowrap !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       text-decoration: none !important;
-      text-align: center !important;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15) !important;
     }
     .vj-btn-read:hover {
       background: #c9a54a !important;
       color: #081428 !important;
-      transform: translateY(-3px) scale(1.04) !important;
-      box-shadow: 0 8px 25px rgba(201, 165, 74, 0.4) !important;
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 6px 18px rgba(201, 165, 74, 0.35) !important;
     }
 
-    /* LIGHT BACKGROUND SPECIAL OFFER CARD BUTTON OVERRIDES (HIGH CONTRAST) */
+    /* LIGHT BACKGROUND SPECIAL OFFER CARD BUTTON OVERRIDES (HIGH CONTRAST & 1-LINE) */
     .offer-card .vj-btn-read,
     .special-offers .vj-btn-read {
       background: #0d1f3c !important;
       color: #ffffff !important;
       border: 1.5px solid #0d1f3c !important;
+      white-space: nowrap !important;
+      padding: 0.45rem 0.9rem !important;
+      font-size: 0.76rem !important;
     }
     .offer-card .vj-btn-read:hover,
     .special-offers .vj-btn-read:hover {
@@ -1666,6 +1673,9 @@ foreach ($packages_raw as $p) {
     .special-offers .vj-btn-book {
       background: #0d1f3c !important;
       color: #ffffff !important;
+      white-space: nowrap !important;
+      padding: 0.45rem 0.9rem !important;
+      font-size: 0.76rem !important;
     }
     .offer-card .vj-btn-book:hover,
     .special-offers .vj-btn-book:hover {
