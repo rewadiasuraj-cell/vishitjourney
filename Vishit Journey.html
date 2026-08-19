@@ -2179,7 +2179,7 @@
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
        VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
-       (OFFICIAL RATE CARD & FAQ 100% WHITE BACKGROUND FIX)
+       (FAQ SECTION & HERO CAB/BUS/FLIGHT TEXT CONTRAST FIX)
        ════════════════════════════════════════════════════════════ */
     html, body {
       background-color: #FFFFFF !important;
@@ -2207,7 +2207,22 @@
       color: #0B1B33 !important;
     }
 
-    /* OFFICIAL RATE CARD & FAQ SECTION 100% PURE WHITE OVERRIDE */
+    /* 1. HERO CAB SERVICE | BUS CHARTER | FLIGHT TOURS DARK TEXT FIX */
+    .hero span[style*="CAB SERVICE"],
+    .hero span[style*="FLIGHT TOURS"],
+    .hero span[style*="letter-spacing"],
+    .hero div[style*="letter-spacing"] {
+      color: #0B1B33 !important;
+      font-weight: 700 !important;
+    }
+
+    .hero span[style*="CAB SERVICE"] svg,
+    .hero span[style*="FLIGHT TOURS"] svg {
+      stroke: #D4A72C !important;
+      color: #D4A72C !important;
+    }
+
+    /* 2. FAQ & ACCREDITED SECTION 100% WHITE CONTAINER FIX */
     #official-rate-and-faq,
     #official-rate-and-faq section,
     #official-rate-and-faq div,
@@ -2217,6 +2232,18 @@
     #official-rate-and-faq th {
       background-color: #FFFFFF !important;
       background: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    /* Target inner container boxes inside FAQ */
+    div[style*="rgba(13,31,60"],
+    div[style*="rgba(13, 31, 60"],
+    div[style*="background: rgba(13"],
+    div[style*="background:rgba(13"] {
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
       color: #0B1B33 !important;
     }
 
@@ -2257,7 +2284,7 @@
       color: #0B1B33 !important;
     }
 
-    /* 1. HERO BACKGROUND TRAVEL DESTINATION SLIDESHOW ANIMATION (SCALE IN & FADE) */
+    /* HERO BACKGROUND TRAVEL DESTINATION SLIDESHOW ANIMATION */
     .hero {
       position: relative !important;
       overflow: hidden !important;
@@ -2321,7 +2348,7 @@
       text-shadow: none !important;
     }
 
-    /* 2. DESTINATION CARDS CLEAN OVERLAY (REMOVE SOLID WHITE BOX BEHIND NAMES) */
+    /* DESTINATION CARDS CLEAN OVERLAY */
     .dest-overlay,
     .dest-name,
     .dest-sub,
@@ -2369,7 +2396,7 @@
       margin-top: 2px !important;
     }
 
-    /* 3. ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
+    /* ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
     .pkg2, 
     .offer-card, 
     .review-card, 
@@ -2605,17 +2632,17 @@
   <div class="slide-overlay"></div>
   <div class="hero-badge">✦ Travel Beyond Limits</div>
   <div style="display:flex;gap:.8rem;margin-bottom:1rem;position:relative;z-index:1;animation:fadeUp .8s .1s ease both;flex-wrap:nowrap;justify-content:center">
-    <span style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;letter-spacing:1px;color:rgba(255,255,255,0.8);white-space:nowrap">
+    <span style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;letter-spacing:1px;color:#0B1B33;font-weight:700;white-space:nowrap">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a54a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
       CAB SERVICE
     </span>
     <span style="color:rgba(201,165,74,0.4)">|</span>
-    <span style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;letter-spacing:1px;color:rgba(255,255,255,0.8);white-space:nowrap">
+    <span style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;letter-spacing:1px;color:#0B1B33;font-weight:700;white-space:nowrap">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a54a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22M5 6V4M19 6V4"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
       BUS CHARTER
     </span>
     <span style="color:rgba(201,165,74,0.4)">|</span>
-    <span style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;letter-spacing:1px;color:rgba(255,255,255,0.8);white-space:nowrap">
+    <span style="display:flex;align-items:center;gap:.4rem;font-size:.65rem;letter-spacing:1px;color:#0B1B33;font-weight:700;white-space:nowrap">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a54a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
       FLIGHT TOURS
     </span>
@@ -3869,7 +3896,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Vishit Journey made our Kashmir trip absolutely magical. The Innova was spotless, driver was professional, and every hotel was perfectly arranged.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Vishit Journey made our Kashmir trip absolutely magical. The Innova was spotless, driver was professional, and every hotel was perfectly arranged.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" alt="Rahul Kumar" class="testi-avatar-img">
         <div>
@@ -3884,7 +3911,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a group bus for 25 people to Shimla. Best decision ever! The bus was luxurious, on time, and the team handled everything perfectly.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a group bus for 25 people to Shimla. Best decision ever! The bus was luxurious, on time, and the team handled everything perfectly.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&q=80" alt="Priya Sharma" class="testi-avatar-img">
         <div>
@@ -3899,7 +3926,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Honeymoon in Dubai planned by Vishit was beyond our expectations. Visa, flights, hotel, cab — everything was sorted. Pure luxury at great price!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Honeymoon in Dubai planned by Vishit was beyond our expectations. Visa, flights, hotel, cab — everything was sorted. Pure luxury at great price!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&q=80" alt="Anjali & Mohit" class="testi-avatar-img">
         <div>
@@ -3914,7 +3941,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">The Leh Ladakh cab package with Vishit Journey was mind-blowing! Extremely reliable SUV, experienced mountain driver, and top-class stays.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">The Leh Ladakh cab package with Vishit Journey was mind-blowing! Extremely reliable SUV, experienced mountain driver, and top-class stays.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80" alt="Vikram Singh" class="testi-avatar-img">
         <div>
@@ -3929,7 +3956,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">We booked a 4-day Goa family package. Super smooth pickup from airport, beautiful beachside resort, and very polite driver. 10/10 recommended!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">We booked a 4-day Goa family package. Super smooth pickup from airport, beautiful beachside resort, and very polite driver. 10/10 recommended!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="Sneha Roy" class="testi-avatar-img">
         <div>
@@ -3944,7 +3971,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Organized a 7-day Rajasthan tour for my family. The Tempo Traveller was super comfortable with AC and recliner seats. Exceptional service!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Organized a 7-day Rajasthan tour for my family. The Tempo Traveller was super comfortable with AC and recliner seats. Exceptional service!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80" alt="Amit Patel" class="testi-avatar-img">
         <div>
@@ -3959,7 +3986,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our Manali trip with Vishit Journey was unforgettable! Snow activities, Solang Valley cab, hotel with mountain view — everything was flawless.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our Manali trip with Vishit Journey was unforgettable! Snow activities, Solang Valley cab, hotel with mountain view — everything was flawless.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" alt="Neha Verma" class="testi-avatar-img">
         <div>
@@ -3974,7 +4001,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Quick weekend getaway to Rishikesh for river rafting & camping. Vishit Journey arranged everything in just 2 hours! Unbelievable speed & hospitality.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Quick weekend getaway to Rishikesh for river rafting & camping. Vishit Journey arranged everything in just 2 hours! Unbelievable speed & hospitality.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80" alt="Rohan Gupta" class="testi-avatar-img">
         <div>
@@ -3989,7 +4016,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Kerala Backwaters & Munnar tea gardens tour was heavenly. The houseboat arrangement by Vishit Journey was the highlight of our vacation.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Kerala Backwaters & Munnar tea gardens tour was heavenly. The houseboat arrangement by Vishit Journey was the highlight of our vacation.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80" alt="Kavita Joshi" class="testi-avatar-img">
         <div>
@@ -4004,7 +4031,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a sedan cab for Delhi-Agra-Jaipur. Driver Ramesh ji was punctual, knowledgeable, and drove very safely. Highly satisfied with Vishit!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a sedan cab for Delhi-Agra-Jaipur. Driver Ramesh ji was punctual, knowledgeable, and drove very safely. Highly satisfied with Vishit!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&q=80" alt="Sandeep Malhotra" class="testi-avatar-img">
         <div>
@@ -4019,7 +4046,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Phuket & Bangkok tour arranged seamlessly. Zero hassle with transfers or bookings. Vishit Journey is our go-to travel partner now!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Phuket & Bangkok tour arranged seamlessly. Zero hassle with transfers or bookings. Vishit Journey is our go-to travel partner now!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&q=80" alt="Megha Saxena" class="testi-avatar-img">
         <div>
@@ -4034,7 +4061,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our dream Maldives water villa honeymoon became a reality thanks to Vishit Journey. Special candle light dinner and sunset cruise were included!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our dream Maldives water villa honeymoon became a reality thanks to Vishit Journey. Special candle light dinner and sunset cruise were included!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&q=80" alt="Kunal & Swati" class="testi-avatar-img">
         <div>
@@ -4049,7 +4076,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a luxury bus for our extended family trip to Himachal. Spotless vehicle, polite staff, and clear pricing with no hidden charges.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a luxury bus for our extended family trip to Himachal. Spotless vehicle, polite staff, and clear pricing with no hidden charges.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&q=80" alt="Rajesh Agarwal" class="testi-avatar-img">
         <div>
@@ -4064,7 +4091,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Vishit Journey made our Kashmir trip absolutely magical. The Innova was spotless, driver was professional, and every hotel was perfectly arranged.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Vishit Journey made our Kashmir trip absolutely magical. The Innova was spotless, driver was professional, and every hotel was perfectly arranged.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" alt="Rahul Kumar" class="testi-avatar-img">
         <div>
@@ -4079,7 +4106,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a group bus for 25 people to Shimla. Best decision ever! The bus was luxurious, on time, and the team handled everything perfectly.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a group bus for 25 people to Shimla. Best decision ever! The bus was luxurious, on time, and the team handled everything perfectly.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&q=80" alt="Priya Sharma" class="testi-avatar-img">
         <div>
@@ -4094,7 +4121,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Honeymoon in Dubai planned by Vishit was beyond our expectations. Visa, flights, hotel, cab — everything was sorted. Pure luxury at great price!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Honeymoon in Dubai planned by Vishit was beyond our expectations. Visa, flights, hotel, cab — everything was sorted. Pure luxury at great price!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&q=80" alt="Anjali & Mohit" class="testi-avatar-img">
         <div>
@@ -4109,7 +4136,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">The Leh Ladakh cab package with Vishit Journey was mind-blowing! Extremely reliable SUV, experienced mountain driver, and top-class stays.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">The Leh Ladakh cab package with Vishit Journey was mind-blowing! Extremely reliable SUV, experienced mountain driver, and top-class stays.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80" alt="Vikram Singh" class="testi-avatar-img">
         <div>
@@ -4124,7 +4151,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">We booked a 4-day Goa family package. Super smooth pickup from airport, beautiful beachside resort, and very polite driver. 10/10 recommended!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">We booked a 4-day Goa family package. Super smooth pickup from airport, beautiful beachside resort, and very polite driver. 10/10 recommended!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="Sneha Roy" class="testi-avatar-img">
         <div>
@@ -4139,7 +4166,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Organized a 7-day Rajasthan tour for my family. The Tempo Traveller was super comfortable with AC and recliner seats. Exceptional service!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Organized a 7-day Rajasthan tour for my family. The Tempo Traveller was super comfortable with AC and recliner seats. Exceptional service!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80" alt="Amit Patel" class="testi-avatar-img">
         <div>
@@ -4154,7 +4181,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our Manali trip with Vishit Journey was unforgettable! Snow activities, Solang Valley cab, hotel with mountain view — everything was flawless.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our Manali trip with Vishit Journey was unforgettable! Snow activities, Solang Valley cab, hotel with mountain view — everything was flawless.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" alt="Neha Verma" class="testi-avatar-img">
         <div>
@@ -4169,7 +4196,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Quick weekend getaway to Rishikesh for river rafting & camping. Vishit Journey arranged everything in just 2 hours! Unbelievable speed & hospitality.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Quick weekend getaway to Rishikesh for river rafting & camping. Vishit Journey arranged everything in just 2 hours! Unbelievable speed & hospitality.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80" alt="Rohan Gupta" class="testi-avatar-img">
         <div>
@@ -4184,7 +4211,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Kerala Backwaters & Munnar tea gardens tour was heavenly. The houseboat arrangement by Vishit Journey was the highlight of our vacation.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Kerala Backwaters & Munnar tea gardens tour was heavenly. The houseboat arrangement by Vishit Journey was the highlight of our vacation.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80" alt="Kavita Joshi" class="testi-avatar-img">
         <div>
@@ -4199,7 +4226,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a sedan cab for Delhi-Agra-Jaipur. Driver Ramesh ji was punctual, knowledgeable, and drove very safely. Highly satisfied with Vishit!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a sedan cab for Delhi-Agra-Jaipur. Driver Ramesh ji was punctual, knowledgeable, and drove very safely. Highly satisfied with Vishit!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&q=80" alt="Sandeep Malhotra" class="testi-avatar-img">
         <div>
@@ -4214,7 +4241,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Phuket & Bangkok tour arranged seamlessly. Zero hassle with transfers or bookings. Vishit Journey is our go-to travel partner now!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Phuket & Bangkok tour arranged seamlessly. Zero hassle with transfers or bookings. Vishit Journey is our go-to travel partner now!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&q=80" alt="Megha Saxena" class="testi-avatar-img">
         <div>
@@ -4229,7 +4256,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our dream Maldives water villa honeymoon became a reality thanks to Vishit Journey. Special candle light dinner and sunset cruise were included!</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Our dream Maldives water villa honeymoon became a reality thanks to Vishit Journey. Special candle light dinner and sunset cruise were included!</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&q=80" alt="Kunal & Swati" class="testi-avatar-img">
         <div>
@@ -4244,7 +4271,7 @@
         <div class="stars" style="color:#c9a54a;font-size:0.9rem">★★★★★</div>
         <div style="color:rgba(201,165,74,0.3);font-size:1.5rem;font-family:serif">“</div>
       </div>
-      <p class="testi-text" style="font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a luxury bus for our extended family trip to Himachal. Spotless vehicle, polite staff, and clear pricing with no hidden charges.</p>
+      <p class="testi-text" style="font-size:0.85rem;color:#0B1B33;line-height:1.6;margin:0.8rem 0;height:4.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">Booked a luxury bus for our extended family trip to Himachal. Spotless vehicle, polite staff, and clear pricing with no hidden charges.</p>
       <div class="testi-author" style="display:flex;align-items:center;gap:0.8rem;margin-top:1rem">
         <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&q=80" alt="Rajesh Agarwal" class="testi-avatar-img">
         <div>
