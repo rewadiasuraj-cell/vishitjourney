@@ -1645,16 +1645,44 @@
 
 
   <style id="vjGlassHeaderStyles">
-    /* GLASSMORPHISM HEADER */
-    header, .site-header, nav.navbar {
-      background: #ffffff !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1.5px solid rgba(201, 165, 74, 0.35) !important;
+    /* APPLE/macOS STYLE ULTRA-LUXURY FROSTED GLASSMORPHISM NAVBAR */
+    header, .site-header, nav, nav.navbar {
+      background: rgba(255, 255, 255, 0.16) !important;
+      backdrop-filter: blur(22px) saturate(140%) !important;
+      -webkit-backdrop-filter: blur(22px) saturate(140%) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.28) !important;
       position: sticky !important;
       top: 0 !important;
       z-index: 1000 !important;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    /* SCROLLED HEADER CLASS FOR HIGH READABILITY */
+    header.vj-scrolled, nav.vj-scrolled {
+      background: rgba(255, 255, 255, 0.32) !important;
+      backdrop-filter: blur(25px) saturate(150%) !important;
+      -webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+
+    /* NAV LINKS CRYSTAL-CLEAR HIGH CONTRAST & GOLD HOVER */
+    nav ul.nav-links li a,
+    nav .nav-links a,
+    header nav a {
+      color: #0d1f3c !important;
+      font-weight: 800 !important;
+      font-size: 0.85rem !important;
+      letter-spacing: 1.5px !important;
+      text-transform: uppercase !important;
+      transition: color 0.25s ease, transform 0.25s ease !important;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6) !important;
+    }
+    nav ul.nav-links li a:hover,
+    nav .nav-links a:hover,
+    header nav a:hover {
+      color: #c9a54a !important;
+      transform: translateY(-1px) !important;
     }
 
     /* HIGH CONTRAST SUBTEXT ON DARK SECTIONS */
@@ -1662,7 +1690,7 @@
     .destinations .section-sub,
     section[style*="#081428"] p,
     section[style*="#0d1f3c"] p {
-      color: rgba(255, 255, 255, 0.9) !important;
+      color: rgba(255, 255, 255, 0.92) !important;
       font-weight: 600 !important;
       font-size: 1.05rem !important;
     }
@@ -1682,6 +1710,17 @@
       box-shadow: 0 4px 15px rgba(201, 165, 74, 0.4) !important;
     }
   </style>
+
+  <script id="vjHeaderScrollScript">
+    window.addEventListener('scroll', function() {
+      const navElements = document.querySelectorAll('header, nav');
+      if (window.scrollY > 40) {
+        navElements.forEach(el => el.classList.add('vj-scrolled'));
+      } else {
+        navElements.forEach(el => el.classList.remove('vj-scrolled'));
+      }
+    });
+  </script>
 
 </head>
 <body>
