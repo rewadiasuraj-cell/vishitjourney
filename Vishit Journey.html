@@ -1683,7 +1683,7 @@
 
   <style id="vjLightLuxuryThemeStyles">
     /* ════════════════════════════════════════════════════════════
-       VISHIT JOURNEY — PREMIUM LIGHT / WHITE LUXURY THEME SYSTEM
+       VISHIT JOURNEY — HIGH-CONTRAST LIGHT LUXURY THEME & HERO FIX
        ════════════════════════════════════════════════════════════ */
     :root {
       --bg-main: #FFFFFF;
@@ -1702,7 +1702,97 @@
       color: #0B1B33 !important;
     }
 
-    /* 2. Section Backgrounds & Text */
+    /* 2. HERO SECTION HIGH-CONTRAST FIX (Over Dark Mountain Background Image) */
+    .hero {
+      background-color: #081428 !important;
+    }
+    .hero h1, 
+    .hero h1 span, 
+    .hero-badge {
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+    }
+    .hero h1 em {
+      color: #D4A72C !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+    }
+    .hero p {
+      color: rgba(255, 255, 255, 0.95) !important;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    /* HERO TRUST BADGES STRIP FIX */
+    .hero-trust-strip {
+      background: rgba(13, 31, 60, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(212, 167, 44, 0.4) !important;
+      border-radius: 30px !important;
+      padding: 0.5rem 1.4rem !important;
+      color: #FFFFFF !important;
+    }
+    .trust-badge-item, 
+    .trust-badge-item span, 
+    .trust-badge-item strong {
+      color: #FFFFFF !important;
+    }
+    .trust-badge-item strong {
+      color: #D4A72C !important;
+    }
+    .trust-badge-divider {
+      background: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    /* HERO STATS FIX */
+    .stat-num {
+      color: #D4A72C !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+    }
+    .stat-label {
+      color: rgba(255, 255, 255, 0.9) !important;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    /* 3. PACKAGE FILTER TABS VISIBILITY FIX */
+    .pkg-filter-btn, 
+    .filter-btn, 
+    .dest-filter-btn,
+    .vj-filter-tab,
+    button.filter-btn,
+    button[data-filter] {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #E3E8EF !important;
+      font-weight: 700 !important;
+      padding: 0.5rem 1.4rem !important;
+      border-radius: 25px !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+      transition: all 0.25s ease !important;
+    }
+    .pkg-filter-btn:hover, 
+    .filter-btn:hover, 
+    .dest-filter-btn:hover,
+    .vj-filter-tab:hover,
+    button.filter-btn:hover,
+    button[data-filter]:hover {
+      background: rgba(212, 167, 44, 0.08) !important;
+      border-color: #D4A72C !important;
+      color: #B88918 !important;
+    }
+    .pkg-filter-btn.active, 
+    .filter-btn.active, 
+    .dest-filter-btn.active,
+    .vj-filter-tab.active,
+    button.filter-btn.active,
+    button[data-filter].active {
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      border-color: #D4A72C !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 14px rgba(212, 167, 44, 0.35) !important;
+    }
+
+    /* 4. Section Backgrounds & Typography */
     section, 
     .destinations, 
     .packages, 
@@ -1716,13 +1806,12 @@
 
     .testimonials, 
     .why-us, 
-    .alternate-bg,
-    .hero-trust-strip {
+    .alternate-bg {
       background-color: #F7F9FC !important;
     }
 
     /* Headings & Section Titles */
-    h1, h2, h3, h4, h5, h6,
+    h2, h3, h4, h5, h6,
     .section-title,
     .pkg2-body h3,
     .review-author,
@@ -1731,15 +1820,14 @@
     }
 
     /* Section Subheadings & Paragraphs */
-    p, .section-sub, .pkg2-list li, .stat-label {
+    .section-sub, .pkg2-list li {
       color: #5F6B7A !important;
     }
 
     /* Gold Highlighted Text Accent */
     em, 
     .gold-text, 
-    .section-tag,
-    .stat-num {
+    .section-tag {
       color: #D4A72C !important;
     }
 
@@ -1748,7 +1836,7 @@
       background: #D4A72C !important;
     }
 
-    /* 3. Header & Navigation */
+    /* 5. Header & Navigation */
     nav {
       background: #FFFFFF !important;
       border-bottom: 1px solid #E3E8EF !important;
@@ -1765,7 +1853,7 @@
       border-color: #D4A72C !important;
     }
 
-    /* 4. Trending Destinations Section */
+    /* 6. Trending Destinations Section */
     .destinations {
       background: #FFFFFF !important;
     }
@@ -1780,7 +1868,7 @@
       color: #FFFFFF !important; /* White text over image overlay */
     }
 
-    /* 5. Tour Packages Section (.pkg2) */
+    /* 7. Tour Packages Section (.pkg2) */
     .packages {
       background: #FFFFFF !important;
     }
@@ -1832,7 +1920,7 @@
       color: #FFFFFF !important;
     }
 
-    /* 6. Testimonials Section */
+    /* 8. Testimonials Section */
     .testimonials {
       background: #F7F9FC !important;
     }
@@ -1851,7 +1939,7 @@
       font-weight: 500 !important;
     }
 
-    /* 7. Footer Theme */
+    /* 9. Footer Theme */
     footer {
       background: #0B1B33 !important;
       color: #FFFFFF !important;
@@ -1863,7 +1951,7 @@
       color: #FFFFFF !important;
     }
 
-    /* 8. Floating WhatsApp Button (Keep Green) */
+    /* 10. Floating WhatsApp Button (Keep Green) */
     .whatsapp-btn, .whatsapp-float, [href*="wa.me"] {
       background-color: #25D366 !important;
       color: #FFFFFF !important;
