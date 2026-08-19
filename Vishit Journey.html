@@ -1680,6 +1680,196 @@
     }
   </style>
 
+
+  <style id="vjLightLuxuryThemeStyles">
+    /* ════════════════════════════════════════════════════════════
+       VISHIT JOURNEY — PREMIUM LIGHT / WHITE LUXURY THEME SYSTEM
+       ════════════════════════════════════════════════════════════ */
+    :root {
+      --bg-main: #FFFFFF;
+      --bg-alt: #F7F9FC;
+      --text-navy: #0B1B33;
+      --text-secondary: #5F6B7A;
+      --gold-accent: #D4A72C;
+      --gold-hover: #B88918;
+      --border-light: #E3E8EF;
+      --card-shadow: 0 10px 30px rgba(11, 27, 51, 0.06);
+    }
+
+    /* 1. Global Page Background & Typography */
+    html, body {
+      background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    /* 2. Section Backgrounds & Text */
+    section, 
+    .destinations, 
+    .packages, 
+    .why, 
+    .contact,
+    .special-offers,
+    .search-section {
+      background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    .testimonials, 
+    .why-us, 
+    .alternate-bg,
+    .hero-trust-strip {
+      background-color: #F7F9FC !important;
+    }
+
+    /* Headings & Section Titles */
+    h1, h2, h3, h4, h5, h6,
+    .section-title,
+    .pkg2-body h3,
+    .review-author,
+    .footer-col-title {
+      color: #0B1B33 !important;
+    }
+
+    /* Section Subheadings & Paragraphs */
+    p, .section-sub, .pkg2-list li, .stat-label {
+      color: #5F6B7A !important;
+    }
+
+    /* Gold Highlighted Text Accent */
+    em, 
+    .gold-text, 
+    .section-tag,
+    .stat-num {
+      color: #D4A72C !important;
+    }
+
+    /* Gold Underline Dividers */
+    .gold-line {
+      background: #D4A72C !important;
+    }
+
+    /* 3. Header & Navigation */
+    nav {
+      background: #FFFFFF !important;
+      border-bottom: 1px solid #E3E8EF !important;
+      box-shadow: 0 4px 20px rgba(11, 27, 51, 0.05) !important;
+    }
+    .nav-links a {
+      color: #0B1B33 !important;
+      border-color: #E3E8EF !important;
+      background: #F7F9FC !important;
+    }
+    .nav-links a:hover {
+      color: #FFFFFF !important;
+      background: #D4A72C !important;
+      border-color: #D4A72C !important;
+    }
+
+    /* 4. Trending Destinations Section */
+    .destinations {
+      background: #FFFFFF !important;
+    }
+    .dest-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: var(--card-shadow) !important;
+      overflow: hidden !important;
+    }
+    .dest-card .dest-name {
+      color: #FFFFFF !important; /* White text over image overlay */
+    }
+
+    /* 5. Tour Packages Section (.pkg2) */
+    .packages {
+      background: #FFFFFF !important;
+    }
+    .pkg2 {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 24px !important;
+      box-shadow: var(--card-shadow) !important;
+    }
+    .pkg2-body {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+    .pkg2-body h3 {
+      color: #0B1B33 !important;
+    }
+    .pkg2-meta span {
+      background: rgba(212, 167, 44, 0.12) !important;
+      color: #0B1B33 !important;
+      border: 1px solid rgba(212, 167, 44, 0.3) !important;
+    }
+    .pkg2-list li {
+      color: #5F6B7A !important;
+    }
+    .pkg2-price-wrap {
+      border-top: 1px solid #E3E8EF !important;
+    }
+
+    /* Package Buttons */
+    .vj-pkg-readmore-btn, .vj-btn-read {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #D4A72C !important;
+    }
+    .vj-pkg-readmore-btn:hover, .vj-btn-read:hover {
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+    }
+
+    .pkg2-btn, .vj-btn-book {
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #D4A72C !important;
+      font-weight: 800 !important;
+    }
+    .pkg2-btn:hover, .vj-btn-book:hover {
+      background: #B88918 !important;
+      border-color: #B88918 !important;
+      color: #FFFFFF !important;
+    }
+
+    /* 6. Testimonials Section */
+    .testimonials {
+      background: #F7F9FC !important;
+    }
+    .review-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: var(--card-shadow) !important;
+    }
+    .review-author {
+      color: #0B1B33 !important;
+      font-weight: 800 !important;
+    }
+    .review-text {
+      color: #5F6B7A !important;
+      font-weight: 500 !important;
+    }
+
+    /* 7. Footer Theme */
+    footer {
+      background: #0B1B33 !important;
+      color: #FFFFFF !important;
+    }
+    footer p, footer a {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+    footer h4, .footer-col-title {
+      color: #FFFFFF !important;
+    }
+
+    /* 8. Floating WhatsApp Button (Keep Green) */
+    .whatsapp-btn, .whatsapp-float, [href*="wa.me"] {
+      background-color: #25D366 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+
 </head>
 <body>
 
