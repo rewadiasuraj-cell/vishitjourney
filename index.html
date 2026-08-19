@@ -1887,6 +1887,15 @@
     <a href="javascript:void(0)" onclick="filterByDestination('all')" style="color:var(--gold);font-size:.75rem;letter-spacing:2px;text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px">View All →</a>
   </div>
   <div class="dest-grid">
+
+    <div class="dest-card" onclick="filterByDestination('chardham')" style="cursor:pointer">
+      <div class="dest-tag">CHAR DHAM YATRA</div>
+      <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=800&q=80" alt="Char Dham Yatra">
+      <div class="dest-overlay">
+        <div class="dest-name">Char Dham Yatra</div>
+        <div class="dest-sub">Sacred Uttarakhand Pilgrimage</div>
+      </div>
+    </div>
     <!-- Big card -->
     <div class="dest-card" onclick="filterByDestination('kashmir')" style="cursor:pointer">
       <div class="dest-tag">MOST POPULAR</div>
@@ -1951,6 +1960,7 @@
         </div>
         <div class="pkg-tabs">
           <button class="pkg-tab active" onclick="filterPkg('all',this)">All</button>
+          <button class="pkg-tab" onclick="filterPkg('pilgrimage',this)">Char Dham Yatra</button>
           <button class="pkg-tab" onclick="filterPkg('international',this)">International</button>
           <button class="pkg-tab" onclick="filterPkg('domestic',this)">Domestic</button>
           <button class="pkg-tab" onclick="filterPkg('hills',this)">Hills</button>
@@ -1958,6 +1968,76 @@
         </div>
       </div>
 <div class="pkg-grid2" id="pkgGrid">
+<div class="pkg2" data-cat="pilgrimage domestic chardham" data-price="20000" data-days="10">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=600&q=80" alt="Char Dham Yatra Package" loading="lazy">
+      <span class="pkg2-badge ">SPIRITUAL</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Char Dham Yatra Package</h3>
+      <div class="pkg2-meta"><span>🗓 10D / 9N</span></div>
+      <ul class="pkg2-list">
+        <li>Yamunotri, Gangotri, Kedarnath, Badrinath</li>
+        <li>Complete AC Vehicle</li>
+        <li>Hotels & Meals</li>
+        <li>VIP Darshan</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹20,000</span>
+        </div>
+        <button onclick="openBooking(11, 'Char Dham Yatra Package', 20000, '10D / 9N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+<div class="pkg2" data-cat="pilgrimage domestic chardham" data-price="13000" data-days="5">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&q=80" alt="Do Dham Yatra Package" loading="lazy">
+      <span class="pkg2-badge ">PILGRIMAGE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Do Dham Yatra Package</h3>
+      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
+      <ul class="pkg2-list">
+        <li>Kedarnath & Badrinath Tour</li>
+        <li>Helicopter / Trek Option</li>
+        <li>Hotel Stay with Meals</li>
+        <li>Dedicated Cab</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹13,000</span>
+        </div>
+        <button onclick="openBooking(10, 'Do Dham Yatra Package', 13000, '5D / 4N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+<div class="pkg2" data-cat="pilgrimage domestic chardham" data-price="10000" data-days="3">
+    <div class="pkg2-img">
+      <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ek Dham Yatra Package" loading="lazy">
+      <span class="pkg2-badge ">PILGRIMAGE</span>
+    </div>
+    <div class="pkg2-body">
+      <h3>Ek Dham Yatra Package</h3>
+      <div class="pkg2-meta"><span>🗓 3D / 2N</span></div>
+      <ul class="pkg2-list">
+        <li>Kedarnath / Badrinath Visit</li>
+        <li>Pooja Assistance</li>
+        <li>Hotel Stay & Meals</li>
+        <li>Cab Transfers</li>
+      </ul>
+      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
+        <div>
+          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
+          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹10,000</span>
+        </div>
+        <button onclick="openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic')" class="pkg2-btn">Book Now →</button>
+      </div>
+    </div>
+  </div>
+
 
   <div class="pkg2" data-cat="international" data-price="39999" data-days="5">
     <div class="pkg2-img">
@@ -2159,79 +2239,13 @@
   </div>
   
 
-  <div class="pkg2" data-cat="pilgrimage domestic" data-price="10000" data-days="3">
-    <div class="pkg2-img">
-      <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ek Dham Yatra Package" loading="lazy">
-      <span class="pkg2-badge ">PILGRIMAGE</span>
-    </div>
-    <div class="pkg2-body">
-      <h3>Ek Dham Yatra Package</h3>
-      <div class="pkg2-meta"><span>🗓 3D / 2N</span></div>
-      <ul class="pkg2-list">
-        <li>Kedarnath / Badrinath Visit</li>
-        <li>Pooja Assistance</li>
-        <li>Hotel Stay & Meals</li>
-        <li>Cab Transfers</li>
-      </ul>
-      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
-        <div>
-          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
-          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹10,000</span>
-        </div>
-        <button onclick="openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic')" class="pkg2-btn">Book Now →</button>
-      </div>
-    </div>
-  </div>
+  
   
 
-  <div class="pkg2" data-cat="pilgrimage domestic" data-price="13000" data-days="5">
-    <div class="pkg2-img">
-      <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=600&q=80" alt="Do Dham Yatra Package" loading="lazy">
-      <span class="pkg2-badge ">PILGRIMAGE</span>
-    </div>
-    <div class="pkg2-body">
-      <h3>Do Dham Yatra Package</h3>
-      <div class="pkg2-meta"><span>🗓 5D / 4N</span></div>
-      <ul class="pkg2-list">
-        <li>Kedarnath & Badrinath Tour</li>
-        <li>Helicopter / Trek Option</li>
-        <li>Hotel Stay with Meals</li>
-        <li>Dedicated Cab</li>
-      </ul>
-      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
-        <div>
-          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
-          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹13,000</span>
-        </div>
-        <button onclick="openBooking(10, 'Do Dham Yatra Package', 13000, '5D / 4N', 'domestic')" class="pkg2-btn">Book Now →</button>
-      </div>
-    </div>
-  </div>
+  
   
 
-  <div class="pkg2" data-cat="pilgrimage domestic" data-price="20000" data-days="10">
-    <div class="pkg2-img">
-      <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=600&q=80" alt="Char Dham Yatra Package" loading="lazy">
-      <span class="pkg2-badge ">SPIRITUAL</span>
-    </div>
-    <div class="pkg2-body">
-      <h3>Char Dham Yatra Package</h3>
-      <div class="pkg2-meta"><span>🗓 10D / 9N</span></div>
-      <ul class="pkg2-list">
-        <li>Yamunotri, Gangotri, Kedarnath, Badrinath</li>
-        <li>Complete AC Vehicle</li>
-        <li>Hotels & Meals</li>
-        <li>VIP Darshan</li>
-      </ul>
-      <div class="pkg2-price-wrap" style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(201,165,74,0.15);">
-        <div>
-          <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
-          <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹20,000</span>
-        </div>
-        <button onclick="openBooking(11, 'Char Dham Yatra Package', 20000, '10D / 9N', 'domestic')" class="pkg2-btn">Book Now →</button>
-      </div>
-    </div>
-  </div>
+  
   
 
   <div class="pkg2" data-cat="heritage domestic" data-price="7500" data-days="2">
