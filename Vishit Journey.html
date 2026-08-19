@@ -1556,6 +1556,38 @@
   }
 
 </style>
+
+  <style id="vjPkgReadMoreStyles">
+    /* PACKAGE CARDS DUAL BUTTONS */
+    .vj-pkg-btn-group {
+      display: flex !important;
+      gap: 0.4rem !important;
+      align-items: center !important;
+    }
+    .vj-pkg-readmore-btn {
+      padding: 0.5rem 0.75rem !important;
+      font-size: 0.75rem !important;
+      background: transparent !important;
+      color: #c9a54a !important;
+      font-weight: 800 !important;
+      border: 1.5px solid #c9a54a !important;
+      border-radius: 20px !important;
+      text-decoration: none !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.8px !important;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+    }
+    .vj-pkg-readmore-btn:hover {
+      background: #c9a54a !important;
+      color: #081428 !important;
+      box-shadow: 0 4px 12px rgba(201,165,74,0.3) !important;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -2321,7 +2353,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹20,000</span>
         </div>
-        <button onclick="openBooking(11, 'Char Dham Yatra Package', 20000, '10D / 9N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Char Dham Yatra Package&price=20000&duration=10D / 9N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(11, 'Char Dham Yatra Package', 20000, '10D / 9N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2344,7 +2379,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹13,000</span>
         </div>
-        <button onclick="openBooking(10, 'Do Dham Yatra Package', 13000, '5D / 4N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Do Dham Yatra Package&price=13000&duration=5D / 4N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(10, 'Do Dham Yatra Package', 13000, '5D / 4N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2367,7 +2405,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹10,000</span>
         </div>
-        <button onclick="openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Ek Dham Yatra Package&price=10000&duration=3D / 2N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2392,7 +2433,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹39,999</span>
         </div>
-        <button onclick="openBooking(1, 'Dubai Luxury Package', 39999, '5D / 4N', 'international')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Dubai Luxury Package&price=39999&duration=5D / 4N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(1, 'Dubai Luxury Package', 39999, '5D / 4N', 'international');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2417,7 +2461,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹29,999</span>
         </div>
-        <button onclick="openBooking(2, 'Thailand Holiday Package', 29999, '6D / 5N', 'international')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Thailand Holiday Package&price=29999&duration=6D / 5N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(2, 'Thailand Holiday Package', 29999, '6D / 5N', 'international');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2442,7 +2489,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹44,999</span>
         </div>
-        <button onclick="openBooking(3, 'Bali Honeymoon Package', 44999, '5D / 4N', 'honeymoon')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Bali Honeymoon Package&price=44999&duration=5D / 4N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(3, 'Bali Honeymoon Package', 44999, '5D / 4N', 'honeymoon');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2467,7 +2517,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹49,999</span>
         </div>
-        <button onclick="openBooking(4, 'Maldives Luxury Package', 49999, '5D / 4N', 'honeymoon')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Maldives Luxury Package&price=49999&duration=5D / 4N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(4, 'Maldives Luxury Package', 49999, '5D / 4N', 'honeymoon');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2492,7 +2545,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹14,999</span>
         </div>
-        <button onclick="openBooking(5, 'Kashmir Paradise Package', 14999, '6D / 5N', 'hills')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Kashmir Paradise Package&price=14999&duration=6D / 5N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(5, 'Kashmir Paradise Package', 14999, '6D / 5N', 'hills');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2517,7 +2573,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,680</span>
         </div>
-        <button onclick="openBooking(6, 'Manali Package (3N/4D)', 9680, '4D / 3N', 'hills')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Manali Package (3N/4D)&price=9680&duration=4D / 3N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(6, 'Manali Package (3N/4D)', 9680, '4D / 3N', 'hills');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2542,7 +2601,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹12,430</span>
         </div>
-        <button onclick="openBooking(7, 'Shimla Manali Package (4N/5D)', 12430, '5D / 4N', 'hills')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Shimla Manali Package (4N/5D)&price=12430&duration=5D / 4N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(7, 'Shimla Manali Package (4N/5D)', 12430, '5D / 4N', 'hills');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2567,7 +2629,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,999</span>
         </div>
-        <button onclick="openBooking(8, 'Kasol + Manali Combo', 9999, '6D / 5N', 'hills')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Kasol + Manali Combo&price=9999&duration=6D / 5N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(8, 'Kasol + Manali Combo', 9999, '6D / 5N', 'hills');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2601,7 +2666,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹7,500</span>
         </div>
-        <button onclick="openBooking(12, 'Agra Overnight Package', 7500, '2D / 1N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Agra Overnight Package&price=7500&duration=2D / 1N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(12, 'Agra Overnight Package', 7500, '2D / 1N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2626,7 +2694,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,000</span>
         </div>
-        <button onclick="openBooking(13, 'Agra Jaipur Combo (2N/3D)', 9000, '3D / 2N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Agra Jaipur Combo (2N/3D)&price=9000&duration=3D / 2N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(13, 'Agra Jaipur Combo (2N/3D)', 9000, '3D / 2N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2651,7 +2722,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹23,000</span>
         </div>
-        <button onclick="openBooking(14, 'Rajasthan Royal Package (7N/8D)', 23000, '8D / 7N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Rajasthan Royal Package (7N/8D)&price=23000&duration=8D / 7N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(14, 'Rajasthan Royal Package (7N/8D)', 23000, '8D / 7N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2676,7 +2750,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹19,250</span>
         </div>
-        <button onclick="openBooking(15, 'Assam & Meghalaya (6N/7D)', 19250, '7D / 6N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Assam & Meghalaya (6N/7D)&price=19250&duration=7D / 6N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(15, 'Assam & Meghalaya (6N/7D)', 19250, '7D / 6N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2701,7 +2778,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹19,250</span>
         </div>
-        <button onclick="openBooking(16, 'Kerala Backwaters (5N/6D)', 19250, '6D / 5N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Kerala Backwaters (5N/6D)&price=19250&duration=6D / 5N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(16, 'Kerala Backwaters (5N/6D)', 19250, '6D / 5N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2726,7 +2806,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹22,999</span>
         </div>
-        <button onclick="openBooking(17, 'Leh Ladakh Adventure', 22999, '7D / 6N', 'hills')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Leh Ladakh Adventure&price=22999&duration=7D / 6N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(17, 'Leh Ladakh Adventure', 22999, '7D / 6N', 'hills');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2751,7 +2834,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹7,999</span>
         </div>
-        <button onclick="openBooking(18, 'Goa Beach Package', 7999, '4D / 3N', 'domestic')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Goa Beach Package&price=7999&duration=4D / 3N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(18, 'Goa Beach Package', 7999, '4D / 3N', 'domestic');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2776,7 +2862,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹5,999</span>
         </div>
-        <button onclick="openBooking(19, 'Rishikesh Camping Package', 5999, '3D / 2N', 'hills')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Rishikesh Camping Package&price=5999&duration=3D / 2N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(19, 'Rishikesh Camping Package', 5999, '3D / 2N', 'hills');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2801,7 +2890,10 @@
           <span style="font-size:0.68rem;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;display:block;">Starting From</span>
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹11,999</span>
         </div>
-        <button onclick="openBooking(20, 'Udaipur Romantic Package', 11999, '4D / 3N', 'honeymoon')" class="pkg2-btn">Book Now →</button>
+        <div class="vj-pkg-btn-group">
+          <a href="booking.html?pkg=Udaipur Romantic Package&price=11999&duration=4D / 3N" onclick="event.stopPropagation();" class="vj-pkg-readmore-btn">READ MORE</a>
+          <button onclick="event.stopPropagation(); openBooking(20, 'Udaipur Romantic Package', 11999, '4D / 3N', 'honeymoon');" class="pkg2-btn">Book Now →</button>
+        </div>
       </div>
     </div>
   </div>
