@@ -1851,7 +1851,34 @@ foreach ($packages_raw as $p) {
       box-shadow: 0 4px 14px rgba(212, 167, 44, 0.35) !important;
     }
 
-    /* 4. Section Backgrounds & Typography */
+    /* 4. TESTIMONIALS / REVIEWS WHITE TONE & DARK TEXT FIX */
+    .testimonials {
+      background: #F7F9FC !important;
+    }
+    .testi-card, 
+    .review-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+    }
+    .testi-text, 
+    .review-text {
+      color: #5F6B7A !important;
+      font-weight: 500 !important;
+    }
+    .testi-name, 
+    .review-author {
+      color: #0B1B33 !important;
+      font-weight: 800 !important;
+    }
+    .testi-loc, 
+    .review-loc {
+      color: #D4A72C !important;
+      font-weight: 600 !important;
+    }
+
+    /* 5. Section Backgrounds & Typography */
     section, 
     .destinations, 
     .packages, 
@@ -1863,7 +1890,6 @@ foreach ($packages_raw as $p) {
       color: #0B1B33 !important;
     }
 
-    .testimonials, 
     .why-us, 
     .alternate-bg {
       background-color: #F7F9FC !important;
@@ -1873,7 +1899,6 @@ foreach ($packages_raw as $p) {
     h2, h3, h4, h5, h6,
     .section-title,
     .pkg2-body h3,
-    .review-author,
     .footer-col-title {
       color: #0B1B33 !important;
     }
@@ -1895,7 +1920,7 @@ foreach ($packages_raw as $p) {
       background: #D4A72C !important;
     }
 
-    /* 5. Header & Navigation */
+    /* 6. Header & Navigation */
     nav {
       background: #FFFFFF !important;
       border-bottom: 1px solid #E3E8EF !important;
@@ -1912,7 +1937,7 @@ foreach ($packages_raw as $p) {
       border-color: #D4A72C !important;
     }
 
-    /* 6. Trending Destinations Section */
+    /* 7. Trending Destinations Section */
     .destinations {
       background: #FFFFFF !important;
     }
@@ -1927,7 +1952,7 @@ foreach ($packages_raw as $p) {
       color: #FFFFFF !important; /* White text over image overlay */
     }
 
-    /* 7. Tour Packages Section (.pkg2) */
+    /* 8. Tour Packages Section (.pkg2) */
     .packages {
       background: #FFFFFF !important;
     }
@@ -1977,25 +2002,6 @@ foreach ($packages_raw as $p) {
       background: #B88918 !important;
       border-color: #B88918 !important;
       color: #FFFFFF !important;
-    }
-
-    /* 8. Testimonials Section */
-    .testimonials {
-      background: #F7F9FC !important;
-    }
-    .review-card {
-      background: #FFFFFF !important;
-      border: 1px solid #E3E8EF !important;
-      border-radius: 20px !important;
-      box-shadow: var(--card-shadow) !important;
-    }
-    .review-author {
-      color: #0B1B33 !important;
-      font-weight: 800 !important;
-    }
-    .review-text {
-      color: #5F6B7A !important;
-      font-weight: 500 !important;
     }
 
     /* 9. Footer Theme */
