@@ -1558,9 +1558,10 @@
 </style>
 
   <style id="vjCtaBtnStyles">
+    /* GLOBAL BUTTON BASE STYLES */
     .vj-btn-book {
-      padding: 0.65rem 1.2rem !important;
-      font-size: 0.82rem !important;
+      padding: 0.65rem 1.3rem !important;
+      font-size: 0.85rem !important;
       background: linear-gradient(45deg, #c9a54a, #e4c06e) !important;
       color: #081428 !important;
       font-weight: 800 !important;
@@ -1583,9 +1584,9 @@
     }
 
     .vj-btn-read {
-      padding: 0.65rem 1.2rem !important;
-      font-size: 0.82rem !important;
-      background: rgba(201, 165, 74, 0.15) !important;
+      padding: 0.65rem 1.3rem !important;
+      font-size: 0.85rem !important;
+      background: rgba(201, 165, 74, 0.18) !important;
       color: #ffffff !important;
       font-weight: 800 !important;
       border: 1.5px solid #c9a54a !important;
@@ -1604,6 +1605,31 @@
       color: #081428 !important;
       transform: translateY(-3px) scale(1.04) !important;
       box-shadow: 0 8px 25px rgba(201, 165, 74, 0.4) !important;
+    }
+
+    /* LIGHT BACKGROUND SPECIAL OFFER CARD BUTTON OVERRIDES (HIGH CONTRAST) */
+    .offer-card .vj-btn-read,
+    .special-offers .vj-btn-read {
+      background: #0d1f3c !important;
+      color: #ffffff !important;
+      border: 1.5px solid #0d1f3c !important;
+    }
+    .offer-card .vj-btn-read:hover,
+    .special-offers .vj-btn-read:hover {
+      background: #c9a54a !important;
+      color: #081428 !important;
+      border-color: #c9a54a !important;
+    }
+
+    .offer-card .vj-btn-book,
+    .special-offers .vj-btn-book {
+      background: #0d1f3c !important;
+      color: #ffffff !important;
+    }
+    .offer-card .vj-btn-book:hover,
+    .special-offers .vj-btn-book:hover {
+      background: linear-gradient(45deg, #c9a54a, #e4c06e) !important;
+      color: #081428 !important;
     }
   </style>
 
