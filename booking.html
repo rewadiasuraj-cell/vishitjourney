@@ -188,36 +188,240 @@
   </footer>
 
   <script style="display:none;">
-    // Itinerary Database
-    const itineraries = {
-      'char dham': [
-        { day: 'Day 1', title: 'Arrival in Haridwar / Rishikesh', desc: 'Pickup from Station/Airport, transfer to hotel, evening Ganga Aarti.' },
-        { day: 'Day 2', title: 'Haridwar to Barkot / Yamunotri Base', desc: 'Scenic drive via Kempty Falls to Barkot base camp.' },
-        { day: 'Day 3', title: 'Yamunotri Dham Darshan', desc: 'Trek to Yamunotri Temple, holy dip at Surya Kund & VIP Darshan.' },
-        { day: 'Day 4', title: 'Barkot to Uttarkashi', desc: 'Drive along Bhagirathi river, visit Kashi Vishwanath Temple.' },
-        { day: 'Day 5', title: 'Gangotri Dham Excursion', desc: 'Drive through Harsil valley to Gangotri Dham, offer prayers & return.' },
-        { day: 'Day 6', title: 'Uttarkashi to Guptkashi', desc: 'Drive through Mandakini valley, stay in Guptkashi/Phata.' },
-        { day: 'Day 7', title: 'Kedarnath Dham Darshan', desc: 'Helicopter or Trek to Kedarnath Temple, evening Aarti & stay.' },
-        { day: 'Day 8', title: 'Kedarnath to Badrinath Dham', desc: 'Morning Pooja, transfer to Badrinath via Chopta & Joshimath.' },
-        { day: 'Day 9', title: 'Badrinath Darshan & Mana Village', desc: 'Tapt Kund dip, Badrinath Darshan, Mana Village & Vyas Gufa.' },
-        { day: 'Day 10', title: 'Badrinath to Rishikesh / Delhi Departure', desc: 'Return drive via Devprayag, drop at Rishikesh/Haridwar/Delhi.' }
-      ],
-      'kashmir': [
-        { day: 'Day 1', title: 'Srinagar Airport Arrival & Houseboat Stay', desc: 'Transfer to Deluxe Houseboat on Dal Lake, 1-Hour Shikara ride.' },
-        { day: 'Day 2', title: 'Srinagar Mughal Gardens Sightseeing', desc: 'Visit Nishat Bagh, Shalimar Bagh, Chashme Shahi & Shankaracharya Temple.' },
-        { day: 'Day 3', title: 'Gulmarg Gondola Excursion', desc: 'Full day trip to Gulmarg, Gondola Cable Car ride & snow points.' },
-        { day: 'Day 4', title: 'Pahalgam Valley Tour', desc: 'Drive to Pahalgam via saffron fields, visit Betaab Valley & Aru Valley.' },
-        { day: 'Day 5', title: 'Sonmarg Glacier Trip', desc: 'Trip to Sonmarg & Thajiwas Glacier pony ride.' },
-        { day: 'Day 6', title: 'Shopping & Srinagar Departure', desc: 'Souvenir shopping and airport drop.' }
-      ],
-      'default': [
-        { day: 'Day 1', title: 'Arrival & Hotel Check-in', desc: 'Pickup from Airport/Station, transfer to hotel, evening market walk.' },
-        { day: 'Day 2', title: 'Full Day Sightseeing Tour', desc: 'Guided tour of top attractions, heritage landmarks & scenic spots.' },
-        { day: 'Day 3', title: 'Outdoor Excursion & Adventure', desc: 'Full day excursion to nearby viewpoints and activity spots.' },
-        { day: 'Day 4', title: 'Leisure & Local Culture', desc: 'Shopping, local food exploration & relaxed evening.' },
-        { day: 'Day 5', title: 'Check-out & Departure', desc: 'Breakfast, check-out and drop transfer to Airport/Station.' }
-      ]
+    
+    // Complete Individual Package Database (Banners & Day-by-Day Itineraries)
+    const packageDatabase = {
+      'char dham': {
+        banner: 'assets/images/chardham_banner.jpg',
+        days: [
+          { day: 'Day 1', title: 'Arrival in Haridwar / Rishikesh', desc: 'Pickup from Station/Airport, transfer to Haridwar/Rishikesh hotel, evening Ganga Aarti.' },
+          { day: 'Day 2', title: 'Haridwar to Barkot / Yamunotri Base', desc: 'Scenic drive via Mussoorie & Kempty Falls to Barkot base camp.' },
+          { day: 'Day 3', title: 'Yamunotri Dham Darshan', desc: 'Trek to Yamunotri Temple, holy dip at Surya Kund & VIP Darshan.' },
+          { day: 'Day 4', title: 'Barkot to Uttarkashi', desc: 'Drive along Bhagirathi river, visit Kashi Vishwanath Temple.' },
+          { day: 'Day 5', title: 'Gangotri Dham Excursion', desc: 'Drive through Harsil valley to Gangotri Dham, offer prayers & return.' },
+          { day: 'Day 6', title: 'Uttarkashi to Guptkashi', desc: 'Drive through Mandakini valley, stay in Guptkashi/Phata.' },
+          { day: 'Day 7', title: 'Kedarnath Dham Darshan', desc: 'Helicopter or Trek to Kedarnath Temple, evening Aarti & stay.' },
+          { day: 'Day 8', title: 'Kedarnath to Badrinath Dham', desc: 'Morning Pooja, transfer to Badrinath via Chopta & Joshimath.' },
+          { day: 'Day 9', title: 'Badrinath Darshan & Mana Village', desc: 'Tapt Kund dip, Badrinath Darshan, Mana Village & Vyas Gufa.' },
+          { day: 'Day 10', title: 'Badrinath to Rishikesh / Delhi Departure', desc: 'Return drive via Devprayag, drop at Rishikesh/Haridwar/Delhi.' }
+        ]
+      },
+      'do dham': {
+        banner: 'https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Haridwar to Guptkashi / Phata', desc: 'Drive along Alaknanda & Mandakini rivers to Guptkashi.' },
+          { day: 'Day 2', title: 'Kedarnath Dham VIP Darshan', desc: 'Helicopter or Trek to Kedarnath Temple, evening Aarti & stay.' },
+          { day: 'Day 3', title: 'Kedarnath to Badrinath Dham', desc: 'Morning Pooja at Kedarnath, transfer to Badrinath via Chopta.' },
+          { day: 'Day 4', title: 'Badrinath Temple & Mana Village', desc: 'Morning Tapt Kund dip, Badrinath Darshan, Mana Village tour.' },
+          { day: 'Day 5', title: 'Badrinath to Haridwar / Rishikesh Departure', desc: 'Return drive via Devprayag confluence, drop at Haridwar.' }
+        ]
+      },
+      'ek dham': {
+        banner: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Haridwar to Phata / Joshimath', desc: 'Pickup and drive through scenic mountain roads to base camp.' },
+          { day: 'Day 2', title: 'Kedarnath or Badrinath VIP Darshan', desc: 'Special VIP Darshan, Puja assistance & local exploration.' },
+          { day: 'Day 3', title: 'Return Transfer & Departure', desc: 'Return drive to Haridwar/Rishikesh for onward journey.' }
+        ]
+      },
+      'dubai': {
+        banner: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Dubai Airport VIP Transfer & Hotel Check-in', desc: 'Welcome at Dubai International Airport, private transfer to luxury hotel.' },
+          { day: 'Day 2', title: 'Half-Day City Tour & Burj Khalifa 124th Floor', desc: 'Visit Dubai Frame, Jumeirah Beach, and Burj Khalifa observation deck.' },
+          { day: 'Day 3', title: 'Desert Safari with 4x4 Dune Bashing & BBQ', desc: 'Thrilling desert safari, camel ride, henna, belly dance & BBQ dinner.' },
+          { day: 'Day 4', title: 'Luxury Marina Dhow Dinner Cruise', desc: 'Leisure morning, evening luxury Dhow Cruise with buffet dinner in Dubai Marina.' },
+          { day: 'Day 5', title: 'Duty Free Shopping & Airport Departure', desc: 'Gold Souk & Mall of Emirates shopping, airport transfer.' }
+        ]
+      },
+      'thailand': {
+        banner: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Bangkok Arrival & Transfer to Pattaya', desc: 'Welcome at Suvarnabhumi Airport, drive to Pattaya beach resort.' },
+          { day: 'Day 2', title: 'Coral Island Speedboat Tour with Lunch', desc: 'Speedboat ride to Coral Island, parasailing, snorkeling & Indian lunch.' },
+          { day: 'Day 3', title: 'Alcazar Show & Transfer to Bangkok', desc: 'World famous Alcazar Show performance, transfer to Bangkok hotel.' },
+          { day: 'Day 4', title: 'Bangkok City & Temple Tour', desc: 'Visit Wat Pho (Reclining Buddha) & Wat Traimit (Golden Buddha).' },
+          { day: 'Day 5', title: 'Safari World & Marine Park Full Day Trip', desc: 'Full day at Safari World with wild animal shows & buffet lunch.' },
+          { day: 'Day 6', title: 'Indra Market Shopping & Departure', desc: 'Shopping at Pratunam & Indra Market, airport drop.' }
+        ]
+      },
+      'bali': {
+        banner: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Bali Airport Welcome & Pool Villa Check-in', desc: 'Flower garland welcome at Denpasar Airport, transfer to private pool villa.' },
+          { day: 'Day 2', title: 'Kintamani Volcano & Ubud Swing Tour', desc: 'Visit Kintamani volcano, Tegalalang rice terraces & famous Bali swing.' },
+          { day: 'Day 3', title: 'Nusa Dua Water Sports & Uluwatu Sunset', desc: 'Banana boat & parasailing, evening Kecak dance at Uluwatu Temple.' },
+          { day: 'Day 4', title: 'Private Nusa Penida Island Speedboat Excursion', desc: 'Speedboat trip to Nusa Penida, Kelingking T-Rex Beach & Angel Billabong.' },
+          { day: 'Day 5', title: 'Balinese Spa Session & Departure', desc: 'Couples massage session, souvenir shopping and airport transfer.' }
+        ]
+      },
+      'maldives': {
+        banner: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Male Airport Speedboat & Water Villa Check-in', desc: 'Speedboat transfer to luxury island resort, water villa check-in.' },
+          { day: 'Day 2', title: 'Coral Reef Snorkeling & Ocean Relaxation', desc: 'Guided snorkeling session in crystal clear lagoon & beach relaxation.' },
+          { day: 'Day 3', title: 'Sunset Dolphin Cruise & Beachfront Dinner', desc: 'Evening dolphin watching cruise followed by candlelit beach dinner.' },
+          { day: 'Day 4', title: 'Private Villa Pool & Spa Treatment', desc: 'Leisure day at private villa pool and wellness spa treatment.' },
+          { day: 'Day 5', title: 'Farewell Breakfast & Speedboat Transfer', desc: 'Buffet breakfast, photos, and speedboat transfer to Male Airport.' }
+        ]
+      },
+      'kashmir': {
+        banner: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Srinagar Airport Arrival & Houseboat Stay', desc: 'Transfer to Deluxe Houseboat on Dal Lake, 1-Hour Shikara ride.' },
+          { day: 'Day 2', title: 'Srinagar Mughal Gardens Sightseeing', desc: 'Visit Nishat Bagh, Shalimar Bagh, Chashme Shahi & Shankaracharya Temple.' },
+          { day: 'Day 3', title: 'Gulmarg Gondola Excursion', desc: 'Full day trip to Gulmarg, Gondola Cable Car ride & snow points.' },
+          { day: 'Day 4', title: 'Pahalgam Valley Tour', desc: 'Drive to Pahalgam via saffron fields, visit Betaab Valley & Aru Valley.' },
+          { day: 'Day 5', title: 'Sonmarg Glacier Trip', desc: 'Trip to Sonmarg & Thajiwas Glacier pony ride.' },
+          { day: 'Day 6', title: 'Shopping & Srinagar Departure', desc: 'Handicraft & dry fruit shopping, Srinagar airport drop.' }
+        ]
+      },
+      'manali': {
+        banner: '/uploads/packages/manali_honeymoon.jpg',
+        days: [
+          { day: 'Day 1', title: 'Manali Arrival & Hotel Check-in', desc: 'Pickup from Manali bus stand, hotel check-in, evening Mall Road walk.' },
+          { day: 'Day 2', title: 'Solang Valley & Atal Tunnel Excursion', desc: 'Full day trip to Solang Valley for paragliding, zorbing & Atal Tunnel.' },
+          { day: 'Day 3', title: 'Hadimba Temple & Local Sightseeing', desc: 'Visit Hadimba Temple, Vashisht Hot Water Springs & Tibetan Monastery.' },
+          { day: 'Day 4', title: 'Naggar Castle & Departure', desc: 'Visit historic Naggar Castle & Kullu rafting spot, evening departure.' }
+        ]
+      },
+      'shimla': {
+        banner: '/uploads/packages/kasol_manali.jpg',
+        days: [
+          { day: 'Day 1', title: 'Delhi to Shimla Drive', desc: 'Scenic mountain drive to Shimla, hotel check-in, Mall Road walk.' },
+          { day: 'Day 2', title: 'Kufri & Chail Excursion', desc: 'Visit Kufri snow point, Himalayan Nature Park & Jakhoo Temple.' },
+          { day: 'Day 3', title: 'Shimla to Manali Drive via Kullu', desc: 'Drive along Beas river, stop at Kullu Shawl Factory & Rafting point.' },
+          { day: 'Day 4', title: 'Solang Valley & Manali Sightseeing', desc: 'Solang Valley adventure sports and Hadimba Devi temple visit.' },
+          { day: 'Day 5', title: 'Return Drive to Delhi', desc: 'Breakfast, check-out and return drive to Delhi.' }
+        ]
+      },
+      'kasol': {
+        banner: '/uploads/packages/kasol_manali.jpg',
+        days: [
+          { day: 'Day 1', title: 'Kasol Arrival & Parvati River Walk', desc: 'Arrival in Kasol, check-in to riverside camp/hotel, explore cafes.' },
+          { day: 'Day 2', title: 'Manikaran Sahib Gurudwara & Hot Springs', desc: 'Visit Manikaran Sahib holy dip, Chalal village trek.' },
+          { day: 'Day 3', title: 'Kasol to Manali Drive', desc: 'Drive to Manali via Kullu valley, evening Mall Road leisure.' },
+          { day: 'Day 4', title: 'Solang Valley Snow Point', desc: 'Full day Solang Valley adventure sports & snow activity.' },
+          { day: 'Day 5', title: 'Manali Local Tour', desc: 'Hadimba Temple, Vashisht & Van Vihar.' },
+          { day: 'Day 6', title: 'Departure Transfer', desc: 'Souvenir shopping and return departure.' }
+        ]
+      },
+      'agra': {
+        banner: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Delhi to Agra via Yamuna Expressway', desc: 'Morning drive to Agra, check-in, visit Agra Fort & Sunset Taj Mahal view.' },
+          { day: 'Day 2', title: 'Sunrise Taj Mahal & Fatehpur Sikri', desc: 'Early morning Sunrise Taj Mahal visit, Fatehpur Sikri & drive to Delhi/Jaipur.' }
+        ]
+      },
+      'rajasthan': {
+        banner: '/uploads/packages/rajasthan.jpg',
+        days: [
+          { day: 'Day 1', title: 'Arrival in Jaipur (Pink City)', desc: 'Transfer to heritage hotel, visit City Palace & Janatar Mantar.' },
+          { day: 'Day 2', title: 'Amber Fort & Hawa Mahal Tour', desc: 'Elephant/jeep ride at Amber Fort, Hawa Mahal & Jal Mahal photo stop.' },
+          { day: 'Day 3', title: 'Jaipur to Jodhpur (Blue City)', desc: 'Drive to Jodhpur, visit Mehrangarh Fort & Jaswant Thada.' },
+          { day: 'Day 4', title: 'Jodhpur to Jaisalmer Sand Dunes', desc: 'Drive to Jaisalmer desert camp, camel safari, Rajasthani folk dance & BBQ.' },
+          { day: 'Day 5', title: 'Jaisalmer Fort & Patwon Ki Haveli', desc: 'Explore Golden Fort, Patwon Ki Haveli & Gadisar Lake.' },
+          { day: 'Day 6', title: 'Jaisalmer to Udaipur (City of Lakes)', desc: 'Scenic drive to Udaipur, evening boat ride on Lake Pichola.' },
+          { day: 'Day 7', title: 'Udaipur City Palace & Saheliyon Ki Bari', desc: 'Visit Udaipur City Palace, Saheliyon Ki Bari & Jagdish Temple.' },
+          { day: 'Day 8', title: 'Shopping & Departure', desc: 'Bapu Bazaar shopping and departure transfer.' }
+        ]
+      },
+      'kerala': {
+        banner: 'https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Cochin Arrival to Munnar Tea Gardens', desc: 'Welcome at Cochin Airport, drive through Cheeyappara waterfalls to Munnar.' },
+          { day: 'Day 2', title: 'Munnar Sightseeing Tour', desc: 'Visit Eravikulam National Park (Nilgiri Tahr), Mattupetty Dam & Tea Museum.' },
+          { day: 'Day 3', title: 'Munnar to Thekkady Spice Plantation', desc: 'Drive to Thekkady, spice plantation tour & Periyar Lake boat safari.' },
+          { day: 'Day 4', title: 'Thekkady to Alleppey Houseboat Cruise', desc: 'Check-in to private luxury Houseboat, cruise through backwater canals.' },
+          { day: 'Day 5', title: 'Alleppey to Kovalam Beach Resort', desc: 'Drive to Kovalam, relax at Lighthouse Beach & Samudra Beach.' },
+          { day: 'Day 6', title: 'Trivandrum Sightseeing & Departure', desc: 'Visit Padmanabhaswamy Temple, Trivandrum Airport drop.' }
+        ]
+      },
+      'ladakh': {
+        banner: '/uploads/packages/leh_ladakh.jpg',
+        days: [
+          { day: 'Day 1', title: 'Leh Airport Arrival & Rest', desc: 'Welcome at Kushok Bakula Rimpochee Airport, complete rest for acclimatization.' },
+          { day: 'Day 2', title: 'Leh Local Sightseeing', desc: 'Visit Shanti Stupa, Leh Palace, Magnetic Hill & Hall of Fame museum.' },
+          { day: 'Day 3', title: 'Drive over Khardung La to Nubra Valley', desc: 'Cross Khardung La pass (18,380 ft), arrive Nubra Valley, double-humped camel safari.' },
+          { day: 'Day 4', title: 'Diskit Monastery & Hunder Sand Dunes', desc: 'Visit giant Buddha statue at Diskit Monastery & Hunder dunes.' },
+          { day: 'Day 5', title: 'Nubra Valley to Pangong Tso Lake', desc: 'Drive along Shyok river to world-famous blue Pangong Tso Lake, lakeside camp stay.' },
+          { day: 'Day 6', title: 'Pangong Lake Sunrise to Leh', desc: 'Sunrise at Pangong Lake, drive back to Leh over Chang La pass.' },
+          { day: 'Day 7', title: 'Shopping & Leh Airport Departure', desc: 'Souvenir shopping and airport drop.' }
+        ]
+      },
+      'goa': {
+        banner: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Goa Arrival & Beach Resort Check-in', desc: 'Pickup from Airport/Thivim Station, check-in to resort near beach.' },
+          { day: 'Day 2', title: 'North Goa Beaches & Fort Aguada', desc: 'Visit Fort Aguada, Calangute, Baga, and Anjuna Beach with water sports.' },
+          { day: 'Day 3', title: 'South Goa Heritage & Sunset Cruise', desc: 'Basilica of Bom Jesus, Mangeshi Temple, Miramar beach & Mandovi river cruise.' },
+          { day: 'Day 4', title: 'Leisure & Departure', desc: 'Relax at beach resort and airport/station drop.' }
+        ]
+      },
+      'rishikesh': {
+        banner: '/uploads/packages/rishikesh.jpg',
+        days: [
+          { day: 'Day 1', title: 'Rishikesh Arrival & Riverside Camping', desc: 'Arrival at Shivpuri camp, lunch, beach games, evening bonfire with music.' },
+          { day: 'Day 2', title: '16km River Rafting & Cliff Jumping', desc: 'Thrilling 16km Ganga rafting, cliff jumping, body surfing & Ram Jhula walk.' },
+          { day: 'Day 3', title: 'Triveni Ghat Ganga Aarti & Departure', desc: 'Morning yoga, visit Laxman Jhula & Triveni Ghat before departure.' }
+        ]
+      },
+      'udaipur': {
+        banner: '/uploads/packages/udaipur.jpg',
+        days: [
+          { day: 'Day 1', title: 'Udaipur Arrival & Lake Pichola Walk', desc: 'Pickup from Udaipur Airport/Station, check-in to hotel, evening lake walk.' },
+          { day: 'Day 2', title: 'City Palace & Sunset Boat Ride', desc: 'Visit magnificent City Palace, Jagdish Temple & sunset boat ride on Lake Pichola.' },
+          { day: 'Day 3', title: 'Sajjangarh Monsoon Palace & Fateh Sagar', desc: 'Visit Monsoon Palace, Saheliyon Ki Bari gardens & Fateh Sagar Lake.' },
+          { day: 'Day 4', title: 'Hathi Pol Shopping & Departure', desc: 'Local Rajasthani handicraft shopping and airport drop.' }
+        ]
+      },
+      'assam': {
+        banner: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Guwahati Arrival to Shillong Drive', desc: 'Pickup at Guwahati Airport, drive to Shillong via Umiam Lake.' },
+          { day: 'Day 2', title: 'Shillong & Elephant Falls Tour', desc: 'Visit Elephant Falls, Shillong Peak & Ward’s Lake.' },
+          { day: 'Day 3', title: 'Cherrapunji Waterfalls Day Trip', desc: 'Excursion to Cherrapunji, Nohkalikai Falls, Mawsmai Cave & Seven Sisters Falls.' },
+          { day: 'Day 4', title: 'Mawlynnong & Dawki Crystal River', desc: 'Visit Mawlynnong (cleanest village) & boat ride on Dawki Umngot river.' },
+          { day: 'Day 5', title: 'Transfer to Kaziranga National Park', desc: 'Drive to Kaziranga, tea estate walk & cultural dance show.' },
+          { day: 'Day 6', title: 'Kaziranga Elephant & Jeep Safari', desc: 'Early morning Elephant safari to spot One-Horned Rhino + Jeep safari.' },
+          { day: 'Day 7', title: 'Kamakhya Temple & Guwahati Departure', desc: 'Visit Kamakhya Temple and Guwahati airport drop.' }
+        ]
+      },
+      'default': {
+        banner: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80',
+        days: [
+          { day: 'Day 1', title: 'Arrival & Hotel Check-in', desc: 'Pickup from Airport/Station, transfer to hotel, evening market walk.' },
+          { day: 'Day 2', title: 'Full Day Guided Sightseeing', desc: 'Guided tour of top attractions, heritage landmarks & scenic spots.' },
+          { day: 'Day 3', title: 'Outdoor Excursion & Adventure', desc: 'Full day excursion to nearby viewpoints and activity spots.' },
+          { day: 'Day 4', title: 'Leisure & Local Culture', desc: 'Shopping, local food exploration & relaxed evening.' },
+          { day: 'Day 5', title: 'Check-out & Departure', desc: 'Breakfast, check-out and drop transfer to Airport/Station.' }
+        ]
+      }
     };
+
+    function getPackageInfo(title) {
+      const t = (title || '').toLowerCase();
+      if (t.includes('char dham')) return packageDatabase['char dham'];
+      if (t.includes('do dham')) return packageDatabase['do dham'];
+      if (t.includes('ek dham') || t.includes('dham')) return packageDatabase['ek dham'];
+      if (t.includes('dubai')) return packageDatabase['dubai'];
+      if (t.includes('thailand')) return packageDatabase['thailand'];
+      if (t.includes('bali')) return packageDatabase['bali'];
+      if (t.includes('maldives')) return packageDatabase['maldives'];
+      if (t.includes('kashmir')) return packageDatabase['kashmir'];
+      if (t.includes('manali') && !t.includes('shimla') && !t.includes('kasol')) return packageDatabase['manali'];
+      if (t.includes('shimla')) return packageDatabase['shimla'];
+      if (t.includes('kasol')) return packageDatabase['kasol'];
+      if (t.includes('agra') && !t.includes('jaipur')) return packageDatabase['agra'];
+      if (t.includes('rajasthan') || t.includes('jaipur')) return packageDatabase['rajasthan'];
+      if (t.includes('kerala')) return packageDatabase['kerala'];
+      if (t.includes('ladakh') || t.includes('leh')) return packageDatabase['ladakh'];
+      if (t.includes('goa')) return packageDatabase['goa'];
+      if (t.includes('rishikesh')) return packageDatabase['rishikesh'];
+      if (t.includes('udaipur')) return packageDatabase['udaipur'];
+      if (t.includes('assam') || t.includes('meghalaya')) return packageDatabase['assam'];
+      return packageDatabase['default'];
+    }
 
     let pagePkgData = {
       title: 'Char Dham Yatra Package',
@@ -238,12 +442,11 @@
       document.getElementById('pagePkgTitle').textContent = pagePkgData.title;
       document.getElementById('pagePkgMeta').textContent = `${pagePkgData.duration} • Starting ₹${Number(pagePkgData.price).toLocaleString('en-IN')} per person`;
 
-      // Set Banner Image
+      // Set Banner Image & Custom Package Info
+      const pkgInfo = getPackageInfo(pagePkgData.title);
       const bannerImg = document.getElementById('pagePkgBanner');
-      if (pagePkgData.title.toLowerCase().includes('kashmir')) {
-        bannerImg.src = 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80';
-      } else if (pagePkgData.title.toLowerCase().includes('char dham') || pagePkgData.title.toLowerCase().includes('dham')) {
-        bannerImg.src = 'assets/images/chardham_banner.jpg';
+      if (bannerImg && pkgInfo.banner) {
+        bannerImg.src = pkgInfo.banner;
       }
 
       // Pre-fill tomorrow's date
@@ -256,12 +459,8 @@
     };
 
     function renderItineraryList() {
-      const titleLower = pagePkgData.title.toLowerCase();
-      let key = 'default';
-      if (titleLower.includes('char dham') || titleLower.includes('dham')) key = 'char dham';
-      else if (titleLower.includes('kashmir')) key = 'kashmir';
-
-      const days = itineraries[key] || itineraries['default'];
+      const pkgInfo = getPackageInfo(pagePkgData.title);
+      const days = pkgInfo.days || packageDatabase['default'].days;
       const container = document.getElementById('itineraryDaysList');
       let html = '';
 
