@@ -100,7 +100,7 @@
 
   .hero-badge{
     font-size:.8rem;letter-spacing:4px;text-transform:uppercase;
-    color:#ffffff;border:1px solid rgba(255,255,255,0.5);
+    color: #0B1B33;border:1px solid rgba(255,255,255,0.5);
     padding:.5rem 1.5rem;border-radius:50px;margin-bottom:1.8rem;
     position:relative;z-index:1;
     animation:fadeUp .8s ease both;
@@ -1019,7 +1019,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.35rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #0B1B33;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1047,7 +1047,7 @@
     display: none;
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    color: #ffffff;
+    color: #0B1B33;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -1271,7 +1271,7 @@
   }
 
   .pkg-empty-state h3 {
-    color: #ffffff;
+    color: #0B1B33;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
@@ -1494,12 +1494,12 @@
 
   .toast-title {
     font-size: 0.82rem;
-    color: #ffffff;
+    color: #0B1B33;
     line-height: 1.3;
   }
 
   .toast-user-name {
-    color: #ffffff;
+    color: #0B1B33;
     font-weight: 700;
   }
 
@@ -1542,7 +1542,7 @@
   }
 
   .toast-close-btn:hover {
-    color: #ffffff;
+    color: #0B1B33;
   }
 
   @media(max-width: 576px) {
@@ -2178,7 +2178,7 @@
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
        VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
-       (APPLIED ACROSS ALL PAGES & STANDALONE TEMPLATES)
+       (RATE CARD TABLE PURE WHITE BACKGROUND & DARK NAVY TEXT FIX)
        ════════════════════════════════════════════════════════════ */
     html, body {
       background-color: #FFFFFF !important;
@@ -2191,11 +2191,6 @@
     }
 
     section,
-    main,
-    div,
-    header,
-    nav,
-    footer,
     .search-section,
     .special-offers,
     .destinations,
@@ -2205,30 +2200,288 @@
     .why,
     .contact,
     .cta-banner,
-    .about-hero,
-    .about-section,
     #official-rate-and-faq {
       background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
       color: #0B1B33 !important;
     }
 
-    /* 1. HEADER NAVBAR CLEAN LIGHT STYLING */
-    nav, header {
+    /* 1. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
+    #official-rate-and-faq div[style*="overflow-x"],
+    #official-rate-and-faq table {
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      color: #0B1B33 !important;
+    }
+
+    #official-rate-and-faq thead tr,
+    #official-rate-and-faq th {
+      background-color: #F7F9FC !important;
+      background: #F7F9FC !important;
+      color: #0B1B33 !important;
+      font-weight: 800 !important;
+      border-bottom: 2px solid #D4A72C !important;
+    }
+
+    #official-rate-and-faq tbody tr {
+      background-color: #FFFFFF !important;
       background: #FFFFFF !important;
       border-bottom: 1px solid #E3E8EF !important;
-      box-shadow: 0 4px 20px rgba(11, 27, 51, 0.04) !important;
     }
-    .nav-links a {
+
+    #official-rate-and-faq tbody tr:hover {
+      background-color: #F7F9FC !important;
+      background: #F7F9FC !important;
+    }
+
+    #official-rate-and-faq td {
+      color: #2D3748 !important;
+      font-weight: 500 !important;
+    }
+
+    #official-rate-and-faq td[style*="font-weight: 700"],
+    #official-rate-and-faq td[style*="font-weight:700"] {
+      color: #0B1B33 !important;
+      font-weight: 800 !important;
+    }
+
+    /* 2. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP FIX */
+    .offer-card {
+      position: relative !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      padding: 1.8rem 1.6rem 1.6rem !important;
+      overflow: hidden !important;
+    }
+
+    .offer-badge,
+    .offer-card .badge,
+    .offer-card span[style*="position:absolute"],
+    .offer-card div[style*="position:absolute"] {
+      position: absolute !important;
+      top: 14px !important;
+      right: 14px !important;
+      left: auto !important;
+      bottom: auto !important;
+      font-size: 0.62rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 1px !important;
+      padding: 0.3rem 0.8rem !important;
+      border-radius: 20px !important;
+      text-transform: uppercase !important;
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      box-shadow: 0 2px 8px rgba(212, 167, 44, 0.25) !important;
+      z-index: 5 !important;
+      transform: none !important;
+    }
+
+    .offer-tag,
+    .offer-card .tag,
+    .offer-card span:first-child,
+    .offer-card div:first-child {
+      padding-right: 130px !important;
+      margin-bottom: 0.5rem !important;
+      display: inline-block !important;
+    }
+
+    .offer-card h3 {
+      font-size: 1.2rem !important;
+      font-weight: 800 !important;
+      color: #0B1B33 !important;
+      margin: 0.4rem 0 0.6rem 0 !important;
+      line-height: 1.3 !important;
+    }
+
+    .offer-card p {
+      color: #5F6B7A !important;
+      font-size: 0.88rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 1.2rem !important;
+    }
+
+    /* 3. HERO CAB SERVICE | BUS CHARTER | FLIGHT TOURS DARK TEXT FIX */
+    .hero span[style*="CAB SERVICE"],
+    .hero span[style*="FLIGHT TOURS"],
+    .hero span[style*="letter-spacing"],
+    .hero div[style*="letter-spacing"] {
       color: #0B1B33 !important;
       font-weight: 700 !important;
     }
-    .nav-links a:hover, .nav-links a.active {
+
+    .hero span[style*="CAB SERVICE"] svg,
+    .hero span[style*="FLIGHT TOURS"] svg {
+      stroke: #D4A72C !important;
       color: #D4A72C !important;
     }
 
-    /* 2. ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
+    /* 4. FAQ CARDS 100% PURE WHITE BACKGROUND & HIGH CONTRAST DARK TEXT */
+    #official-rate-and-faq article,
+    #vj-geo-faq-section article,
+    article[style*="rgba(8,20,40"],
+    article[style*="background: rgba(8"] {
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      color: #0B1B33 !important;
+    }
+
+    #official-rate-and-faq article h3,
+    #vj-geo-faq-section article h3,
+    article h3 {
+      color: #0B1B33 !important;
+      font-weight: 800 !important;
+    }
+
+    #official-rate-and-faq article p,
+    #vj-geo-faq-section article p,
+    article p {
+      color: #2D3748 !important;
+      font-weight: 500 !important;
+      line-height: 1.7 !important;
+    }
+
+    #official-rate-and-faq article p strong,
+    #vj-geo-faq-section article p strong,
+    article p strong {
+      color: #0B1B33 !important;
+      font-weight: 700 !important;
+    }
+
+    /* ALTERNATE SECTIONS IN SOFT ICE WHITE (#F7F9FC) */
+    .testimonials, 
+    .why-us, 
+    .faq-section, 
+    .alternate-bg,
+    footer,
+    .footer-section,
+    .footer-bottom {
+      background-color: #F7F9FC !important;
+      background: #F7F9FC !important;
+      color: #0B1B33 !important;
+    }
+
+    /* HERO BACKGROUND TRAVEL DESTINATION SLIDESHOW ANIMATION */
+    .hero {
+      position: relative !important;
+      overflow: hidden !important;
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    .slide {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: 0 !important;
+      animation: slideShow 18s infinite !important;
+      z-index: 0 !important;
+    }
+    .slide:nth-child(1) { animation-delay: 0s !important; }
+    .slide:nth-child(2) { animation-delay: 6s !important; }
+    .slide:nth-child(3) { animation-delay: 12s !important; }
+
+    @keyframes slideShow {
+      0% { opacity: 0; transform: scale(1); }
+      6% { opacity: 1; }
+      28% { opacity: 1; transform: scale(1.08); }
+      34% { opacity: 0; transform: scale(1.12); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+
+    .slide-overlay {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%) !important;
+    }
+
+    .hero > *:not(.slide):not(.slide-overlay) {
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .hero-badge {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1px solid #E3E8EF !important;
+      box-shadow: 0 2px 10px rgba(11, 27, 51, 0.06) !important;
+    }
+    .hero h1, 
+    .hero h1 span {
+      color: #0B1B33 !important;
+      text-shadow: none !important;
+    }
+    .hero h1 em {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+    .hero p {
+      color: #5F6B7A !important;
+      font-weight: 500 !important;
+      text-shadow: none !important;
+    }
+
+    /* DESTINATION CARDS CLEAN OVERLAY */
+    .dest-overlay,
+    .dest-name,
+    .dest-sub,
+    .dest-tag {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    .dest-card {
+      position: relative !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      overflow: hidden !important;
+    }
+
+    .dest-overlay {
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      padding: 1.2rem !important;
+      background: linear-gradient(to top, rgba(8, 20, 40, 0.88) 0%, rgba(8, 20, 40, 0.25) 55%, transparent 100%) !important;
+      z-index: 2 !important;
+    }
+
+    .dest-name {
+      color: #FFFFFF !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+      margin: 0 !important;
+    }
+
+    .dest-sub {
+      color: #e4c06e !important;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 1.5px !important;
+      text-transform: uppercase !important;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+      margin-top: 2px !important;
+    }
+
+    /* ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
     .pkg2, 
-    .offer-card, 
     .review-card, 
     .testi-card, 
     .faq-card, 
@@ -2236,10 +2489,7 @@
     .pricing-card, 
     .trust-highlight-card, 
     .hero-trust-strip, 
-    .pkg2-body,
-    .about-card,
-    .stat-card,
-    .team-card {
+    .pkg2-body {
       background-color: #FFFFFF !important;
       background: #FFFFFF !important;
       border: 1px solid #E3E8EF !important;
@@ -2248,7 +2498,38 @@
       color: #0B1B33 !important;
     }
 
-    /* 3. ALL HEADINGS IN DEEP NAVY (#0B1B33) */
+    /* HERO TRUST BADGES STRIP PURE WHITE FIX */
+    .hero-trust-strip {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 30px !important;
+      padding: 0.55rem 1.6rem !important;
+      color: #0B1B33 !important;
+      box-shadow: 0 8px 25px rgba(11, 27, 51, 0.06) !important;
+    }
+    .trust-badge-item, 
+    .trust-badge-item span, 
+    .trust-badge-item strong {
+      color: #0B1B33 !important;
+    }
+    .trust-badge-item strong {
+      color: #D4A72C !important;
+    }
+    .trust-badge-divider {
+      background: #E3E8EF !important;
+    }
+
+    /* HERO STATS PURE WHITE FIX */
+    .stat-num {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+    .stat-label {
+      color: #5F6B7A !important;
+      text-shadow: none !important;
+    }
+
+    /* ALL HEADINGS IN DEEP NAVY (#0B1B33) */
     h1, h2, h3, h4, h5, h6,
     .section-title,
     .pkg2-body h3,
@@ -2256,12 +2537,14 @@
     .review-author,
     .footer-col-title,
     .faq-question,
-    .about-title {
+    .pkg-count-info,
+    .pkg-count-info strong,
+    #pkgCount {
       color: #0B1B33 !important;
       text-shadow: none !important;
     }
 
-    /* 4. ALL SUBTITLES & PARAGRAPHS IN SLATE GRAY (#5F6B7A) */
+    /* ALL SUBTITLES & PARAGRAPHS IN SLATE GRAY (#5F6B7A) */
     p, 
     .section-sub, 
     .pkg2-list li, 
@@ -2286,17 +2569,63 @@
       text-shadow: none !important;
     }
 
-    /* ALTERNATE SECTIONS IN SOFT ICE WHITE (#F7F9FC) */
-    .testimonials, 
-    .why-us, 
-    .faq-section, 
-    .alternate-bg,
-    footer,
-    .footer-section,
-    .footer-bottom {
-      background-color: #F7F9FC !important;
-      background: #F7F9FC !important;
+    .gold-line {
+      background: #D4A72C !important;
+    }
+
+    /* REMOVE ALL MARQUEE FADE OVERLAYS */
+    .testi-marquee-wrapper::before,
+    .testi-marquee-wrapper::after,
+    .testimonials::before,
+    .testimonials::after,
+    .testi-marquee-wrapper .fade-left,
+    .testi-marquee-wrapper .fade-right {
+      display: none !important;
+      background: none !important;
+      opacity: 0 !important;
+    }
+
+    /* PACKAGE FILTER TABS */
+    .pkg-tab,
+    .pkg-filter-btn, 
+    .filter-btn, 
+    .dest-filter-btn,
+    .vj-filter-tab,
+    button.filter-btn,
+    button[data-filter] {
+      background: #FFFFFF !important;
       color: #0B1B33 !important;
+      border: 1.5px solid #E3E8EF !important;
+      font-weight: 700 !important;
+      padding: 0.5rem 1.4rem !important;
+      border-radius: 25px !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+      transition: all 0.25s ease !important;
+      display: inline-block !important;
+    }
+    .pkg-tab:hover,
+    .pkg-filter-btn:hover, 
+    .filter-btn:hover, 
+    .dest-filter-btn:hover,
+    .vj-filter-tab:hover,
+    button.filter-btn:hover,
+    button[data-filter]:hover {
+      background: rgba(212, 167, 44, 0.08) !important;
+      border-color: #D4A72C !important;
+      color: #B88918 !important;
+    }
+    .pkg-tab.active,
+    .pkg-filter-btn.active, 
+    .filter-btn.active, 
+    .dest-filter-btn.active,
+    .vj-filter-tab.active,
+    button.filter-btn.active,
+    button[data-filter].active {
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      border-color: #D4A72C !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 14px rgba(212, 167, 44, 0.35) !important;
     }
 
     /* BUTTONS */
@@ -2306,11 +2635,21 @@
       border: 1.5px solid #D4A72C !important;
       font-weight: 800 !important;
     }
+    .pkg2-btn:hover, .btn-gold:hover, .vj-btn-book:hover {
+      background: #B88918 !important;
+      border-color: #B88918 !important;
+      color: #FFFFFF !important;
+    }
+
     .vj-pkg-readmore-btn, .btn-outline, .vj-btn-read {
       background: #FFFFFF !important;
       color: #0B1B33 !important;
       border: 1.5px solid #D4A72C !important;
       font-weight: 700 !important;
+    }
+    .vj-pkg-readmore-btn:hover, .btn-outline:hover, .vj-btn-read:hover {
+      background: rgba(212, 167, 44, 0.1) !important;
+      color: #B88918 !important;
     }
 
     /* FLOATING WHATSAPP BUTTON (GREEN) */
@@ -2528,7 +2867,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
           </div>
-          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#ffffff; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#ffffff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2550,7 +2889,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
           </div>
-          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#0072ff; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#0072ff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2572,7 +2911,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
           </div>
-          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:linear-gradient(45deg, #ff6a00, #ee0979); color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:linear-gradient(45deg, #ff6a00, #ee0979); color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2594,7 +2933,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
           </div>
-          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#d97706; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#d97706; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2616,7 +2955,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
           </div>
-          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#059669; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#059669; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2638,7 +2977,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
           </div>
-          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#6d28d9; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#6d28d9; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2660,7 +2999,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
           </div>
-          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#ffffff; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#ffffff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2682,7 +3021,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
           </div>
-          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#0072ff; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#0072ff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2704,7 +3043,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
           </div>
-          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:linear-gradient(45deg, #ff6a00, #ee0979); color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:linear-gradient(45deg, #ff6a00, #ee0979); color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2726,7 +3065,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
           </div>
-          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#d97706; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#d97706; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2748,7 +3087,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
           </div>
-          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#059669; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#059669; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -2770,7 +3109,7 @@
             <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
             <span style="font-size:1.05rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
           </div>
-          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#6d28d9; color:#ffffff; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#6d28d9; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
         </div>
       </div>
 
@@ -4052,7 +4391,7 @@
       
       <div style="text-align: center; margin-bottom: 2.2rem;">
         <span style="font-size: 0.75rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; font-weight: 700; background: rgba(201,165,74,0.12); padding: 0.35rem 1.2rem; border-radius: 20px; border: 1px solid rgba(201,165,74,0.3);">OFFICIAL RATE CARD</span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.2vw, 2.8rem); color: #ffffff; margin-top: 0.6rem; font-weight: 700;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.2vw, 2.8rem); color: #0B1B33; margin-top: 0.6rem; font-weight: 700;">
           Vishit Journey Starting Price List
         </h2>
         <p style="font-size: 0.92rem; color: #5F6B7A; margin-top: 0.4rem; max-width: 750px; margin-left: auto; margin-right: auto;">
@@ -4061,8 +4400,8 @@
       </div>
 
       <!-- Responsive Table Container -->
-      <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(201,165,74,0.25); background: rgba(8,20,40,0.7);">
-        <table style="width: 100%; border-collapse: collapse; color: #ffffff; font-size: 0.95rem; text-align: left; min-width: 700px;">
+      <div style="overflow-x: auto; border-radius: 16px; border: 1px solid #E3E8EF; background: #FFFFFF; box-shadow: 0 10px 30px rgba(11,27,51,0.06);">
+        <table style="width: 100%; border-collapse: collapse; color: #0B1B33; font-size: 0.95rem; text-align: left; min-width: 700px;">
           <thead>
             <tr style="background: linear-gradient(90deg, rgba(201,165,74,0.25) 0%, rgba(201,165,74,0.1) 100%); border-bottom: 2px solid var(--gold);">
               <th style="padding: 1.1rem 1.5rem; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.82rem; color: var(--gold); font-weight: 700;">Package Name</th>
@@ -4074,7 +4413,7 @@
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">
                 Ek Dham Yatra <span style="font-size: 0.7rem; background: rgba(201,165,74,0.2); color: var(--gold); padding: 2px 8px; border-radius: 10px; margin-left: 6px;">Spiritual</span>
               </td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">3D / 2N</td>
@@ -4085,7 +4424,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">
                 Do Dham Yatra <span style="font-size: 0.7rem; background: rgba(201,165,74,0.2); color: var(--gold); padding: 2px 8px; border-radius: 10px; margin-left: 6px;">Popular</span>
               </td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">5D / 4N</td>
@@ -4096,7 +4435,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">
                 Char Dham Yatra <span style="font-size: 0.7rem; background: rgba(201,165,74,0.3); color: var(--gold); padding: 2px 8px; border-radius: 10px; margin-left: 6px; font-weight:800;">TOP RATED</span>
               </td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">10D / 9N</td>
@@ -4107,7 +4446,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">Manali Package</td>
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">Manali Package</td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">4D / 3N</td>
               <td style="padding: 1.1rem 1.5rem; color: #5F6B7A; font-size: 0.88rem;">Solang Valley + Atal Tunnel + Hotel</td>
               <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: var(--gold); font-size: 1.1rem; text-align: right;">₹9,680/-</td>
@@ -4116,7 +4455,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">Shimla Manali Package</td>
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">Shimla Manali Package</td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">5D / 4N</td>
               <td style="padding: 1.1rem 1.5rem; color: #5F6B7A; font-size: 0.88rem;">Kufri + Solang + Mall Road + Transfers</td>
               <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: var(--gold); font-size: 1.1rem; text-align: right;">₹12,430/-</td>
@@ -4125,7 +4464,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">Kashmir Paradise Package</td>
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">Kashmir Paradise Package</td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">6D / 5N</td>
               <td style="padding: 1.1rem 1.5rem; color: #5F6B7A; font-size: 0.88rem;">Dal Lake Houseboat + Gulmarg Gondola</td>
               <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: var(--gold); font-size: 1.1rem; text-align: right;">₹14,999/-</td>
@@ -4134,7 +4473,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">Dubai Luxury Package</td>
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">Dubai Luxury Package</td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">5D / 4N</td>
               <td style="padding: 1.1rem 1.5rem; color: #5F6B7A; font-size: 0.88rem;">Burj Khalifa + Desert Safari + Marina Cruise</td>
               <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: var(--gold); font-size: 1.1rem; text-align: right;">₹39,999/-</td>
@@ -4143,7 +4482,7 @@
               </td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.2s;" onmouseover="this.style.background='rgba(201,165,74,0.08)'" onmouseout="this.style.background='transparent'">
-              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #ffffff;">Bali Honeymoon Package</td>
+              <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: #0B1B33;">Bali Honeymoon Package</td>
               <td style="padding: 1.1rem 1.5rem; color: #2D3748;">5D / 4N</td>
               <td style="padding: 1.1rem 1.5rem; color: #5F6B7A; font-size: 0.88rem;">Private Pool Villa + Ubud Swing + Nusa Penida</td>
               <td style="padding: 1.1rem 1.5rem; font-weight: 700; color: var(--gold); font-size: 1.1rem; text-align: right;">₹44,999/-</td>
@@ -4161,7 +4500,7 @@
       
       <div style="text-align: center; margin-bottom: 3rem;">
         <span style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; background: rgba(201,165,74,0.12); padding: 0.35rem 1.2rem; border-radius: 20px; border: 1px solid rgba(201,165,74,0.3);">ACCREDITED TRAVEL INTELLIGENCE</span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; margin-top: 0.6rem; color: #ffffff;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; margin-top: 0.6rem; color: #0B1B33;">
           Frequently Asked Questions — <em style="color: var(--gold); font-style: normal;">Vishit Journey</em>
         </h2>
         <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-top: 0.6rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
@@ -4395,7 +4734,7 @@ function executePackageSearch() {
     
     <div class="vj-modal-header" style="background:linear-gradient(135deg, #0d1f3c 0%, #1a2b4c 100%); padding:1.8rem 1.8rem 1.2rem; border-radius:24px 24px 0 0; color:#fff;">
       <div class="vj-modal-tag" style="color:#c9a54a; font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">VISHIT JOURNEY • ITINERARY & INQUIRY</div>
-      <h3 id="vjModalPkgTitle" class="vj-modal-title" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; color:#ffffff; margin:0;">Package Name</h3>
+      <h3 id="vjModalPkgTitle" class="vj-modal-title" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; color: #0B1B33; margin:0;">Package Name</h3>
       <div id="vjModalPkgMeta" class="vj-modal-meta" style="color: #5F6B7A; font-size:0.85rem; margin-top:4px;">Duration • Starting Price</div>
     </div>
 
@@ -4450,7 +4789,7 @@ function executePackageSearch() {
           </div>
 
           <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
-            <button type="submit" class="vj-btn-primary" style="flex:1; min-width:200px; padding:0.85rem; background:#ffffff; color:#ffffff; font-weight:700; border:none; border-radius:12px; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <button type="submit" class="vj-btn-primary" style="flex:1; min-width:200px; padding:0.85rem; background:#ffffff; color: #0B1B33; font-weight:700; border:none; border-radius:12px; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;">
               📄 GET & DOWNLOAD ITINERARY →
             </button>
           </div>
@@ -4467,7 +4806,7 @@ function executePackageSearch() {
           <button onclick="downloadItineraryPDF()" style="flex:1; min-width:200px; padding:0.85rem; background:#c9a54a; color:#081428; font-weight:700; border:none; border-radius:12px; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; box-shadow:0 4px 12px rgba(201,165,74,0.3);">
             📥 DOWNLOAD PDF ITINERARY
           </button>
-          <a id="vjItineraryWABtn" href="https://wa.me/919899902890" target="_blank" style="flex:1; min-width:200px; padding:0.85rem; background:#25D366; color:#ffffff; font-weight:700; border:none; border-radius:12px; font-size:0.9rem; cursor:pointer; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
+          <a id="vjItineraryWABtn" href="https://wa.me/919899902890" target="_blank" style="flex:1; min-width:200px; padding:0.85rem; background:#25D366; color: #0B1B33; font-weight:700; border:none; border-radius:12px; font-size:0.9rem; cursor:pointer; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
             💬 CHAT WITH TRAVEL EXPERT
           </a>
         </div>
