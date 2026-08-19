@@ -330,3 +330,12 @@ function hideError() {
   const el = document.getElementById('vjModalError');
   if (el) { el.style.display = 'none'; }
 }
+
+
+// Attach global window functions for 100% reliable click execution
+window.openBooking = openBooking;
+window.openBookingModal = openBookingModal;
+window.closeBookingModal = closeBookingModal;
+window.handleDetailsSubmit = handleDetailsSubmit;
+window.downloadItineraryPDF = downloadItineraryPDF;
+window.showStep = showStep;
