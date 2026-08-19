@@ -252,16 +252,12 @@ function handleDetailsSubmit(e) {
   const name = (document.getElementById('vjInputName')?.value || '').trim();
   const phone = (document.getElementById('vjInputPhone')?.value || '').trim();
   const location = (document.getElementById('vjInputCity')?.value || document.getElementById('vjInputPickup')?.value || '').trim();
-  const travelDate = document.getElementById('vjInputDate')?.value || '';
+  const travelDate = document.getElementById('inputDate')?.value || document.getElementById('vjInputDate')?.value || '';
   const adults = document.getElementById('vjSelectAdults')?.value || '2';
   const children = document.getElementById('vjSelectChildren')?.value || '0';
 
   if (!name || !phone) {
     showError('Please enter your Full Name and Mobile Phone Number.');
-    return;
-  }
-  if (phone.length < 10) {
-    showError('Please enter a valid 10-digit mobile number.');
     return;
   }
 
@@ -272,12 +268,12 @@ function handleDetailsSubmit(e) {
     travelDate,
     adults,
     children,
-    pkgName: vjCurrentPkg.name,
-    duration: vjCurrentPkg.duration,
-    price: vjCurrentPkg.price
+    pkgName: vjCurrentPkg ? vjCurrentPkg.name : 'Travel Package',
+    duration: vjCurrentPkg ? vjCurrentPkg.duration : '5D / 4N',
+    price: vjCurrentPkg ? vjCurrentPkg.price : 15000
   };
 
-  // Save Inquiry lead to local storage / admin store
+  // Save Inquiry lead
   try {
     let existing = JSON.parse(localStorage.getItem('vj_admin_inquiries') || '[]');
     existing.unshift({
@@ -288,7 +284,13 @@ function handleDetailsSubmit(e) {
     localStorage.setItem('vj_admin_inquiries', JSON.stringify(existing));
   } catch(err) {}
 
-  // Render Package Itinerary View
+  // Format WhatsApp Message to +91 98999 02890
+  const text = `Hi Vishit Journey! I want to get custom quote & itinerary details for ${vjUserData.pkgName}.\n\n👤 *Name:* ${vjUserData.name}\n📞 *Phone:* ${vjUserData.phone}\n📍 *Starting City:* ${vjUserData.location}\n🗓 *Travel Date:* ${vjUserData.travelDate}\n👥 *Guests:* ${vjUserData.adults} Adults${vjUserData.children > 0 ? ', ' + vjUserData.children + ' Children' : ''}\n\nPlease share detailed PDF itinerary and best package price!`;
+  const waUrl = `https://wa.me/919899902890?text=${encodeURIComponent(text)}`;
+
+  // AUTOMATICALLY OPEN WHATSAPP TO +91 98999 02890
+  window.open(waUrl, '_blank');
+
   renderItineraryScreen();
   showStep(2);
 }

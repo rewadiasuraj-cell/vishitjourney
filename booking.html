@@ -498,10 +498,15 @@
       document.getElementById('bookingPageForm').style.display = 'none';
       document.getElementById('bookingSuccessBox').style.display = 'block';
 
-      // Set WhatsApp Link
+      // Format WhatsApp Message to +91 98999 02890
+      const text = `Hi Vishit Journey! I want to get custom quote & itinerary details for ${pagePkgData.title}.\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n📍 *Starting City:* ${city}\n🗓 *Travel Date:* ${travelDate}\n👥 *Guests:* ${guests}\n\nPlease share detailed PDF itinerary and best package price!`;
+      const waUrl = `https://wa.me/919899902890?text=${encodeURIComponent(text)}`;
+
       const waBtn = document.getElementById('waDirectBtn');
-      const text = `Hi Vishit Journey, I want to book ${pagePkgData.title}!\n\n*Name:* ${name}\n*Phone:* ${phone}\n*City:* ${city}\n*Travel Date:* ${travelDate}\n*Guests:* ${guests}\n\nPlease share full package details and confirm slots!`;
-      waBtn.href = `https://wa.me/919899902890?text=${encodeURIComponent(text)}`;
+      if (waBtn) waBtn.href = waUrl;
+
+      // AUTOMATICALLY OPEN WHATSAPP TO +91 98999 02890
+      window.open(waUrl, '_blank');
     }
 
     function downloadPagePDF() {
