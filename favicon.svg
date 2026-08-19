@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Luxury Navy Gradient Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1d38"/>
+      <stop offset="50%" stop-color="#081428"/>
+      <stop offset="100%" stop-color="#030812"/>
+    </linearGradient>
+
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fce7ac"/>
+      <stop offset="35%" stop-color="#e4c06e"/>
+      <stop offset="75%" stop-color="#c9a54a"/>
+      <stop offset="100%" stop-color="#967428"/>
+    </linearGradient>
+
+    <!-- Bright Crisp Gold Accent -->
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#f8e5b0"/>
+      <stop offset="100%" stop-color="#dfb758"/>
+    </linearGradient>
+
+    <!-- Gold Border Ring Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fce7ac" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#c9a54a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#967428" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Central Radial Glow -->
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a54a" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#081428" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base with high-contrast Gold Border Ring -->
+  <rect x="16" y="16" width="480" height="480" rx="116" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="200" fill="url(#glowGrad)"/>
+  <rect x="16" y="16" width="480" height="480" rx="116" fill="none" stroke="url(#borderGrad)" stroke-width="14"/>
+
+  <!-- Compass Star in Upper Right -->
+  <g transform="translate(355, 140) scale(0.7)">
+    <polygon points="0,-40 9,-9 40,0 9,9 0,40 -9,9 -40,0 -9,-9" fill="url(#goldBright)"/>
+    <polygon points="0,-22 5,-5 22,0 5,5 0,22 -5,5 -22,0 -5,-5" fill="#ffffff"/>
+  </g>
+
+  <!-- Subtle Soaring Travel Route Arc -->
+  <path d="M 105 320 C 130 180, 280 120, 375 140" fill="none" stroke="url(#goldGrad)" stroke-width="9" stroke-dasharray="16 12" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- Monogram "V" Left Stem (Deep Gold) -->
+  <path d="M 120 156 L 186 156 L 256 368 L 210 368 Z" fill="url(#goldGrad)"/>
+
+  <!-- Monogram "V" Right Stem (Bright Gold / White highlight) -->
+  <path d="M 392 156 L 326 156 L 256 368 L 302 368 Z" fill="url(#goldBright)"/>
+
+  <!-- Center Travel Compass Pointer Arrow -->
+  <path d="M 256 120 L 286 210 L 256 192 L 226 210 Z" fill="url(#goldBright)"/>
+
+  <!-- Pin Vertex Bottom Diamond -->
+  <polygon points="256,336 278,368 256,400 234,368" fill="url(#goldBright)"/>
+</svg>
