@@ -2996,269 +2996,180 @@ foreach ($packages_raw as $p) {
     <button onclick="scrollOffersManual(1)" style="position:absolute; right:15px; top:50%; transform:translateY(-50%); z-index:25; background:#ffffff; color:#c9a54a; border:2px solid #c9a54a; width:48px; height:48px; border-radius:50%; cursor:pointer; font-size:1.4rem; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(0,0,0,0.3);">›</button>
 
     <!-- Edge-to-Edge Scrollable Track -->
-    <div id="vjOffersTrack" style="display:flex; flex-wrap:nowrap; gap:2rem; width:100%; overflow-x:auto; scroll-behavior:smooth; padding:1rem 2rem 1.8rem; scrollbar-width:none; -ms-overflow-style:none;" onmouseenter="pauseOffersScroll()" onmouseleave="resumeOffersScroll()">
-      
+        <!-- Edge-to-Edge Scrollable Track -->
+    <div id="vjOffersTrack" style="display:flex; flex-wrap:nowrap; gap:1.8rem; width:100%; overflow-x:auto; scroll-behavior:smooth; padding:1.6rem 2rem 2rem; scrollbar-width:none; -ms-overflow-style:none;" onmouseenter="pauseOffersScroll()" onmouseleave="resumeOffersScroll()">
+
       <!-- OFFER CARD 1: CHAR DHAM SPECIAL -->
-      <div class="offer-card" style="min-width:380px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(201,165,74,0.4); border-radius:24px; padding:2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #e4c06e, #c9a54a); color:#081428; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FLAT ₹2,000 OFF
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(201,165,74,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#e4c06e,#c9a54a); color:#0d1f3c; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(201,165,74,0.3);">FLAT ₹2,000 OFF</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M11 2H13V15H11V2ZM5 4H7V10C7 11.6569 8.34315 13 10 13V15C7.23858 15 5 12.7614 5 10V4ZM19 4H17V10C17 11.6569 15.6569 13 14 13V15C16.7614 15 19 12.7614 19 10V4ZM11 17H13V22H11V17Z" fill="#c9a54a"/></svg>
+          <span style="font-size:0.66rem; color:#c9a54a; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">FESTIVE SPECIAL</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;display:inline-block;"><path d="M11 2H13V15H11V2ZM5 4H7V10C7 11.6569 8.34315 13 10 13V15C7.23858 15 5 12.7614 5 10V4ZM19 4H17V10C17 11.6569 15.6569 13 14 13V15C16.7614 15 19 12.7614 19 10V4ZM11 17H13V22H11V17Z" fill="#c9a54a"/></svg>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Char Dham Yatra Early Bird</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Book Char Dham 10D/9N package early and get ₹2,000 instant discount per family + VIP Darshan assistance included.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#f7f4ef; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(201,165,74,0.5); margin-top:1rem; flex-shrink:0;">
           <div>
-            <span style="font-size:0.72rem; color:var(--gold); font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">FESTIVE SPECIAL</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Char Dham Yatra Early Bird</h3>
+            <span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
+            <span style="font-size:0.9rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
           </div>
-        </div>
-        <p style="font-size:0.92rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Book Char Dham 10D/9N package early and get ₹2,000 instant discount per family + VIP Darshan assistance included.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#f7f4ef; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(201,165,74,0.6);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
-          </div>
-          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#ffffff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#e4c06e,#c9a54a); color:#0d1f3c; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
       <!-- OFFER CARD 2: KASHMIR & LADAKH GROUP OFFER -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(0,114,255,0.3); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #00c6ff, #0072ff); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          20% GROUP DISCOUNT
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(0,114,255,0.25); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#00c6ff,#0072ff); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(0,114,255,0.3);">20% GROUP DISCOUNT</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="mg1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#00c6ff"/><stop offset="100%" stop-color="#0072ff"/></linearGradient></defs><path d="M12 3L2 19H22L12 3Z" fill="url(#mg1)"/><path d="M12 3L9 8.5L12 10.5L15 8.5L12 3Z" fill="#fff" opacity="0.9"/></svg>
+          <span style="font-size:0.66rem; color:#0072ff; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">SEASONAL SALE</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><defs><linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#00c6ff"/><stop offset="100%" stop-color="#0072ff"/></linearGradient></defs><path d="M12 3L2 19H22L12 3Z" fill="url(#mountainGrad)"/><path d="M12 3L9 8.5L12 10.5L15 8.5L12 3Z" fill="#ffffff" opacity="0.9"/></svg>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Kashmir &amp; Ladakh Group Offer</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Book for 4+ travellers and get flat 20% discount on total package + complimentary Shikara ride in Dal Lake.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#f0f7ff; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(0,114,255,0.35); margin-top:1rem; flex-shrink:0;">
           <div>
-            <span style="font-size:0.72rem; color:#0072ff; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">SEASONAL SALE</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Kashmir & Ladakh Group Offer</h3>
+            <span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
+            <span style="font-size:0.9rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
           </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Book for 4+ travellers and get flat 20% discount on total package + complimentary Shikara ride in Dal Lake.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#f0f7ff; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(0,114,255,0.4);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
-          </div>
-          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#0072ff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#00c6ff,#0072ff); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
       <!-- OFFER CARD 3: BALI HONEYMOON SPECIAL -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(238,9,121,0.3); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #ff6a00, #ee0979); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FREE CANDLELIGHT DINNER
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(238,9,121,0.25); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#ff6a00,#ee0979); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(238,9,121,0.3);">FREE CANDLELIGHT DINNER</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="url(#hg1)"><defs><linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff0844"/><stop offset="100%" stop-color="#ffb199"/></linearGradient></defs><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span style="font-size:0.66rem; color:#ee0979; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROMANTIC ESCAPE</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="url(#heartGrad)" style="vertical-align:middle;"><defs><linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff0844"/><stop offset="100%" stop-color="#ffb199"/></linearGradient></defs><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Bali &amp; Manali Honeymoon Perk</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Free luxury room upgrade, complimentary romantic candlelight dinner &amp; honeymoon cake setup on all couples packages.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#fff5f7; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(238,9,121,0.35); margin-top:1rem; flex-shrink:0;">
           <div>
-            <span style="font-size:0.72rem; color:#ee0979; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROMANTIC ESCAPE</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Bali & Manali Honeymoon Perk</h3>
+            <span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
+            <span style="font-size:0.9rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
           </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Free luxury room upgrade, complimentary romantic candlelight dinner & honeymoon cake setup on all couples packages.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#fff5f7; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(238,9,121,0.4);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
-          </div>
-          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:linear-gradient(45deg, #ff6a00, #ee0979); color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#ff6a00,#ee0979); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
       <!-- OFFER CARD 4: DUBAI LUXURY FAMILY DEAL -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(245,158,11,0.4); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #f59e0b, #d97706); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FREE BURJ KHALIFA TICKETS
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(245,158,11,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(245,158,11,0.3);">FREE BURJ KHALIFA TICKETS</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8L22 9L17 14L18 21L12 17.5L6 21L7 14L2 9L9 8L12 2Z" fill="#f59e0b"/></svg>
+          <span style="font-size:0.66rem; color:#d97706; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">LUXURY INTERNATIONAL</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2L15 8L22 9L17 14L18 21L12 17.5L6 21L7 14L2 9L9 8L12 2Z" fill="#f59e0b"/></svg>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Dubai Family Special Deal</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Get flat 15% discount on 5D/4N Dubai package + complimentary Burj Khalifa 124th floor tickets for kids.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#fffbe6; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(245,158,11,0.45); margin-top:1rem; flex-shrink:0;">
           <div>
-            <span style="font-size:0.72rem; color:#d97706; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">LUXURY INTERNATIONAL</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Dubai Family Special Deal</h3>
+            <span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
+            <span style="font-size:0.9rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
           </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Get flat 15% discount on 5D/4N Dubai package + complimentary Burj Khalifa 124th floor tickets for kids.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#fffbe6; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(245,158,11,0.5);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
-          </div>
-          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#d97706; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
       <!-- OFFER CARD 5: THAILAND SUNSHINE ADVENTURE -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(16,185,129,0.4); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #10b981, #059669); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          BUY 1 GET 1 CORAL ISLAND
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(16,185,129,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#10b981,#059669); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(16,185,129,0.3);">BUY 1 GET 1 CORAL ISLAND</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M12 6V12L16 14" stroke="#10b981" stroke-width="2"/></svg>
+          <span style="font-size:0.66rem; color:#059669; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">BEACH &amp; ISLAND</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M12 6V12L16 14" stroke="#10b981" stroke-width="2"/></svg>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Thailand Sunshine Adventure</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Book 6D/5N Bangkok &amp; Pattaya tour and enjoy Buy 1 Get 1 Free Coral Island speedboat trip with Indian lunch.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#ecfdf5; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(16,185,129,0.45); margin-top:1rem; flex-shrink:0;">
           <div>
-            <span style="font-size:0.72rem; color:#059669; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">BEACH & ISLAND</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Thailand Sunshine Adventure</h3>
+            <span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
+            <span style="font-size:0.9rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
           </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Book 6D/5N Bangkok & Pattaya tour and enjoy Buy 1 Get 1 Free Coral Island speedboat trip with Indian lunch.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#ecfdf5; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(16,185,129,0.5);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
-          </div>
-          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#059669; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#10b981,#059669); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
       <!-- OFFER CARD 6: SPITI & HIMACHAL ROADTRIP SPECIAL -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(139,92,246,0.4); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #8b5cf6, #6d28d9); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FREE 4x4 SUV UPGRADE
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(139,92,246,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(139,92,246,0.3);">FREE 4x4 SUV UPGRADE</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 17h14M5 12h14M7 7h10" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/></svg>
+          <span style="font-size:0.66rem; color:#6d28d9; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROADTRIP SPECIAL</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M5 17h14M5 12h14M7 7h10" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Spiti &amp; Manali Roadtrip</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Get free 4x4 SUV vehicle upgrade + complimentary camping bonfire and stargazing session in Spiti Valley.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#f5f3ff; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(139,92,246,0.45); margin-top:1rem; flex-shrink:0;">
           <div>
-            <span style="font-size:0.72rem; color:#6d28d9; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROADTRIP SPECIAL</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Spiti & Manali Roadtrip</h3>
+            <span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
+            <span style="font-size:0.9rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
           </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Get free 4x4 SUV vehicle upgrade + complimentary camping bonfire and stargazing session in Spiti Valley.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#f5f3ff; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(139,92,246,0.5);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
-          </div>
-          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#6d28d9; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
-      <!-- OFFER CARD 1: CHAR DHAM SPECIAL -->
-      <div class="offer-card" style="min-width:380px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(201,165,74,0.4); border-radius:24px; padding:2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #e4c06e, #c9a54a); color:#081428; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FLAT ₹2,000 OFF
+      <!-- ======= DUPLICATE SET FOR INFINITE SCROLL ======= -->
+
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(201,165,74,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#e4c06e,#c9a54a); color:#0d1f3c; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(201,165,74,0.3);">FLAT ₹2,000 OFF</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M11 2H13V15H11V2ZM5 4H7V10C7 11.6569 8.34315 13 10 13V15C7.23858 15 5 12.7614 5 10V4ZM19 4H17V10C17 11.6569 15.6569 13 14 13V15C16.7614 15 19 12.7614 19 10V4ZM11 17H13V22H11V17Z" fill="#c9a54a"/></svg>
+          <span style="font-size:0.66rem; color:#c9a54a; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">FESTIVE SPECIAL</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;display:inline-block;"><path d="M11 2H13V15H11V2ZM5 4H7V10C7 11.6569 8.34315 13 10 13V15C7.23858 15 5 12.7614 5 10V4ZM19 4H17V10C17 11.6569 15.6569 13 14 13V15C16.7614 15 19 12.7614 19 10V4ZM11 17H13V22H11V17Z" fill="#c9a54a"/></svg>
-          <div>
-            <span style="font-size:0.72rem; color:var(--gold); font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">FESTIVE SPECIAL</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Char Dham Yatra Early Bird</h3>
-          </div>
-        </div>
-        <p style="font-size:0.92rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Book Char Dham 10D/9N package early and get ₹2,000 instant discount per family + VIP Darshan assistance included.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#f7f4ef; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(201,165,74,0.6);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
-          </div>
-          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#ffffff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Char Dham Yatra Early Bird</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Book Char Dham 10D/9N package early and get ₹2,000 instant discount per family + VIP Darshan assistance included.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#f7f4ef; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(201,165,74,0.5); margin-top:1rem; flex-shrink:0;">
+          <div><span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span><span style="font-size:0.9rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span></div>
+          <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#e4c06e,#c9a54a); color:#0d1f3c; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
-
-      <!-- OFFER CARD 2: KASHMIR & LADAKH GROUP OFFER -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(0,114,255,0.3); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #00c6ff, #0072ff); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          20% GROUP DISCOUNT
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><defs><linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#00c6ff"/><stop offset="100%" stop-color="#0072ff"/></linearGradient></defs><path d="M12 3L2 19H22L12 3Z" fill="url(#mountainGrad)"/><path d="M12 3L9 8.5L12 10.5L15 8.5L12 3Z" fill="#ffffff" opacity="0.9"/></svg>
-          <div>
-            <span style="font-size:0.72rem; color:#0072ff; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">SEASONAL SALE</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Kashmir & Ladakh Group Offer</h3>
-          </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Book for 4+ travellers and get flat 20% discount on total package + complimentary Shikara ride in Dal Lake.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#f0f7ff; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(0,114,255,0.4);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
-          </div>
-          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#0072ff; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(0,114,255,0.25); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#00c6ff,#0072ff); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(0,114,255,0.3);">20% GROUP DISCOUNT</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="mg2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#00c6ff"/><stop offset="100%" stop-color="#0072ff"/></linearGradient></defs><path d="M12 3L2 19H22L12 3Z" fill="url(#mg2)"/><path d="M12 3L9 8.5L12 10.5L15 8.5L12 3Z" fill="#fff" opacity="0.9"/></svg><span style="font-size:0.66rem; color:#0072ff; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">SEASONAL SALE</span></div>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Kashmir &amp; Ladakh Group Offer</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Book for 4+ travellers and get flat 20% discount on total package + complimentary Shikara ride in Dal Lake.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#f0f7ff; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(0,114,255,0.35); margin-top:1rem; flex-shrink:0;">
+          <div><span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span><span style="font-size:0.9rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span></div>
+          <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#00c6ff,#0072ff); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
-
-      <!-- OFFER CARD 3: BALI HONEYMOON SPECIAL -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(238,9,121,0.3); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #ff6a00, #ee0979); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FREE CANDLELIGHT DINNER
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="url(#heartGrad)" style="vertical-align:middle;"><defs><linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff0844"/><stop offset="100%" stop-color="#ffb199"/></linearGradient></defs><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          <div>
-            <span style="font-size:0.72rem; color:#ee0979; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROMANTIC ESCAPE</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Bali & Manali Honeymoon Perk</h3>
-          </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Free luxury room upgrade, complimentary romantic candlelight dinner & honeymoon cake setup on all couples packages.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#fff5f7; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(238,9,121,0.4);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
-          </div>
-          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:linear-gradient(45deg, #ff6a00, #ee0979); color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(238,9,121,0.25); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#ff6a00,#ee0979); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(238,9,121,0.3);">FREE CANDLELIGHT DINNER</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="url(#hg2)"><defs><linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff0844"/><stop offset="100%" stop-color="#ffb199"/></linearGradient></defs><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span style="font-size:0.66rem; color:#ee0979; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROMANTIC ESCAPE</span></div>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Bali &amp; Manali Honeymoon Perk</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Free luxury room upgrade, complimentary romantic candlelight dinner &amp; honeymoon cake setup on all couples packages.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#fff5f7; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(238,9,121,0.35); margin-top:1rem; flex-shrink:0;">
+          <div><span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span><span style="font-size:0.9rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span></div>
+          <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#ff6a00,#ee0979); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
-
-      <!-- OFFER CARD 4: DUBAI LUXURY FAMILY DEAL -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(245,158,11,0.4); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #f59e0b, #d97706); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FREE BURJ KHALIFA TICKETS
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M12 2L15 8L22 9L17 14L18 21L12 17.5L6 21L7 14L2 9L9 8L12 2Z" fill="#f59e0b"/></svg>
-          <div>
-            <span style="font-size:0.72rem; color:#d97706; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">LUXURY INTERNATIONAL</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Dubai Family Special Deal</h3>
-          </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Get flat 15% discount on 5D/4N Dubai package + complimentary Burj Khalifa 124th floor tickets for kids.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#fffbe6; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(245,158,11,0.5);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
-          </div>
-          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#d97706; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(245,158,11,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(245,158,11,0.3);">FREE BURJ KHALIFA TICKETS</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8L22 9L17 14L18 21L12 17.5L6 21L7 14L2 9L9 8L12 2Z" fill="#f59e0b"/></svg><span style="font-size:0.66rem; color:#d97706; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">LUXURY INTERNATIONAL</span></div>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Dubai Family Special Deal</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Get flat 15% discount on 5D/4N Dubai package + complimentary Burj Khalifa 124th floor tickets for kids.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#fffbe6; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(245,158,11,0.45); margin-top:1rem; flex-shrink:0;">
+          <div><span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span><span style="font-size:0.9rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span></div>
+          <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
-
-      <!-- OFFER CARD 5: THAILAND SUNSHINE ADVENTURE -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(16,185,129,0.4); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #10b981, #059669); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          BUY 1 GET 1 CORAL ISLAND
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M12 6V12L16 14" stroke="#10b981" stroke-width="2"/></svg>
-          <div>
-            <span style="font-size:0.72rem; color:#059669; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">BEACH & ISLAND</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Thailand Sunshine Adventure</h3>
-          </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Book 6D/5N Bangkok & Pattaya tour and enjoy Buy 1 Get 1 Free Coral Island speedboat trip with Indian lunch.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#ecfdf5; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(16,185,129,0.5);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
-          </div>
-          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#059669; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(16,185,129,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#10b981,#059669); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(16,185,129,0.3);">BUY 1 GET 1 CORAL ISLAND</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M12 6V12L16 14" stroke="#10b981" stroke-width="2"/></svg><span style="font-size:0.66rem; color:#059669; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">BEACH &amp; ISLAND</span></div>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Thailand Sunshine Adventure</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Book 6D/5N Bangkok &amp; Pattaya tour and enjoy Buy 1 Get 1 Free Coral Island speedboat trip with Indian lunch.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#ecfdf5; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(16,185,129,0.45); margin-top:1rem; flex-shrink:0;">
+          <div><span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span><span style="font-size:0.9rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span></div>
+          <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#10b981,#059669); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
-
-      <!-- OFFER CARD 6: SPITI & HIMACHAL ROADTRIP SPECIAL -->
-      <div class="offer-card" style="min-width:400px; max-width:400px; flex:0 0 auto; position:relative; background:#ffffff; border:1px solid rgba(139,92,246,0.4); border-radius:24px; padding:2.2rem; overflow:hidden; box-shadow:0 12px 35px rgba(13,31,60,0.08); transition:all 0.3s ease;">
-        <div style="position:absolute; top:0; right:0; background:linear-gradient(45deg, #8b5cf6, #6d28d9); color:#fff; font-weight:800; font-size:0.78rem; padding:0.65rem 1.4rem; border-radius:0 0 0 16px; letter-spacing:1px; text-transform:uppercase; box-shadow:0 2px 10px rgba(0,0,0,0.15);">
-          FREE 4x4 SUV UPGRADE
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;"><path d="M5 17h14M5 12h14M7 7h10" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/></svg>
-          <div>
-            <span style="font-size:0.72rem; color:#6d28d9; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROADTRIP SPECIAL</span>
-            <h3 style="font-size:1.35rem; font-weight:700; color:#0d1f3c; margin-top:2px;">Spiti & Manali Roadtrip</h3>
-          </div>
-        </div>
-        <p style="font-size:0.95rem; color:#4a5568; line-height:1.6; margin-bottom:1.4rem;">Get free 4x4 SUV vehicle upgrade + complimentary camping bonfire and stargazing session in Spiti Valley.</p>
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; background:#f5f3ff; padding:0.9rem 1.1rem; border-radius:16px; border:1px dashed rgba(139,92,246,0.5);">
-          <div>
-            <span style="font-size:0.68rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span>
-            <span style="font-size:1.05rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
-          </div>
-          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="padding:0.65rem 1.4rem; font-size:0.88rem; background:#6d28d9; color: #0B1B33; font-weight:700; border:none; border-radius:20px; cursor:pointer;">Claim Offer →</button>
+      <div class="offer-card" style="min-width:320px; max-width:320px; flex:0 0 auto; min-height:330px; display:flex; flex-direction:column; position:relative; background:#ffffff; border:1.5px solid rgba(139,92,246,0.35); border-radius:20px; padding:1.4rem 1.5rem 1.5rem; overflow:visible; box-shadow:none; transition:transform 0.25s ease;">
+        <div style="position:absolute; top:-12px; right:16px; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:#fff; font-weight:800; font-size:0.63rem; padding:0.28rem 0.85rem; border-radius:20px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; box-shadow:0 2px 8px rgba(139,92,246,0.3);">FREE 4x4 SUV UPGRADE</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.6rem; margin-top:0.5rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 17h14M5 12h14M7 7h10" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/></svg><span style="font-size:0.66rem; color:#6d28d9; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;">ROADTRIP SPECIAL</span></div>
+        <h3 style="font-size:1.1rem; font-weight:800; color:#0d1f3c; margin:0 0 0.5rem; line-height:1.3;">Spiti &amp; Manali Roadtrip</h3>
+        <p style="font-size:0.86rem; color:#4a5568; line-height:1.6; margin:0; flex-grow:1;">Get free 4x4 SUV vehicle upgrade + complimentary camping bonfire and stargazing session in Spiti Valley.</p>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:0.6rem; background:#f5f3ff; padding:0.7rem 0.9rem; border-radius:14px; border:1.5px dashed rgba(139,92,246,0.45); margin-top:1rem; flex-shrink:0;">
+          <div><span style="font-size:0.6rem; color:#64748b; display:block; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Promo Code</span><span style="font-size:0.9rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span></div>
+          <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" style="padding:0.5rem 1rem; font-size:0.8rem; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:#fff; font-weight:800; border:none; border-radius:12px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Claim →</button>
         </div>
       </div>
 
