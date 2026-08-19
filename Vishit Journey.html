@@ -3213,12 +3213,14 @@ function executePackageSearch() {
 
 <!-- BOOKING MODAL -->
 <!-- BOOKING & ITINERARY DOWNLOAD MODAL -->
-<div id="vjBookingModal" class="vj-modal-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; background:rgba(8,20,40,0.85); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:1rem;">
-  <div class="vj-modal-box" style="background:#ffffff; border-radius:24px; width:100%; max-width:650px; max-height:90vh; overflow-y:auto; box-shadow:0 25px 50px rgba(0,0,0,0.3); border:1px solid rgba(201,165,74,0.4); position:relative;">
+
+<!-- BOOKING & ITINERARY DOWNLOAD MODAL -->
+<div id="vjBookingModal" class="vj-modal-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:99999; background:rgba(8,20,40,0.85); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:1rem;">
+  <div class="vj-modal-box" style="background:#ffffff; border-radius:24px; width:100%; max-width:650px; max-height:90vh; overflow-y:auto; box-shadow:0 25px 50px rgba(0,0,0,0.35); border:1px solid rgba(201,165,74,0.4); position:relative; margin:auto;">
     <button onclick="closeBookingModal()" class="vj-modal-close" style="position:absolute; top:16px; right:20px; background:rgba(13,31,60,0.08); border:none; width:36px; height:36px; border-radius:50%; font-size:1.1rem; cursor:pointer; color:#0d1f3c; font-weight:bold; display:flex; align-items:center; justify-content:center;">✕</button>
     
     <div class="vj-modal-header" style="background:linear-gradient(135deg, #0d1f3c 0%, #1a2b4c 100%); padding:1.8rem 1.8rem 1.2rem; border-radius:24px 24px 0 0; color:#fff;">
-      <div class="vj-modal-tag" style="color:var(--gold); font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">VISHIT JOURNEY • ITINERARY & INQUIRY</div>
+      <div class="vj-modal-tag" style="color:#c9a54a; font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">VISHIT JOURNEY • ITINERARY & INQUIRY</div>
       <h3 id="vjModalPkgTitle" class="vj-modal-title" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; color:#ffffff; margin:0;">Package Name</h3>
       <div id="vjModalPkgMeta" class="vj-modal-meta" style="color:rgba(255,255,255,0.75); font-size:0.85rem; margin-top:4px;">Duration • Starting Price</div>
     </div>
@@ -3226,7 +3228,7 @@ function executePackageSearch() {
     <div class="vj-modal-body" style="padding:1.5rem 1.8rem;">
       <div id="vjModalError" class="vj-alert-error" style="display:none; background:#fef2f2; border:1px solid #fca5a5; color:#991b1b; padding:0.75rem 1rem; border-radius:10px; font-size:0.85rem; margin-bottom:1rem;"></div>
 
-      <!-- STEP 1: USER DETAILS FORM (NO FORCED PAYMENT) -->
+      <!-- STEP 1: USER DETAILS FORM -->
       <div id="vjStep1">
         <form onsubmit="handleDetailsSubmit(event)">
           <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:1rem;">
@@ -3304,180 +3306,8 @@ function executePackageSearch() {
     </div>
   </div>
 </div>
-    </div>
-
-    <div class="vj-modal-body">
-      <div id="vjModalError" class="vj-alert-error"></div>
-
-      <!-- STEP 1: TRIP DETAILS -->
-      <div id="vjStep1">
-        <div class="vj-form-grid-2">
-          <div class="vj-field-group">
-            <label class="vj-label">Travel Date *</label>
-            <input type="date" id="vjInputDate" class="vj-input" required>
-          </div>
-          <div class="vj-field-group">
-            <label class="vj-label">Adults (12+ yrs)</label>
-            <select id="vjSelectAdults" class="vj-select" onchange="recalculatePricing()">
-              <option value="1">1 Adult</option>
-              <option value="2" selected>2 Adults</option>
-              <option value="3">3 Adults</option>
-              <option value="4">4 Adults</option>
-              <option value="5">5 Adults</option>
-              <option value="6">6+ Adults</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="vj-form-grid-2">
-          <div class="vj-field-group">
-            <label class="vj-label">Children (5-11 yrs)</label>
-            <select id="vjSelectChildren" class="vj-select" onchange="recalculatePricing()">
-              <option value="0" selected>0 Children</option>
-              <option value="1">1 Child</option>
-              <option value="2">2 Children</option>
-              <option value="3">3 Children</option>
-            </select>
-          </div>
-          <div class="vj-field-group">
-            <label class="vj-label">Rooms</label>
-            <select id="vjSelectRooms" class="vj-select">
-              <option value="1" selected>1 Room</option>
-              <option value="2">2 Rooms</option>
-              <option value="3">3 Rooms</option>
-              <option value="4">4+ Rooms</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="vj-price-summary-card" style="margin-top:0.5rem">
-          <div class="vj-price-row">
-            <span>Estimated Package Total:</span>
-            <strong id="vjPreviewTotal" style="color:#ffffff;font-size:1.1rem">₹0</strong>
-          </div>
-          <div class="vj-price-row advance" style="margin-bottom:0">
-            <span>Advance Payment Required:</span>
-            <strong id="vjPreviewAdvance" style="font-size:1.1rem">₹0</strong>
-          </div>
-        </div>
-
-        <button onclick="goToStep(2)" class="vj-btn-primary">CONTINUE TO TRAVELLER DETAILS →</button>
-      </div>
-
-      <!-- STEP 2: TRAVELLER DETAILS -->
-      <div id="vjStep2" style="display:none">
-        <div class="vj-form-grid-2">
-          <div class="vj-field-group">
-            <label class="vj-label">Full Name *</label>
-            <input type="text" id="vjInputName" class="vj-input" placeholder="Enter your full name" required>
-          </div>
-          <div class="vj-field-group">
-            <label class="vj-label">Phone Number *</label>
-            <input type="tel" id="vjInputPhone" class="vj-input" placeholder="+91 9876543210" required>
-          </div>
-        </div>
-
-        <div class="vj-form-grid-2">
-          <div class="vj-field-group">
-            <label class="vj-label">WhatsApp Number</label>
-            <input type="tel" id="vjInputWhatsApp" class="vj-input" placeholder="Same as phone or different">
-          </div>
-          <div class="vj-field-group">
-            <label class="vj-label">Email Address</label>
-            <input type="email" id="vjInputEmail" class="vj-input" placeholder="yourname@gmail.com">
-          </div>
-        </div>
-
-        <div class="vj-field-group">
-          <label class="vj-label">Pickup / Drop Location (Optional)</label>
-          <input type="text" id="vjInputPickup" class="vj-input" placeholder="Airport, Railway Station, Hotel, or Address">
-        </div>
-
-        <div class="vj-field-group">
-          <label class="vj-label">Special Requests (Optional)</label>
-          <textarea id="vjInputRequests" class="vj-textarea" rows="2" placeholder="Vegetarian food, extra bed, flight details, etc."></textarea>
-        </div>
-
-        <div class="vj-actions-flex">
-          <button onclick="goToStep(1)" class="vj-btn-secondary">← BACK</button>
-          <button onclick="goToStep(3)" class="vj-btn-primary" style="flex:1">REVIEW PRICE & PAY →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: PRICE CALCULATION & PAY -->
-      <div id="vjStep3" style="display:none">
-        <div id="vjPriceBreakdownBox" class="vj-price-summary-card">
-          <!-- Dynamically filled by renderPriceBreakdown() -->
-        </div>
-
-        <div style="font-size:0.75rem;color:rgba(255,255,255,0.6);margin-bottom:1.2rem;text-align:center;line-height:1.5">
-          🔒 <strong>256-bit SSL Secured Razorpay Checkout</strong><br>
-          Advance payment locks your hotel, cab, and slots instantly.
-        </div>
-
-        <div class="vj-actions-flex">
-          <button onclick="goToStep(2)" class="vj-btn-secondary">← BACK</button>
-          <button id="vjBtnPay" onclick="submitBookingPayment()" class="vj-btn-primary" style="flex:1">PROCEED TO PAY →</button>
-        </div>
-      </div>
-
-      <!-- SUCCESS STEP -->
-      <div id="vjStepSuccess" style="display:none;text-align:center">
-        <div style="font-size:3rem;margin-bottom:0.5rem;color:#2e7d32">✓</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#c9a54a;margin-bottom:0.3rem">BOOKING CONFIRMED</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:1.2rem">Thank you for choosing Vishit Journey! Your reservation is secured.</p>
-        
-        <div id="vjSuccessReceiptContainer"></div>
-
-        <div class="vj-actions-flex" style="flex-wrap:wrap">
-          <button onclick="printConfirmation()" class="vj-btn-secondary" style="flex:1">🖨️ PRINT / PDF</button>
-          <a id="vjSuccessWABtn" href="#" target="_blank" class="vj-btn-primary" style="background:#25D366;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:0.4rem;flex:1">💬 WHATSAPP</a>
-        </div>
-        <button onclick="closeBookingModal()" class="vj-btn-secondary" style="width:100%;margin-top:0.8rem">BACK TO HOME</button>
-      </div>
-
-      <!-- FAILED STEP -->
-      <div id="vjStepFailed" style="display:none;text-align:center">
-        <div style="font-size:3rem;margin-bottom:0.5rem;color:#ff5252">❌</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#ff5252;margin-bottom:0.3rem">PAYMENT UNSUCCESSFUL</h3>
-        <p id="vjFailedMsg" style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:0.3rem"></p>
-        <p id="vjFailedRef" style="font-size:0.9rem;font-weight:600;color:#c9a54a;margin-bottom:1.2rem"></p>
-
-        <div class="vj-actions-flex">
-          <button id="vjBtnRetry" class="vj-btn-primary">TRY PAYMENT AGAIN ↺</button>
-          <a href="https://wa.me/919899902890" target="_blank" class="vj-btn-secondary" style="text-decoration:none;display:flex;align-items:center;justify-content:center">💬 CONTACT US</a>
-        </div>
-        <button onclick="closeBookingModal()" class="vj-btn-secondary" style="width:100%;margin-top:0.8rem">RETURN TO PACKAGE</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- RAZORPAY & BOOKING SCRIPTS -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="/assets/js/booking.js"></script>
-<script>
-// Alias openBooking for full backward compatibility
-function openBooking(id, name, price, duration, category) {
-  openBookingModal(id, name, price, duration, category);
-}
-</script>
 
 
-<script>
-function filterByDestination(destKey) {
-  const destSelect = document.getElementById('searchDest');
-  if (destSelect) {
-    destSelect.value = destKey;
-  }
-  if (typeof executePackageSearch === 'function') {
-    executePackageSearch();
-  }
-}
-</script>
-
-
-<!-- USER AUTH MODAL (LOGIN / SIGN UP) -->
 <div id="vjAuthModal" class="vj-modal-overlay">
   <div class="vj-modal-box" style="max-width:440px;border-radius:24px;">
     <button onclick="closeAuthModal()" class="vj-modal-close">✕</button>
