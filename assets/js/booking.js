@@ -54,8 +54,12 @@ function getItineraryForPackage(pkgName) {
 }
 
 // Open Booking & Itinerary Modal
+
 function openBooking(id, name, price, duration, category) {
-  openBookingModal(id, name, price, duration, category);
+  const pkgName = encodeURIComponent(name || 'Travel Package');
+  const pkgPrice = encodeURIComponent(price || 0);
+  const pkgDur = encodeURIComponent(duration || '');
+  window.location.href = '/booking?pkg=' + pkgName + '&price=' + pkgPrice + '&duration=' + pkgDur;
 }
 
 async function openBookingModal(pkgId, name, price, duration, category) {

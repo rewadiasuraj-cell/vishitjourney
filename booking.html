@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Booking & Itinerary — Vishit Journey</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #081428;
+      --navy2: #0d1f3c;
+      --gold: #c9a54a;
+      --gold-light: #e4c06e;
+      --offwhite: #f8f6f0;
+      --text-dark: #0d1f3c;
+      --text-muted: #5a6a85;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Jost', sans-serif; background: var(--offwhite); color: var(--text-dark); line-height: 1.6; }
+
+    /* NAVBAR */
+    header { background: #ffffff; border-bottom: 2px solid rgba(201,165,74,0.3); padding: 0.8rem 5%; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .logo-img { height: 50px; width: auto; }
+    .nav-link-btn { text-decoration: none; color: var(--navy2); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.5rem 1.2rem; border-radius: 20px; border: 1px solid rgba(201,165,74,0.4); background: rgba(13,31,60,0.03); }
+
+    /* HERO BANNER */
+    .booking-hero { background: linear-gradient(135deg, #081428 0%, #0d1f3c 100%); color: #fff; padding: 2.5rem 5%; text-align: center; border-bottom: 3px solid var(--gold); }
+    .hero-tag { display: inline-block; background: rgba(201,165,74,0.15); border: 1px solid var(--gold); color: var(--gold); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff; }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.8); }
+
+    /* LAYOUT CONTAINER */
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 4%; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 900px) { .container { grid-template-columns: 1fr; } }
+
+    /* CARD STYLES */
+    .card { background: #ffffff; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid rgba(201,165,74,0.3); }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: var(--navy2); margin-bottom: 1rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; }
+
+    /* FORM ELEMENTS */
+    .form-group { margin-bottom: 1.2rem; }
+    .form-label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--navy2); margin-bottom: 4px; }
+    .form-input, .form-select { width: 100%; padding: 0.85rem; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 0.95rem; font-family: inherit; background: #fff; }
+    .form-input:focus, .form-select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,165,74,0.2); }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+    /* BUTTONS */
+    .btn-submit { width: 100%; padding: 1rem; background: var(--navy2); color: #fff; border: none; border-radius: 14px; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(13,31,60,0.2); }
+    .btn-submit:hover { background: var(--gold); color: var(--navy); }
+    .btn-pdf { background: var(--gold); color: #081428; }
+    .btn-wa { background: #25D366; color: #ffffff; text-decoration: none; }
+
+    /* ITINERARY LIST */
+    .itinerary-day { background: #f8f6f0; border-left: 4px solid var(--gold); padding: 1rem 1.2rem; border-radius: 0 12px 12px 0; margin-bottom: 1rem; }
+    .itinerary-day-num { font-size: 0.75rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+    .itinerary-day-title { font-size: 1.05rem; font-weight: 700; color: var(--navy2); margin: 2px 0 4px; }
+    .itinerary-day-desc { font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+
+    /* INCLUSIONS BOX */
+    .inclusions-box { background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: 14px; padding: 1.2rem; margin-top: 1.5rem; }
+    .inclusions-title { font-size: 0.95rem; font-weight: 700; color: #1e40af; margin-bottom: 0.5rem; }
+    .inclusions-list { font-size: 0.88rem; color: #1e3a8a; padding-left: 1.2rem; line-height: 1.7; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: #fff; text-align: center; padding: 2rem 5%; margin-top: 3rem; border-top: 2px solid var(--gold); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <header>
+    <a href="index.html">
+      <img src="Vishit_Journey_Logo.png" alt="Vishit Journey" class="logo-img">
+    </a>
+    <a href="index.html#packages" class="nav-link-btn">← Back To All Packages</a>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="booking-hero">
+    <span class="hero-tag">PACKAGE DETAILS & ITINERARY</span>
+    <h1 id="pagePkgTitle" class="hero-title">Char Dham Yatra Package</h1>
+    <p id="pagePkgMeta" class="hero-sub">10 Days / 9 Nights • Starting ₹20,000 per person</p>
+  </section>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+    
+    <!-- LEFT COLUMN: PACKAGE ITINERARY & DETAILS -->
+    <div class="card">
+      <h2 class="card-title">📋 Day-by-Day Travel Plan</h2>
+      <div id="pkgBannerWrap" style="margin-bottom:1.5rem; border-radius:14px; overflow:hidden; border:1px solid rgba(201,165,74,0.3);">
+        <img id="pagePkgBanner" src="assets/images/chardham_banner.jpg" alt="Package Banner" style="width:100%; height:auto; display:block;">
+      </div>
+
+      <div id="itineraryDaysList">
+        <!-- Dynamically rendered itinerary days -->
+      </div>
+
+      <div class="inclusions-box">
+        <h3 class="inclusions-title">✨ Package Inclusions Included:</h3>
+        <ul class="inclusions-list">
+          <li>Complete Tour Transfers via AC Vehicle</li>
+          <li>Pre-booked Hotel / Resort Accommodation</li>
+          <li>Daily Delicious Breakfast & Dinner</li>
+          <li>VIP Darshan & Sightseeing Entry Assistance</li>
+          <li>24/7 Dedicated Trip Manager Support</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: USER DETAILS FORM & DOWNLOAD -->
+    <div class="card" id="formCard">
+      <h2 class="card-title">📝 Get Package Itinerary</h2>
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Enter your details to instantly view & download the complete PDF itinerary and receive customized quotes on WhatsApp!
+      </p>
+
+      <form id="bookingPageForm" onsubmit="handlePageFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" id="inputName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Mobile / WhatsApp Number *</label>
+            <input type="tel" id="inputPhone" class="form-input" placeholder="+91 9876543210" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Starting City / Location *</label>
+            <input type="text" id="inputCity" class="form-input" placeholder="e.g. Delhi, Mumbai" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Expected Travel Date *</label>
+            <input type="date" id="inputDate" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Number of Travellers</label>
+            <select id="selectGuests" class="form-select">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults (Couple)</option>
+              <option value="4">4 Adults (Family / Group)</option>
+              <option value="6+">6+ Adults (Large Group)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" style="margin-top:1rem;">
+          📄 GET ITINERARY & CUSTOM QUOTE →
+        </button>
+      </form>
+
+      <!-- SUCCESS CONFIRMATION & PDF DOWNLOAD (Hidden initially) -->
+      <div id="bookingSuccessBox" style="display:none; margin-top:1.5rem; text-align:center; background:#f0fdf4; border:1px solid #86efac; border-radius:16px; padding:1.5rem;">
+        <div style="font-size:2.5rem; color:#16a34a; margin-bottom:0.3rem;">✓</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:#15803d; margin-bottom:0.4rem;">Details Received Successfully!</h3>
+        <p style="font-size:0.88rem; color:#166534; margin-bottom:1.2rem;">
+          Your itinerary is ready for download. Our travel expert will also contact you on WhatsApp shortly!
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:0.8rem;">
+          <button onclick="downloadPagePDF()" class="btn-submit btn-pdf">
+            📥 DOWNLOAD PDF ITINERARY
+          </button>
+          <a id="waDirectBtn" href="https://wa.me/919899902890" target="_blank" class="btn-submit btn-wa">
+            💬 CONNECT ON WHATSAPP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Vishit Journey — Travel Beyond Limits</strong></p>
+    <p style="margin-top:4px; color:rgba(255,255,255,0.7);">
+      Office on First Floor, Plot No. 2, Metro Pillar No. 786, 55 Feet Rd, Uttam Nagar, New Delhi • Phone: +91 98999 02890
+    </p>
+  </footer>
+
+  <script style="display:none;">
+    // Itinerary Database
+    const itineraries = {
+      'char dham': [
+        { day: 'Day 1', title: 'Arrival in Haridwar / Rishikesh', desc: 'Pickup from Station/Airport, transfer to hotel, evening Ganga Aarti.' },
+        { day: 'Day 2', title: 'Haridwar to Barkot / Yamunotri Base', desc: 'Scenic drive via Kempty Falls to Barkot base camp.' },
+        { day: 'Day 3', title: 'Yamunotri Dham Darshan', desc: 'Trek to Yamunotri Temple, holy dip at Surya Kund & VIP Darshan.' },
+        { day: 'Day 4', title: 'Barkot to Uttarkashi', desc: 'Drive along Bhagirathi river, visit Kashi Vishwanath Temple.' },
+        { day: 'Day 5', title: 'Gangotri Dham Excursion', desc: 'Drive through Harsil valley to Gangotri Dham, offer prayers & return.' },
+        { day: 'Day 6', title: 'Uttarkashi to Guptkashi', desc: 'Drive through Mandakini valley, stay in Guptkashi/Phata.' },
+        { day: 'Day 7', title: 'Kedarnath Dham Darshan', desc: 'Helicopter or Trek to Kedarnath Temple, evening Aarti & stay.' },
+        { day: 'Day 8', title: 'Kedarnath to Badrinath Dham', desc: 'Morning Pooja, transfer to Badrinath via Chopta & Joshimath.' },
+        { day: 'Day 9', title: 'Badrinath Darshan & Mana Village', desc: 'Tapt Kund dip, Badrinath Darshan, Mana Village & Vyas Gufa.' },
+        { day: 'Day 10', title: 'Badrinath to Rishikesh / Delhi Departure', desc: 'Return drive via Devprayag, drop at Rishikesh/Haridwar/Delhi.' }
+      ],
+      'kashmir': [
+        { day: 'Day 1', title: 'Srinagar Airport Arrival & Houseboat Stay', desc: 'Transfer to Deluxe Houseboat on Dal Lake, 1-Hour Shikara ride.' },
+        { day: 'Day 2', title: 'Srinagar Mughal Gardens Sightseeing', desc: 'Visit Nishat Bagh, Shalimar Bagh, Chashme Shahi & Shankaracharya Temple.' },
+        { day: 'Day 3', title: 'Gulmarg Gondola Excursion', desc: 'Full day trip to Gulmarg, Gondola Cable Car ride & snow points.' },
+        { day: 'Day 4', title: 'Pahalgam Valley Tour', desc: 'Drive to Pahalgam via saffron fields, visit Betaab Valley & Aru Valley.' },
+        { day: 'Day 5', title: 'Sonmarg Glacier Trip', desc: 'Trip to Sonmarg & Thajiwas Glacier pony ride.' },
+        { day: 'Day 6', title: 'Shopping & Srinagar Departure', desc: 'Souvenir shopping and airport drop.' }
+      ],
+      'default': [
+        { day: 'Day 1', title: 'Arrival & Hotel Check-in', desc: 'Pickup from Airport/Station, transfer to hotel, evening market walk.' },
+        { day: 'Day 2', title: 'Full Day Sightseeing Tour', desc: 'Guided tour of top attractions, heritage landmarks & scenic spots.' },
+        { day: 'Day 3', title: 'Outdoor Excursion & Adventure', desc: 'Full day excursion to nearby viewpoints and activity spots.' },
+        { day: 'Day 4', title: 'Leisure & Local Culture', desc: 'Shopping, local food exploration & relaxed evening.' },
+        { day: 'Day 5', title: 'Check-out & Departure', desc: 'Breakfast, check-out and drop transfer to Airport/Station.' }
+      ]
+    };
+
+    let pagePkgData = {
+      title: 'Char Dham Yatra Package',
+      price: 20000,
+      duration: '10D / 9N',
+      banner: 'assets/images/chardham_banner.jpg'
+    };
+
+    let pageUserData = {};
+
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('pkg')) pagePkgData.title = urlParams.get('pkg');
+      if (urlParams.has('price')) pagePkgData.price = urlParams.get('price');
+      if (urlParams.has('duration')) pagePkgData.duration = urlParams.get('duration');
+
+      // Update UI Header
+      document.getElementById('pagePkgTitle').textContent = pagePkgData.title;
+      document.getElementById('pagePkgMeta').textContent = `${pagePkgData.duration} • Starting ₹${Number(pagePkgData.price).toLocaleString('en-IN')} per person`;
+
+      // Set Banner Image
+      const bannerImg = document.getElementById('pagePkgBanner');
+      if (pagePkgData.title.toLowerCase().includes('kashmir')) {
+        bannerImg.src = 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80';
+      } else if (pagePkgData.title.toLowerCase().includes('char dham') || pagePkgData.title.toLowerCase().includes('dham')) {
+        bannerImg.src = 'assets/images/chardham_banner.jpg';
+      }
+
+      // Pre-fill tomorrow's date
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.getElementById('inputDate').value = tomorrow.toISOString().split('T')[0];
+
+      // Render Itinerary Days
+      renderItineraryList();
+    };
+
+    function renderItineraryList() {
+      const titleLower = pagePkgData.title.toLowerCase();
+      let key = 'default';
+      if (titleLower.includes('char dham') || titleLower.includes('dham')) key = 'char dham';
+      else if (titleLower.includes('kashmir')) key = 'kashmir';
+
+      const days = itineraries[key] || itineraries['default'];
+      const container = document.getElementById('itineraryDaysList');
+      let html = '';
+
+      days.forEach(item => {
+        html += `
+          <div class="itinerary-day">
+            <span class="itinerary-day-num">${item.day}</span>
+            <h4 class="itinerary-day-title">${item.title}</h4>
+            <p class="itinerary-day-desc">${item.desc}</p>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function handlePageFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('inputName').value.trim();
+      const phone = document.getElementById('inputPhone').value.trim();
+      const city = document.getElementById('inputCity').value.trim();
+      const travelDate = document.getElementById('inputDate').value;
+      const guests = document.getElementById('selectGuests').value;
+
+      pageUserData = { name, phone, city, travelDate, guests, pkg: pagePkgData.title };
+
+      // Save Inquiry Lead
+      try {
+        let existing = JSON.parse(localStorage.getItem('vj_admin_inquiries') || '[]');
+        existing.unshift({ id: 'INQ-' + Math.floor(1000 + Math.random() * 9000), ...pageUserData, timestamp: new Date().toISOString() });
+        localStorage.setItem('vj_admin_inquiries', JSON.stringify(existing));
+      } catch(err) {}
+
+      // Show Success Box
+      document.getElementById('bookingPageForm').style.display = 'none';
+      document.getElementById('bookingSuccessBox').style.display = 'block';
+
+      // Set WhatsApp Link
+      const waBtn = document.getElementById('waDirectBtn');
+      const text = `Hi Vishit Journey, I want to book ${pagePkgData.title}!\n\n*Name:* ${name}\n*Phone:* ${phone}\n*City:* ${city}\n*Travel Date:* ${travelDate}\n*Guests:* ${guests}\n\nPlease share full package details and confirm slots!`;
+      waBtn.href = `https://wa.me/919899902890?text=${encodeURIComponent(text)}`;
+    }
+
+    function downloadPagePDF() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
