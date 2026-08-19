@@ -2075,9 +2075,8 @@
     function autoScrollOffersLoop() {
       const track = document.getElementById('vjOffersTrack');
       if (track && !isOffersPaused) {
-        track.scrollLeft += 1.5;
-        // Seamlessly reset scrollLeft to 0 when reaching half of the scrollWidth (end of first set of 6 cards)
-        if (track.scrollLeft >= (track.scrollWidth / 2) - 2) {
+        track.scrollLeft += 1;
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) {
           track.scrollLeft = 0;
         }
       }
