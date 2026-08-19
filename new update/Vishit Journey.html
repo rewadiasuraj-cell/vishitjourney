@@ -1682,7 +1682,7 @@
 
   <style id="vjLightLuxuryThemeStyles">
     /* ════════════════════════════════════════════════════════════
-       VISHIT JOURNEY — COMPLETE LIGHT / WHITE LUXURY THEME & FIXES
+       VISHIT JOURNEY — 100% PURE WHITE LUXURY THEME (ZERO DARK SECTIONS)
        ════════════════════════════════════════════════════════════ */
     :root {
       --bg-main: #FFFFFF;
@@ -1701,7 +1701,92 @@
       color: #0B1B33 !important;
     }
 
-    /* 2. REMOVE DARK FADE OVERLAYS FROM REVIEWS / TESTIMONIALS MARQUEE */
+    /* 2. HERO SECTION 100% LIGHT WHITE THEME */
+    .hero {
+      background-color: #FFFFFF !important;
+      background-image: none !important;
+      color: #0B1B33 !important;
+      padding: 100px 4% 3rem !important;
+    }
+    .slide, .slide-overlay {
+      display: none !important;
+      opacity: 0 !important;
+    }
+    .hero-badge {
+      background: #F7F9FC !important;
+      color: #0B1B33 !important;
+      border: 1px solid #E3E8EF !important;
+      box-shadow: 0 2px 10px rgba(11, 27, 51, 0.04) !important;
+    }
+    .hero h1, 
+    .hero h1 span {
+      color: #0B1B33 !important;
+      text-shadow: none !important;
+    }
+    .hero h1 em {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+    .hero p {
+      color: #5F6B7A !important;
+      text-shadow: none !important;
+    }
+
+    /* HERO BUTTONS LIGHT THEME */
+    .btn-gold {
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #D4A72C !important;
+      box-shadow: 0 4px 15px rgba(212, 167, 44, 0.25) !important;
+    }
+    .btn-gold:hover {
+      background: #B88918 !important;
+      border-color: #B88918 !important;
+      color: #FFFFFF !important;
+    }
+    .btn-outline {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #D4A72C !important;
+      box-shadow: 0 4px 15px rgba(11, 27, 51, 0.04) !important;
+    }
+    .btn-outline:hover {
+      background: rgba(212, 167, 44, 0.08) !important;
+      color: #B88918 !important;
+    }
+
+    /* HERO TRUST BADGES STRIP PURE WHITE FIX */
+    .hero-trust-strip {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 30px !important;
+      padding: 0.55rem 1.6rem !important;
+      color: #0B1B33 !important;
+      box-shadow: 0 8px 25px rgba(11, 27, 51, 0.06) !important;
+    }
+    .trust-badge-item, 
+    .trust-badge-item span, 
+    .trust-badge-item strong {
+      color: #0B1B33 !important;
+    }
+    .trust-badge-item strong {
+      color: #D4A72C !important;
+    }
+    .trust-badge-divider {
+      background: #E3E8EF !important;
+    }
+
+    /* HERO STATS PURE WHITE FIX */
+    .stat-num {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+    .stat-label {
+      color: #5F6B7A !important;
+      text-shadow: none !important;
+    }
+
+    /* 3. REMOVE DARK FADE OVERLAYS FROM REVIEWS / TESTIMONIALS MARQUEE */
     .testi-marquee-wrapper::before,
     .testi-marquee-wrapper::after,
     .testimonials::before,
@@ -1737,57 +1822,6 @@
     .review-loc {
       color: #D4A72C !important;
       font-weight: 600 !important;
-    }
-
-    /* 3. HERO SECTION HIGH-CONTRAST FIX (Over Dark Mountain Background Image) */
-    .hero {
-      background-color: #081428 !important;
-    }
-    .hero h1, 
-    .hero h1 span, 
-    .hero-badge {
-      color: #FFFFFF !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
-    }
-    .hero h1 em {
-      color: #D4A72C !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
-    }
-    .hero p {
-      color: rgba(255, 255, 255, 0.95) !important;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
-    }
-
-    /* HERO TRUST BADGES STRIP FIX */
-    .hero-trust-strip {
-      background: rgba(13, 31, 60, 0.85) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(212, 167, 44, 0.4) !important;
-      border-radius: 30px !important;
-      padding: 0.5rem 1.4rem !important;
-      color: #FFFFFF !important;
-    }
-    .trust-badge-item, 
-    .trust-badge-item span, 
-    .trust-badge-item strong {
-      color: #FFFFFF !important;
-    }
-    .trust-badge-item strong {
-      color: #D4A72C !important;
-    }
-    .trust-badge-divider {
-      background: rgba(255, 255, 255, 0.3) !important;
-    }
-
-    /* HERO STATS FIX */
-    .stat-num {
-      color: #D4A72C !important;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
-    }
-    .stat-label {
-      color: rgba(255, 255, 255, 0.9) !important;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
     }
 
     /* 4. SHOWING X PACKAGES TEXT & FILTER TABS FIX */
@@ -1847,7 +1881,7 @@
       box-shadow: 0 4px 14px rgba(212, 167, 44, 0.35) !important;
     }
 
-    /* 5. PRICING TABLE, FAQ & LOWER SECTIONS LIGHT THEME & DARK TEXT FIX */
+    /* 5. PRICING TABLE, FAQ & LOWER SECTIONS PURE WHITE THEME */
     .pricing-table-section,
     .pricing-table,
     .faq-section,
@@ -1874,8 +1908,7 @@
     .faq-box,
     .pricing-row,
     .pricing-card,
-    .trust-highlight-card,
-    div[style*="border:1px solid rgba(201,165,74"] {
+    .trust-highlight-card {
       background: #FFFFFF !important;
       border: 1px solid #E3E8EF !important;
       border-radius: 16px !important;
@@ -1889,9 +1922,7 @@
     .faq-item h3,
     .faq-item h4,
     .pricing-title,
-    .trust-title,
-    div[style*="color:#ffffff"],
-    div[style*="color: #ffffff"] {
+    .trust-title {
       color: #0B1B33 !important;
       font-weight: 700 !important;
     }
@@ -1901,8 +1932,7 @@
     .faq-p,
     .faq-item p,
     .pricing-desc,
-    .trust-desc,
-    p[style*="color:rgba(255,255,255"] {
+    .trust-desc {
       color: #5F6B7A !important;
       font-weight: 500 !important;
       line-height: 1.6 !important;
