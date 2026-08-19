@@ -2492,7 +2492,7 @@ foreach ($packages_raw as $p) {
   </div>
 <div class="pkg2" onclick="openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic')" data-cat="pilgrimage domestic chardham" data-price="10000" data-days="3" style="cursor:pointer;">
     <div class="pkg2-img">
-      <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Ek Dham Yatra Package" loading="lazy">
+      <img src="assets/images/ekdham_banner.jpg" alt="Ek Dham Yatra Package" loading="lazy">
       <span class="pkg2-badge ">PILGRIMAGE</span>
     </div>
     <div class="pkg2-body">
