@@ -264,7 +264,7 @@ foreach ($packages_raw as $p) {
     transform: translateY(-2px) !important;
   }
   .vj-auth-tabs {
-    display: flex; gap: 0.5rem; justify-content: center; background: rgba(255,255,255,0.06);
+    display: flex; gap: 0.5rem; justify-content: center; background: #ffffff;
     padding: 4px; border-radius: 20px; border: 1px solid rgba(201,165,74,0.2); margin-top: 0.6rem;
   }
   .vj-auth-tab {
@@ -284,7 +284,7 @@ foreach ($packages_raw as $p) {
     align-items: center !important;
     justify-content: space-between !important;
     padding: .25rem 4% !important;
-    background: rgba(255, 255, 255, 0.88) !important;
+    background: #ffffff !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 2px solid rgba(201, 165, 74, 0.3) !important;
@@ -397,7 +397,7 @@ foreach ($packages_raw as $p) {
   }
   .btn-outline {
     padding: .9rem 2.2rem !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: #ffffff !important;
     color: var(--white) !important;
     font-size: .8rem !important;
     font-weight: 600 !important;
@@ -1688,7 +1688,7 @@ foreach ($packages_raw as $p) {
   <style id="vjGlassHeaderStyles">
     /* GLASSMORPHISM HEADER */
     header, .site-header, nav.navbar {
-      background: rgba(255, 255, 255, 0.88) !important;
+      background: #ffffff !important;
       backdrop-filter: blur(16px) !important;
       -webkit-backdrop-filter: blur(16px) !important;
       border-bottom: 1.5px solid rgba(201, 165, 74, 0.35) !important;
