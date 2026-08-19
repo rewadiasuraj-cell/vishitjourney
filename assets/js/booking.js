@@ -1,81 +1,95 @@
 /**
- * VISHIT JOURNEY - Multi-Step Trip Booking & Razorpay System
+ * VISHIT JOURNEY - Trip Booking, Itinerary Generator & Details Collection System
  */
 
 let vjCurrentPkg = null;
 let vjPricing = null;
 let vjCurrentStep = 1;
-let vjBookingData = null;
+let vjUserData = {};
 
-// Dynamic WhatsApp Pre-fill Helper
-function formatWhatsAppPackageMessage(pkgName, price) {
-  const priceFmt = Number(price || 0).toLocaleString('en-IN');
-  return `Hi, I'm interested in ${pkgName} starting ₹${priceFmt}`;
+// Detailed Package Day-by-Day Itineraries Database
+const vjItineraryDatabase = {
+  'char dham': [
+    { day: 'Day 1', title: 'Arrival in Haridwar / Rishikesh', desc: 'Pickup from Airport/Station and transfer to Haridwar/Rishikesh. Evening Ganga Aarti at Har Ki Pauri.' },
+    { day: 'Day 2', title: 'Haridwar to Barkot / Yamunotri Base', desc: 'Scenic drive through Mussoorie & Kempty Falls to Barkot. Hotel check-in & rest.' },
+    { day: 'Day 3', title: 'Yamunotri Dham Darshan', desc: 'Drive to Janki Chatti, trek to Yamunotri Temple, holy dip in Surya Kund & VIP Darshan.' },
+    { day: 'Day 4', title: 'Barkot to Uttarkashi', desc: 'Drive to Uttarkashi along Bhagirathi river. Visit Kashi Vishwanath Temple.' },
+    { day: 'Day 5', title: 'Uttarkashi to Gangotri Dham & Back', desc: 'Drive through Harsil Valley to Gangotri Dham. Offer prayers & return to Uttarkashi.' },
+    { day: 'Day 6', title: 'Uttarkashi to Guptkashi / Phata', desc: 'Drive to Guptkashi via Mandakini river valley. Visit Vishwanath Temple at Guptkashi.' },
+    { day: 'Day 7', title: 'Guptkashi to Kedarnath Dham', desc: 'Trek or Helicopter ride to Kedarnath Temple. Evening Aarti & overnight stay in Kedarnath.' },
+    { day: 'Day 8', title: 'Kedarnath to Badrinath Dham', desc: 'Morning Pooja at Kedarnath, transfer to Badrinath via Chopta/Joshimath.' },
+    { day: 'Day 9', title: 'Badrinath Darshan & Mana Village', desc: 'Tapt Kund dip, Badrinath Darshan, Mana Village (last village of India) & Vyas Gufa.' },
+    { day: 'Day 10', title: 'Badrinath to Rishikesh / Delhi Departure', desc: 'Return drive via Devprayag confluence. Drop at Rishikesh/Haridwar/Delhi.' }
+  ],
+  'kashmir': [
+    { day: 'Day 1', title: 'Srinagar Airport Arrival & Houseboat Stay', desc: 'Traditional welcome at Srinagar Airport, transfer to Deluxe Houseboat on Dal Lake. 1-Hour complimentary Shikara ride.' },
+    { day: 'Day 2', title: 'Srinagar Mughal Gardens Tour', desc: 'Visit Nishat Bagh, Shalimar Bagh, Chashme Shahi, and Shankaracharya Temple.' },
+    { day: 'Day 3', title: 'Excursion to Gulmarg', desc: 'Full day trip to Gulmarg. Experience the world-famous Gondola Cable Car ride & snow points.' },
+    { day: 'Day 4', title: 'Srinagar to Pahalgam (Valley of Shepherds)', desc: 'Drive to Pahalgam via saffron fields. Visit Betaab Valley, Aru Valley & Chandanwari.' },
+    { day: 'Day 5', title: 'Sonmarg Day Excursion', desc: 'Trip to Sonmarg (Meadow of Gold) & Thajiwas Glacier pony ride.' },
+    { day: 'Day 6', title: 'Shopping & Srinagar Departure', desc: 'Dry fruit & Kashmiri handicraft shopping, airport drop with unforgettable memories.' }
+  ],
+  'bali': [
+    { day: 'Day 1', title: 'Bali Airport Arrival & Villa Check-in', desc: 'Flower garland welcome at Denpasar Airport, transfer to luxury pool villa.' },
+    { day: 'Day 2', title: 'Kintamani Volcano & Ubud Swing Tour', desc: 'Visit Kintamani volcano, Tegalalang rice terraces, Ubud monkey forest & famous Bali swing.' },
+    { day: 'Day 3', title: 'Water Sports & Sunset Uluwatu Temple', desc: 'Banana boat & parasailing at Tanjung Benoa, evening Kecak dance at Uluwatu Temple.' },
+    { day: 'Day 4', title: 'Nusa Penida Island Tour', desc: 'Speedboat transfer to Nusa Penida. Visit Kelingking T-Rex Beach & Angel Billabong.' },
+    { day: 'Day 5', title: 'Spa & Departure', desc: 'Balinese massage session, souvenir shopping, and airport transfer.' }
+  ],
+  'default': [
+    { day: 'Day 1', title: 'Arrival & Welcome Transfer', desc: 'Pickup from Airport/Station, check-in to pre-booked hotel, evening leisure & local market exploration.' },
+    { day: 'Day 2', title: 'Full Day Guided Sightseeing', desc: 'Breakfast at hotel, visit top attractions, iconic landmarks, and cultural spots with private cab driver.' },
+    { day: 'Day 3', title: 'Excursion & Adventure Activities', desc: 'Full day outdoor excursion, adventure sports, scenic viewpoints, and photography stops.' },
+    { day: 'Day 4', title: 'Leisure & Shopping', desc: 'Local market shopping, authentic cuisine dining, and relaxed evening.' },
+    { day: 'Day 5', title: 'Check-out & Farewell Departure', desc: 'Breakfast, check-out from hotel, souvenir pickup and drop transfer to Station/Airport.' }
+  ]
+};
+
+function getItineraryForPackage(pkgName) {
+  const nameLower = (pkgName || '').toLowerCase();
+  if (nameLower.includes('char dham') || nameLower.includes('dham')) return vjItineraryDatabase['char dham'];
+  if (nameLower.includes('kashmir')) return vjItineraryDatabase['kashmir'];
+  if (nameLower.includes('bali')) return vjItineraryDatabase['bali'];
+  return vjItineraryDatabase['default'];
 }
 
-function updateWhatsAppLinksForPackage(pkgName, price) {
-  if (!pkgName) return;
-  const text = formatWhatsAppPackageMessage(pkgName, price);
-  const encodedText = encodeURIComponent(text);
-  const waUrl = `https://wa.me/919899902890?text=${encodedText}`;
-
-  const floatingWA = document.getElementById('vjFloatingWA');
-  if (floatingWA) {
-    floatingWA.href = waUrl;
-  }
-
-  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    if (link.id !== 'vjSuccessWABtn') {
-      link.href = waUrl;
-    }
-  });
+// Open Booking & Itinerary Modal
+function openBooking(id, name, price, duration, category) {
+  openBookingModal(id, name, price, duration, category);
 }
 
-// Open Booking Modal for a specific package ID
 async function openBookingModal(pkgId, name, price, duration, category) {
   vjCurrentStep = 1;
   hideError();
   
-  // Set basic fallback info immediately
-  vjCurrentPkg = { id: pkgId, name: name || 'Travel Package', price: price || 0, duration: duration || '', category: category || 'domestic' };
-  
-  document.getElementById('vjModalPkgTitle').textContent = vjCurrentPkg.name;
-  document.getElementById('vjModalPkgMeta').textContent = `${vjCurrentPkg.duration || ''} • Starting ₹${vjCurrentPkg.price.toLocaleString('en-IN')}`;
+  vjCurrentPkg = {
+    id: pkgId || 1,
+    name: name || 'Custom Travel Package',
+    price: price || 15000,
+    duration: duration || '5D / 4N',
+    category: category || 'domestic'
+  };
 
-  // Update dynamic WhatsApp pre-fill message for current package
-  updateWhatsAppLinksForPackage(vjCurrentPkg.name, vjCurrentPkg.price);
-  
-  // Open modal UI
+  const titleEl = document.getElementById('vjModalPkgTitle');
+  const metaEl = document.getElementById('vjModalPkgMeta');
+  if (titleEl) titleEl.textContent = vjCurrentPkg.name;
+  if (metaEl) metaEl.textContent = `${vjCurrentPkg.duration} • Starting ₹${Number(vjCurrentPkg.price).toLocaleString('en-IN')}`;
+
   const modal = document.getElementById('vjBookingModal');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  
-  // Set default travel date (tomorrow)
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Pre-fill tomorrow's date
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
-  const dateStr = tomorrow.toISOString().split('T')[0];
   const dateInput = document.getElementById('vjInputDate');
   if (dateInput && !dateInput.value) {
-    dateInput.value = dateStr;
-    dateInput.min = dateStr;
+    dateInput.value = tomorrow.toISOString().split('T')[0];
   }
-  
-  // Fetch detailed package info & pricing from API
-  try {
-    const res = await fetch(`/api/get_package.php?id=${pkgId}&adults=1&children=0`);
-    const data = await res.json();
-    if (data.success) {
-      vjCurrentPkg = data.package;
-      vjPricing = data.pricing;
-      document.getElementById('vjModalPkgTitle').textContent = vjCurrentPkg.name;
-      document.getElementById('vjModalPkgMeta').textContent = `${vjCurrentPkg.duration || ''} • ${vjCurrentPkg.price_label || 'per person'}`;
-    }
-  } catch (err) {
-    console.warn('Package detail fetch fallback:', err);
-  }
-  
-  updateStepView(1);
-  recalculatePricing();
+
+  showStep(1);
 }
 
 function closeBookingModal() {
@@ -84,395 +98,227 @@ function closeBookingModal() {
   document.body.style.overflow = '';
 }
 
-function updateStepView(stepNum) {
+function showStep(stepNum) {
   vjCurrentStep = stepNum;
-  
-  // Steps container visibility
-  const steps = ['vjStep1', 'vjStep2', 'vjStep3', 'vjStepSuccess', 'vjStepFailed'];
-  steps.forEach(s => {
-    const el = document.getElementById(s);
-    if (el) el.style.display = 'none';
-  });
-  
-  const stepIndicators = document.querySelectorAll('.vj-step-item');
-  stepIndicators.forEach((ind, idx) => {
-    ind.classList.remove('active', 'completed');
-    if (idx + 1 === stepNum) ind.classList.add('active');
-    else if (idx + 1 < stepNum) ind.classList.add('completed');
-  });
-  
-  if (stepNum === 1) {
-    document.getElementById('vjStep1').style.display = 'block';
-  } else if (stepNum === 2) {
-    document.getElementById('vjStep2').style.display = 'block';
-  } else if (stepNum === 3) {
-    document.getElementById('vjStep3').style.display = 'block';
-    renderPriceBreakdown();
-  } else if (stepNum === 4) {
-    // Success
-    document.getElementById('vjStepSuccess').style.display = 'block';
-  } else if (stepNum === 5) {
-    // Failed
-    document.getElementById('vjStepFailed').style.display = 'block';
-  }
+  const s1 = document.getElementById('vjStep1');
+  const s2 = document.getElementById('vjStep2');
+  const s3 = document.getElementById('vjStep3');
+
+  if (s1) s1.style.display = stepNum === 1 ? 'block' : 'none';
+  if (s2) s2.style.display = stepNum === 2 ? 'block' : 'none';
+  if (s3) s3.style.display = stepNum === 3 ? 'block' : 'none';
 }
 
-function goToStep(stepNum) {
+// Handle Form Submission (Collect Name, Phone, Location & Show Itinerary)
+function handleDetailsSubmit(e) {
+  if (e) e.preventDefault();
   hideError();
-  if (stepNum === 2) {
-    // Validate Step 1
-    const travelDate = document.getElementById('vjInputDate').value;
-    if (!travelDate) {
-      showError('Please select a travel date.');
-      return;
-    }
-  } else if (stepNum === 3) {
-    // Validate Step 2
-    const name = document.getElementById('vjInputName').value.trim();
-    const phone = document.getElementById('vjInputPhone').value.trim();
-    if (!name || !phone) {
-      showError('Please enter your full name and contact phone number.');
-      return;
-    }
-    if (phone.length < 10) {
-      showError('Please enter a valid 10-digit mobile number.');
-      return;
-    }
+
+  const name = (document.getElementById('vjInputName')?.value || '').trim();
+  const phone = (document.getElementById('vjInputPhone')?.value || '').trim();
+  const location = (document.getElementById('vjInputCity')?.value || document.getElementById('vjInputPickup')?.value || '').trim();
+  const travelDate = document.getElementById('vjInputDate')?.value || '';
+  const adults = document.getElementById('vjSelectAdults')?.value || '2';
+  const children = document.getElementById('vjSelectChildren')?.value || '0';
+
+  if (!name || !phone) {
+    showError('Please enter your Full Name and Mobile Phone Number.');
+    return;
   }
-  updateStepView(stepNum);
-}
-
-function recalculatePricing() {
-  const adults = parseInt(document.getElementById('vjSelectAdults')?.value || 1);
-  const children = parseInt(document.getElementById('vjSelectChildren')?.value || 0);
-  const basePrice = vjCurrentPkg ? vjCurrentPkg.price : 0;
-  
-  const childPrice = Math.round(basePrice * 0.5);
-  const totalAmount = Math.round((basePrice * adults) + (childPrice * children));
-  
-  // Determine advance logic
-  let advType = (vjPricing && vjPricing.advance_type) ? vjPricing.advance_type : 'percentage';
-  let advVal = (vjPricing && vjPricing.advance_value) ? vjPricing.advance_value : 20;
-  let advanceAmount = 0;
-  
-  if (advType === 'full') {
-    advanceAmount = totalAmount;
-  } else if (advType === 'fixed') {
-    advanceAmount = Math.min(totalAmount, advVal);
-  } else {
-    advanceAmount = Math.round((totalAmount * advVal) / 100);
-  }
-  
-  const remainingAmount = Math.max(0, totalAmount - advanceAmount);
-  
-  vjPricing = {
-    base_price: basePrice,
-    adults,
-    children,
-    child_price: childPrice,
-    total_amount: totalAmount,
-    advance_amount: advanceAmount,
-    remaining_amount: remainingAmount,
-    advance_type: advType,
-    advance_value: advVal
-  };
-  
-  // Update live preview in Step 1
-  const prevTotal = document.getElementById('vjPreviewTotal');
-  const prevAdv = document.getElementById('vjPreviewAdvance');
-  if (prevTotal) prevTotal.textContent = '₹' + totalAmount.toLocaleString('en-IN');
-  if (prevAdv) prevAdv.textContent = '₹' + advanceAmount.toLocaleString('en-IN');
-}
-
-function renderPriceBreakdown() {
-  recalculatePricing();
-  const p = vjPricing;
-  const container = document.getElementById('vjPriceBreakdownBox');
-  if (!container) return;
-  
-  container.innerHTML = `
-    <div class="vj-price-row">
-      <span>Package Price (${p.adults} Adult${p.adults > 1 ? 's' : ''} x ₹${p.base_price.toLocaleString('en-IN')})</span>
-      <span>₹${(p.adults * p.base_price).toLocaleString('en-IN')}</span>
-    </div>
-    ${p.children > 0 ? `
-    <div class="vj-price-row">
-      <span>Child Price (${p.children} Child${p.children > 1 ? 'ren' : ''} x ₹${p.child_price.toLocaleString('en-IN')})</span>
-      <span>₹${(p.children * p.child_price).toLocaleString('en-IN')}</span>
-    </div>` : ''}
-    <div class="vj-price-row total">
-      <span>TOTAL PACKAGE VALUE</span>
-      <span>₹${p.total_amount.toLocaleString('en-IN')}</span>
-    </div>
-    <div class="vj-price-row advance">
-      <span>ADVANCE PAYABLE NOW (${p.advance_type === 'percentage' ? p.advance_value + '%' : p.advance_type === 'full' ? 'Full Payment' : 'Fixed Advance'})</span>
-      <span>₹${p.advance_amount.toLocaleString('en-IN')}</span>
-    </div>
-    <div class="vj-price-row remaining">
-      <span>REMAINING BALANCE ON TRIP DAY</span>
-      <span>₹${p.remaining_amount.toLocaleString('en-IN')}</span>
-    </div>
-  `;
-}
-
-// Initiate Booking & Razorpay Payment
-async function submitBookingPayment() {
-  hideError();
-  const btn = document.getElementById('vjBtnPay');
-  if (btn) { btn.disabled = true; btn.textContent = 'Securing Booking...'; }
-  
-  const payload = {
-    package_id: vjCurrentPkg.id,
-    package_name: vjCurrentPkg.name,
-    name: document.getElementById('vjInputName').value.trim(),
-    phone: document.getElementById('vjInputPhone').value.trim(),
-    whatsapp: document.getElementById('vjInputWhatsApp').value.trim() || document.getElementById('vjInputPhone').value.trim(),
-    email: document.getElementById('vjInputEmail').value.trim(),
-    travel_date: document.getElementById('vjInputDate').value,
-    adults: parseInt(document.getElementById('vjSelectAdults').value || 1),
-    children: parseInt(document.getElementById('vjSelectChildren').value || 0),
-    rooms: parseInt(document.getElementById('vjSelectRooms').value || 1),
-    pickup_location: document.getElementById('vjInputPickup').value.trim(),
-    special_requests: document.getElementById('vjInputRequests').value.trim()
-  };
-  
-  const saveToAdminStore = (bData) => {
-    if (typeof saveBookingToCloud === 'function') {
-      saveBookingToCloud(bData);
-    } else {
-      try {
-        let existing = JSON.parse(localStorage.getItem('vj_admin_bookings') || '[]');
-        if (!existing.some(b => b.id === bData.id)) {
-          existing.unshift(bData);
-          localStorage.setItem('vj_admin_bookings', JSON.stringify(existing));
-        }
-      } catch(e) {}
-    }
-  };
-
-  const RAZORPAY_KEY_ID = 'rzp_test_TPH35birrxUzj8';
-
-  const bookingRef = 'VJ-' + Math.floor(1000 + Math.random() * 9000);
-  const totalAmt = vjPricing ? vjPricing.total_amount : (vjCurrentPkg.price * payload.adults);
-  const advAmt = vjPricing ? vjPricing.advance_amount : Math.round(totalAmt * 0.2);
-  const remAmt = Math.max(0, totalAmt - advAmt);
-
-  // Dynamically load Razorpay SDK if not present
-  if (typeof window.Razorpay === 'undefined') {
-    try {
-      await new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    } catch(e) {
-      console.warn('Razorpay SDK load error:', e);
-    }
-  }
-
-  if (typeof window.Razorpay === 'undefined') {
-    showError('Unable to load Razorpay payment gateway. Please check your internet connection and try again.');
-    if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
+  if (phone.length < 10) {
+    showError('Please enter a valid 10-digit mobile number.');
     return;
   }
 
-  // Mandatory Razorpay Payment Options
-  const options = {
-    key: RAZORPAY_KEY_ID,
-    amount: advAmt * 100, // in paise
-    currency: 'INR',
-    name: 'Vishit Journey',
-    description: `${payload.package_name} (${bookingRef})`,
-    prefill: {
-      name: payload.name,
-      contact: payload.phone,
-      email: payload.email || ''
-    },
-    theme: { color: '#c9a54a' },
-    handler: function(response) {
-      // Payment Successful!
-      const paymentId = response.razorpay_payment_id || ('pay_' + Math.random().toString(36).substring(2, 12));
-      const confirmedBooking = {
-        id: bookingRef,
-        name: payload.name,
-        phone: payload.phone,
-        email: payload.email || 'N/A',
-        package: payload.package_name,
-        date: payload.travel_date,
-        persons: (payload.adults || 1) + (payload.children || 0),
-        price: totalAmt,
-        status: 'Confirmed',
-        payment_id: paymentId
-      };
-      saveToAdminStore(confirmedBooking);
-
-      showSuccessState({
-        booking_ref: bookingRef,
-        package_name: payload.package_name,
-        customer_name: payload.name,
-        phone: payload.phone,
-        travel_date: payload.travel_date,
-        adults: payload.adults,
-        children: payload.children,
-        total_amount: totalAmt,
-        advance_amount: advAmt,
-        remaining_amount: remAmt,
-        payment_id: paymentId
-      });
-    },
-    modal: {
-      ondismiss: function() {
-        if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
-        saveToAdminStore({
-          id: bookingRef,
-          name: payload.name,
-          phone: payload.phone,
-          email: payload.email || 'N/A',
-          package: payload.package_name,
-          date: payload.travel_date,
-          persons: (payload.adults || 1) + (payload.children || 0),
-          price: totalAmt,
-          status: 'Pending'
-        });
-        showFailedState(bookingRef, 'Payment popup closed. Please complete payment to confirm your booking.');
-      }
-    }
+  vjUserData = {
+    name,
+    phone,
+    location: location || 'Delhi NCR',
+    travelDate,
+    adults,
+    children,
+    pkgName: vjCurrentPkg.name,
+    duration: vjCurrentPkg.duration,
+    price: vjCurrentPkg.price
   };
 
+  // Save Inquiry lead to local storage / admin store
   try {
-    const rzp = new window.Razorpay(options);
-    rzp.on('payment.failed', function(response) {
-      if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
-      showFailedState(bookingRef, (response.error && response.error.description) ? response.error.description : 'Payment transaction failed.');
+    let existing = JSON.parse(localStorage.getItem('vj_admin_inquiries') || '[]');
+    existing.unshift({
+      id: 'INQ-' + Math.floor(1000 + Math.random() * 9000),
+      ...vjUserData,
+      timestamp: new Date().toISOString()
     });
-    rzp.open();
-  } catch(err) {
-    console.error('Razorpay invocation error:', err);
-    showError('Error starting payment gateway. Please try again.');
-    if (btn) { btn.disabled = false; btn.textContent = 'PROCEED TO PAY →'; }
-  }
+    localStorage.setItem('vj_admin_inquiries', JSON.stringify(existing));
+  } catch(err) {}
+
+  // Render Package Itinerary View
+  renderItineraryScreen();
+  showStep(2);
 }
 
-async function verifyRazorpayPayment(rzpResponse, bookingId) {
-  try {
-    const res = await fetch('/api/verify-payment.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...rzpResponse, booking_id: bookingId })
-    });
-    const data = await res.json();
-    if (data.success) {
-      showSuccessState(data);
-    } else {
-      showFailedState(data.booking_ref, data.message || 'Payment signature verification failed.');
-    }
-  } catch (err) {
-    showFailedState(vjBookingData ? vjBookingData.booking_ref : '', 'Server verification failed.');
-  }
-}
-
-async function retryPayment(bookingRef) {
-  hideError();
-  const btn = document.getElementById('vjBtnRetry');
-  if (btn) { btn.disabled = true; btn.textContent = 'Re-initializing Razorpay...'; }
-  
-  try {
-    const res = await fetch('/api/retry_payment.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ booking_ref: bookingRef })
-    });
-    const data = await res.json();
-    
-    if (!data.success) {
-      showError(data.message || 'Unable to retry payment.');
-      if (btn) { btn.disabled = false; btn.textContent = 'TRY PAYMENT AGAIN'; }
-      return;
-    }
-    
-    if (data.razorpay_order && data.razorpay_order.id) {
-      const options = {
-        key: data.razorpay_key,
-        amount: data.advance_amount * 100,
-        currency: 'INR',
-        name: 'Vishit Journey',
-        description: `Retry Payment for ${data.booking_ref}`,
-        order_id: data.razorpay_order.id,
-        handler: async function(response) {
-          verifyRazorpayPayment(response, data.booking_id);
-        },
-        prefill: { name: data.customer_name, contact: data.phone, email: data.email },
-        theme: { color: '#c9a54a' }
-      };
-      new Razorpay(options).open();
-    } else {
-      showError('Payment gateway unavailable for retry. Please contact support via WhatsApp.');
-    }
-  } catch (err) {
-    showError('Error reconnecting to payment gateway.');
-  }
-  if (btn) { btn.disabled = false; btn.textContent = 'TRY PAYMENT AGAIN'; }
-}
-
-function showSuccessState(info) {
-  updateStepView(4);
-  const container = document.getElementById('vjSuccessReceiptContainer');
+function renderItineraryScreen() {
+  const container = document.getElementById('vjItineraryContent');
   if (!container) return;
-  
-  const totalFmt = '₹' + floatFmt(info.total_amount);
-  const advFmt = '₹' + floatFmt(info.advance_amount);
-  const remFmt = '₹' + floatFmt(info.remaining_amount);
-  
-  container.innerHTML = `
-    <div class="vj-receipt-box" id="vjPrintSection">
-      <div class="vj-receipt-header">
+
+  const itineraryList = getItineraryForPackage(vjUserData.pkgName);
+
+  let html = `
+    <div style="background:linear-gradient(135deg, #0d1f3c 0%, #1a2b4c 100%); color:#fff; padding:1.2rem; border-radius:16px; margin-bottom:1.2rem; border:1px solid rgba(201,165,74,0.4);">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(201,165,74,0.2); padding-bottom:0.6rem; margin-bottom:0.8rem;">
         <div>
-          <div class="vj-receipt-logo">VISHIT JOURNEY</div>
-          <div style="font-size:0.7rem;color:#666;margin-top:2px">Official Trip Booking Confirmation Slip</div>
+          <span style="font-size:0.7rem; color:#c9a54a; text-transform:uppercase; font-weight:700; letter-spacing:1.5px;">CUSTOMER DETAILS</span>
+          <h4 style="font-size:1.1rem; color:#fff; margin-top:2px;">${vjUserData.name}</h4>
         </div>
-        <span class="vj-receipt-badge">✓ CONFIRMED</span>
+        <div style="text-align:right;">
+          <span style="font-size:0.75rem; color:#dcdcdc; display:block;">📞 ${vjUserData.phone}</span>
+          <span style="font-size:0.75rem; color:#c9a54a; display:block;">📍 ${vjUserData.location}</span>
+        </div>
       </div>
-      <div class="vj-receipt-grid">
-        <div><div class="vj-receipt-label">Booking Reference</div><div class="vj-receipt-value" style="color:#c9a54a;font-size:1.1rem;letter-spacing:1px">${info.booking_ref}</div></div>
-        <div><div class="vj-receipt-label">Payment Reference ID</div><div class="vj-receipt-value">${info.payment_id || 'VERIFIED'}</div></div>
-        <div><div class="vj-receipt-label">Package Name</div><div class="vj-receipt-value">${info.package_name}</div></div>
-        <div><div class="vj-receipt-label">Travel Date</div><div class="vj-receipt-value">${info.travel_date || 'To be scheduled'}</div></div>
-        <div><div class="vj-receipt-label">Customer Name</div><div class="vj-receipt-value">${info.customer_name}</div></div>
-        <div><div class="vj-receipt-label">Guests</div><div class="vj-receipt-value">${info.adults || 1} Adult(s)${info.children ? ', ' + info.children + ' Child(ren)' : ''}</div></div>
-      </div>
-      <div style="background:#f8f9fa;border-radius:6px;padding:1rem;margin-top:0.5rem;border-left:4px solid #c9a54a">
-        <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:0.85rem"><span>Total Package Value:</span><strong>${totalFmt}</strong></div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:0.85rem;color:#2e7d32"><span>Advance Paid:</span><strong>${advFmt}</strong></div>
-        <div style="display:flex;justify-content:space-between;font-size:0.85rem;color:#c62828"><span>Remaining Balance Due:</span><strong>${remFmt}</strong></div>
+      <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#e0e0e0;">
+        <span>🗓 Travel Date: <strong>${vjUserData.travelDate || 'Flexible'}</strong></span>
+        <span>👥 Guests: <strong>${vjUserData.adults} Adult(s)${vjUserData.children > 0 ? ', ' + vjUserData.children + ' Child' : ''}</strong></span>
       </div>
     </div>
+
+    <div style="margin-bottom:1.5rem;">
+      <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:#0d1f3c; margin-bottom:0.8rem; font-weight:700;">
+        📍 Detailed Day-by-Day Itinerary
+      </h4>
+      <div style="display:flex; flex-direction:column; gap:0.8rem;">
   `;
-  
-  // Set WhatsApp button link
-  const waBtn = document.getElementById('vjSuccessWABtn');
+
+  itineraryList.forEach(item => {
+    html += `
+      <div style="background:#f8f6f0; border-left:4px solid #c9a54a; padding:0.9rem 1.1rem; border-radius:0 12px 12px 0;">
+        <span style="font-size:0.72rem; font-weight:800; color:#c9a54a; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:2px;">${item.day}</span>
+        <h5 style="font-size:0.98rem; font-weight:700; color:#0d1f3c; margin-bottom:4px;">${item.title}</h5>
+        <p style="font-size:0.85rem; color:#4a5568; margin:0; line-height:1.4;">${item.desc}</p>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+    </div>
+
+    <div style="background:#f0f7ff; border:1px solid #bfdbfe; border-radius:14px; padding:1rem; margin-bottom:1.5rem;">
+      <h5 style="font-size:0.9rem; font-weight:700; color:#1e40af; margin-bottom:0.4rem;">✨ Package Inclusions Included:</h5>
+      <ul style="font-size:0.82rem; color:#1e3a8a; margin:0; padding-left:1.2rem; line-height:1.6;">
+        <li>Private AC Vehicle Transfer for complete tour duration</li>
+        <li>Pre-booked Luxury Hotel / Resort accommodation</li>
+        <li>Complimentary Daily Breakfast & Dinner meals</li>
+        <li>VIP Darshan & Temple Entry assistance (where applicable)</li>
+        <li>24/7 Dedicated Vishit Journey Trip Manager Support</li>
+      </ul>
+    </div>
+  `;
+
+  container.innerHTML = html;
+
+  // Set WhatsApp action link
+  const waBtn = document.getElementById('vjItineraryWABtn');
   if (waBtn) {
-    const msg = `Hi Vishit Journey, I have confirmed my booking!\n\n*Booking ID:* ${info.booking_ref}\n*Package:* ${info.package_name}\n*Travel Date:* ${info.travel_date}\n*Name:* ${info.customer_name}\n*Amount Paid:* ${advFmt}\n*Remaining:* ${remFmt}`;
-    waBtn.href = `https://wa.me/919899902890?text=${encodeURIComponent(msg)}`;
+    const text = `Hi Vishit Journey, I filled out my details for ${vjUserData.pkgName}.
+
+*Name:* ${vjUserData.name}
+*Phone:* ${vjUserData.phone}
+*Location:* ${vjUserData.location}
+*Travel Date:* ${vjUserData.travelDate}
+
+Please share customized quotes & PDF itinerary!`;
+    waBtn.href = `https://wa.me/919899902890?text=${encodeURIComponent(text)}`;
   }
 }
 
-function showFailedState(bookingRef, errorMsg) {
-  updateStepView(5);
-  const refEl = document.getElementById('vjFailedRef');
-  const msgEl = document.getElementById('vjFailedMsg');
-  if (refEl) refEl.textContent = bookingRef ? `Booking Reference: ${bookingRef}` : '';
-  if (msgEl) msgEl.textContent = errorMsg || 'Payment could not be completed.';
+// Download Itinerary as Clean PDF / Printable Sheet
+function downloadItineraryPDF() {
+  if (!vjUserData || !vjUserData.name) {
+    alert('Please fill out your details first.');
+    return;
+  }
+
+  const itineraryList = getItineraryForPackage(vjUserData.pkgName);
   
-  const retryBtn = document.getElementById('vjBtnRetry');
-  if (retryBtn) {
-    retryBtn.onclick = function() { retryPayment(bookingRef); };
-  }
-}
+  let daysHtml = '';
+  itineraryList.forEach(item => {
+    daysHtml += `
+      <div style="margin-bottom: 12px; padding: 10px 14px; background: #f9f9f9; border-left: 4px solid #c9a54a; border-radius: 4px;">
+        <strong style="color: #c9a54a; font-size: 11px; text-transform: uppercase;">${item.day}</strong>
+        <h4 style="margin: 2px 0 4px; color: #0d1f3c; font-size: 14px;">${item.title}</h4>
+        <p style="margin: 0; color: #555; font-size: 12px; line-height: 1.4;">${item.desc}</p>
+      </div>
+    `;
+  });
 
-function printConfirmation() {
-  window.print();
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Vishit Journey - ${vjUserData.pkgName} Itinerary</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 25px; color: #333; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c9a54a; padding-bottom: 15px; margin-bottom: 20px; }
+        .brand { font-size: 24px; font-weight: bold; color: #0d1f3c; }
+        .brand span { color: #c9a54a; }
+        .sub { font-size: 12px; color: #666; }
+        .box { background: #0d1f3c; color: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .box-grid { display: flex; justify-content: space-between; font-size: 13px; margin-top: 8px; }
+        h3 { color: #0d1f3c; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+        .footer { margin-top: 30px; border-top: 1px solid #ddd; padding-top: 12px; font-size: 11px; color: #777; text-align: center; }
+        @media print { body { padding: 0; } }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <div>
+          <div class="brand">VISHIT <span>JOURNEY</span></div>
+          <div class="sub">Travel Beyond Limits | Luxury Tour Packages</div>
+        </div>
+        <div style="text-align: right; font-size: 12px;">
+          <strong>Call / WhatsApp:</strong> +91 98999 02890<br>
+          <strong>Website:</strong> www.vishitjourney.com
+        </div>
+      </div>
+
+      <div class="box">
+        <div style="font-size: 18px; font-weight: bold; color: #e4c06e;">${vjUserData.pkgName}</div>
+        <div style="font-size: 12px; color: #ccc;">Duration: ${vjUserData.duration} • Starting ₹${Number(vjUserData.price).toLocaleString('en-IN')}</div>
+        <div class="box-grid">
+          <div><strong>Customer Name:</strong> ${vjUserData.name}</div>
+          <div><strong>Phone:</strong> ${vjUserData.phone}</div>
+          <div><strong>Starting City:</strong> ${vjUserData.location}</div>
+          <div><strong>Travel Date:</strong> ${vjUserData.travelDate || 'Flexible'}</div>
+        </div>
+      </div>
+
+      <h3>Detailed Day-by-Day Itinerary Plan</h3>
+      ${daysHtml}
+
+      <h3>Package Inclusions</h3>
+      <ul style="font-size: 12px; line-height: 1.6; color: #444;">
+        <li>Private AC Vehicle for complete tour transfers</li>
+        <li>Luxury Hotel / Resort Accommodation</li>
+        <li>Daily Breakfast & Dinner</li>
+        <li>Sightseeing & VIP Darshan Assistance</li>
+        <li>24/7 Dedicated Trip Manager Support</li>
+      </ul>
+
+      <div class="footer">
+        Vishit Journey • Office on 1st Floor, Plot No. 2, Metro Pillar 786, Uttam Nagar, New Delhi • Helpline: +91 98999 02890
+      </div>
+
+      <script>
+        window.onload = function() {
+          window.print();
+        }
+      </script>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
 }
 
 function showError(msg) {
@@ -483,8 +329,4 @@ function showError(msg) {
 function hideError() {
   const el = document.getElementById('vjModalError');
   if (el) { el.style.display = 'none'; }
-}
-
-function floatFmt(num) {
-  return parseFloat(num || 0).toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
