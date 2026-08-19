@@ -1810,6 +1810,32 @@ foreach ($packages_raw as $p) {
     }
   </style>
 
+
+  <style id="vjHeaderFixStyles">
+    /* HIDE MOBILE DRAWER COMPLETELY ON DESKTOP SCREENS */
+    .mob-drawer, #mobDrawer {
+      display: none !important;
+    }
+    @media (max-width: 900px) {
+      .mob-drawer, #mobDrawer {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 280px !important;
+        height: 100vh !important;
+        background: #081428 !important;
+        z-index: 9999 !important;
+        flex-direction: column !important;
+        padding: 3rem 2rem !important;
+        transition: right 0.3s ease !important;
+      }
+      .mob-drawer.open, #mobDrawer.open {
+        right: 0 !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -1820,8 +1846,7 @@ foreach ($packages_raw as $p) {
     <img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:64px;width:auto;display:block;">
   </a>
   <ul class="nav-links">
-    <li><a href="index.php#destinations">Destinations</a></li>
-    <li><a href="index.php#packages">Packages</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
     <li><a href="contact.php">Contact Us</a></li>
     <li><a href="about.php">About Us</a></li>
   </ul>
@@ -1837,7 +1862,6 @@ foreach ($packages_raw as $p) {
 <div class="mob-drawer" id="mobDrawer">
   <button class="mob-close" onclick="document.getElementById('mobDrawer').classList.remove('open')">✕</button>
   <a href="index.html" style="font-weight:700;">Home</a>
-  <a href="#destinations" onclick="document.getElementById('mobDrawer').classList.remove('open')">Destinations</a>
   <a href="#packages" onclick="document.getElementById('mobDrawer').classList.remove('open')">Packages</a>
   <a href="#why" onclick="document.getElementById('mobDrawer').classList.remove('open')">About</a>
   <a href="#contact" onclick="document.getElementById('mobDrawer').classList.remove('open')">Contact</a>
@@ -3704,8 +3728,7 @@ foreach ($packages_raw as $p) {
     <div class="footer-col">
       <h5>Quick Links</h5>
       <a href="#">Home</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#packages">Packages</a>
+      <a href="#packages" onclick="document.getElementById('mobDrawer').classList.remove('open')">Packages</a>
       <a href="#why">About Us</a>
       <a href="#contact">Contact</a>
     </div>
