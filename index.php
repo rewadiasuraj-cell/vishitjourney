@@ -1808,7 +1808,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Char Dham Yatra Package (Discounted ₹2,000 Off)&price=18000&duration=10D / 9N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Char Dham Yatra Package (Discounted ₹2,000 Off)&price=18000&duration=10D / 9N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1833,7 +1833,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kashmir Paradise Package (20% Group Discount)&price=15999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kashmir Paradise Package (20% Group Discount)&price=15999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1858,7 +1858,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Bali Honeymoon Package (VIP Offer)&price=34999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Bali Honeymoon Package (VIP Offer)&price=34999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1883,7 +1883,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Dubai Luxury Package (Family Deal)&price=33999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Dubai Luxury Package (Family Deal)&price=33999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1908,7 +1908,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Thailand Holiday Package (Coral Offer)&price=24999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Thailand Holiday Package (Coral Offer)&price=24999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1933,7 +1933,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kasol + Manali Combo (Roadtrip Special)&price=8999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kasol + Manali Combo (Roadtrip Special)&price=8999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1958,7 +1958,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#0d1f3c; font-family:monospace; letter-spacing:1.5px;">CHARDHAM2000</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Char Dham Yatra Package (Discounted ₹2,000 Off)&price=18000&duration=10D / 9N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Char Dham Yatra Package (Discounted ₹2,000 Off)&price=18000&duration=10D / 9N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(11, 'Char Dham Yatra Package (Discounted ₹2,000 Off)', 18000, '10D / 9N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -1983,7 +1983,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#0072ff; font-family:monospace; letter-spacing:1.5px;">SUMMER20</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kashmir Paradise Package (20% Group Discount)&price=15999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kashmir Paradise Package (20% Group Discount)&price=15999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(5, 'Kashmir Paradise Package (20% Group Discount)', 15999, '6D / 5N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -2008,7 +2008,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#ee0979; font-family:monospace; letter-spacing:1.5px;">HONEYMOONVIP</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Bali Honeymoon Package (VIP Offer)&price=34999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Bali Honeymoon Package (VIP Offer)&price=34999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(3, 'Bali Honeymoon Package (VIP Offer)', 34999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -2033,7 +2033,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#d97706; font-family:monospace; letter-spacing:1.5px;">DUBAIFAMILY15</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Dubai Luxury Package (Family Deal)&price=33999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Dubai Luxury Package (Family Deal)&price=33999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(1, 'Dubai Luxury Package (Family Deal)', 33999, '5D / 4N', 'international')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -2058,7 +2058,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#059669; font-family:monospace; letter-spacing:1.5px;">THAIISLAND</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Thailand Holiday Package (Coral Offer)&price=24999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Thailand Holiday Package (Coral Offer)&price=24999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(2, 'Thailand Holiday Package (Coral Offer)', 24999, '6D / 5N', 'international')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -2083,7 +2083,7 @@ foreach ($packages_raw as $p) {
             <span style="font-size:1.05rem; font-weight:700; color:#6d28d9; font-family:monospace; letter-spacing:1.5px;">SPITI4X4</span>
           </div>
           <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kasol + Manali Combo (Roadtrip Special)&price=8999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kasol + Manali Combo (Roadtrip Special)&price=8999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(8, 'Kasol + Manali Combo (Roadtrip Special)', 8999, '6D / 5N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
         </div>
@@ -2386,7 +2386,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹20,000</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Char Dham Yatra Package&price=20000&duration=10D / 9N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Char Dham Yatra Package&price=20000&duration=10D / 9N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(11, 'Char Dham Yatra Package', 20000, '10D / 9N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2412,7 +2412,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹13,000</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Do Dham Yatra Package&price=13000&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Do Dham Yatra Package&price=13000&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(10, 'Do Dham Yatra Package', 13000, '5D / 4N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2438,7 +2438,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹10,000</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Ek Dham Yatra Package&price=10000&duration=3D / 2N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Ek Dham Yatra Package&price=10000&duration=3D / 2N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(9, 'Ek Dham Yatra Package', 10000, '3D / 2N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2466,7 +2466,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹39,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Dubai Luxury Package&price=39999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Dubai Luxury Package&price=39999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(1, 'Dubai Luxury Package', 39999, '5D / 4N', 'international')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2494,7 +2494,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹29,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Thailand Holiday Package&price=29999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Thailand Holiday Package&price=29999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(2, 'Thailand Holiday Package', 29999, '6D / 5N', 'international')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2522,7 +2522,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹44,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Bali Honeymoon Package&price=44999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Bali Honeymoon Package&price=44999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(3, 'Bali Honeymoon Package', 44999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2550,7 +2550,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹49,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Maldives Luxury Package&price=49999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Maldives Luxury Package&price=49999&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(4, 'Maldives Luxury Package', 49999, '5D / 4N', 'honeymoon')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2578,7 +2578,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹14,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kashmir Paradise Package&price=14999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kashmir Paradise Package&price=14999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(5, 'Kashmir Paradise Package', 14999, '6D / 5N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2606,7 +2606,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,680</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Manali Package (3N/4D)&price=9680&duration=4D / 3N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Manali Package (3N/4D)&price=9680&duration=4D / 3N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(6, 'Manali Package (3N/4D)', 9680, '4D / 3N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2634,7 +2634,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹12,430</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Shimla Manali Package (4N/5D)&price=12430&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Shimla Manali Package (4N/5D)&price=12430&duration=5D / 4N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(7, 'Shimla Manali Package (4N/5D)', 12430, '5D / 4N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2662,7 +2662,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kasol + Manali Combo&price=9999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kasol + Manali Combo&price=9999&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(8, 'Kasol + Manali Combo', 9999, '6D / 5N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2699,7 +2699,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹7,500</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Agra Overnight Package&price=7500&duration=2D / 1N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Agra Overnight Package&price=7500&duration=2D / 1N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(12, 'Agra Overnight Package', 7500, '2D / 1N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2727,7 +2727,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹9,000</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Agra Jaipur Combo (2N/3D)&price=9000&duration=3D / 2N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Agra Jaipur Combo (2N/3D)&price=9000&duration=3D / 2N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(13, 'Agra Jaipur Combo (2N/3D)', 9000, '3D / 2N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2755,7 +2755,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹23,000</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Rajasthan Royal Package (7N/8D)&price=23000&duration=8D / 7N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Rajasthan Royal Package (7N/8D)&price=23000&duration=8D / 7N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(14, 'Rajasthan Royal Package (7N/8D)', 23000, '8D / 7N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2783,7 +2783,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹19,250</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Assam & Meghalaya (6N/7D)&price=19250&duration=7D / 6N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Assam & Meghalaya (6N/7D)&price=19250&duration=7D / 6N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(15, 'Assam & Meghalaya (6N/7D)', 19250, '7D / 6N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2811,7 +2811,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹19,250</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Kerala Backwaters (5N/6D)&price=19250&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Kerala Backwaters (5N/6D)&price=19250&duration=6D / 5N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(16, 'Kerala Backwaters (5N/6D)', 19250, '6D / 5N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2839,7 +2839,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹22,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Leh Ladakh Adventure&price=22999&duration=7D / 6N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Leh Ladakh Adventure&price=22999&duration=7D / 6N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(17, 'Leh Ladakh Adventure', 22999, '7D / 6N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2867,7 +2867,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹7,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Goa Beach Package&price=7999&duration=4D / 3N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Goa Beach Package&price=7999&duration=4D / 3N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(18, 'Goa Beach Package', 7999, '4D / 3N', 'domestic')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2895,7 +2895,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹5,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Rishikesh Camping Package&price=5999&duration=3D / 2N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Rishikesh Camping Package&price=5999&duration=3D / 2N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(19, 'Rishikesh Camping Package', 5999, '3D / 2N', 'hills')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
@@ -2923,7 +2923,7 @@ foreach ($packages_raw as $p) {
           <span style="font-size:1.25rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;">₹11,999</span>
         </div>
         <div style="display:flex; gap:0.6rem; margin-top:0.8rem; width:100%;">
-      <a href="booking.html?pkg=Udaipur Romantic Package&price=11999&duration=4D / 3N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.15); color:#0d1f3c; font-weight:800; border:1px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
+      <a href="booking.html?pkg=Udaipur Romantic Package&price=11999&duration=4D / 3N" class="pkg2-btn-readmore" style="flex:1; text-align:center; padding:0.6rem 0.8rem; font-size:0.8rem; background:rgba(201,165,74,0.25); color:#ffffff !important; font-weight:800; border:1.5px solid #c9a54a; border-radius:20px; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-block;">READ MORE</a>
       <button onclick="openBooking(20, 'Udaipur Romantic Package', 11999, '4D / 3N', 'honeymoon')" class="pkg2-btn" style="flex:1; padding:0.6rem 0.8rem; font-size:0.8rem; background:#0d1f3c; color:#ffffff; font-weight:800; border:none; border-radius:20px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;">BOOK NOW →</button>
     </div>
       </div>
