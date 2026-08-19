@@ -375,6 +375,10 @@ function downloadItineraryPDF() {
     alert('Please fill out your details first.');
     return;
   }
+  if (vjUserData.pkgName && (vjUserData.pkgName.toLowerCase().includes('char dham') || vjUserData.pkgName.toLowerCase().includes('dham'))) {
+    window.open('/chardham_itinerary.html', '_blank');
+    return;
+  }
 
   const itineraryList = getItineraryForPackage(vjUserData.pkgName);
   

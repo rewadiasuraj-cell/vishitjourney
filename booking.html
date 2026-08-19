@@ -510,7 +510,12 @@
     }
 
     function downloadPagePDF() {
-      window.print();
+      const titleLower = (pagePkgData.title || '').toLowerCase();
+      if (titleLower.includes('char dham') || titleLower.includes('dham')) {
+        window.open('/chardham_itinerary.html', '_blank');
+      } else {
+        window.print();
+      }
     }
   </script>
 </body>

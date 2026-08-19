@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/chardham-itinerary", "destination": "/chardham_itinerary.html" },
+    { "source": "/chardham_itinerary", "destination": "/chardham_itinerary.html" },
     { "source": "/booking", "destination": "/booking.html" },
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/admin/", "destination": "/admin.html" },

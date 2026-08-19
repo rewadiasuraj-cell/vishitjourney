@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Char Dham Yatra Package | Vishit Journey — 10 Day Itinerary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Jost:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0a1f3a;
+    --navy:#0d2a4d;
+    --navy-soft:#173a63;
+    --gold:#c9971e;
+    --gold-light:#e6b94a;
+    --gold-pale:#f3d98b;
+    --parchment:#faf6ec;
+    --parchment-dim:#f1ead7;
+    --ink:#1c2735;
+    --slate:#5a6478;
+    --line:#d8cba4;
+    --white:#ffffff;
+    --amber-bg:#fdf3df;
+    --amber-line:#e8c477;
+    --amber-ink:#7a5210;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 500px at 10% -10%, rgba(201,151,30,0.10), transparent 60%),
+      radial-gradient(1000px 500px at 100% 0%, rgba(10,31,58,0.06), transparent 55%),
+      var(--parchment);
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:0 20px 90px;}
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(10,20,38,0.35) 0%, rgba(9,22,44,0.72) 55%, rgba(6,15,30,0.94) 100%),
+      url('https://commons.wikimedia.org/wiki/Special:FilePath/Kedarnath%20Temple%20with%20Snow%20Covered%20Mountains%20in%20Background.jpg') center 30%/cover no-repeat;
+    color:var(--white);
+    padding:46px 26px 40px;
+    border-radius:0 0 28px 28px;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.4px);
+    background-size:26px 26px;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .logo-badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    background:rgba(255,255,255,0.96);
+    padding:10px 22px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    margin-bottom:22px;
+  }
+  .logo-badge img{height:46px; display:block;}
+  .hero-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:4px;
+    font-size:11px;
+    color:var(--gold-pale);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:clamp(30px,5vw,50px);
+    line-height:1.14;
+    margin-bottom:14px;
+    text-shadow:0 4px 24px rgba(0,0,0,0.4);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-light);
+  }
+  .hero p.sub{
+    font-size:15.5px;
+    color:#e7ecf3;
+    max-width:580px;
+    margin:0 auto 26px;
+    line-height:1.6;
+  }
+  .route-strip{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    margin:20px auto 6px;
+    max-width:760px;
+    flex-wrap:wrap;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    color:var(--gold-pale);
+  }
+  .route-strip .stop{ padding:3px 7px; white-space:nowrap;}
+  .route-strip .dash{ opacity:0.45;}
+
+  .meta-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-top:26px;
+  }
+  .meta-chip{
+    background:rgba(255,255,255,0.10);
+    border:1px solid rgba(255,255,255,0.25);
+    backdrop-filter:blur(4px);
+    color:#fff;
+    font-size:12px;
+    padding:8px 16px;
+    border-radius:999px;
+    display:flex; align-items:center; gap:7px;
+    font-family:'Jost',sans-serif;
+    letter-spacing:0.3px;
+  }
+  .meta-chip b{color:var(--gold-light); font-weight:600;}
+
+  /* ================= SECTION LABEL ================= */
+  .section-label{
+    display:flex; align-items:center; gap:14px;
+    margin:56px 0 26px;
+  }
+  .section-label .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--navy);
+    background:var(--gold-pale);
+    padding:6px 12px;
+    border-radius:6px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .section-label h2{
+    font-family:'Playfair Display', serif;
+    font-size:24px;
+    color:var(--navy-deep);
+    font-weight:700;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 12px);
+  }
+
+  /* ================= BOARDING PASS CARD ================= */
+  .pass{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1.55fr 1fr;
+    background:var(--white);
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(15,30,55,0.10), 0 2px 8px rgba(15,30,55,0.06);
+    margin-bottom:34px;
+    overflow:visible;
+    border:1px solid #ece3ca;
+  }
+  .pass-main{
+    position:relative;
+    padding:26px 26px 24px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .pass-photo{
+    height:190px;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.05);
+  }
+  .pass-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .pass-photo .day-tag{
+    position:absolute; top:10px; left:10px;
+    background:rgba(10,31,58,0.82);
+    color:var(--gold-pale);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    padding:5px 10px;
+    border-radius:6px;
+    font-weight:600;
+  }
+  .pass-route{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:1.5px;
+    color:var(--gold);
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .pass-title{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    font-weight:700;
+    color:var(--navy-deep);
+    line-height:1.22;
+  }
+  .pass-desc{
+    font-size:14.5px;
+    color:var(--slate);
+    line-height:1.6;
+  }
+  .pass-tags{
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:2px;
+  }
+  .pass-tags span{
+    font-size:11px;
+    font-family:'Jost',sans-serif;
+    background:var(--parchment-dim);
+    color:var(--navy);
+    border:1px solid var(--line);
+    padding:4px 10px;
+    border-radius:999px;
+    font-weight:500;
+  }
+
+  .pass-stub{
+    position:relative;
+    background:var(--navy-deep);
+    background-image:
+      radial-gradient(400px 200px at 100% 0%, rgba(201,151,30,0.18), transparent 60%);
+    color:#eef2f8;
+    padding:26px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .perforation{
+    position:absolute;
+    top:0; bottom:0; left:0;
+    width:0;
+    border-left:2.5px dashed rgba(201,151,30,0.55);
+  }
+  .notch{
+    position:absolute; left:-11px;
+    width:22px; height:22px;
+    background:var(--parchment);
+    border-radius:50%;
+    border:1px solid #ece3ca;
+  }
+  .notch.top{top:-11px;}
+  .notch.bottom{bottom:-11px;}
+
+  .stub-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:2.5px;
+    color:var(--gold-pale);
+    text-transform:uppercase;
+    margin-bottom:6px;
+    opacity:0.85;
+  }
+  .stub-day-num{
+    font-family:'Playfair Display', serif;
+    font-size:44px;
+    font-weight:800;
+    color:var(--gold-light);
+    line-height:1;
+    margin-bottom:4px;
+  }
+  .stub-day-num sup{
+    font-size:15px;
+    font-family:'Jost',sans-serif;
+    color:#c7d2e2;
+    font-weight:400;
+    margin-left:4px;
+  }
+  .stub-place{
+    font-size:13px;
+    color:#d7deea;
+    line-height:1.5;
+    margin-bottom:16px;
+  }
+  .stub-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 10px;
+    font-family:'JetBrains Mono', monospace;
+  }
+  .stub-grid .label{
+    font-size:9px;
+    letter-spacing:1.5px;
+    color:var(--gold-pale);
+    opacity:0.75;
+    margin-bottom:3px;
+    text-transform:uppercase;
+  }
+  .stub-grid .val{
+    font-size:12.5px;
+    color:#f2f5fa;
+    font-weight:600;
+  }
+  .stub-barcode{
+    margin-top:18px;
+    height:30px;
+    background:repeating-linear-gradient(90deg, #eef2f8 0 2px, transparent 2px 5px, #eef2f8 5px 7px, transparent 7px 12px);
+    opacity:0.55;
+    border-radius:2px;
+  }
+
+  @media (max-width:700px){
+    .pass{grid-template-columns:1fr;}
+    .pass-stub{padding:22px;}
+    .perforation{display:none;}
+    .notch{display:none;}
+  }
+
+  /* ================= IMPORTANT NOTE ================= */
+  .notice{
+    margin-top:20px;
+    background:var(--amber-bg);
+    border:1px solid var(--amber-line);
+    border-left:5px solid var(--gold);
+    border-radius:14px;
+    padding:26px 28px;
+  }
+  .notice-head{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:14px;
+  }
+  .notice-head .icon{ font-size:20px; }
+  .notice-head h3{
+    font-family:'Playfair Display', serif;
+    font-size:19px;
+    color:var(--amber-ink);
+    font-weight:700;
+  }
+  .notice ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .notice li{
+    font-size:13.5px;
+    color:#5c4009;
+    line-height:1.6;
+    padding-left:22px;
+    position:relative;
+  }
+  .notice li::before{
+    content:"◆";
+    position:absolute; left:0; top:1px;
+    color:var(--gold);
+    font-size:10px;
+  }
+
+  /* ================= STAY GRID ================= */
+  .stay-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:14px;
+    margin-top:6px;
+  }
+  .stay-card{
+    background:var(--white);
+    border:1px solid #ece3ca;
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 4px 14px rgba(15,30,55,0.06);
+  }
+  .stay-card .place{
+    font-family:'Playfair Display', serif;
+    font-size:16px;
+    font-weight:700;
+    color:var(--navy-deep);
+    margin-bottom:6px;
+  }
+  .stay-card .type{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:1px;
+    color:var(--gold);
+    text-transform:uppercase;
+    font-weight:600;
+    background:var(--parchment-dim);
+    display:inline-block;
+    padding:3px 9px;
+    border-radius:6px;
+  }
+  .stay-card.special{
+    background:var(--navy-deep);
+    border-color:var(--navy-deep);
+  }
+  .stay-card.special .place{ color:#fff; }
+  .stay-card.special .type{
+    background:rgba(201,151,30,0.2);
+    color:var(--gold-light);
+  }
+
+  /* ================= INCLUSIONS ================= */
+  .inclusions{
+    margin-top:60px;
+    background:var(--navy-deep);
+    background-image:
+      radial-gradient(600px 300px at 0% 0%, rgba(201,151,30,0.14), transparent 60%),
+      radial-gradient(600px 300px at 100% 100%, rgba(201,151,30,0.10), transparent 60%);
+    border-radius:20px;
+    padding:40px 36px;
+    color:#eef2f8;
+    position:relative;
+    overflow:hidden;
+  }
+  .inclusions::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1.4px);
+    background-size:22px 22px;
+    pointer-events:none;
+  }
+  .inclusions-head{
+    display:flex; align-items:center; gap:12px; margin-bottom:24px;
+  }
+  .inclusions-head .icon{
+    width:38px; height:38px;
+    border-radius:10px;
+    background:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px;
+    flex-shrink:0;
+  }
+  .inclusions-head h2{
+    font-family:'Playfair Display', serif;
+    font-size:23px;
+    font-weight:700;
+    color:#fff;
+  }
+  .inclusions-head p{
+    font-size:12px;
+    color:var(--gold-pale);
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+  }
+  .incl-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:16px;
+    position:relative;
+  }
+  .incl-item{
+    display:flex; gap:12px; align-items:flex-start;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(201,151,30,0.25);
+    padding:16px;
+    border-radius:12px;
+  }
+  .incl-item .check{
+    width:24px; height:24px; flex-shrink:0;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:13px;
+  }
+  .incl-item p{
+    font-size:13.5px;
+    color:#dde4ef;
+    line-height:1.5;
+  }
+
+  /* ================= CTA ================= */
+  .cta{
+    margin-top:44px;
+    text-align:center;
+    background:
+      radial-gradient(500px 260px at 50% 0%, rgba(201,151,30,0.16), transparent 70%),
+      var(--white);
+    border:1.5px solid var(--gold-light);
+    border-radius:20px;
+    padding:42px 30px;
+  }
+  .cta .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .cta h2{
+    font-family:'Playfair Display', serif;
+    font-size:clamp(22px,3.4vw,30px);
+    color:var(--navy-deep);
+    font-weight:700;
+    margin-bottom:10px;
+    line-height:1.3;
+  }
+  .cta p{
+    font-size:14px;
+    color:var(--slate);
+    max-width:480px;
+    margin:0 auto 24px;
+    line-height:1.6;
+  }
+  .cta-buttons{
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  }
+  .cta-btn{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:13px 26px;
+    border-radius:999px;
+    font-family:'Jost',sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    text-decoration:none;
+    letter-spacing:0.3px;
+  }
+  .cta-btn.primary{
+    background:var(--navy-deep);
+    color:#fff;
+    box-shadow:0 8px 22px rgba(10,31,58,0.25);
+  }
+  .cta-btn.secondary{
+    background:#25D366;
+    color:#fff;
+    box-shadow:0 8px 22px rgba(37,211,102,0.28);
+  }
+  .cta .phone{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:1px;
+  }
+
+  /* ================= FOOTER ================= */
+  .footer{
+    text-align:center;
+    margin-top:44px;
+    padding-top:30px;
+    border-top:1px dashed var(--line);
+  }
+  .footer .brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--navy-deep);
+    letter-spacing:0.5px;
+  }
+  .footer .tagline{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:3px;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-top:6px;
+  }
+  .footer .note{
+    font-size:12px;
+    color:var(--slate);
+    margin-top:14px;
+    max-width:480px;
+    margin-left:auto; margin-right:auto;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo-badge">
+    <img src="/Vishit_Journey_Logo.png" alt="Vishit Journey">
+  </div>
+  <div class="hero-eyebrow">Boarding Pass to the Himalayas</div>
+  <h1>Char Dham Yatra <em>Package</em></h1>
+  <p class="sub">9 Nights / 10 Days — Yamunotri, Gangotri, Kedarnath &amp; Badrinath, curated end-to-end by Vishit Journey with Delhi/Haridwar pickup &amp; drop.</p>
+
+  <div class="route-strip">
+    <span class="stop">DELHI/HARIDWAR</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">BARKOT</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">UTTARKASHI</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">GUPTKASHI</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">KEDARNATH</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">BADRINATH</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">HARIDWAR</span><span class="dash">✈ ·· ✈</span>
+    <span class="stop">DELHI</span>
+  </div>
+
+  <div class="meta-strip">
+    <div class="meta-chip">🗓️ <b>10 Days</b> / 9 Nights</div>
+    <div class="meta-chip">📍 <b>Uttarakhand,</b> India</div>
+    <div class="meta-chip">🚐 <b>Pickup &amp; Drop</b> Included</div>
+    <div class="meta-chip">🛎️ <b>24/7</b> Trip Support</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="section-label">
+    <span class="tag">ITINERARY</span>
+    <h2>Day-by-Day Travel Plan</h2>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yamuna%20river%20in%20Yamunotri%20Road%20near%20Mussoorie%2012.jpg" alt="Route via Mussoorie">
+        <div class="day-tag">DAY 01</div>
+      </div>
+      <div class="pass-route">Delhi / Haridwar → Rishikesh → Mussoorie → Barkot</div>
+      <div class="pass-title">Delhi/Haridwar to Barkot</div>
+      <div class="pass-desc">Yatra begins with a morning pickup from Delhi or Haridwar. Drive on via Rishikesh and Mussoorie towards Barkot — if time and road conditions permit, stop at Mussoorie viewpoints and Kempty Falls along the way. Evening hotel check-in, dinner and overnight stay at Barkot.</div>
+      <div class="pass-tags"><span>Pickup</span><span>Mussoorie</span><span>Kempty Falls (optional)</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">01<sup>/10</sup></div>
+        <div class="stub-place">Barkot</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">1,220 m</div></div>
+        <div><div class="label">Stay</div><div class="val">Barkot</div></div>
+        <div><div class="label">Meals</div><div class="val">Dinner</div></div>
+        <div><div class="label">Gate</div><div class="val">01 → 02</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yamunotri%20temple%20and%20ashram.jpg" alt="Yamunotri Temple">
+        <div class="day-tag">DAY 02</div>
+      </div>
+      <div class="pass-route">Barkot → Janki Chatti → Yamunotri Dham → Barkot</div>
+      <div class="pass-title">Yamunotri Dham Darshan</div>
+      <div class="pass-desc">Today is dedicated to Yamunotri Dham. Drive from Barkot to Janki Chatti, then continue by trek, pony or doli (as per your preference) to the temple. After Darshan of Goddess Yamuna, visit Surya Kund and Divya Shila subject to local access. Return to Barkot for overnight stay.</div>
+      <div class="pass-tags"><span>Trek / Pony / Doli</span><span>Surya Kund</span><span>Divya Shila</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">02<sup>/10</sup></div>
+        <div class="stub-place">Yamunotri Dham</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">3,293 m</div></div>
+        <div><div class="label">Dham</div><div class="val">1 of 4</div></div>
+        <div><div class="label">Stay</div><div class="val">Barkot</div></div>
+        <div><div class="label">Gate</div><div class="val">02 → 03</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laxman%20Jhula%2C%20Rishikesh%2C%20Uttaranchal.jpg" alt="Himalayan valley enroute">
+        <div class="day-tag">DAY 03</div>
+      </div>
+      <div class="pass-route">Barkot → Uttarkashi</div>
+      <div class="pass-title">Barkot to Uttarkashi</div>
+      <div class="pass-desc">A scenic drive from Barkot to Uttarkashi through beautiful Himalayan landscapes, with photo stops along the way as time allows. Evening hotel check-in at Uttarkashi.</div>
+      <div class="pass-tags"><span>Scenic Drive</span><span>Photo Stops</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">03<sup>/10</sup></div>
+        <div class="stub-place">Uttarkashi</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">1,158 m</div></div>
+        <div><div class="label">Stay</div><div class="val">Uttarkashi</div></div>
+        <div><div class="label">Meals</div><div class="val">Dinner</div></div>
+        <div><div class="label">Gate</div><div class="val">03 → 04</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gangotri%20(ganga%20river).jpg" alt="Gangotri Dham">
+        <div class="day-tag">DAY 04</div>
+      </div>
+      <div class="pass-route">Uttarkashi → Harsil → Gangotri Dham → Uttarkashi</div>
+      <div class="pass-title">Gangotri Dham Darshan</div>
+      <div class="pass-desc">Morning departure from Uttarkashi towards Gangotri, driving through the picturesque Harsil valley. Darshan of Maa Ganga at Gangotri Dham, with a visit to Bhagirathi Shila and nearby sacred spots as time and local access permit. Drive back to Uttarkashi for overnight stay.</div>
+      <div class="pass-tags"><span>Harsil Valley</span><span>Gangotri Dham</span><span>Bhagirathi Shila</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">04<sup>/10</sup></div>
+        <div class="stub-place">Gangotri Dham</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">3,100 m</div></div>
+        <div><div class="label">Dham</div><div class="val">2 of 4</div></div>
+        <div><div class="label">Stay</div><div class="val">Uttarkashi</div></div>
+        <div><div class="label">Gate</div><div class="val">04 → 05</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rudraprayag%20-%20Confluence%20of%20Alaknanda%20and%20Mandakini.JPG" alt="Rudraprayag confluence">
+        <div class="day-tag">DAY 05</div>
+      </div>
+      <div class="pass-route">Uttarkashi → Rudraprayag → Kund → Guptkashi</div>
+      <div class="pass-title">Uttarkashi to Guptkashi</div>
+      <div class="pass-desc">A long, scenic drive from Uttarkashi to Guptkashi via Rudraprayag and Kund. Along the way, stop for sightseeing at the sacred river confluences if time allows. Evening check-in at Guptkashi, your gateway to Kedarnath.</div>
+      <div class="pass-tags"><span>Rudraprayag</span><span>River Confluence</span><span>Long Drive</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">05<sup>/10</sup></div>
+        <div class="stub-place">Guptkashi</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">1,319 m</div></div>
+        <div><div class="label">Stay</div><div class="val">Guptkashi</div></div>
+        <div><div class="label">Via</div><div class="val">Rudraprayag</div></div>
+        <div><div class="label">Gate</div><div class="val">05 → 06</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kedarnath%20Temple%20with%20Snow%20Covered%20Mountains%20in%20Background.jpg" alt="Kedarnath Temple">
+        <div class="day-tag">DAY 06</div>
+      </div>
+      <div class="pass-route">Guptkashi → Sonprayag → Gaurikund → Kedarnath</div>
+      <div class="pass-title">Kedarnath — The Sacred Trek</div>
+      <div class="pass-desc">The most awaited part of the yatra. Drive from Guptkashi to Sonprayag, then to Gaurikund by local transport. From Gaurikund begins the trek to Kedarnath — on foot, pony or via helicopter as per availability. On arrival, check into your accommodation / dormitory and attend evening temple Darshan as per temple timings.</div>
+      <div class="pass-tags"><span>Gaurikund Trek</span><span>Jyotirlinga</span><span>Evening Darshan</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">06<sup>/10</sup></div>
+        <div class="stub-place">Kedarnath Dham</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">3,583 m</div></div>
+        <div><div class="label">Dham</div><div class="val">3 of 4</div></div>
+        <div><div class="label">Trek</div><div class="val">~16 km</div></div>
+        <div><div class="label">Gate</div><div class="val">06 → 07</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Way%20to%20kedarnathm.jpg" alt="Trek back from Kedarnath">
+        <div class="day-tag">DAY 07</div>
+      </div>
+      <div class="pass-route">Kedarnath → Gaurikund → Sonprayag → Guptkashi</div>
+      <div class="pass-title">Kedarnath Darshan &amp; Descent</div>
+      <div class="pass-desc">If Darshan could not be completed the previous evening, morning Darshan at the temple. Afterwards, trek back down to Gaurikund / Sonprayag and drive onward to Guptkashi for overnight stay.</div>
+      <div class="pass-tags"><span>Morning Darshan</span><span>Return Trek</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">07<sup>/10</sup></div>
+        <div class="stub-place">Back to Guptkashi</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Descent</div><div class="val">~16 km</div></div>
+        <div><div class="label">Stay</div><div class="val">Guptkashi</div></div>
+        <div><div class="label">Status</div><div class="val">Darshan ✓</div></div>
+        <div><div class="label">Gate</div><div class="val">07 → 08</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Badrinath%20Temple%20(front%20view).JPG" alt="Badrinath Temple">
+        <div class="day-tag">DAY 08</div>
+      </div>
+      <div class="pass-route">Guptkashi → Joshimath → Badrinath</div>
+      <div class="pass-title">Guptkashi to Badrinath</div>
+      <div class="pass-desc">Drive from Guptkashi to Badrinath via Joshimath, arriving for Darshan at the Badrinath Temple. As time and local access permit, also visit Tapt Kund, Narad Kund, Mana Village, Vyas Gufa, Ganesh Gufa and the Saraswati River. Overnight stay at Badrinath or Joshimath, subject to hotel availability.</div>
+      <div class="pass-tags"><span>Tapt Kund</span><span>Mana Village</span><span>Vyas &amp; Ganesh Gufa</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">08<sup>/10</sup></div>
+        <div class="stub-place">Badrinath Dham</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">3,100 m</div></div>
+        <div><div class="label">Dham</div><div class="val">4 of 4</div></div>
+        <div><div class="label">Stay</div><div class="val">Badrinath</div></div>
+        <div><div class="label">Gate</div><div class="val">08 → 09</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ganga%20Aarti%20in%20Haridwar.jpg" alt="Ganga Aarti Haridwar">
+        <div class="day-tag">DAY 09</div>
+      </div>
+      <div class="pass-route">Badrinath → Karnaprayag → Rudraprayag → Devprayag → Rishikesh → Haridwar</div>
+      <div class="pass-title">Badrinath to Haridwar</div>
+      <div class="pass-desc">Long drive back from Badrinath / Joshimath towards Haridwar, passing through the sacred confluences of Karnaprayag, Rudraprayag and Devprayag, and through Rishikesh. If time permits on arrival, witness the evening Ganga Aarti at Har Ki Pauri.</div>
+      <div class="pass-tags"><span>Panch Prayag Route</span><span>Rishikesh</span><span>Ganga Aarti</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">09<sup>/10</sup></div>
+        <div class="stub-place">Haridwar</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Altitude</div><div class="val">314 m</div></div>
+        <div><div class="label">Stay</div><div class="val">Haridwar</div></div>
+        <div><div class="label">Dhams</div><div class="val">4 / 4 ✓</div></div>
+        <div><div class="label">Gate</div><div class="val">09 → 10</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="pass">
+    <div class="pass-main">
+      <div class="pass-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mansa%20Devi%20Temple%2C%20Haridwar.JPG" alt="Mansa Devi Temple, Haridwar">
+        <div class="day-tag">DAY 10</div>
+      </div>
+      <div class="pass-route">Haridwar → Mansa Devi / Chandi Devi (optional) → Delhi</div>
+      <div class="pass-title">Haridwar to Delhi Departure</div>
+      <div class="pass-desc">After breakfast, hotel checkout. If time permits, an optional visit to Mansa Devi or Chandi Devi Temple. Onward drive from Haridwar to Delhi, with drop-off at your desired location — bringing your Char Dham Yatra to a close.</div>
+      <div class="pass-tags"><span>Optional Temple Visit</span><span>Drop to Delhi</span><span>Journey Ends</span></div>
+    </div>
+    <div class="pass-stub">
+      <div class="perforation"></div>
+      <div class="notch top"></div>
+      <div class="notch bottom"></div>
+      <div>
+        <div class="stub-eyebrow">Boarding · Yatra Pass</div>
+        <div class="stub-day-num">10<sup>/10</sup></div>
+        <div class="stub-place">Journey Complete</div>
+      </div>
+      <div class="stub-grid">
+        <div><div class="label">Drop</div><div class="val">Delhi</div></div>
+        <div><div class="label">Status</div><div class="val">Complete</div></div>
+        <div><div class="label">Dhams</div><div class="val">4 / 4 ✓</div></div>
+        <div><div class="label">Gate</div><div class="val">Arrived</div></div>
+      </div>
+      <div class="stub-barcode"></div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT NOTE -->
+  <div class="section-label">
+    <span class="tag">PLEASE NOTE</span>
+    <h2>Important Information</h2>
+  </div>
+  <div class="notice">
+    <div class="notice-head">
+      <span class="icon">⚠️</span>
+      <h3>Char Dham Yatra is not a normal trip</h3>
+    </div>
+    <ul>
+      <li>At Yamunotri, the option of trek, pony or doli is available from Janki Chatti; at Kedarnath, the trek begins from Gaurikund.</li>
+      <li>Pony, doli and helicopter availability depends on weather and local rules, and are not included unless specifically mentioned.</li>
+      <li>Weather conditions in the Himalayan region can change road or temple access at short notice.</li>
+      <li>Applicable Char Dham registration must be completed before the yatra, and valid ID along with registration documents must be carried at all times.</li>
+    </ul>
+  </div>
+
+  <!-- STAY -->
+  <div class="section-label">
+    <span class="tag">STAY</span>
+    <h2>Accommodation on the Route</h2>
+  </div>
+  <div class="stay-grid">
+    <div class="stay-card">
+      <div class="place">Barkot</div>
+      <span class="type">3-Star Hotel / Resort</span>
+    </div>
+    <div class="stay-card">
+      <div class="place">Uttarkashi</div>
+      <span class="type">3-Star Hotel / Resort</span>
+    </div>
+    <div class="stay-card">
+      <div class="place">Guptkashi</div>
+      <span class="type">3-Star Hotel / Resort</span>
+    </div>
+    <div class="stay-card special">
+      <div class="place">Kedarnath</div>
+      <span class="type">Basic / Dormitory</span>
+    </div>
+    <div class="stay-card">
+      <div class="place">Badrinath / Joshimath</div>
+      <span class="type">3-Star Hotel / Resort</span>
+    </div>
+    <div class="stay-card">
+      <div class="place">Haridwar</div>
+      <span class="type">3-Star Hotel / Resort</span>
+    </div>
+  </div>
+
+  <!-- INCLUSIONS -->
+  <div class="inclusions">
+    <div class="inclusions-head">
+      <div class="icon">✦</div>
+      <div>
+        <h2>Package Inclusions</h2>
+        <p>What's covered on your journey</p>
+      </div>
+    </div>
+    <div class="incl-grid">
+      <div class="incl-item"><div class="check">✓</div><p>Complete tour transfers via AC vehicle throughout the journey</p></div>
+      <div class="incl-item"><div class="check">✓</div><p>Pre-booked hotel / resort accommodation at every overnight halt</p></div>
+      <div class="incl-item"><div class="check">✓</div><p>Daily delicious breakfast &amp; dinner included</p></div>
+      <div class="incl-item"><div class="check">✓</div><p>VIP Darshan &amp; sightseeing entry assistance at all four Dhams</p></div>
+      <div class="incl-item"><div class="check">✓</div><p>24/7 dedicated trip manager support for the full trip</p></div>
+      <div class="incl-item"><div class="check">✓</div><p>Delhi / Haridwar pickup &amp; drop included</p></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="eyebrow">Booking Now Open</div>
+    <h2>Plan your Char Dham Yatra with Vishit Journey</h2>
+    <p>Don't worry about the planning — we'll handle it. 9 Nights / 10 Days, complete Char Dham Yatra with Delhi/Haridwar pickup &amp; drop.</p>
+    <div class="cta-buttons">
+      <a class="cta-btn primary" href="tel:9899902890">📞 Call <span class="phone">9899902890</span></a>
+      <a class="cta-btn secondary" href="https://wa.me/919899902890">💬 WhatsApp Us</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Vishit Journey</div>
+    <div class="tagline">Aapki Yatra, Hamari Zimmedari</div>
+    <p class="note">This itinerary is indicative and subject to weather, road, and temple committee conditions in the Himalayan region. Final day-wise timings will be confirmed by your dedicated trip manager.</p>
+  </div>
+
+</div>
+</body>
+</html>
