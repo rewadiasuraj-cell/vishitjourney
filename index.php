@@ -72,7 +72,7 @@ foreach ($packages_raw as $p) {
     position:fixed;top:80px;left:0;right:0;z-index:98;
     background:#f5f0e8;
     padding:.65rem 0;
-    text-align:center;
+    text-align:left;
     border-bottom:1px solid rgba(201,165,74,0.3);
     box-shadow:0 1px 8px rgba(0,0,0,0.06);
     min-height:40px;
@@ -118,7 +118,7 @@ foreach ($packages_raw as $p) {
   .hero{
     position:relative;min-height:100vh;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:0 2%;overflow:hidden;
+    text-align:left;padding:0 2%;overflow:hidden;
     margin-top: 80px; /* overridden by JS */
   }
   /* slideshow */
@@ -192,7 +192,7 @@ foreach ($packages_raw as $p) {
     background:var(--navy2);padding:2.5rem 4%;
     border-bottom:1px solid rgba(201,165,74,0.1);
   }
-  .search-label{text-align:center;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+  .search-label{text-align:left;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
   .search-bar{
     display:flex;gap:0;max-width:900px;margin:0 auto;
     border:1px solid rgba(201,165,74,0.35);border-radius:30px;overflow:hidden;
@@ -665,7 +665,7 @@ foreach ($packages_raw as $p) {
   .why-badge{
     position:absolute;bottom:-1.5rem;right:-1.5rem;
     background:var(--gold);color:var(--navy);
-    padding:1.5rem;text-align:center;min-width:140px;
+    padding:1.5rem;text-align:left;min-width:140px;
   }
   .why-badge .num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;display:block}
   .why-badge .txt{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
@@ -708,7 +708,7 @@ foreach ($packages_raw as $p) {
 
   /* ── CTA BANNER ── */
   .cta-banner{
-    padding:5rem 4%;text-align:center;
+    padding:5rem 4%;text-align:left;
     background:
       linear-gradient(rgba(8,20,40,0.8),rgba(8,20,40,0.8)),
       url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80') center/cover no-repeat;
@@ -860,7 +860,7 @@ foreach ($packages_raw as $p) {
     .hero p{ font-size:.9rem;max-width:100% }
     .hero-badge{ font-size:.65rem;padding:.4rem 1rem }
     .hero-btns{ flex-direction:column;align-items:center;gap:.8rem }
-    .btn-gold,.btn-outline{ width:260px;text-align:center;padding:.85rem }
+    .btn-gold,.btn-outline{ width:260px;text-align:left;padding:.85rem }
     .hero-stats{
       bottom:1.5rem;gap:1.2rem;flex-wrap:nowrap;
       padding:0 3%;
@@ -923,7 +923,7 @@ foreach ($packages_raw as $p) {
     .footer-brand img{ height:128px !important; }
     .footer-bottom{
       flex-direction:column;align-items:center;
-      text-align:center;gap:.7rem;
+      text-align:left;gap:.7rem;
     }
     .social-row{ justify-content:center }
 
@@ -1001,7 +1001,7 @@ foreach ($packages_raw as $p) {
   .pkg2-list li{font-size:.73rem;color:rgba(255,255,255,0.65);padding:.2rem 0;padding-left:.9rem;position:relative;line-height:1.4}
   .pkg2-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:.65rem}
   .pkg2-btn{
-    display:block;text-align:center;padding:.65rem 1rem;
+    display:block;text-align:left;padding:.65rem 1rem;
     background:transparent;border:1px solid rgba(201,165,74,0.4);
     color:var(--gold);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;
     text-decoration:none;transition:all .3s ease;border-radius:25px;
@@ -1836,6 +1836,43 @@ foreach ($packages_raw as $p) {
     }
   </style>
 
+
+  <style id="vjLeftAlignedOfferCardStyles">
+    /* CLEAN LEFT ALIGNED EDITORIAL SPECIAL OFFER CARDS */
+    .offer-card {
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      min-height: 440px !important;
+      height: 100% !important;
+      padding: 2.2rem 1.8rem 1.6rem !important;
+      position: relative !important;
+      box-sizing: border-box !important;
+    }
+
+    .offer-card *,
+    .offer-card h3,
+    .offer-card p,
+    .offer-card span,
+    .offer-card div {
+      text-align: left !important;
+    }
+
+    .offer-card p {
+      flex-grow: 1 !important;
+      font-size: 0.94rem !important;
+      line-height: 1.65 !important;
+      color: #4a5568 !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .offer-card .vj-btn-read,
+    .offer-card .vj-btn-book {
+      text-align: center !important;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -1919,7 +1956,7 @@ foreach ($packages_raw as $p) {
 </section>
 
 <!-- SPECIAL OFFERS & DISCOUNTS SECTION (CLEAN SOLID WHITE BACKGROUND) -->
-<section id="offers" style="background:#ffffff; padding:4rem 0 3rem; text-align:center; position:relative; z-index:10;">
+<section id="offers" style="background:#ffffff; padding:4rem 0 3rem; text-align:left; position:relative; z-index:10;">
   <div style="max-width:1380px; margin:0 auto; padding:0 2%;">
     <div style="display:inline-block; background:rgba(201,165,74,0.15); border:1px solid #c9a54a; color:#0d1f3c; padding:0.4rem 1.4rem; border-radius:20px; font-size:0.82rem; font-weight:800; letter-spacing:2px; text-transform:uppercase;">
       LIMITED TIME SPECIAL OFFERS
@@ -2414,7 +2451,7 @@ foreach ($packages_raw as $p) {
 <!-- TOUR PACKAGES -->
 
 <section class="packages" id="packages">
-  <div style="text-align:center;max-width:700px;margin:0 auto 2.5rem">
+  <div style="text-align:left;max-width:700px;margin:0 auto 2.5rem">
     <div class="section-tag">✦ Our Tour Packages</div>
     <h2 class="section-title">Find Your <em>Perfect Trip</em></h2>
     <div class="gold-line" style="margin:1rem auto"></div>
@@ -3090,7 +3127,7 @@ foreach ($packages_raw as $p) {
 
 <!-- TESTIMONIALS (NON-STOP INFINITE MARQUEE SLIDER) -->
 <section class="testimonials" id="reviews" style="overflow:hidden;padding:4rem 0">
-  <div style="text-align:center;margin-bottom:2.5rem">
+  <div style="text-align:left;margin-bottom:2.5rem">
     <div class="section-tag">✦ What Our Travellers Say</div>
     <h2 class="section-title">Real <em>Journey</em>, Real Smiles</h2>
     <div class="gold-line" style="margin:1rem auto"></div>
@@ -3953,7 +3990,7 @@ function executePackageSearch() {
   <div class="vj-modal-box" style="max-width:440px;border-radius:24px;">
     <button onclick="closeAuthModal()" class="vj-modal-close">✕</button>
     
-    <div class="vj-modal-header" style="text-align:center;padding-bottom:0.8rem">
+    <div class="vj-modal-header" style="text-align:left;padding-bottom:0.8rem">
       <div class="vj-modal-tag" style="margin-bottom:0.4rem">✦ VISHIT JOURNEY ACCOUNT</div>
       <div class="vj-auth-tabs">
         <button id="tabBtnLogin" onclick="switchAuthTab('login')" class="vj-auth-tab active">LOGIN</button>
@@ -3999,7 +4036,7 @@ function executePackageSearch() {
         <button type="submit" class="vj-btn-primary" style="width:100%;border-radius:25px;margin-top:0.5rem">CREATE ACCOUNT →</button>
       </form>
 
-      <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.6)">
+      <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);text-align:left;font-size:0.75rem;color:rgba(255,255,255,0.6)">
         Are you an administrator? <a href="/admin/login.php" style="color:var(--gold);text-decoration:none;font-weight:600">Admin Login 🔒</a>
       </div>
     </div>
