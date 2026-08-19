@@ -1746,7 +1746,7 @@ foreach ($packages_raw as $p) {
 <!-- MOBILE DRAWER -->
 <div class="mob-drawer" id="mobDrawer">
   <button class="mob-close" onclick="document.getElementById('mobDrawer').classList.remove('open')">✕</button>
-  <a href="#offers" onclick="document.getElementById('mobDrawer').classList.remove('open')"><svg width="18" height="18" viewBox="0 0 24 24" fill="url(#flameGrad)" style="vertical-align:-3px;margin-right:6px;"><defs><linearGradient id="flameGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ff4500"/><stop offset="50%" stop-color="#ff8c00"/><stop offset="100%" stop-color="#ffcc00"/></linearGradient></defs><path d="M12 23c-4.97 0-9-3.584-9-8 0-4.008 3.013-7.564 6.78-9.458.375-.188.82.02.946.425.688 2.213 2.19 3.86 3.774 4.533C15.82 8.01 16.5 5.5 16.5 3c0-.36.25-.67.6-.73.35-.06.7.13.85.45C19.7 6.4 21 9.8 21 13c0 5.523-4.03 10-9 10z"/></svg> Special Offers</a>
+  <a href="#offers" onclick="document.getElementById('mobDrawer').classList.remove('open')">Special Offers</a>
   <a href="#packages" onclick="document.getElementById('mobDrawer').classList.remove('open')">Packages</a>
   <a href="#why" onclick="document.getElementById('mobDrawer').classList.remove('open')">About</a>
   <a href="#contact" onclick="document.getElementById('mobDrawer').classList.remove('open')">Contact</a>
@@ -1881,7 +1881,7 @@ foreach ($packages_raw as $p) {
   
   <div style="text-align:center; max-width:850px; margin:0 auto 2.5rem; padding:0 1rem;">
     <div class="section-tag" style="display:inline-flex; align-items:center; gap:8px; background:rgba(201,165,74,0.12); border:1px solid rgba(201,165,74,0.4); color:#0d1f3c; padding:0.45rem 1.4rem; border-radius:20px; font-size:0.78rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="url(#flameGrad)" style="vertical-align:-3px;margin-right:6px;"><defs><linearGradient id="flameGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ff4500"/><stop offset="50%" stop-color="#ff8c00"/><stop offset="100%" stop-color="#ffcc00"/></linearGradient></defs><path d="M12 23c-4.97 0-9-3.584-9-8 0-4.008 3.013-7.564 6.78-9.458.375-.188.82.02.946.425.688 2.213 2.19 3.86 3.774 4.533C15.82 8.01 16.5 5.5 16.5 3c0-.36.25-.67.6-.73.35-.06.7.13.85.45C19.7 6.4 21 9.8 21 13c0 5.523-4.03 10-9 10z"/></svg> LIMITED TIME SPECIAL OFFERS
+      LIMITED TIME SPECIAL OFFERS
     </div>
     <h2 class="section-title" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem, 3.5vw, 3rem); color:#0d1f3c; margin-top:0.6rem; font-weight:700;">
       Exclusive <em>Offers & Discounts</em>
