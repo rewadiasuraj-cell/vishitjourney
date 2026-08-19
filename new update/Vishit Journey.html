@@ -1632,6 +1632,46 @@
     }
   </style>
 
+
+  <style id="vjGlassHeaderStyles">
+    /* GLASSMORPHISM HEADER */
+    header, .site-header, nav.navbar {
+      background: rgba(255, 255, 255, 0.88) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1.5px solid rgba(201, 165, 74, 0.35) !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* HIGH CONTRAST SUBTEXT ON DARK SECTIONS */
+    .packages .section-sub,
+    .destinations .section-sub,
+    section[style*="#081428"] p,
+    section[style*="#0d1f3c"] p {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-weight: 600 !important;
+      font-size: 1.05rem !important;
+    }
+
+    /* CATEGORY FILTER BUTTONS HIGH CONTRAST */
+    .cat-tab, .filter-btn, .pkg2-cat-btn {
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      border: 1.5px solid #c9a54a !important;
+      background: rgba(201, 165, 74, 0.15) !important;
+      transition: all 0.3s ease !important;
+    }
+    .cat-tab.active, .filter-btn.active, .pkg2-cat-btn.active {
+      background: linear-gradient(45deg, #c9a54a, #e4c06e) !important;
+      color: #081428 !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 15px rgba(201, 165, 74, 0.4) !important;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -2312,7 +2352,7 @@
     <div class="section-tag">✦ Our Tour Packages</div>
     <h2 class="section-title">Find Your <em>Perfect Trip</em></h2>
     <div class="gold-line" style="margin:1rem auto"></div>
-    <p class="section-sub" style="color:#0d1f3c; font-size:1.15rem; font-weight:700; max-width:850px; margin:0.8rem auto 0;">Handpicked destinations with cabs, buses & complete arrangements — just pack your bags!</p>
+    <p class="section-sub" style="color:#0d1f3c; font-size:1.15rem; font-weight:700; max-width:850px; margin:0.8rem auto 0;"><span style="color:#ffffff !important; font-weight:700; font-size:1.1rem;">Handpicked destinations with cabs, buses & complete arrangements — just pack your bags!</span></p>
   </div>
 
   <!-- MOBILE FILTER TOGGLE BUTTON -->
