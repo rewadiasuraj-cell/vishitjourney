@@ -1794,7 +1794,22 @@ foreach ($packages_raw as $p) {
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
     }
 
-    /* 3. PACKAGE FILTER TABS VISIBILITY FIX */
+    /* 3. SHOWING X PACKAGES TEXT & FILTER TABS FIX */
+    .pkg-count-info,
+    .pkg-count-info strong,
+    #pkgCount,
+    .gold-txt {
+      color: #0B1B33 !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+    }
+    .pkg-count-info strong,
+    #pkgCount {
+      color: #0B1B33 !important;
+      font-weight: 800 !important;
+    }
+
+    .pkg-tab,
     .pkg-filter-btn, 
     .filter-btn, 
     .dest-filter-btn,
@@ -1809,7 +1824,9 @@ foreach ($packages_raw as $p) {
       border-radius: 25px !important;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
       transition: all 0.25s ease !important;
+      display: inline-block !important;
     }
+    .pkg-tab:hover,
     .pkg-filter-btn:hover, 
     .filter-btn:hover, 
     .dest-filter-btn:hover,
@@ -1820,6 +1837,7 @@ foreach ($packages_raw as $p) {
       border-color: #D4A72C !important;
       color: #B88918 !important;
     }
+    .pkg-tab.active,
     .pkg-filter-btn.active, 
     .filter-btn.active, 
     .dest-filter-btn.active,
