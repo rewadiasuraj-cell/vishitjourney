@@ -3652,5 +3652,22 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+
+<script src="assets/js/booking.js"></script>
+<script>
+// Fail-safe global backup for instant click execution
+function openBooking(id, name, price, duration, category) {
+  const pkgName = encodeURIComponent(name || 'Travel Package');
+  const pkgPrice = encodeURIComponent(price || 0);
+  const pkgDur = encodeURIComponent(duration || '');
+  window.location.href = '/booking?pkg=' + pkgName + '&price=' + pkgPrice + '&duration=' + pkgDur;
+}
+function openBookingModal(id, name, price, duration, category) {
+  openBooking(id, name, price, duration, category);
+}
+window.openBooking = openBooking;
+window.openBookingModal = openBookingModal;
+</script>
+
 </body>
 </html>
