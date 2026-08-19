@@ -2220,7 +2220,7 @@ foreach ($packages_raw as $p) {
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
        VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
-       (SPECIAL OFFER CARDS BADGE & TEXT OVERLAP 100% FIX)
+       (HERO DESTINATION ANIMATED SLIDESHOW: SCALE IN & CROSS-FADE)
        ════════════════════════════════════════════════════════════ */
     html, body {
       background-color: #FFFFFF !important;
@@ -2248,14 +2248,127 @@ foreach ($packages_raw as $p) {
       color: #0B1B33 !important;
     }
 
-    /* 1. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP PERFECT FIX */
+    /* 1. HERO BACKGROUND TRAVEL DESTINATION ANIMATED SLIDESHOW */
+    .hero {
+      position: relative !important;
+      overflow: hidden !important;
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      padding: 100px 4% 3rem !important;
+      min-height: 520px !important;
+    }
+
+    .slide {
+      display: block !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: 0 !important;
+      animation: heroSlideFade 18s infinite linear !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .slide:nth-child(1) {
+      animation-delay: 0s !important;
+      background-image: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1600&q=80') !important; /* Kashmir / Himalayas */
+    }
+    .slide:nth-child(2) {
+      animation-delay: 6s !important;
+      background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80') !important; /* Dubai Skyline */
+    }
+    .slide:nth-child(3) {
+      animation-delay: 12s !important;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') !important; /* Tropical Beach / Kerala */
+    }
+
+    @keyframes heroSlideFade {
+      0% {
+        opacity: 0;
+        transform: scale(1);
+      }
+      6% {
+        opacity: 0.85;
+      }
+      30% {
+        opacity: 0.85;
+        transform: scale(1.10);
+      }
+      36% {
+        opacity: 0;
+        transform: scale(1.14);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    .slide-overlay {
+      display: block !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(255, 255, 255, 0.96) 100%) !important;
+      pointer-events: none !important;
+    }
+
+    .hero > *:not(.slide):not(.slide-overlay) {
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .hero-badge {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1px solid #E3E8EF !important;
+      box-shadow: 0 2px 10px rgba(11, 27, 51, 0.06) !important;
+    }
+    .hero h1, 
+    .hero h1 span {
+      color: #0B1B33 !important;
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8) !important;
+    }
+    .hero h1 em {
+      color: #D4A72C !important;
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8) !important;
+    }
+    .hero p {
+      color: #5F6B7A !important;
+      font-weight: 600 !important;
+      text-shadow: none !important;
+    }
+
+    /* HERO CAB SERVICE | BUS CHARTER | FLIGHT TOURS DARK TEXT FIX */
+    .hero span[style*="CAB SERVICE"],
+    .hero span[style*="FLIGHT TOURS"],
+    .hero span[style*="letter-spacing"],
+    .hero div[style*="letter-spacing"] {
+      color: #0B1B33 !important;
+      font-weight: 700 !important;
+    }
+
+    .hero span[style*="CAB SERVICE"] svg,
+    .hero span[style*="FLIGHT TOURS"] svg {
+      stroke: #D4A72C !important;
+      color: #D4A72C !important;
+    }
+
+    /* 2. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP PERFECT FIX */
     .offer-card {
       position: relative !important;
       background: #FFFFFF !important;
       border: 1px solid #E3E8EF !important;
       border-radius: 20px !important;
       box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
-      padding: 3.2rem 1.6rem 1.6rem !important; /* Top padding 3.2rem gives clear vertical space for badge */
+      padding: 3.2rem 1.6rem 1.6rem !important;
       overflow: hidden !important;
     }
 
@@ -2310,7 +2423,7 @@ foreach ($packages_raw as $p) {
       margin-bottom: 1.2rem !important;
     }
 
-    /* 2. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
+    /* 3. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
     #official-rate-and-faq div[style*="overflow-x"],
     #official-rate-and-faq table {
       background-color: #FFFFFF !important;
@@ -2350,21 +2463,6 @@ foreach ($packages_raw as $p) {
     #official-rate-and-faq td[style*="font-weight:700"] {
       color: #0B1B33 !important;
       font-weight: 800 !important;
-    }
-
-    /* 3. HERO CAB SERVICE | BUS CHARTER | FLIGHT TOURS DARK TEXT FIX */
-    .hero span[style*="CAB SERVICE"],
-    .hero span[style*="FLIGHT TOURS"],
-    .hero span[style*="letter-spacing"],
-    .hero div[style*="letter-spacing"] {
-      color: #0B1B33 !important;
-      font-weight: 700 !important;
-    }
-
-    .hero span[style*="CAB SERVICE"] svg,
-    .hero span[style*="FLIGHT TOURS"] svg {
-      stroke: #D4A72C !important;
-      color: #D4A72C !important;
     }
 
     /* 4. FAQ CARDS 100% PURE WHITE BACKGROUND & HIGH CONTRAST DARK TEXT */
@@ -2413,70 +2511,6 @@ foreach ($packages_raw as $p) {
       background-color: #F7F9FC !important;
       background: #F7F9FC !important;
       color: #0B1B33 !important;
-    }
-
-    /* HERO BACKGROUND TRAVEL DESTINATION SLIDESHOW ANIMATION */
-    .hero {
-      position: relative !important;
-      overflow: hidden !important;
-      background: #FFFFFF !important;
-      color: #0B1B33 !important;
-    }
-
-    .slide {
-      display: block !important;
-      position: absolute !important;
-      inset: 0 !important;
-      background-size: cover !important;
-      background-position: center !important;
-      opacity: 0 !important;
-      animation: slideShow 18s infinite !important;
-      z-index: 0 !important;
-    }
-    .slide:nth-child(1) { animation-delay: 0s !important; }
-    .slide:nth-child(2) { animation-delay: 6s !important; }
-    .slide:nth-child(3) { animation-delay: 12s !important; }
-
-    @keyframes slideShow {
-      0% { opacity: 0; transform: scale(1); }
-      6% { opacity: 1; }
-      28% { opacity: 1; transform: scale(1.08); }
-      34% { opacity: 0; transform: scale(1.12); }
-      100% { opacity: 0; transform: scale(1); }
-    }
-
-    .slide-overlay {
-      display: block !important;
-      position: absolute !important;
-      inset: 0 !important;
-      z-index: 1 !important;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%) !important;
-    }
-
-    .hero > *:not(.slide):not(.slide-overlay) {
-      position: relative !important;
-      z-index: 2 !important;
-    }
-
-    .hero-badge {
-      background: #FFFFFF !important;
-      color: #0B1B33 !important;
-      border: 1px solid #E3E8EF !important;
-      box-shadow: 0 2px 10px rgba(11, 27, 51, 0.06) !important;
-    }
-    .hero h1, 
-    .hero h1 span {
-      color: #0B1B33 !important;
-      text-shadow: none !important;
-    }
-    .hero h1 em {
-      color: #D4A72C !important;
-      text-shadow: none !important;
-    }
-    .hero p {
-      color: #5F6B7A !important;
-      font-weight: 500 !important;
-      text-shadow: none !important;
     }
 
     /* DESTINATION CARDS CLEAN OVERLAY */
