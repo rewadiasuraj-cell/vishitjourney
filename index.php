@@ -2219,12 +2219,12 @@ foreach ($packages_raw as $p) {
 
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
-       VISHIT JOURNEY — MASTER 100% PURE WHITE LUXURY THEME
-       (100% ZERO DARK NAVY BACKGROUNDS ANYWHERE ON THE WEBSITE)
+       VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
+       (HERO DESTINATION ANIMATED SLIDESHOW + CLEAN CARDS)
        ════════════════════════════════════════════════════════════ */
-    html, body, main, section, header, nav, footer, div, article, aside {
-      background-color: #FFFFFF;
-      color: #0B1B33;
+    html, body {
+      background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
     }
 
     body {
@@ -2233,7 +2233,6 @@ foreach ($packages_raw as $p) {
     }
 
     section,
-    .hero,
     .search-section,
     .special-offers,
     .destinations,
@@ -2260,9 +2259,120 @@ foreach ($packages_raw as $p) {
       color: #0B1B33 !important;
     }
 
-    /* ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
+    /* 1. HERO BACKGROUND TRAVEL DESTINATION SLIDESHOW ANIMATION (SCALE IN & FADE) */
+    .hero {
+      position: relative !important;
+      overflow: hidden !important;
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    .slide {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: 0 !important;
+      animation: slideShow 18s infinite !important;
+      z-index: 0 !important;
+    }
+    .slide:nth-child(1) { animation-delay: 0s !important; }
+    .slide:nth-child(2) { animation-delay: 6s !important; }
+    .slide:nth-child(3) { animation-delay: 12s !important; }
+
+    @keyframes slideShow {
+      0% { opacity: 0; transform: scale(1); }
+      6% { opacity: 1; }
+      28% { opacity: 1; transform: scale(1.08); }
+      34% { opacity: 0; transform: scale(1.12); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+
+    .slide-overlay {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%) !important;
+    }
+
+    .hero > *:not(.slide):not(.slide-overlay) {
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .hero-badge {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1px solid #E3E8EF !important;
+      box-shadow: 0 2px 10px rgba(11, 27, 51, 0.06) !important;
+    }
+    .hero h1, 
+    .hero h1 span {
+      color: #0B1B33 !important;
+      text-shadow: none !important;
+    }
+    .hero h1 em {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+    .hero p {
+      color: #5F6B7A !important;
+      font-weight: 500 !important;
+      text-shadow: none !important;
+    }
+
+    /* 2. DESTINATION CARDS CLEAN OVERLAY (REMOVE SOLID WHITE BOX BEHIND NAMES) */
+    .dest-overlay,
+    .dest-name,
+    .dest-sub,
+    .dest-tag {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    .dest-card {
+      position: relative !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      overflow: hidden !important;
+    }
+
+    .dest-overlay {
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      padding: 1.2rem !important;
+      background: linear-gradient(to top, rgba(8, 20, 40, 0.88) 0%, rgba(8, 20, 40, 0.25) 55%, transparent 100%) !important;
+      z-index: 2 !important;
+    }
+
+    .dest-name {
+      color: #FFFFFF !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+      margin: 0 !important;
+    }
+
+    .dest-sub {
+      color: #e4c06e !important;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 1.5px !important;
+      text-transform: uppercase !important;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+      margin-top: 2px !important;
+    }
+
+    /* 3. ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
     .pkg2, 
-    .dest-card, 
     .offer-card, 
     .review-card, 
     .testi-card, 
@@ -2271,7 +2381,6 @@ foreach ($packages_raw as $p) {
     .pricing-card, 
     .trust-highlight-card, 
     .hero-trust-strip, 
-    .hero-badge,
     .pkg2-body {
       background-color: #FFFFFF !important;
       background: #FFFFFF !important;
@@ -2281,10 +2390,40 @@ foreach ($packages_raw as $p) {
       color: #0B1B33 !important;
     }
 
+    /* HERO TRUST BADGES STRIP PURE WHITE FIX */
+    .hero-trust-strip {
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 30px !important;
+      padding: 0.55rem 1.6rem !important;
+      color: #0B1B33 !important;
+      box-shadow: 0 8px 25px rgba(11, 27, 51, 0.06) !important;
+    }
+    .trust-badge-item, 
+    .trust-badge-item span, 
+    .trust-badge-item strong {
+      color: #0B1B33 !important;
+    }
+    .trust-badge-item strong {
+      color: #D4A72C !important;
+    }
+    .trust-badge-divider {
+      background: #E3E8EF !important;
+    }
+
+    /* HERO STATS PURE WHITE FIX */
+    .stat-num {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+    .stat-label {
+      color: #5F6B7A !important;
+      text-shadow: none !important;
+    }
+
     /* ALL HEADINGS IN DEEP NAVY (#0B1B33) */
     h1, h2, h3, h4, h5, h6,
     .section-title,
-    .dest-name,
     .pkg2-body h3,
     .testi-name,
     .review-author,
@@ -2301,7 +2440,6 @@ foreach ($packages_raw as $p) {
     p, 
     .section-sub, 
     .pkg2-list li, 
-    .stat-label, 
     .testi-text, 
     .review-text, 
     .faq-answer, 
@@ -2317,7 +2455,6 @@ foreach ($packages_raw as $p) {
     .gold-text, 
     .gold-txt, 
     .section-tag, 
-    .stat-num, 
     .testi-loc, 
     .review-loc {
       color: #D4A72C !important;
