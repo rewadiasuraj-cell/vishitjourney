@@ -175,6 +175,152 @@ require_once __DIR__ . '/config/config.php';
   .footer-links a:hover{color:var(--gold)}
   .copyright{text-align:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.85rem}
 </style>
+
+  <style id="vjMasterWhiteThemeStyles">
+    /* ════════════════════════════════════════════════════════════
+       VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
+       (APPLIED ACROSS ALL PAGES & STANDALONE TEMPLATES)
+       ════════════════════════════════════════════════════════════ */
+    html, body {
+      background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    body {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    section,
+    main,
+    div,
+    header,
+    nav,
+    footer,
+    .search-section,
+    .special-offers,
+    .destinations,
+    .packages,
+    .pkg-wrapper,
+    .pkg-main-content,
+    .why,
+    .contact,
+    .cta-banner,
+    .about-hero,
+    .about-section,
+    #official-rate-and-faq {
+      background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    /* 1. HEADER NAVBAR CLEAN LIGHT STYLING */
+    nav, header {
+      background: #FFFFFF !important;
+      border-bottom: 1px solid #E3E8EF !important;
+      box-shadow: 0 4px 20px rgba(11, 27, 51, 0.04) !important;
+    }
+    .nav-links a {
+      color: #0B1B33 !important;
+      font-weight: 700 !important;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #D4A72C !important;
+    }
+
+    /* 2. ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
+    .pkg2, 
+    .offer-card, 
+    .review-card, 
+    .testi-card, 
+    .faq-card, 
+    .faq-item, 
+    .pricing-card, 
+    .trust-highlight-card, 
+    .hero-trust-strip, 
+    .pkg2-body,
+    .about-card,
+    .stat-card,
+    .team-card {
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      color: #0B1B33 !important;
+    }
+
+    /* 3. ALL HEADINGS IN DEEP NAVY (#0B1B33) */
+    h1, h2, h3, h4, h5, h6,
+    .section-title,
+    .pkg2-body h3,
+    .testi-name,
+    .review-author,
+    .footer-col-title,
+    .faq-question,
+    .about-title {
+      color: #0B1B33 !important;
+      text-shadow: none !important;
+    }
+
+    /* 4. ALL SUBTITLES & PARAGRAPHS IN SLATE GRAY (#5F6B7A) */
+    p, 
+    .section-sub, 
+    .pkg2-list li, 
+    .testi-text, 
+    .review-text, 
+    .faq-answer, 
+    footer p, 
+    footer a,
+    footer span {
+      color: #5F6B7A !important;
+      text-shadow: none !important;
+    }
+
+    /* GOLD HIGHLIGHTED ACCENTS (#D4A72C) */
+    em, 
+    .gold-text, 
+    .gold-txt, 
+    .section-tag, 
+    .testi-loc, 
+    .review-loc {
+      color: #D4A72C !important;
+      text-shadow: none !important;
+    }
+
+    /* ALTERNATE SECTIONS IN SOFT ICE WHITE (#F7F9FC) */
+    .testimonials, 
+    .why-us, 
+    .faq-section, 
+    .alternate-bg,
+    footer,
+    .footer-section,
+    .footer-bottom {
+      background-color: #F7F9FC !important;
+      background: #F7F9FC !important;
+      color: #0B1B33 !important;
+    }
+
+    /* BUTTONS */
+    .pkg2-btn, .btn-gold, .vj-btn-book {
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #D4A72C !important;
+      font-weight: 800 !important;
+    }
+    .vj-pkg-readmore-btn, .btn-outline, .vj-btn-read {
+      background: #FFFFFF !important;
+      color: #0B1B33 !important;
+      border: 1.5px solid #D4A72C !important;
+      font-weight: 700 !important;
+    }
+
+    /* FLOATING WHATSAPP BUTTON (GREEN) */
+    .whatsapp-btn, .whatsapp-float, [href*="wa.me"] {
+      background-color: #25D366 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -184,7 +330,7 @@ require_once __DIR__ . '/config/config.php';
       <img src="Vishit_Journey_Logo.png" alt="Vishit Journey" style="height:64px;width:auto;display:block;">
     </a>
     <ul class="nav-links">
-      <li><a href="index.php#destinations">Destinations</a></li>
+      <li></li>
       <li><a href="index.php#packages">Packages</a></li>
       <li><a href="contact.php">Contact Us</a></li>
       <li><a href="about.php" class="active">About Us</a></li>
@@ -280,7 +426,7 @@ require_once __DIR__ . '/config/config.php';
         <h4>Quick Links</h4>
         <ul class="footer-links">
           <li><a href="index.php">Home</a></li>
-          <li><a href="index.php#destinations">Destinations</a></li>
+          <li></li>
           <li><a href="contact.php">Contact Us</a></li>
           <li><a href="about.php">About Us</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>

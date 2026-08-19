@@ -71,12 +71,12 @@
 
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
-       VISHIT JOURNEY — MASTER 100% PURE WHITE LUXURY THEME
-       (100% ZERO DARK NAVY BACKGROUNDS ANYWHERE ON THE WEBSITE)
+       VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
+       (APPLIED ACROSS ALL PAGES & STANDALONE TEMPLATES)
        ════════════════════════════════════════════════════════════ */
-    html, body, main, section, header, nav, footer, div, article, aside {
-      background-color: #FFFFFF;
-      color: #0B1B33;
+    html, body {
+      background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
     }
 
     body {
@@ -85,7 +85,11 @@
     }
 
     section,
-    .hero,
+    main,
+    div,
+    header,
+    nav,
+    footer,
     .search-section,
     .special-offers,
     .destinations,
@@ -93,28 +97,31 @@
     .pkg-wrapper,
     .pkg-main-content,
     .why,
-    .contact {
+    .contact,
+    .cta-banner,
+    .about-hero,
+    .about-section,
+    #official-rate-and-faq {
       background-color: #FFFFFF !important;
+      color: #0B1B33 !important;
+    }
+
+    /* 1. HEADER NAVBAR CLEAN LIGHT STYLING */
+    nav, header {
       background: #FFFFFF !important;
+      border-bottom: 1px solid #E3E8EF !important;
+      box-shadow: 0 4px 20px rgba(11, 27, 51, 0.04) !important;
+    }
+    .nav-links a {
       color: #0B1B33 !important;
+      font-weight: 700 !important;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #D4A72C !important;
     }
 
-    /* ALTERNATE SECTIONS IN SOFT ICE WHITE (#F7F9FC) */
-    .testimonials, 
-    .why-us, 
-    .faq-section, 
-    .alternate-bg,
-    footer,
-    .footer-section,
-    .footer-bottom {
-      background-color: #F7F9FC !important;
-      background: #F7F9FC !important;
-      color: #0B1B33 !important;
-    }
-
-    /* ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
+    /* 2. ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
     .pkg2, 
-    .dest-card, 
     .offer-card, 
     .review-card, 
     .testi-card, 
@@ -123,8 +130,10 @@
     .pricing-card, 
     .trust-highlight-card, 
     .hero-trust-strip, 
-    .hero-badge,
-    .pkg2-body {
+    .pkg2-body,
+    .about-card,
+    .stat-card,
+    .team-card {
       background-color: #FFFFFF !important;
       background: #FFFFFF !important;
       border: 1px solid #E3E8EF !important;
@@ -133,27 +142,23 @@
       color: #0B1B33 !important;
     }
 
-    /* ALL HEADINGS IN DEEP NAVY (#0B1B33) */
+    /* 3. ALL HEADINGS IN DEEP NAVY (#0B1B33) */
     h1, h2, h3, h4, h5, h6,
     .section-title,
-    .dest-name,
     .pkg2-body h3,
     .testi-name,
     .review-author,
     .footer-col-title,
     .faq-question,
-    .pkg-count-info,
-    .pkg-count-info strong,
-    #pkgCount {
+    .about-title {
       color: #0B1B33 !important;
       text-shadow: none !important;
     }
 
-    /* ALL SUBTITLES & PARAGRAPHS IN SLATE GRAY (#5F6B7A) */
+    /* 4. ALL SUBTITLES & PARAGRAPHS IN SLATE GRAY (#5F6B7A) */
     p, 
     .section-sub, 
     .pkg2-list li, 
-    .stat-label, 
     .testi-text, 
     .review-text, 
     .faq-answer, 
@@ -169,70 +174,23 @@
     .gold-text, 
     .gold-txt, 
     .section-tag, 
-    .stat-num, 
     .testi-loc, 
     .review-loc {
       color: #D4A72C !important;
       text-shadow: none !important;
     }
 
-    .gold-line {
-      background: #D4A72C !important;
-    }
-
-    /* REMOVE ALL MARQUEE FADE OVERLAYS */
-    .testi-marquee-wrapper::before,
-    .testi-marquee-wrapper::after,
-    .testimonials::before,
-    .testimonials::after,
-    .testi-marquee-wrapper .fade-left,
-    .testi-marquee-wrapper .fade-right {
-      display: none !important;
-      background: none !important;
-      opacity: 0 !important;
-    }
-
-    /* PACKAGE FILTER TABS */
-    .pkg-tab,
-    .pkg-filter-btn, 
-    .filter-btn, 
-    .dest-filter-btn,
-    .vj-filter-tab,
-    button.filter-btn,
-    button[data-filter] {
-      background: #FFFFFF !important;
+    /* ALTERNATE SECTIONS IN SOFT ICE WHITE (#F7F9FC) */
+    .testimonials, 
+    .why-us, 
+    .faq-section, 
+    .alternate-bg,
+    footer,
+    .footer-section,
+    .footer-bottom {
+      background-color: #F7F9FC !important;
+      background: #F7F9FC !important;
       color: #0B1B33 !important;
-      border: 1.5px solid #E3E8EF !important;
-      font-weight: 700 !important;
-      padding: 0.5rem 1.4rem !important;
-      border-radius: 25px !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
-      transition: all 0.25s ease !important;
-      display: inline-block !important;
-    }
-    .pkg-tab:hover,
-    .pkg-filter-btn:hover, 
-    .filter-btn:hover, 
-    .dest-filter-btn:hover,
-    .vj-filter-tab:hover,
-    button.filter-btn:hover,
-    button[data-filter]:hover {
-      background: rgba(212, 167, 44, 0.08) !important;
-      border-color: #D4A72C !important;
-      color: #B88918 !important;
-    }
-    .pkg-tab.active,
-    .pkg-filter-btn.active, 
-    .filter-btn.active, 
-    .dest-filter-btn.active,
-    .vj-filter-tab.active,
-    button.filter-btn.active,
-    button[data-filter].active {
-      background: #D4A72C !important;
-      color: #0B1B33 !important;
-      border-color: #D4A72C !important;
-      font-weight: 800 !important;
-      box-shadow: 0 4px 14px rgba(212, 167, 44, 0.35) !important;
     }
 
     /* BUTTONS */
@@ -242,21 +200,11 @@
       border: 1.5px solid #D4A72C !important;
       font-weight: 800 !important;
     }
-    .pkg2-btn:hover, .btn-gold:hover, .vj-btn-book:hover {
-      background: #B88918 !important;
-      border-color: #B88918 !important;
-      color: #FFFFFF !important;
-    }
-
     .vj-pkg-readmore-btn, .btn-outline, .vj-btn-read {
       background: #FFFFFF !important;
       color: #0B1B33 !important;
       border: 1.5px solid #D4A72C !important;
       font-weight: 700 !important;
-    }
-    .vj-pkg-readmore-btn:hover, .btn-outline:hover, .vj-btn-read:hover {
-      background: rgba(212, 167, 44, 0.1) !important;
-      color: #B88918 !important;
     }
 
     /* FLOATING WHATSAPP BUTTON (GREEN) */
