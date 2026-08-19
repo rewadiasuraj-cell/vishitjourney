@@ -1689,6 +1689,17 @@ foreach ($packages_raw as $p) {
     }
   </style>
 
+
+  <style id="vjBannerThumbStyles">
+    /* ALIGN THUMBNAIL IMAGES FROM LEFT TO SHOW LOGO AND TITLE CLEARLY */
+    .pkg2-img img {
+      width: 100% !important;
+      height: 210px !important;
+      object-fit: cover !important;
+      object-position: left center !important; /* Left alignment for logo & title visibility */
+    }
+  </style>
+
 </head>
 <body>
 
