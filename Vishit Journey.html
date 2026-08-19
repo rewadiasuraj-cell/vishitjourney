@@ -2179,7 +2179,7 @@
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
        VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
-       (RATE CARD TABLE PURE WHITE BACKGROUND & DARK NAVY TEXT FIX)
+       (SPECIAL OFFER CARDS BADGE & TEXT OVERLAP 100% FIX)
        ════════════════════════════════════════════════════════════ */
     html, body {
       background-color: #FFFFFF !important;
@@ -2207,7 +2207,69 @@
       color: #0B1B33 !important;
     }
 
-    /* 1. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
+    /* 1. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP PERFECT FIX */
+    .offer-card {
+      position: relative !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E3E8EF !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
+      padding: 3.2rem 1.6rem 1.6rem !important; /* Top padding 3.2rem gives clear vertical space for badge */
+      overflow: hidden !important;
+    }
+
+    .offer-badge,
+    .offer-card .badge,
+    .offer-card span[style*="position:absolute"],
+    .offer-card div[style*="position:absolute"],
+    .offer-card div[style*="background:#D4A72C"],
+    .offer-card span[style*="background:#D4A72C"] {
+      position: absolute !important;
+      top: 12px !important;
+      right: 12px !important;
+      left: auto !important;
+      bottom: auto !important;
+      font-size: 0.6rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.8px !important;
+      padding: 0.3rem 0.8rem !important;
+      border-radius: 14px !important;
+      text-transform: uppercase !important;
+      background: #D4A72C !important;
+      color: #0B1B33 !important;
+      box-shadow: 0 2px 8px rgba(212, 167, 44, 0.2) !important;
+      z-index: 10 !important;
+      transform: none !important;
+    }
+
+    .offer-tag,
+    .offer-card .tag,
+    .offer-card span[style*="letter-spacing"],
+    .offer-card div[style*="letter-spacing"] {
+      padding-right: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0.4rem !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.4rem !important;
+    }
+
+    .offer-card h3 {
+      font-size: 1.25rem !important;
+      font-weight: 800 !important;
+      color: #0B1B33 !important;
+      margin: 0.3rem 0 0.6rem 0 !important;
+      line-height: 1.3 !important;
+    }
+
+    .offer-card p {
+      color: #5F6B7A !important;
+      font-size: 0.88rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 1.2rem !important;
+    }
+
+    /* 2. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
     #official-rate-and-faq div[style*="overflow-x"],
     #official-rate-and-faq table {
       background-color: #FFFFFF !important;
@@ -2247,63 +2309,6 @@
     #official-rate-and-faq td[style*="font-weight:700"] {
       color: #0B1B33 !important;
       font-weight: 800 !important;
-    }
-
-    /* 2. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP FIX */
-    .offer-card {
-      position: relative !important;
-      background: #FFFFFF !important;
-      border: 1px solid #E3E8EF !important;
-      border-radius: 20px !important;
-      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
-      padding: 1.8rem 1.6rem 1.6rem !important;
-      overflow: hidden !important;
-    }
-
-    .offer-badge,
-    .offer-card .badge,
-    .offer-card span[style*="position:absolute"],
-    .offer-card div[style*="position:absolute"] {
-      position: absolute !important;
-      top: 14px !important;
-      right: 14px !important;
-      left: auto !important;
-      bottom: auto !important;
-      font-size: 0.62rem !important;
-      font-weight: 800 !important;
-      letter-spacing: 1px !important;
-      padding: 0.3rem 0.8rem !important;
-      border-radius: 20px !important;
-      text-transform: uppercase !important;
-      background: #D4A72C !important;
-      color: #0B1B33 !important;
-      box-shadow: 0 2px 8px rgba(212, 167, 44, 0.25) !important;
-      z-index: 5 !important;
-      transform: none !important;
-    }
-
-    .offer-tag,
-    .offer-card .tag,
-    .offer-card span:first-child,
-    .offer-card div:first-child {
-      padding-right: 130px !important;
-      margin-bottom: 0.5rem !important;
-      display: inline-block !important;
-    }
-
-    .offer-card h3 {
-      font-size: 1.2rem !important;
-      font-weight: 800 !important;
-      color: #0B1B33 !important;
-      margin: 0.4rem 0 0.6rem 0 !important;
-      line-height: 1.3 !important;
-    }
-
-    .offer-card p {
-      color: #5F6B7A !important;
-      font-size: 0.88rem !important;
-      line-height: 1.6 !important;
-      margin-bottom: 1.2rem !important;
     }
 
     /* 3. HERO CAB SERVICE | BUS CHARTER | FLIGHT TOURS DARK TEXT FIX */
