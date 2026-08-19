@@ -1691,12 +1691,19 @@ foreach ($packages_raw as $p) {
 
 
   <style id="vjBannerThumbStyles">
-    /* ALIGN THUMBNAIL IMAGES FROM LEFT TO SHOW LOGO AND TITLE CLEARLY */
+    /* PERFECT EDGE-TO-EDGE FIT FOR CARD THUMBNAILS WITH ZERO BLANK SPACE */
+    .pkg2-img {
+      height: 250px !important;
+      overflow: hidden !important;
+      position: relative !important;
+      background: transparent !important;
+    }
     .pkg2-img img {
       width: 100% !important;
-      height: 210px !important;
+      height: 100% !important;
       object-fit: cover !important;
-      object-position: left center !important; /* Left alignment for logo & title visibility */
+      object-position: left top !important; /* Shows top-left logo & title while filling full card height */
+      display: block !important;
     }
   </style>
 
