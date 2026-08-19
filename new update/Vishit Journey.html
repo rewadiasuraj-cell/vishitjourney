@@ -2178,7 +2178,7 @@
   <style id="vjMasterWhiteThemeStyles">
     /* ════════════════════════════════════════════════════════════
        VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
-       (HERO DESTINATION ANIMATED SLIDESHOW: SCALE IN & CROSS-FADE)
+       (REMOVE FAQ OUTER CARD & DROP SHADOWS)
        ════════════════════════════════════════════════════════════ */
     html, body {
       background-color: #FFFFFF !important;
@@ -2206,7 +2206,25 @@
       color: #0B1B33 !important;
     }
 
-    /* 1. HERO BACKGROUND TRAVEL DESTINATION ANIMATED SLIDESHOW */
+    /* 1. REMOVE FAQ OUTER CARD CONTAINER, BORDER & SHADOWS */
+    #vj-geo-faq-section {
+      background: transparent !important;
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 1rem 0 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    #vj-geo-faq-section h2,
+    #vj-geo-faq-section h3,
+    #vj-geo-faq-section p {
+      text-shadow: none !important;
+    }
+
+    /* 2. HERO BACKGROUND TRAVEL DESTINATION ANIMATED SLIDESHOW */
     .hero {
       position: relative !important;
       overflow: hidden !important;
@@ -2233,15 +2251,15 @@
 
     .slide:nth-child(1) {
       animation-delay: 0s !important;
-      background-image: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1600&q=80') !important; /* Kashmir / Himalayas */
+      background-image: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1600&q=80') !important;
     }
     .slide:nth-child(2) {
       animation-delay: 6s !important;
-      background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80') !important; /* Dubai Skyline */
+      background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80') !important;
     }
     .slide:nth-child(3) {
       animation-delay: 12s !important;
-      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') !important; /* Tropical Beach / Kerala */
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') !important;
     }
 
     @keyframes heroSlideFade {
@@ -2319,7 +2337,7 @@
       color: #D4A72C !important;
     }
 
-    /* 2. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP PERFECT FIX */
+    /* 3. SPECIAL OFFER CARDS BADGE & TEXT OVERLAP PERFECT FIX */
     .offer-card {
       position: relative !important;
       background: #FFFFFF !important;
@@ -2381,7 +2399,7 @@
       margin-bottom: 1.2rem !important;
     }
 
-    /* 3. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
+    /* 4. RATE CARD TABLE CONTAINER & ROW PURE WHITE FIX */
     #official-rate-and-faq div[style*="overflow-x"],
     #official-rate-and-faq table {
       background-color: #FFFFFF !important;
@@ -2423,7 +2441,7 @@
       font-weight: 800 !important;
     }
 
-    /* 4. FAQ CARDS 100% PURE WHITE BACKGROUND & HIGH CONTRAST DARK TEXT */
+    /* 5. FAQ CARDS 100% PURE WHITE BACKGROUND & HIGH CONTRAST DARK TEXT */
     #official-rate-and-faq article,
     #vj-geo-faq-section article,
     article[style*="rgba(8,20,40"],
@@ -4535,7 +4553,7 @@
     </div>
 
     <!-- 2. EXPANSIVE FAQ SECTION (2-COLUMN GRID ON WEB) -->
-    <div id="vj-geo-faq-section" style="background: #FFFFFF; border: 1px solid rgba(201,165,74,0.35); border-radius: 24px; padding: 3rem; box-shadow: 0 25px 60px rgba(0,0,0,0.4); backdrop-filter: blur(12px);">
+    <div id="vj-geo-faq-section" style="background:transparent; border:none; box-shadow:none; padding:1rem 0;">
       
       <div style="text-align: center; margin-bottom: 3rem;">
         <span style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; background: rgba(201,165,74,0.12); padding: 0.35rem 1.2rem; border-radius: 20px; border: 1px solid rgba(201,165,74,0.3);">ACCREDITED TRAVEL INTELLIGENCE</span>
