@@ -1,5 +1,5 @@
 {
-  "name": "Vishit Journey — Travel Beyond Limits",
+  "name": "Vishit Journey",
   "short_name": "Vishit Journey",
   "icons": [
     {
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#081428",
-  "background_color": "#081428",
+  "theme_color": "#0a2540",
+  "background_color": "#ffffff",
   "display": "standalone"
 }

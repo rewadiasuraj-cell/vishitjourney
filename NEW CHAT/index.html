@@ -584,39 +584,112 @@
   .section-sub{color:var(--muted);margin-top:.7rem;font-size:.9rem;line-height:1.7;max-width:500px}
   .gold-line{width:50px;height:2px;background:var(--gold);margin:1rem 0}
 
-  /* ── DESTINATIONS ── */
-  .destinations{background:var(--navy)}
-  .dest-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
-  .dest-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-template-rows:auto auto;
-    gap:16px;
+  
+  /* ── DESTINATIONS (LUXURY 4-COLUMN UNIFORM GRID) ── */
+  .destinations {
+    background: #ffffff;
+    padding: 4rem 5%;
   }
-  .dest-card{
-    position:relative;overflow:hidden;cursor:pointer;
-    border:1px solid rgba(201,165,74,0.1);
+  .dest-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  .dest-card:first-child{grid-row:span 2}
-  .dest-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-  .dest-card:first-child img{height:420px}
-  .dest-card:not(:first-child) img{height:195px}
-  .dest-card:hover img{transform:scale(1.07)}
-  .dest-overlay{
-    position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(8,20,40,0.9) 0%,transparent 55%);
-    display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;
-    transition:all .3s;
+  .dest-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .dest-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700}
-  .dest-sub{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:3px}
-  .dest-tag{
-    position:absolute;top:12px;right:12px;
-    background:var(--gold);color:var(--navy);
-    font-size:.6rem;font-weight:600;letter-spacing:1px;padding:3px 10px;
+  .dest-card {
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(201,165,74,0.2) !important;
+    height: 320px !important;
+    box-shadow: 0 8px 24px rgba(11,27,51,0.06) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+  }
+  .dest-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 16px 36px rgba(11,27,51,0.16) !important;
+  }
+  .dest-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .dest-card:hover img {
+    transform: scale(1.08) !important;
+  }
+  .dest-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(to top, rgba(8,20,40,0.92) 0%, rgba(8,20,40,0.2) 60%, transparent 100%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 1.4rem !important;
+    transition: all 0.3s ease !important;
+  }
+  .dest-name {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+  }
+  .dest-sub {
+    font-size: 0.72rem !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: var(--gold) !important;
+    margin-top: 4px !important;
+    font-weight: 600 !important;
+  }
+  .dest-tag {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    padding: 4px 10px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
   }
 
-  /* ── WHY VISHIT ── */
+  @media (max-width: 1024px) {
+    .dest-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+    }
+    .dest-card {
+      height: 260px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .dest-grid {
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+    }
+    .dest-card {
+      height: 220px !important;
+    }
+  }
+
+/* ── WHY VISHIT ── */
   .why{background:var(--navy2);border-top:1px solid rgba(201,165,74,0.1);border-bottom:1px solid rgba(201,165,74,0.1)}
   .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
   .why-img{position:relative;overflow:hidden}
@@ -2435,55 +2508,50 @@
 <section class="destinations" id="destinations">
   <div class="dest-header">
     <div>
-      <div class="section-tag">✦ Where Will You Go?</div>
-      <h2 class="section-title">Featured <em>Destinations</em></h2>
+      <div class="section-tag">Where Will You Go?</div>
+      <h2 class="section-title">Trending <em>Destinations</em></h2>
       <div class="gold-line"></div>
     </div>
     <a href="javascript:void(0)" onclick="filterByDestination('all')" style="color:var(--gold);font-size:.75rem;letter-spacing:2px;text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px">View All →</a>
   </div>
   <div class="dest-grid">
-    <!-- Big card -->
+
+    <div class="dest-card" onclick="filterByDestination('chardham')" style="cursor:pointer">
+      <div class="dest-tag">CHAR DHAM YATRA</div>
+      <img src="assets/images/chardham_banner.jpg" alt="Char Dham Yatra">
+      <div class="dest-overlay">
+        <div class="dest-name">Char Dham Yatra</div>
+        <div class="dest-sub">Sacred Uttarakhand Pilgrimage</div>
+      </div>
+    </div>
+
     <div class="dest-card" onclick="filterByDestination('kashmir')" style="cursor:pointer">
       <div class="dest-tag">MOST POPULAR</div>
       <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&q=80" alt="Kashmir">
       <div class="dest-overlay">
         <div class="dest-name">Kashmir</div>
-        <div class="dest-sub">Heaven on Earth • From ₹12,999</div>
+        <div class="dest-sub">Heaven on Earth</div>
       </div>
     </div>
-    <!-- Small cards -->
+
     <div class="dest-card" onclick="filterByDestination('goa')" style="cursor:pointer">
+      <div class="dest-tag">BEACH & NIGHTLIFE</div>
       <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa">
       <div class="dest-overlay">
         <div class="dest-name">Goa</div>
-        <div class="dest-sub">Sun & Surf • From ₹7,499</div>
+        <div class="dest-sub">Sun & Surf</div>
       </div>
     </div>
-    <div class="dest-card" onclick="filterByDestination('udaipur')" style="cursor:pointer">
-      <img src="assets/images/udaipur.jpg" alt="Udaipur">
-      <div class="dest-tag">ROYAL HERITAGE</div>
-      <div class="dest-overlay">
-        <div class="dest-name">Udaipur</div>
-        <div class="dest-sub">City of Lakes</div>
-      </div>
-    </div>
-    </div>
+
     <div class="dest-card" onclick="filterByDestination('manali')" style="cursor:pointer">
+      <div class="dest-tag">HILLS & SNOW</div>
       <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80" alt="Manali">
       <div class="dest-overlay">
         <div class="dest-name">Manali</div>
-        <div class="dest-sub">Adventure Awaits • From ₹9,999</div>
+        <div class="dest-sub">Adventure Awaits</div>
       </div>
     </div>
-    <div class="dest-card" onclick="filterByDestination('rishikesh')" style="cursor:pointer">
-      <img src="assets/images/rishikesh.jpg" alt="Rishikesh">
-      <div class="dest-tag">YOGA & ADVENTURE</div>
-      <div class="dest-overlay">
-        <div class="dest-name">Rishikesh</div>
-        <div class="dest-sub">Spiritual & Rafting Capital</div>
-      </div>
-    </div>
-    </div>
+
   </div>
 </section>
 
