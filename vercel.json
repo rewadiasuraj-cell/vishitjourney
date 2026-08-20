@@ -1,5 +1,11 @@
 {
   "cleanUrls": true,
+  "crons": [
+    {
+      "path": "/api/keep-alive",
+      "schedule": "0 0 */3 * *"
+    }
+  ],
   "rewrites": [
     { "source": "/chardham-itinerary", "destination": "/chardham_itinerary.html" },
     { "source": "/chardham_itinerary", "destination": "/chardham_itinerary.html" },
