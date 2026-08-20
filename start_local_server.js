@@ -3,20 +3,21 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 8000;
-const PUBLIC_DIR = __DIR__ = path.resolve(__dirname);
+const PUBLIC_DIR = path.resolve(__dirname);
 
 const MIME_TYPES = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'text/javascript',
-  '.json': 'application/json',
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
-  '.pdf': 'application/pdf'
+  '.pdf': 'application/pdf',
+  '.webmanifest': 'application/manifest+json'
 };
 
 const server = http.createServer((req, res) => {
@@ -32,6 +33,11 @@ const server = http.createServer((req, res) => {
     res.statusCode = 403;
     res.end('Forbidden');
     return;
+  }
+
+  // Clean URL rewrite (e.g. /booking -> /booking.html)
+  if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath = filePath + '.html';
   }
 
   fs.stat(filePath, (err, stats) => {
@@ -55,7 +61,7 @@ const server = http.createServer((req, res) => {
         res.end('Server Error');
       } else {
         res.writeHead(200, { 'Content-Type': contentType });
-        res.end(content, 'utf-8');
+        res.end(content);
       }
     });
   });

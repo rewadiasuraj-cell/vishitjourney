@@ -192,152 +192,6 @@
     main.main-content { margin-left: 70px; padding: 1.5rem; }
   }
 </style>
-
-  <style id="vjMasterWhiteThemeStyles">
-    /* ════════════════════════════════════════════════════════════
-       VISHIT JOURNEY — MASTER 100% LIGHT WHITE LUXURY THEME
-       (APPLIED ACROSS ALL PAGES & STANDALONE TEMPLATES)
-       ════════════════════════════════════════════════════════════ */
-    html, body {
-      background-color: #FFFFFF !important;
-      color: #0B1B33 !important;
-    }
-
-    body {
-      background: #FFFFFF !important;
-      color: #0B1B33 !important;
-    }
-
-    section,
-    main,
-    div,
-    header,
-    nav,
-    footer,
-    .search-section,
-    .special-offers,
-    .destinations,
-    .packages,
-    .pkg-wrapper,
-    .pkg-main-content,
-    .why,
-    .contact,
-    .cta-banner,
-    .about-hero,
-    .about-section,
-    #official-rate-and-faq {
-      background-color: #FFFFFF !important;
-      color: #0B1B33 !important;
-    }
-
-    /* 1. HEADER NAVBAR CLEAN LIGHT STYLING */
-    nav, header {
-      background: #FFFFFF !important;
-      border-bottom: 1px solid #E3E8EF !important;
-      box-shadow: 0 4px 20px rgba(11, 27, 51, 0.04) !important;
-    }
-    .nav-links a {
-      color: #0B1B33 !important;
-      font-weight: 700 !important;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #D4A72C !important;
-    }
-
-    /* 2. ALL CARDS IN PURE WHITE WITH LIGHT BORDER & SOFT SHADOW */
-    .pkg2, 
-    .offer-card, 
-    .review-card, 
-    .testi-card, 
-    .faq-card, 
-    .faq-item, 
-    .pricing-card, 
-    .trust-highlight-card, 
-    .hero-trust-strip, 
-    .pkg2-body,
-    .about-card,
-    .stat-card,
-    .team-card {
-      background-color: #FFFFFF !important;
-      background: #FFFFFF !important;
-      border: 1px solid #E3E8EF !important;
-      border-radius: 20px !important;
-      box-shadow: 0 10px 30px rgba(11, 27, 51, 0.06) !important;
-      color: #0B1B33 !important;
-    }
-
-    /* 3. ALL HEADINGS IN DEEP NAVY (#0B1B33) */
-    h1, h2, h3, h4, h5, h6,
-    .section-title,
-    .pkg2-body h3,
-    .testi-name,
-    .review-author,
-    .footer-col-title,
-    .faq-question,
-    .about-title {
-      color: #0B1B33 !important;
-      text-shadow: none !important;
-    }
-
-    /* 4. ALL SUBTITLES & PARAGRAPHS IN SLATE GRAY (#5F6B7A) */
-    p, 
-    .section-sub, 
-    .pkg2-list li, 
-    .testi-text, 
-    .review-text, 
-    .faq-answer, 
-    footer p, 
-    footer a,
-    footer span {
-      color: #5F6B7A !important;
-      text-shadow: none !important;
-    }
-
-    /* GOLD HIGHLIGHTED ACCENTS (#D4A72C) */
-    em, 
-    .gold-text, 
-    .gold-txt, 
-    .section-tag, 
-    .testi-loc, 
-    .review-loc {
-      color: #D4A72C !important;
-      text-shadow: none !important;
-    }
-
-    /* ALTERNATE SECTIONS IN SOFT ICE WHITE (#F7F9FC) */
-    .testimonials, 
-    .why-us, 
-    .faq-section, 
-    .alternate-bg,
-    footer,
-    .footer-section,
-    .footer-bottom {
-      background-color: #F7F9FC !important;
-      background: #F7F9FC !important;
-      color: #0B1B33 !important;
-    }
-
-    /* BUTTONS */
-    .pkg2-btn, .btn-gold, .vj-btn-book {
-      background: #D4A72C !important;
-      color: #0B1B33 !important;
-      border: 1.5px solid #D4A72C !important;
-      font-weight: 800 !important;
-    }
-    .vj-pkg-readmore-btn, .btn-outline, .vj-btn-read {
-      background: #FFFFFF !important;
-      color: #0B1B33 !important;
-      border: 1.5px solid #D4A72C !important;
-      font-weight: 700 !important;
-    }
-
-    /* FLOATING WHATSAPP BUTTON (GREEN) */
-    .whatsapp-btn, .whatsapp-float, [href*="wa.me"] {
-      background-color: #25D366 !important;
-      color: #FFFFFF !important;
-    }
-  </style>
-
 </head>
 <body>
 
@@ -636,6 +490,7 @@
     if (sessionStorage.getItem('vj_admin_logged') === 'true') {
       document.getElementById('loginOverlay').style.display = 'none';
       renderAll();
+      fetchCloudData();
     }
   }
 
@@ -644,11 +499,12 @@
     const user = document.getElementById('adminUser').value.trim();
     const pass = document.getElementById('adminPass').value.trim();
 
-    // Updated Credentials: admin@vishitjourney.com / vish7689@journey
+    // Credentials: admin@vishitjourney.com / vish7689@journey
     if ((user.toLowerCase() === 'admin@vishitjourney.com' || user.toLowerCase() === 'admin') && pass === 'vish7689@journey') {
       sessionStorage.setItem('vj_admin_logged', 'true');
       document.getElementById('loginOverlay').style.display = 'none';
       renderAll();
+      fetchCloudData();
     } else {
       document.getElementById('loginError').style.display = 'block';
     }
@@ -685,7 +541,7 @@
   }
 
   function renderStats() {
-    const totalRev = bookings.reduce((sum, b) => b.status === 'Confirmed' ? sum + b.price : sum, 0);
+    const totalRev = bookings.reduce((sum, b) => b.status === 'Confirmed' ? sum + (Number(b.price) || 0) : sum, 0);
     document.getElementById('statRevenue').textContent = '₹' + totalRev.toLocaleString('en-IN');
     document.getElementById('statBookings').textContent = bookings.length;
     document.getElementById('statPackages').textContent = packages.length;
@@ -702,48 +558,58 @@
   function renderBookings() {
     // Dashboard Table (Top 5)
     const dashTbody = document.getElementById('dashboardBookingsTbody');
-    dashTbody.innerHTML = bookings.slice(0, 5).map(b => `
-      <tr>
-        <td><strong>${b.id}</strong></td>
-        <td>${b.name}</td>
-        <td>${b.package}</td>
-        <td>${b.date}</td>
-        <td>₹${b.price.toLocaleString('en-IN')}</td>
-        <td><span class="badge ${getBadgeClass(b.status)}">${b.status}</span></td>
-        <td>
-          <button class="btn-sm btn-outline" onclick="showTab('bookings', document.querySelectorAll('.menu-link')[1])">Manage</button>
-        </td>
-      </tr>
-    `).join('');
+    if (dashTbody) {
+      dashTbody.innerHTML = bookings.slice(0, 5).map(b => `
+        <tr>
+          <td><strong>${b.id}</strong></td>
+          <td>${b.name}</td>
+          <td>${b.package}</td>
+          <td>${b.date}</td>
+          <td>₹${(Number(b.price) || 0).toLocaleString('en-IN')}</td>
+          <td><span class="badge ${getBadgeClass(b.status)}">${b.status}</span></td>
+          <td>
+            <button class="btn-sm btn-outline" onclick="showTab('bookings', document.querySelectorAll('.menu-link')[1])">Manage</button>
+          </td>
+        </tr>
+      `).join('');
+    }
 
     // All Bookings Table
     const allTbody = document.getElementById('allBookingsTbody');
-    allTbody.innerHTML = bookings.map(b => `
-      <tr>
-        <td><strong>${b.id}</strong></td>
-        <td><strong>${b.name}</strong></td>
-        <td>${b.phone}<br><span style="font-size:0.75rem;color:var(--text-muted)">${b.email}</span></td>
-        <td>${b.package}</td>
-        <td>${b.persons} Person(s)</td>
-        <td><strong>₹${b.price.toLocaleString('en-IN')}</strong></td>
-        <td><span class="badge ${getBadgeClass(b.status)}">${b.status}</span></td>
-        <td>
-          <select onchange="updateBookingStatus('${b.id}', this.value)" style="background:var(--bg-dark);color:#fff;border:1px solid var(--border-color);padding:0.4rem;border-radius:6px;outline:none;">
-            <option value="Confirmed" ${b.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
-            <option value="Pending" ${b.status === 'Pending' ? 'selected' : ''}>Pending</option>
-            <option value="Cancelled" ${b.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
-          </select>
-        </td>
-      </tr>
-    `).join('');
+    if (allTbody) {
+      allTbody.innerHTML = bookings.map(b => `
+        <tr>
+          <td><strong>${b.id}</strong></td>
+          <td><strong>${b.name}</strong></td>
+          <td>${b.phone}<br><span style="font-size:0.75rem;color:var(--text-muted)">${b.email}</span></td>
+          <td>${b.package}</td>
+          <td>${b.persons} Person(s)</td>
+          <td><strong>₹${(Number(b.price) || 0).toLocaleString('en-IN')}</strong></td>
+          <td><span class="badge ${getBadgeClass(b.status)}">${b.status}</span></td>
+          <td>
+            <select onchange="updateBookingStatus('${b.id}', this.value)" style="background:var(--bg-dark);color:#fff;border:1px solid var(--border-color);padding:0.4rem;border-radius:6px;outline:none;cursor:pointer;">
+              <option value="Confirmed" ${b.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
+              <option value="Pending" ${b.status === 'Pending' ? 'selected' : ''}>Pending</option>
+              <option value="Cancelled" ${b.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+    }
   }
 
-  function updateBookingStatus(id, newStatus) {
+  async function updateBookingStatus(id, newStatus) {
     const item = bookings.find(b => b.id === id);
     if (item) {
       item.status = newStatus;
       localStorage.setItem('vj_admin_bookings', JSON.stringify(bookings));
       renderAll();
+
+      if (typeof dbClient !== 'undefined' && dbClient) {
+        try {
+          await dbClient.from('bookings').update({ status: newStatus }).eq('id', id);
+        } catch(e) { console.warn('Supabase status update error:', e); }
+      }
     }
   }
 
@@ -758,14 +624,15 @@
 
   function renderPackages() {
     const grid = document.getElementById('adminPackageGrid');
+    if (!grid) return;
     grid.innerHTML = packages.map(p => `
       <div class="admin-pkg-card">
-        <img src="${p.image}" class="admin-pkg-img" alt="${p.title}">
+        <img src="${p.image}" class="admin-pkg-img" alt="${p.title}" onerror="this.src='/Vishit_Journey_Logo.png'">
         <div class="admin-pkg-body">
           <div class="admin-pkg-title">${p.title}</div>
           <div class="admin-pkg-meta">
             <span>${p.duration}</span>
-            <span>₹${p.price.toLocaleString('en-IN')}</span>
+            <span>₹${(Number(p.price) || 0).toLocaleString('en-IN')}</span>
           </div>
           <span class="badge badge-info">${p.badge || 'SPECIAL'}</span>
           <div class="admin-pkg-actions">
@@ -841,15 +708,16 @@
 
   function renderEnquiries() {
     const tbody = document.getElementById('enquiriesTbody');
+    if (!tbody) return;
     tbody.innerHTML = enquiries.map((e, idx) => `
       <tr>
         <td>${e.date}</td>
         <td><strong>${e.name}</strong></td>
         <td>${e.contact}</td>
-        <td><span class="badge badge-info">${e.dest}</span></td>
-        <td style="max-width:250px">${e.msg}</td>
+        <td><span class="badge badge-info">${e.dest || 'General'}</span></td>
+        <td style="max-width:250px">${e.msg || ''}</td>
         <td>
-          <select onchange="updateEnquiryStatus(${idx}, this.value)" style="background:var(--bg-dark);color:#fff;border:1px solid var(--border-color);padding:0.4rem;border-radius:6px;outline:none;">
+          <select onchange="updateEnquiryStatus(${idx}, this.value)" style="background:var(--bg-dark);color:#fff;border:1px solid var(--border-color);padding:0.4rem;border-radius:6px;outline:none;cursor:pointer;">
             <option value="New" ${e.status === 'New' ? 'selected' : ''}>New</option>
             <option value="Contacted" ${e.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
             <option value="Resolved" ${e.status === 'Resolved' ? 'selected' : ''}>Resolved</option>
@@ -859,10 +727,16 @@
     `).join('');
   }
 
-  function updateEnquiryStatus(idx, newStatus) {
+  async function updateEnquiryStatus(idx, newStatus) {
     enquiries[idx].status = newStatus;
     localStorage.setItem('vj_admin_enquiries', JSON.stringify(enquiries));
     renderAll();
+
+    if (typeof dbClient !== 'undefined' && dbClient && enquiries[idx].name) {
+      try {
+        await dbClient.from('enquiries').update({ status: newStatus }).eq('name', enquiries[idx].name);
+      } catch(e) {}
+    }
   }
 
   function exportBookingsCSV() {
@@ -879,17 +753,20 @@
   }
 
   async function fetchCloudData() {
+    if (typeof initSupabase === 'function' && !dbClient) {
+      initSupabase();
+    }
     if (typeof dbClient !== 'undefined' && dbClient) {
       try {
-        const { data: cBookings } = await dbClient.from('bookings').select('*').order('created_at', { ascending: false });
-        if (cBookings && cBookings.length > 0) {
+        const { data: cBookings, error: bError } = await dbClient.from('bookings').select('*').order('created_at', { ascending: false });
+        if (!bError && cBookings && cBookings.length > 0) {
           bookings = cBookings.map(b => ({
-            id: b.id,
-            name: b.customer_name,
-            phone: b.phone,
-            email: b.email,
-            package: b.package_name,
-            date: b.travel_date,
+            id: b.id || ('VJ-' + Math.floor(1000 + Math.random() * 9000)),
+            name: b.customer_name || 'Guest',
+            phone: b.phone || '',
+            email: b.email || '',
+            package: b.package_name || 'Tour Package',
+            date: b.travel_date || '',
             persons: b.guests || 1,
             price: b.price || 0,
             status: b.status || 'Pending'
@@ -897,13 +774,29 @@
           localStorage.setItem('vj_admin_bookings', JSON.stringify(bookings));
           renderAll();
         }
-      } catch(e) { console.warn('Supabase fetch notice:', e); }
+      } catch(e) { console.warn('Supabase bookings fetch notice:', e); }
+
+      try {
+        const { data: cEnquiries, error: eError } = await dbClient.from('enquiries').select('*').order('created_at', { ascending: false });
+        if (!eError && cEnquiries && cEnquiries.length > 0) {
+          enquiries = cEnquiries.map(e => ({
+            date: e.date || (e.created_at ? e.created_at.slice(0, 10) : new Date().toISOString().slice(0, 10)),
+            name: e.name || 'Visitor',
+            contact: e.contact || '',
+            dest: e.destination || 'General',
+            msg: e.message || '',
+            status: e.status || 'New'
+          }));
+          localStorage.setItem('vj_admin_enquiries', JSON.stringify(enquiries));
+          renderAll();
+        }
+      } catch(e) { console.warn('Supabase enquiries fetch notice:', e); }
     }
   }
 
   // AUTO INIT
   checkSession();
-  fetchCloudData();
+  setTimeout(fetchCloudData, 500);
 </script>
 </body>
 </html>
